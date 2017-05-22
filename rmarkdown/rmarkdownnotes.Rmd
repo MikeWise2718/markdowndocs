@@ -1,0 +1,41 @@
+---
+title: "How R-markdown works"
+output: html_document
+---
+
+## R Markdown Intro
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.
+
+This document also documents how R-markdown works for me, because I always forget what I have learned.
+
+# Using it
+That is the easy part. See here <http://rmarkdown.rstudio.com> for example.
+Also check out the R-mardkwown Cheat Sheet: <http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf>.
+
+Built with R-version `r getRversion()`
+
+## YAML
+An R-markdown is really embedded in a YAML stream. YAML is a somewhat bizaar "data serialization language" - to be compared with JSON or XML a bit. Those are YAML directives at the top of this document, two documents seperated by "---" in a single stream (I think). The first document is refered to as the YAML header. Ugh.
+
+## Compilation Flow
+The cheatsheet above has some useful information on how R-markdown gets rendered under the section "Set render options with YAML". And man is this an archaic flow. While the output format can be pdf, or word, or a few others, we are mostly concered with HTML. It uses the knitr and the pandoc programs to do its thing. The flow looks like this:
+
+ - An **xxx.rmd** file like this one is read into *knitr*
+ - *knitr* spits out an **xxx.md** file - basically it translates all the r chunks into quoted output.
+ - *pandoc* reads in the **xxx.md** file
+ - *pandoc* creates the final **xxx.html** file - converting the markdown into html and adding css and javascript as needed
+ 
+ you can do these from the R-console of course:
+ 
+ - library(knitr)
+ - knit(xxx.rmd)
+
+This is all cool, but what if you want to do something that isn't covered by some default functionality? Then you can use hooks...
+
+## Hooks
+Now it gets complicated and badly documented.
+
+
+## Htmlwidges
+This is also something pretty complicated
