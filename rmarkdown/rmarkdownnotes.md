@@ -11,7 +11,7 @@ This document also documents how R-markdown works for me, because I always forge
 
 # Using it
 That is the easy part. See here <http://rmarkdown.rstudio.com> for example.
-Also check out the R-mardkwown Cheat Sheet: <http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf>
+Also check out the R-markdwon Cheat Sheet: <http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf>
 
 ## YAML
 An R-markdown is really embedded in a YAML stream. YAML is a somewhat bizaar "data serialization language" - to be compared with JSON or XML a bit. Those are YAML directives at the top of this document, two documents seperated by "---" in a single stream (I think). The first document is refered to as the YAML header. Ugh.
