@@ -32,11 +32,10 @@ Particular this post is important from valad2135:
 More explanation of what this does can be found in the post fromLVT:
 
 # Extentions
-You will want make sure the following extneions are up to date:
+You will want make sure the following extensions are up to date:
  - Don Jaymanne python extention
  - pylint (?)
 
- something else
 
 
 
