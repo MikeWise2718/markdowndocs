@@ -1,13 +1,20 @@
 ---
-title: "How Javascript works"
+title: "How JavaScript works"
 output: html_document
 ---
 
-# VS Code
-VS Code is a general editor, made for working with lots of different kinds of projects - but kept lightweight. Portability to platforms like MacOS and Linux are also high priorities. It can work with Javascript, but I am not going into that now.
+# In general
+JavaScript is not my favorite language, but I think it has some great features. It is in many ways close to being a functional language than the C dervitive that it pretends to be. But it has a lot of gotchas. Typescript, Microsoft's typed variant of Javascript is probably a better engineering language, if that is what you need. I mostly use it for hacking user interface stuff in R.
 
-Note that to get a preview of this document in VS Code use Ctrl-Shift-V
+#  Good JavaScript links
+Fizzbizz and other things you should remember: [link](https://ilikekillnerds.com/2015/03/things-every-javascript-developer-should-know/)
+7 JavaScript Things I Wish I Knew ealier: [link] (https://www.smashingmagazine.com/2010/04/seven-javascript-things-i-wish-i-knew-much-earlier-in-my-career/)
 
+#  Javascript with VS Code
+VS Code works find with JavaScript, but I am not going into that now.
+
+# Console
+You debug using the JavaScript console which most browsers support well. Should have a page just on using it as I always have to relearn stuff there.
 
 # Events
 I recall there are two families of events - but somehow I can only find one now:
@@ -42,10 +49,7 @@ A basic call:
  $('#drop-area').html(txt);   // the elite way to write it (dollar sign magic)
 ```
 
- It is important to realize that a jQuery returns a different kind of object that a DOM query like document. Mixing methods can be tricky.
-
-
-
+It is important to realize that a jQuery returns a different kind of object that a DOM query like document. Mixing methods can be tricky.
 
 A page cannot be manipulated until it is ready. There is a jQuery function for this. It is where you normally assign all the event handlers on a page to do your magic. https://learn.jquery.com/using-jquery-core/document-ready/ 
 ```
