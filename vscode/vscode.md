@@ -36,12 +36,28 @@ Useful extenstions to install:
 Go to Command Palette and type in Themes (I kind of like "Solarized Dark")
 
 ## Opening folders
-VS Code seems to manage its settings on a folder basis, so you should have a folder for each project that you are doing (one that needs seperate settings) and do an "Open Folder" from the VS Code menu when you switch to working with that project. At this point I am not sure if you can have two folders open at the same time, it seems you can although you wonder whose setting take priority.
+VS Code manages its settings on a folder basis, so you should have a folder for each project that you are doing (one that needs seperate settings) and do an "Open Folder" from the VS Code menu when you switch to working with that project. At this point I am not sure if you can have two folders open at the same time, it seems you can although you wonder whose setting take priority.
 
 ## Settings
+Settings are explained here: [settings](https://code.visualstudio.com/docs/getstarted/settings)
+
 Go to Command Palette and type in Settings and then choose the one you want - two of the most ineresting are the User settings and the Workspace settings:
  ![alt text](CommandPaletteSettings.png "Invoking Debugger")   
 
+ You get a list of the settings you can change to the left of the settings you are editing. You can have VScode copy them over by clicking on the pencil icon (which is not that obvious).
+
+
+# Storing stuff 
+ The user settings are stored in "C:/Users/mike/AppData/Roaming/Code/User/settings.json"
+
+ The Extensions are stored in 
+"C:/Users/mike/.vscode/extensions"
+
+The folder specific settings are stored in 
+"..\folder/.vscode/settings.json"
+
+The language specfic launch settings are stored in
+"..\folder/.vscode/launch.json"
 
 ## Key bindings
 File > Preferences > Keyboard Shortcuts
