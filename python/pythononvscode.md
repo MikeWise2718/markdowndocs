@@ -9,7 +9,7 @@ VS Code is a general editor, made for working with lots of different kinds of pr
 
 VS Code is "folder based", that means it loads settings from a folder that you "open". Here you can specify if it is to operate in different kinds of modes. This document will mostly be around how to operate it in python model
 
-VS Code changes frequently. You practially have to up date it every week. ALso the ways you work with it have changed over time.
+VS Code changes frequently. You practially have to update it every week. ALso the ways you work with it have changed over time.
 
 What to do:
 - Install VS Code
@@ -30,7 +30,12 @@ You will want make sure the following extensions are up to date:
 https://code.visualstudio.com/docs/languages/python
 
  # Icon Bar
- 
+ On the left, we have five icons for the 
+ * file explorer
+ * search (find)
+ * source code control (git)
+ * run and debug
+ * extensions
 
  Things to note
  - You can get to the user settings by clicking on the gear icon/settings in the lower left, or from the menu File/Preferences/Settings
