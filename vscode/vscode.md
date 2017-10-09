@@ -41,11 +41,12 @@ VS Code manages its settings on a folder basis, so you should have a folder for 
 ## Settings
 Settings are explained here: [settings](https://code.visualstudio.com/docs/getstarted/settings)
 
-Go to Command Palette and type in Settings and then choose the one you want - two of the most ineresting are the User settings and the Workspace settings:
- ![alt text](CommandPaletteSettings.png "Invoking Debugger")   
+Go to Command Palette and type in Settings and then choose the one you want - two of the most ineresting are the User settings and the Workspace settings:<br>
+ ![Command Palette](CommandPaletteSettings.png "Command Palette")   
 
- You get a list of the settings you can change to the left of the settings you are editing. You can have VScode copy them over by clicking on the pencil icon (which is not that obvious).
+ You get a list of the settings you can change to the left of the settings you are editing. You can have VScode copy them over by clicking on the pencil icon (which is not that obvious).<br>
 
+![Editing User Settings](EditingUserSettings.png "Editing User Settings")
 
 # Storing stuff 
  The user settings are stored in "C:/Users/mike/AppData/Roaming/Code/User/settings.json"

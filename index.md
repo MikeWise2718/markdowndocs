@@ -13,3 +13,4 @@ Revit: [link](https://mikewise2718.github.io/markdowndocs/revit/revit)<br>
 TensorFlow: [link](https://mikewise2718.github.io/markdowndocs/tensorflow/tensorflow)<br>
 Unity: [link](https://mikewise2718.github.io/markdowndocs/unity/unity)<br>
 Microtik (switch): [link](https://mikewise2718.github.io/markdowndocs/microtik/microtik)<br>
+Data Science Languages: [link](https://mikewise2718.github.io/markdowndocs/languagecheetsheet/languagetablek)<br>
