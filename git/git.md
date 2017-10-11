@@ -37,14 +37,14 @@ table td {
 
 ## Favorites
 
-| Construct	| git | git gui |	Visual Studio | VSCode
-| --------- |:----|:--------|:--------------|:------|
-| init a repo | git init | 
-| add all cnanges | git add -A |
-| commit changes to staging | git commit -m "msg" |
-| push changes to remote master | git push |
-| view status | git status |
-| view user name | git config user.name |
+| Construct	| git | git gui | VSCode | 	Visual Studio
+| --------- |:----|:--------|:-------|:--------------|
+| init a repo | git init |  |   |
+| add all cnanges | git add -A | | Under "..."   |
+| commit changes to staging | git commit -m "msg" | | Under "..."   |
+| push changes to remote master | git push | | Under "..."   |
+| view status | git status | | Under "..."   |
+| view user name | git config user.name | | Under "..."   |
 | view user email | git config user.email |
 | see all settings | git config -l |
 | set user name | git config --global user.name "Mike Wise" |
