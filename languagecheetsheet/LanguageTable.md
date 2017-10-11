@@ -21,6 +21,7 @@ table td {
    border: 1px solid blue;
    font-family:monospace;
    font-size:9px;
+   text-align:left;
 }
 
 </style>
