@@ -59,6 +59,7 @@ table td {
 
 
 ## Control
+
 | Construct	| R | 	Python |	Matlab/Octave |
 | --------- |:---|:---------|:-----|
 |for loop |for (j in 1:5){print(j)} |  for j in range(6)):<br>&nbsp;&nbsp;&nbsp;&nbsp;print(j) | for j=1:5 disp(j) end|
@@ -69,6 +70,7 @@ table td {
 
 
 ## Arrays and Matrices
+
 | Construct	| R | 	Python |	Matlab/Octave |
 | --------- |:---|:---------|:-----|
 | array | a = 1:3 | a = np.array([1,2,3]) | a = [1,2,3]
@@ -83,6 +85,7 @@ Data Frames might be [Tables in Matlab](https://blogs.mathworks.com/loren/2013/0
 Intro to pandas [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/version/0.15.2/10min.html)<br>
 
 ## Data Frames
+
 | Construct	| R | 	Python |	Matlab/Octave |
 | --------- |:---|:---------|:-----|
 |Simple Data Frame| df <- data.frame(x=c(1,2,3),y=(4,5,6)) |  df = pd.DataFrame({ 'x' : [1,2,3],'y':[4,5,6] })    | ? |

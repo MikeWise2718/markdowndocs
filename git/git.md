@@ -36,6 +36,7 @@ table td {
 </style>
 
 ## Favorites
+
 | Construct	| git | git gui |	Visual Studio | VSCode
 | --------- |:----|:--------|:--------------|:------|
 | init a repo | git init | 
