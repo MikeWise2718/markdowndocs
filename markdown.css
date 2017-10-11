@@ -34,3 +34,8 @@ pre code * {
   color: black !important;
   background-color: #eee !important;
 }
+
+table {
+  font-family:monospace;
+  font-size:10px
+}
