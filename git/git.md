@@ -43,8 +43,8 @@ table td {
 | add all cnanges | git add -A | | Under "..."   |
 | commit changes to staging | git commit -m "msg" | | Under "..."   |
 | push changes to remote master | git push | | Under "..."   |
-| view status | git status | | Under "..."   |
-| view user name | git config user.name | | Under "..."   |
+| view status | git status | |   |
+| view user name | git config user.name | | |
 | view user email | git config user.email |
 | see all settings | git config -l |
 | set user name | git config --global user.name "Mike Wise" |
