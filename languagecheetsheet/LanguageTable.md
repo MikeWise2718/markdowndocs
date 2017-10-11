@@ -12,7 +12,7 @@ This is a table comparing syntax in R, Python, and Matlab
   type="text/css">
 
 table th {
-   border: 1px solid red;
+   border: 1px solid green;
    font-family:monospace;
    font-size:12px;
 }
