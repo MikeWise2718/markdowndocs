@@ -35,12 +35,3 @@ pre code * {
   background-color: #eee !important;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid green;
-  font-family:monospace;
-  font-size:10px
-}

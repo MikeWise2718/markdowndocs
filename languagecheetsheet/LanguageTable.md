@@ -2,12 +2,47 @@
 title: "Template Titles"
 output: 
   html_document:
-     css: ./markdown.css
+     css: markdown.css
 ---
 
 # Intro
 This is supposed to be a table showing how to do things in R, Python, and Matlab
 
+<style
+  type="text/css">
+
+table{
+   border-collapse: collapse;
+   border: 1px solid black;
+   font-family:monospace;
+   font-size:10px;
+}
+
+table td{
+   border: 1px solid black;
+   font-family:monospace;
+   font-size:10px;
+}
+</style>
+
+<table>
+    <tr>
+        <th>Heading 1</th>
+        <th>Heading 2</th>
+    </tr>
+    <tr>
+        <td>Cell (1,1)</td>
+        <td>Cell (1,2)</td>
+    </tr>
+    <tr>
+        <td>Cell (2,1)</td>
+        <td>Cell (2,2)</td>
+    </tr>
+    <tr>
+        <td>Cell (3,1)</td>
+        <td>Cell (3,2)</td>
+    </tr>
+</table>
 
 Function	| R | 	Python |	Matlab
 --------- | --|---------|-----
