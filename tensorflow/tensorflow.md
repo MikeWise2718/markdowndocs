@@ -2,6 +2,7 @@
 title: "Tensorflow Notes"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
 Tensorflow - main install link: [link](https://www.tensorflow.org/install/)

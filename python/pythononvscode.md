@@ -2,6 +2,7 @@
 title: "How Python with VScode works"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 ## VS Code
 VS Code is a general editor, made for working with lots of different kinds of projects - but kept lightweight. Portability to platforms like MacOS and Linux are also high priorities.

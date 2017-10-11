@@ -2,15 +2,14 @@
 title: "Template Titles"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
 Unity3D is a powerful game engine. Here I keep notes on things that took me awhile to figure out that I think I might forget.
 
 Note that to get a preview of this document in VS Code use Ctrl-Shift-V
 
-Unity Subscription FAQ: [Unity FAQ](https://unity3d.com/unity/faq)
-
-Unity Technical Forums: [Unity] http://answers.unity3d.com/page/faq.html
+[Unity Technical Forums](http://answers.unity3d.com/page/faq.html)
 
 
 

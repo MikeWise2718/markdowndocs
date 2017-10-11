@@ -2,6 +2,7 @@
 title: "Template Titles"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
 Explain what this thing is and what kind of help can be expected of this file.
@@ -13,7 +14,7 @@ Github markdown is explained here: [Mastering Markdown](https://guides.github.co
 Example link: [jQuery FAQs](https://learn.jquery.com/using-jquery-core/faq/)
 
 Example image:
-![Red Fish](RedFishSmall.jpg)
+![Red Fish](SmallerFish.png)
 
 
 # Something Else

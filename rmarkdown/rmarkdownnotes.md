@@ -2,6 +2,7 @@
 title: "How R-markdown works"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 ## R Markdown Intro
 

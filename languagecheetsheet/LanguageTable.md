@@ -4,6 +4,7 @@ output:
   html_document:
      css: markdown.css
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # Data Science Languages Cheetsheet
 This is a table comparing syntax in R, Python, and Matlab/Octave 
@@ -50,7 +51,7 @@ table td {
 | import | library | import | import
 |string | "it's" or 'it"s' |"it's" or 'it"s' |   "it's" or 'it"s' (strings or chars) |
 | int | 1234L | 1234 | 1234 |
-| longint | none | switches transparently | int64(1234) |
+| longint | none | switches transparently<br> even to bigints | int64(1234) |
 |type of x |class(x) | type(x) | class(x) |
 |Formatted print | print(sprintf(“pi:%$.2f”,pi))| print("pi:%.2f" % (numpy.pi)) | fprintf(“pi:%.2f”,pi)|
 

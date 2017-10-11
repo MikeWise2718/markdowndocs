@@ -2,6 +2,7 @@
 title: "CIV 6"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # CIV 6 things
 

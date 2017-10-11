@@ -4,6 +4,7 @@ output:
   html_document:
      css: markdown.css
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # All things git
 [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)<br>
@@ -47,6 +48,7 @@ table td {
 | see all settings | git config -l |
 | set user name | git config --global user.name "Mike Wise" |
 | set user email | git config --global user.email mwise@oz.ai |
+| ![fish](SmallerFish.png) | git config --global user.email mwise@oz.ai |
 
 
 

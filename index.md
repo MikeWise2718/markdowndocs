@@ -11,6 +11,7 @@ A compendium of things I have learned that I think I might need again but will l
 [VS Code](https://mikewise2718.github.io/markdowndocs/vscode/vscode)<br>
 [Python and VS Code](https://mikewise2718.github.io/markdowndocs/python/pythononvscode)<br>
 [Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript)<br>
+[Git](https://mikewise2718.github.io/markdowndocs/git/git)<br>
 
 # Graphics
 [Plotly](https://mikewise2718.github.io/markdowndocs/plotly/plotly)<br>
