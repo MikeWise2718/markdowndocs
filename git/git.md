@@ -6,10 +6,15 @@ output:
 ---
 
 # All things git
+[Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)<br>
 [Git Documentation](https://git-scm.com/docs)<br>
 [Visual Git Doc](https://marklodato.github.io/visual-git-guide/index-en.html)<br>
 [Basic Git Commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)<br>
 [Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)<br>
+
+
+# Newest version
+[Download](http://git-scm.com/downloads)
 
 <style
   type="text/css">
@@ -29,18 +34,19 @@ table td {
 
 </style>
 
-## Amost always imports
-|  R | 	Python |	Matlab/Octave |
-| --------- |:---|:---------|:-----|
-| library(tidyverse) |import numpy as np|
-|  | import pandas as pd|
-
-
-## Basics
+## Favorites
 | Construct	| git | git gui |	Visual Studio | VSCode
 | --------- |:----|:--------|:--------------|:------|
 | init a repo | git init | 
-
+| add all cnanges | git add -A |
+| commit changes to staging | git commit -m "msg" |
+| push changes to remote master | git push |
+| view status | git status |
+| view user name | git config user.name |
+| view user email | git config user.email |
+| see all settings | git config -l |
+| set user name | git config --global user.name "Mike Wise" |
+| set user email | git config --global user.email mwise@oz.ai |
 
 
 
