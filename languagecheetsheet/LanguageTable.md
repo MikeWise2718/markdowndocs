@@ -1,6 +1,8 @@
 ---
 title: "Template Titles"
-output: html_document
+output: 
+  html_document:
+     css: ./markdown.css
 ---
 
 # Intro
