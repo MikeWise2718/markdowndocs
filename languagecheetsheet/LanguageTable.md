@@ -37,6 +37,7 @@ table td {
 </style>
 
 ## Amost always imports
+
 |  R | 	Python |	Matlab/Octave |
 | --------- |:---|:---------|:-----|
 | library(tidyverse) |import numpy as np|
@@ -44,6 +45,7 @@ table td {
 
 
 ## Basics
+
 | Construct	| R | 	Python |	Matlab/Octave |
 | --------- |:---|:---------|:-----|
 |help on "func" | ?func | help(func) | doc func |
