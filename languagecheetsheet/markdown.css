@@ -36,6 +36,11 @@ pre code * {
 }
 
 table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid blue;
   font-family:monospace;
   font-size:10px
 }
