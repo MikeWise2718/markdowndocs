@@ -31,5 +31,6 @@ A compendium of things I have learned that I think I might need again but will l
 
 ## Hardware
 [Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik-notes)<br>
+[HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens-notes)<br>
 
 
