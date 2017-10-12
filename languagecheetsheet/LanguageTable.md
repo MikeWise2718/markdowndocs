@@ -43,7 +43,6 @@ table td {
 | library(tidyverse) |import numpy as np|
 |  | import pandas as pd|
 
-
 ## Basics
 
 | Construct	| R | 	Python |	Matlab/Octave |
