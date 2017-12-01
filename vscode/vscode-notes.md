@@ -2,6 +2,7 @@
 title: "VS Code notes"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 A helpful question on using a local markdown.css: [local markdown.css](http://stackoverflow.com/questions/32410064/how-can-i-use-an-online-style-css-on-the-visual-studio-code-markdown-preview)
 

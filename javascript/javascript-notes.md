@@ -2,6 +2,7 @@
 title: "How JavaScript works"
 output: html_document
 ---
+[up](https://mikewise2718.github.io/markdowndocs/)
 
 # In general
 JavaScript is not my favorite language, but I think it has some great features. It is in many ways close to being a functional language than the C dervitive that it pretends to be. But it has a lot of gotchas. Typescript, Microsoft's typed variant of Javascript is probably a better engineering language, if that is what you need. I mostly use it for hacking user interface stuff in R.
