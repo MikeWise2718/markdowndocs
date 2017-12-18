@@ -47,6 +47,7 @@ These are examples basically
       - (optional) BAZEL_VS="C:/Program Files (x86)/Microsoft Visual Studio 14.0"
       - (optional)BAZEL_PYTHON=C:/Python27/python.exe
     - If you want to start over 
+    - Never actually got it to work
 
 # model - textsum
    - Model and Readme can be found here:
@@ -64,3 +65,14 @@ These are examples basically
    - Finally ran but with lots of "Assertion Error: Empty filelist."
           - Could be related to my tensorflow 1.0.1 which is old at this point
           - Ran using all 8 CPUs, CPU usage around 25%, GPU usage around 3%
+
+
+# seq2seq - 6 Dec 2017
+ - Tried to get this installed on my "new" Surface Book
+ - Installed Anaconda 3.6, and then TensorFlow 1.4, following instructions on TensorFlow site
+ - Used the TensorFlow gpu version (which was probably a mistake)
+ - Had to install a couple extra packages like yaml and something else before it worked
+ - There were a couple lines I had to change in one of the files to get two of the libraries to work
+     from tensorflow.contrib.distributions import  Bernoulli
+     from tensorflow.contrib.distributions import Categorical
+ - Changes were to this file: C:\tensorflow\seq2seq\seq2seq\contrib\seq2seq\helper.py
