@@ -30,4 +30,5 @@ One you run that the environment is setup so you can run the C++ compiler:  cl.e
 
     usage: cl [ option... ] filename... [ /link linkoption... ]
 
+And so on...
 
