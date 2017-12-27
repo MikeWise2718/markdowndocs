@@ -7,13 +7,20 @@ output: html_document
 # Intro
 Tensorflow - main install link: [link](https://www.tensorflow.org/install/)
  - 9 March 2017 TF 1.0.1 installed into Anaconda3 (from file dates)
+ - Actually installing TF is a royal pia every time. Switching to Docker.
 
 
 ![TensorFlow logo](tflogo.png)
 
+# Docker
+First you ahve to install docker of course. Try [this](https://docs.docker.com/get-started/#container-diagram)
+Then this command gets you far:
+
+
 # Links
  - Repository - [link](https://github.com/tensorflow)
  - Newest Release notes - [link](https://github.com/tensorflow/tensorflow/blob/master/RELEASE.md)
+
 
 # Command line commands
  - Get version:

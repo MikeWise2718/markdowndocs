@@ -16,3 +16,4 @@ output: html_document
 # Visual Studio
 - You can make any Visual Studio Solution use it by "publishing" the solution
 - Add to solution control, there should be a button in the lower right status bar, and maybe in the menu somewhere too
+- Can use git gui, git clone, etc. with vsts just like as with github
