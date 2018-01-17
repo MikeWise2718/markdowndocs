@@ -34,3 +34,8 @@ docker exec -it tf /bin/bash
 # Useful 
 * docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow
 * docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow
+
+
+# Docker foreground/background process killing advice
+- See the comments from GHETTO.CHILD in his answer
+- https://stackoverflow.com/questions/32224101/kill-a-running-process-like-a-webserver-inside-a-docker-container-without-killin
