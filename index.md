@@ -36,9 +36,10 @@ A compendium of things I have learned that I think I might need again but will l
 [Revit](https://mikewise2718.github.io/markdowndocs/revit/revit-notes)<br>
 [Unity](https://mikewise2718.github.io/markdowndocs/unity/unity-notes)<br>
 
-## HPC including Machine Learning
+## Neural Networks and Machine Learning
+[Keras](https://mikewise2718.github.io/markdowndocs/keras/keras)<br>
 [TensorFlow](https://mikewise2718.github.io/markdowndocs/tensorflow/tensorflow-notes)<br>
-[Cuda](https://mikewise2718.github.io/markdowndocs/tensorflow/cuda)<br>
+[Cuda](https://mikewise2718.github.io/markdowndocs/cuda/cuda)<br>
 
 ## Games
 [Civ6](https://mikewise2718.github.io/markdowndocs/civ6/civ6-notes)<br>
