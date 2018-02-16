@@ -44,11 +44,24 @@ Windows:
 - Installed tigervnc on windows
 - used the tigervnc "vncviewer" to connect to the server addess and port 5900
 
+# NoMachine
+- I gave up on all that VNC stuff when I found NoMachine.
+- It has a client, start in Windows with Windows Key and then type "NoMachine"
+- It is commercial, but free for home use
+
 # Misc Unix commands
 - grep stuff files - grep -r tqdm *.py .
 - find files with a mask find . -path "*/src/*.h"
 - find filew with masks - find . -path '*/src/*.h' -o -path '*/src/*.cpp'
+- find files and pipe to greap - find . -path '*/src/*.h' -exec grep PATTERN {}
 - change field 3 to AD - awk '{$3 = "AD"; print}' infile > outfile
+
+# Terminal Window
+- Note that the "super" key is the "windows" key in the docs. 
+- Open Terminal Window - Ctrl-Alt-T
+- Paste into Terminal Window - Ctrl-Shift-V
+- Other shortcuts can be found [here](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
+
 
 # Applications
 - Application launch icons can be found in /usr/share/applications
