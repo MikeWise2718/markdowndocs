@@ -7,13 +7,41 @@ output: html_document
 # Intro
 Tensorflow - main install link: [link](https://www.tensorflow.org/install/)
  - 9 March 2017 TF 1.0.1 installed into Anaconda3 (from file dates)
+ - Actually installing TF is a royal pia every time. Switching to Docker.
 
 
 ![TensorFlow logo](tflogo.png)
 
+# Docker
+First you ahve to install docker of course. Try [this](https://docs.docker.com/get-started/#container-diagram)
+Then this command gets you far:
+docker run -it -p:8888:8888 tensorflow/tensorflow
+
+
+# Installing with anaconda
+Start with the anaconda command prompt
+  - windows key 
+  - type "anaconda"
+  - click on the command prompt icon
+
+Start with a naked enironment and then activate it
+ - conda create --name tf python=3.6
+ - conda tf
+
+Then install Tensorflow
+  - pip install --upgrade tensorflow
+
+Then test it
+  - see the tensorflow install page for a little test program
+
+Then you might want to install jupyter
+ - pip install --upgrade jupyter
+
+
 # Links
  - Repository - [link](https://github.com/tensorflow)
  - Newest Release notes - [link](https://github.com/tensorflow/tensorflow/blob/master/RELEASE.md)
+
 
 # Command line commands
  - Get version:
@@ -76,5 +104,25 @@ These are examples basically
      from tensorflow.contrib.distributions import  Bernoulli
      from tensorflow.contrib.distributions import Categorical
  - Changes were to this file: C:\tensorflow\seq2seq\seq2seq\contrib\seq2seq\helper.py
- 
- C:\Users\mwise\AppData\Local\Continuum\anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\util\tf_inspect.py:
+
+ #boltzmann-machine notes
+
+- pip install nosetest 
+ - changed nosetest path in makefile to "which nosetest" path
+ - make test &> err.txt
+ - gedit err.txt
+ - pip install tqdm
+ - pip install seaborn
+ - sudo apt-get install python-tk
+ - Final text
+ - Ran 8 tests in 29.171s
+ - OK
+ - pip install jupyter
+ - changed path in makefile to which jupyter path
+ - pip install JSAnimation
+ - pip install sklearn
+
+ # keras
+ - pip install pillow
+ - pip install h5py
+ - pip install keras

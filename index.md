@@ -14,7 +14,7 @@ A compendium of things I have learned that I think I might need again but will l
 [RTVS](https://mikewise2718.github.io/markdowndocs/rtvs/rtvs)<br>
 [Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript-notes)<br>
 [Git](https://mikewise2718.github.io/markdowndocs/git/git-notes)<br>
-
+[Anaconda](https://mikewise2718.github.io/markdowndocs/anaconda/anaconda)<br>
 
 # Misc Frameworks
 [Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/git-notes)<br>
@@ -48,5 +48,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik-notes)<br>
 [HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens-notes)<br>
 [Jetson](https://mikewise2718.github.io/markdowndocs/jetson/jetson)<br>
+[Unifinvr](https://mikewise2718.github.io/markdowndocs/unifinvr/unifinvr)<br>
+[FritzBox](https://mikewise2718.github.io/markdowndocs/fritzbox/fritzbox)<br>
 
 
