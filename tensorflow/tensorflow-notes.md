@@ -13,16 +13,16 @@ Tensorflow - main install link: [link](https://www.tensorflow.org/install/)
 ![TensorFlow logo](tflogo.png)
 
 # Docker
-First you ahve to install docker of course. Try [this](https://docs.docker.com/get-started/#container-diagram)
-Then this command gets you far:
-docker run -it -p:8888:8888 tensorflow/tensorflow
-
+- First you ahve to install docker of course. Try [this](https://docs.docker.com/get-started/#container-diagram)
+- Then this command gets you far:
+  - docker run -it -p:8888:8888 tensorflow/tensorflow
+- Note that docker cannot get to the GPU on normal Windows 10 hyper-v (as of Mar 2018), so don't even try
 
 # Installing with anaconda
 Start with the anaconda command prompt
   - windows key 
   - type "anaconda"
-  - click on the command prompt icon
+  - click on the "Anaconda Prompt" icon<br>![ap](AnacondaCmdPrompt.png)
 
 Start with a naked enironment and then activate it
  - conda create --name tf python=3.6
@@ -35,7 +35,15 @@ Then test it
   - see the tensorflow install page for a little test program
 
 Then you might want to install jupyter
- - pip install --upgrade jupyter
+ - pip install jupyter --upgrade 
+
+
+# Reactivating an old anaconda
+- conda info --envs
+
+# Bringing TF up-to-date
+- pip install pip --upgrade
+- pip install tensorflow --upgrade
 
 
 # Links

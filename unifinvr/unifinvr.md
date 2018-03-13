@@ -9,13 +9,15 @@ output: html_document
 ![UniFiG3.p3](UniFiG3.png)
 - Not exactly straightforward - either the hw or the sw.
 - The camera is essentially some kind of a linux device that can/must be configured.
+- Quick start guide [here](https://dl.ubnt.com/guides/unifivideo/UVC-G3_QSG.pdf)
+- Softwar [here](https://www.ubnt.com/download/unifivideo/)
 
 
 # Installing HW
 - It needs PoE power. While you can buy a switch that has this on every port, I elected to buy a single shot adpater.
 - It also needs some kind of a mount, I built something out of wood and an old table leg. 
 - My first attempt using a wooden pole failed because
-  - The wooden pole was made out of extrodinarily hard wood (the drill barely wored and burnt the wood)
+  - The wooden pole was made out of extrodinarily hard wood (the drill barely worked and burnt the wood)
   - I didn't have the right size drill bit.
   - I striped the screw and ruined a good screwdrive because of the hard wood.
   - Etc.

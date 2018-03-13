@@ -17,7 +17,7 @@ output: html_document
   * Putting Jetson in [forced recovery mode](https://www.youtube.com/watch?v=4JUWS9i_FCQ)
   * Installing Docker is [here](https://github.com/Technica-Corporation/Tegra-Docker)
 
-# Notes on Installation of L4T and CUDA on the TX2
+# Installation of L4T and CUDA on the TX2
 * Docs (not that up-to-date) are [here](http://docs.nvidia.com/jetpack-l4t/2_1/content/developertools/mobile/jetpack/jetpack_l4t/2.0/jetpack_l4t_install.htm)
 * They assume you are doing this from another Ubunu ucomputer called the "host", the Jetson is called the "target"
 * Apparently it comes with the operating system installed, but I never saw it, somehow I only got my HDMI monitor to display it after I had flashed it once.
@@ -41,10 +41,29 @@ output: html_document
 
 ![Jetson TX2](jetson_tx2_after_install.jpg)
 
-# Notes on Installation of Docker on the TX2
+# Installation of Docker on the TX2
 Not really that trival, described in some detail in the github repo [here](https://github.com/Technica-Corporation/Tegra-Docker)
 * That description has two parts
    1.  one on compling a kernal from scratch on a host computer that has the setting necessary to support docker. This is no longer necessary since Jetpack 28.2.
    2. one on actually installing docker on the TX2 and running "deviceQuery" in that container.
    3. The scripts there do not actually run CUDA samples using OpenGL, I made some modifications that handle that as well, see my entry under the issues tab on the above repo.
 
+
+
+# Installation of CudNN
+- You have to install the sources and build it - don't forget to build the samples
+- the docs are here: http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
+- You can test it with the mnist example
+
+# Installation of Tensorflow
+- You need to download this guy's pip wheels and install from there
+  - git clone https://github.com/peterlee0127/tensorflow-nvJetson
+  - He lists what combinations of Jetpack, cuDNN, Cuda, and Python he managed to get to to work - stick with those versions
+
+# Installation of Object Detection Zoo
+  - git clone https://github.com/tensorflow/models/object_detection
+  - Follow the instructions in the readme page
+  - Needed to install coco api
+    - see instructions
+    - need to install cython
+      - pip install cython
