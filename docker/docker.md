@@ -13,10 +13,10 @@ output: html_document
 # Concepts
 * dockerfile - a list of commands that builds a series of images, resulting in a named image that you can use to start a container
 * image - the bits that need to be instanced to form a container
-* dangling image - an image without a name (https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
+* dangling image - an image without a name [https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image]
 * container - an instance of a running image
 * entry point - the program that will be ruuning
-* container states - containers can be "created", "up" or "exited" (https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker)
+* container states - containers can be "created", "up" or "exited" [https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker]
 
 
 # Windows
