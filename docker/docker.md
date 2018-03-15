@@ -22,7 +22,7 @@ output: html_document
 # Windows
 - Docker uses a single hyper-v, and thus is subject to any hyper-v nuances and limitations
 - When docker is running there will be tray app running where you can get some info
-- However most interaction with docker is via command line, be it cmd, powershell, or some form of bash
+- However most interaction with docker is via command line, be it cmd, PowerShell, or some form of bash
 
 
 # Basic commands
