@@ -26,29 +26,29 @@ output: html_document
 
 
 # Basic commands
-* docker -?                  ( list all commands)
-* docker -v                  (version)
-* docker version             (long client/server version)
-* docker -p2                 (list running containers)
-* docker search tensorvlow   (search docker hub for images)
-* docker ps                  (see what dockers are running)
-* docker kill containername  (kill a particular container)
-* docker ps -a               (see running and exited container)
-* docker rm containername    (remove an exited container)
-* docker -i                  (allocate a pseudo-tty)
-* docker -t                  (keep STDIN open even if not attached)
-* docker -e                  (set environment variable)
-* docker images
-* docker rm -v $(docker ps -a -q -f status=exited) (delete all stopped containers)
-* docker rm -f $(docker ps -qa) (delete all stopped and running containers)
+* `docker -?`                  ( list all commands)
+* `docker -v`                  (version)
+* `docker version`             (long client/server version)
+* `docker -p2`                 (list running containers)
+* `docker search tensorvlow`   (search docker hub for an imagte)
+* `docker ps`                  (see what dockers are running)
+* `docker kill containername`  (kill a particular container)
+* `docker ps -a`               (see running and exited container)
+* `docker rm containername`    (remove an exited container)
+* `docker -i`                  (allocate a pseudo-tty)
+* `docker -t`                  (keep STDIN open even if not attached)
+* `docker -e`                  (set environment variable)
+* `docker images`
+* `docker rm -v $(docker ps -a -q -f status=exited)` (delete all stopped containers)
+* `docker rm -f $(docker ps -qa`) (delete all stopped and running containers)
 
 # Useful commands 
 * docker exec -it tf /bin/bash  # Open a terminal on a docker
 
 # Useful 
-* sudo usermod -aG docker user_name  # gets rid of need for sudo for docker
-* docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow
-* docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow
+* `sudo usermod -aG docker user_name`  # gets rid of need for sudo for docker
+* `docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow`
+* `docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow`
 
 
 # Docker foreground/background process killing advice

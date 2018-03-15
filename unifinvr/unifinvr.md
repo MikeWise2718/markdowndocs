@@ -1,5 +1,5 @@
 ---
-title: "Template Titles"
+title: "UniFi Video"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -10,7 +10,7 @@ output: html_document
 - Not exactly straightforward - either the hw or the sw.
 - The camera is essentially some kind of a linux device that can/must be configured.
 - Quick start guide [here](https://dl.ubnt.com/guides/unifivideo/UVC-G3_QSG.pdf)
-- Softwar [here](https://www.ubnt.com/download/unifivideo/)
+- Software [here](https://www.ubnt.com/download/unifivideo/)
 
 
 # Installing HW
@@ -40,3 +40,18 @@ output: html_document
 - Took me awhile to get this all working so not completely sure of the proper order of the above steps.
 
 - When it is working it looks like this:<br>![applet](UnifiApplet.png)<br>
+
+## Installing SW on Ubuntu
+- Didn't work so easily
+- Had to use `deb unifi-video.Ubuntu16.05_amd64.v3.9.4.deb` as `gdebi` did not work
+- Then had to start service with `systemctl start unifi-video`
+- Query status with `systemctl status unifi-video`
+- Then opened web browser on https://localhost:7443 and it finally was there.
+
+# Storage
+- Here is where you specify where the data gets saved (Settings/Something)<br>![applet](DataSaveLocationSetting.png)<br>
+- On Windows the video ends up getting stored in `C:\ProgramData\unif-video\data\videos`
+- On Windows the video ends up getting stored in `C:\ProgramData\unif-video\data\videos`
+- On Ubuntu the video ends up in `/usr/lib/unif-video/data/videos`
+- On Ubuntu the snapshots ends up in `/usr/lib/unif-video/data/`
+- Screenshots store the snapshots in `~/Download` on both Windows and Ubuntu(?)

@@ -87,15 +87,15 @@ These are examples basically
 
 # model - textsum
    - Model and Readme can be found here:
-       -  https://github.com/tensorflow/models/tree/master/textsum
+       -  `https://github.com/tensorflow/models/tree/master/textsum`
    - This builds all the scripts
-        - bazel build -c opt --config=cuda textsum/...
+        - `bazel build -c opt --config=cuda textsum/...`
    - Used this bash under a Powershell with admin priveleges:
         - C:\tools\msys64\usr\bin\bash
    - This does the training: 
-          - "bazel-bin/textsum/seq2seq_attention --mode=train --article_key=article --abstract_key=abstract --data_path=data/training-* --vocab_path=data/vocab  --log_root=textsum/log_root --train_dir=textsum/log_root/train"
+          - `bazel-bin/textsum/seq2seq_attention --mode=train --article_key=article --abstract_key=abstract --data_path=data/training-* --vocab_path=data/vocab  --log_root=textsum/log_root --train_dir=textsum/log_root/train`
    - Failed complaining TF was not installed (it is because it was running Python 2.7)
-      - noticed c:\Python27;c:\Python27Scripts had made it to top of my path after installing bazel, deleted them
+      - noticed `c:\Python27;c:\Python27Scripts `had made it to top of my path after installing bazel, deleted them
       - That made it use my Anaconda (4.1.164 - bit) Python 3.5.2
    - It did not run in the D: drive, had to move everything to the C: drive to get it to work.
    - Finally ran but with lots of "Assertion Error: Empty filelist."
@@ -111,26 +111,38 @@ These are examples basically
  - There were a couple lines I had to change in one of the files to get two of the libraries to work
      from tensorflow.contrib.distributions import  Bernoulli
      from tensorflow.contrib.distributions import Categorical
- - Changes were to this file: C:\tensorflow\seq2seq\seq2seq\contrib\seq2seq\helper.py
+ - Changes were to this file: `C:\tensorflow\seq2seq\seq2seq\contrib\seq2seq\helper.py`
 
  #boltzmann-machine notes
 
 - pip install nosetest 
  - changed nosetest path in makefile to "which nosetest" path
- - make test &> err.txt
- - gedit err.txt
- - pip install tqdm
- - pip install seaborn
- - sudo apt-get install python-tk
+   - `make test &> err.txt`
+   - `gedit err.txt`
+   - `pip install tqdm`
+   - `pip install seaborn`
+   - `sudo apt-get install python-tk`
  - Final text
- - Ran 8 tests in 29.171s
- - OK
- - pip install jupyter
+   - Ran 8 tests in 29.171s
+   - OK
+ - `pip install jupyter`
  - changed path in makefile to which jupyter path
- - pip install JSAnimation
- - pip install sklearn
+ - `pip install JSAnimation`
+ - `pip install sklearn`
 
  # keras
- - pip install pillow
- - pip install h5py
- - pip install keras
+ - `pip install pillow`
+ - `pip install h5py`
+ - `pip install keras`
+
+
+ # tensorflow object detection models on abra
+  - These are the github google Tensorflow models found [here](https://github.com/tensorflow/models/tree/master/research/object_detection)
+  - Clone all the models into a directory `git clone https://github.com/tensorflow/models`
+  - Change to home dir `cd ~`
+  - Activete the right environment for python `source ./tf27gpu/bin/activate`
+  - now go to the object detection directory `cd ~/tfrepos/models/research/object_detection`
+  - Start jupyter on the right notebook `jupyter notebook object_detection_tutorial.ipynb`
+  - If you get error "could not create cudnn handle: CUDNN_STATUS_NOT_INITIALIZED" try the following
+  - Start jupyter on the right notebook `sudo jupyter notebook object_detection_tutorial.ipynb --allow-root`
+

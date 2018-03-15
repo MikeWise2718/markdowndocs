@@ -48,7 +48,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik-notes)<br>
 [HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens-notes)<br>
 [Jetson](https://mikewise2718.github.io/markdowndocs/jetson/jetson)<br>
-[Unifinvr](https://mikewise2718.github.io/markdowndocs/unifinvr/unifinvr)<br>
+[Unifi-NVR (Vidcam)](https://mikewise2718.github.io/markdowndocs/unifinvr/unifinvr)<br>
 [FritzBox](https://mikewise2718.github.io/markdowndocs/fritzbox/fritzbox)<br>
 
 
