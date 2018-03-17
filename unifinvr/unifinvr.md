@@ -25,8 +25,10 @@ output: html_document
 # Installing SW
 - Setup management computer
   - You need to install the management software of course.
-  - After you install it (on windows) a tray applet will start running:<br>![applet](UnifiApplet.png)<br>
-  - You need to log into the mangement console by clicking on the applet and "Open in Browser"
+  - After you install it (on windows) it might start the tray applet
+  - If not do `Windows Key-Unifi` and start the Desktop App - that should in turn start the tray applet.
+  -  a tray applet will start running:<br>![applet](UnifiApplet.png)<br>
+  - You need to log into the mangement console by clicking on the applet and`"Open in Browser`
   - Then you need to create a user and password.
   - You also will need to know the IP address of this "managment computer".
 - Setup camera
