@@ -6,12 +6,30 @@ output: html_document
 
 # Intro
 - UniFi G3 is an NVR (Network Video Recorder) Camera from Ubiqity Networks. Info [here](https://www.ubnt.com/unifi-video/unifi-video-camera-g3/)<br>
-![UniFiG3.p3](UniFiG3.png)
+![UniFiG3](UniFiG3.png)
 - Not exactly straightforward - either the hw or the sw.
 - The camera is essentially some kind of a linux device that can/must be configured.
 - Quick start guide [here](https://dl.ubnt.com/guides/unifivideo/UVC-G3_QSG.pdf)
 - Software [here](https://www.ubnt.com/download/unifivideo/)
 
+# Logging into the camera
+- While the camera is being managed, you can't log into it in standalone mode
+- Once it has been managed somewhere, it seems to have problems remembering it is unmanged
+- When you unmanage it, it bizarrly *sometimes* changes the password without changing the user name
+- You only get two attempts to login, then it just fails.
+
+# Capturing a single shot from the command line
+- Key is to look at the "link state" in the multi-camera management web client - it should say "Disconnected" whereever it appears under MANAGED or "Unmanaged" when it appears under UNMANAGED.
+![UIatcapture.png](UIatcapture.png)
+
+- And here is the capture command I used:
+
+```
+C:\Users\mike>curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{"username":"ubnt","password":"ubnt"}' "http://xxx.xxx.x.xxx/api/1.1/snapshot" -o test.jpg
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  210k  100  210k  100    37  1233k    216 --:--:-- --:--:-- --:--:-- 1239k
+```
 
 # Installing HW
 - It needs PoE power. While you can buy a switch that has this on every port, I elected to buy a single shot adpater.
@@ -57,3 +75,5 @@ output: html_document
 - On Ubuntu the video ends up in `/usr/lib/unif-video/data/videos`
 - On Ubuntu the snapshots ends up in `/usr/lib/unif-video/data/`
 - Screenshots store the snapshots in `~/Download` on both Windows and Ubuntu(?)
+
+# Screenshots
