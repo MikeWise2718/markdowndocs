@@ -20,6 +20,8 @@ A compendium of things I have learned that I think I might need again but will l
 [Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/git-notes)<br>
 [TinkerPop](https://mikewise2718.github.io/markdowndocs/tinkerpop/tinkerpop)<br>
 [BotFramework](https://mikewise2718.github.io/markdowndocs/botframework/botframework)<br>
+[ReactiveX](https://mikewise2718.github.io/markdowndocs/reactivex/reactivex)<br>
+[Node.js](https://mikewise2718.github.io/markdowndocs/nodejs/nodejs)<br>
 
 # OS
 [Ubuntu](https://mikewise2718.github.io/markdowndocs/ubuntu/ubuntu)<br>
