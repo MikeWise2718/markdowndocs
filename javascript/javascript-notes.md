@@ -5,7 +5,15 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # In general
-JavaScript is not my favorite language, but I think it has some great features. It is in many ways close to being a functional language than the C dervitive that it pretends to be. But it has a lot of gotchas. Typescript, Microsoft's typed variant of Javascript is probably a better engineering language, if that is what you need. I mostly use it for hacking user interface stuff in R.
+JavaScript (JS) is not my favorite language, but I think it has some great features. It is in many ways closer to being a functional language than the C/Java derivative that it pretends to be. But it has a lot of "gotchas". 
+
+Typescript, Microsoft's typed variant of Javascript is a better engineering language, if that is what you need. Any JS program can be "converted" to typescript, TypeScript has static typing, explicity interfaces, modules, and some other [stuff](https://www.hanselman.com/blog/WhyDoesTypeScriptHaveToBeTheAnswerToAnything.aspx). Was introduced in 2012 and adopting is still increasing 5 years later (one of the fastest growing languages in SO poll of 2017).
+
+There are two main ways to use it:
+   - On a web client in a browser - JS, HTML, and CSS are the unholy trinity that rules the web - all have some kind of javascript engine.
+   - As a client or server app in Node.js - runs using the V8 engine.
+   
+I mostly use JS for hacking user interface stuff in R - but that is likely to change.
 
 #  Good JavaScript links
 Fizzbizz and other things you should remember: [link](https://ilikekillnerds.com/2015/03/things-every-javascript-developer-should-know/)

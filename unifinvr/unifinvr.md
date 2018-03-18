@@ -19,9 +19,10 @@ output: html_document
 - You only get two attempts to login, then it just fails.
 
 # Capturing a single shot from the command line
+- There is an undocumented way to capture images with curl mentioned [here](https://community.ubnt.com/t5/UniFi-Video/unifi-3-2-2-snapshot-cgi-wget-curl-string-from-camera/td-p/1572322)
+- You can't capture with `curl` if any server or client is "managing" it
 - Key is to look at the "link state" in the multi-camera management web client - it should say "Disconnected" whereever it appears under MANAGED or "Unmanaged" when it appears under UNMANAGED.
 ![UIatcapture.png](UIatcapture.png)
-
 - And here is the capture command I used:
 
 ```
