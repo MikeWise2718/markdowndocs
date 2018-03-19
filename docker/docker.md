@@ -40,7 +40,7 @@ output: html_document
 * `docker -e`                  (set environment variable)
 * `docker images`
 * `docker rm -v $(docker ps -a -q -f status=exited)` (delete all stopped containers)
-* `docker rm -f $(docker ps -qa`) (delete all stopped and running containers)
+* `docker rm -f $(docker ps -qa)` (delete all stopped and running containers)
 
 # Useful commands 
 * docker exec -it tf /bin/bash  # Open a terminal on a docker
