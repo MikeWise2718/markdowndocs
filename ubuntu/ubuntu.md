@@ -56,6 +56,12 @@ Windows:
 - find files and pipe to greap - find . -path '*/src/*.h' -exec grep PATTERN {}
 - change field 3 to AD - awk '{$3 = "AD"; print}' infile > outfile
 
+# File manager
+- Under Ubuntu it is called nautilus
+- If it doesn't open, try killing the process and restarting
+- for command line too long
+   - for f in *.pdf; do chmod 664 "$f"; done
+
 # Terminal Window
 - Note that the "super" key is the "windows" key in the docs. 
 - Open Terminal Window - Ctrl-Alt-T
