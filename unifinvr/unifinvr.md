@@ -73,8 +73,8 @@ C:\Users\mike>curl -X POST -H "Content-Type: application/json" -H "Cache-Control
 - Here is where you specify where the data gets saved (Settings/Something)<br>![applet](DataSaveLocationSetting.png)<br>
 - On Windows the video ends up getting stored in `C:\ProgramData\unif-video\data\videos`
 - On Windows the video ends up getting stored in `C:\ProgramData\unif-video\data\videos`
-- On Ubuntu the video ends up in `/usr/lib/unif-video/data/videos`
-- On Ubuntu the snapshots ends up in `/usr/lib/unif-video/data/`
+- On Ubuntu the video ends up in `/usr/lib/unifi-video/data/videos`
+- On Ubuntu the snapshots ends up in `/usr/lib/unifi-video/data/`
 - Screenshots store the snapshots in `~/Download` on both Windows and Ubuntu(?)
 
 # Screenshots
