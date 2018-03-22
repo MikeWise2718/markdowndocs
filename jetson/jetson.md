@@ -4,7 +4,7 @@ output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
-# Intro
+# Intro ()
 - The Nvidia Jetson TX2 is an embeded ARM device for High Performance Computing on the IoT edge. 
 - It runs Linux 4 Tegra (L4T) which is an Ubuntu derived Linux distirubtion running on ARM.
 - The actualy module is quite small, but the Dev Kit contains a carrier board which is a little ITX form factor main board that hosts it.
@@ -67,3 +67,62 @@ Not really that trival, described in some detail in the github repo [here](https
     - see instructions
     - need to install cython
       - pip install cython
+
+
+# Installing as IoT Edge device (22 Mar)
+The usual spiel with a few things
+- I still had the Jetpack 28.2 preview from Dec 2017 installed on my jetson Tx2
+- Installing  order to get the to work
+- I had to do add the following packages to get azure-iot-edge-runtime-ctl to install
+   - `sudo apt-get update && sudo apt-get install libffi-dev`
+   - `sudo apt-get install libssl-dev`
+   - then finally `sudo pip install -U azure-iot-edge-runtime-ctl`
+- The default docker image is only for x64 so you have to pick a new image from 
+   - [https://hub.docker.com/r/microsoft/azureiotedge-agent/tags/)]
+   - Note there is no arm64 runtime yet (this will be a problem I think)
+   - Then you have to edit the json configuration 
+   - It is in `/etc/azure-iot-edge/config.json`
+   - You will also need this guy [https://hub.docker.com/r/microsoft/azureiotedge-hub/tags/] 
+
+These are the current contents of config.json:
+```
+{
+  "deployment": {
+    "docker": {
+      "edgeRuntimeImage": "microsoft/azureiotedge-agent:1.0.0-preview021-linux-arm32v7",
+      "loggingOptions": {
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "10m"
+        }
+      },
+      "registries": [],
+      "uri": "unix:///var/run/docker.sock"
+    },
+    "type": "docker"
+  },
+  "deviceConnectionString": "HostName=MikesIoThub1618.azure-devices.net;DeviceId=joltik-l4t-aarch64;SharedAccessKey=xxxxxxx",
+  "homeDir": "/var/lib/azure-iot-edge",
+  "hostName": "tegra-ubuntu",
+  "logLevel": "info",
+  "schemaVersion": "1",
+  "security": {
+    "certificates": {
+      "option": "selfSigned",
+      "selfSigned": {
+        "agentCAPassphraseFilePath": null,
+        "deviceCAPassphraseFilePath": null,
+        "forceNoPasswords": true
+      },
+      "subject": {
+        "commonName": "Edge Device CA",
+        "countryCode": "US",
+        "locality": "Redmond",
+        "organization": "Default Edge Organization",
+        "organizationUnit": "Edge Unit",
+        "state": "Washington"
+      }
+    }
+  }
+}
+```

@@ -82,3 +82,4 @@ Windows:
 - Couldn't boot from the stick in Hyper-V because the USB drive has no pass-thru functionality (oddly)
 - Installation straightforward
 - Installed Chrome next (via Firefox)
+
