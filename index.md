@@ -12,12 +12,12 @@ A compendium of things I have learned that I think I might need again but will l
 [Python and VS Code](https://mikewise2718.github.io/markdowndocs/pythononvscode/pythononvscode)<br>
 [Visual Studio](https://mikewise2718.github.io/markdowndocs/visualstudio/visualstudio)<br>
 [RTVS](https://mikewise2718.github.io/markdowndocs/rtvs/rtvs)<br>
-[Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript-notes)<br>
+[Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript)<br>
 [Git](https://mikewise2718.github.io/markdowndocs/git/git-notes)<br>
 [Anaconda](https://mikewise2718.github.io/markdowndocs/anaconda/anaconda)<br>
 
 # Misc Frameworks
-[Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/git-notes)<br>
+[Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/xamarin)<br>
 [TinkerPop](https://mikewise2718.github.io/markdowndocs/tinkerpop/tinkerpop)<br>
 [BotFramework](https://mikewise2718.github.io/markdowndocs/botframework/botframework)<br>
 [ReactiveX](https://mikewise2718.github.io/markdowndocs/reactivex/reactivex)<br>
@@ -44,7 +44,7 @@ A compendium of things I have learned that I think I might need again but will l
 
 ## Neural Networks and Machine Learning
 [Keras](https://mikewise2718.github.io/markdowndocs/keras/keras)<br>
-[TensorFlow](https://mikewise2718.github.io/markdowndocs/tensorflow/tensorflow-notes)<br>
+[TensorFlow](https://mikewise2718.github.io/markdowndocs/tensorflow/tensorflow)<br>
 [Cuda](https://mikewise2718.github.io/markdowndocs/cuda/cuda)<br>
 
 ## Games
