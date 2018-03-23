@@ -8,8 +8,8 @@ A compendium of things I have learned that I think I might need again but will l
 
 ## Languages and Programming
 [Data Science Languages](https://mikewise2718.github.io/markdowndocs/languagecheetsheet/LanguageTable)<br>
-[VS Code](https://mikewise2718.github.io/markdowndocs/vscode/vscode-notes)<br>
-[Python and VS Code](https://mikewise2718.github.io/markdowndocs/pythononvscode/pythononvscode-notes)<br>
+[VS Code](https://mikewise2718.github.io/markdowndocs/vscode/vscode)<br>
+[Python and VS Code](https://mikewise2718.github.io/markdowndocs/pythononvscode/pythononvscode)<br>
 [Visual Studio](https://mikewise2718.github.io/markdowndocs/visualstudio/visualstudio)<br>
 [RTVS](https://mikewise2718.github.io/markdowndocs/rtvs/rtvs)<br>
 [Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript-notes)<br>
@@ -22,6 +22,10 @@ A compendium of things I have learned that I think I might need again but will l
 [BotFramework](https://mikewise2718.github.io/markdowndocs/botframework/botframework)<br>
 [ReactiveX](https://mikewise2718.github.io/markdowndocs/reactivex/reactivex)<br>
 [Node.js](https://mikewise2718.github.io/markdowndocs/nodejs/nodejs)<br>
+
+# Azure
+[Azure](https://mikewise2718.github.io/markdowndocs/azure/azure)<br>
+[Azure IoT Edge](https://mikewise2718.github.io/markdowndocs/azureiotedge/azureiotedge)<br>
 
 # OS
 [Ubuntu](https://mikewise2718.github.io/markdowndocs/ubuntu/ubuntu)<br>

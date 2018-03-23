@@ -50,39 +50,30 @@ Go to Command Palette and type in Settings and then choose the one you want - tw
 ![Editing User Settings](EditingUserSettings.png "Editing User Settings")
 
 # Storing stuff 
- The user settings are stored in "C:/Users/mike/AppData/Roaming/Code/User/settings.json"
-
- The Extensions are stored in 
-"C:/Users/mike/.vscode/extensions"
-
-The folder specific settings are stored in 
-"..\folder/.vscode/settings.json"
-
-The language specfic launch settings are stored in
-"..\folder/.vscode/launch.json"
+ - The user settings are stored in `C:/Users/mike/AppData/Roaming/Code/User/settings.json`
+ - The Extensions are stored in `C:/Users/mike/.vscode/extensions`
+ - The folder specific settings are stored in `..\folder/.vscode/settings.json`
+ - The language specfic launch settings are stored in `..\folder/.vscode/launch.json`
 
 ## Key bindings
-File > Preferences > Keyboard Shortcuts
+- `File > Preferences > Keyboard Shortcuts`<br>
 ![alt text](KeyboardShortcutSearch.png "Keyboard Shortcut Search")  
 
 ## VS Code and Markdown
-This might become a big topic, but for now we will lump it in here.
-
-Some good stuff on colors here: [colors](http://clrs.cc/)
-
-A helpful question on using a local markdown.css: [local markdown.css](http://stackoverflow.com/questions/32410064/how-can-i-use-an-online-style-css-on-the-visual-studio-code-markdown-preview)
+ - This might become a big topic, but for now we will lump it in here.
+ - Some good stuff on colors here: [colors](http://clrs.cc/)
+ - A helpful question on using a local `markdown.css`: [local markdown.css](http://stackoverflow.com/questions/32410064/how-can-i-use-an-online-style-css-on-the-visual-studio-code-markdown-preview)
 
 ## Starting a markdown topic
- - create a markdown folder under local/markdownnotes
+ - create a markdown folder under `local/markdownnotes`
  - put an md file in there
- - add a markdown.css
+ - add a `markdown.css`
  - open it as a folder in VSCode
- - Because we have the settings to search for markdown.css in the user settings now you should not have to have change local workspace settings
- - preview with Ctrl-Shift-V
+ - Because we have the settings to search for `markdown.css` in the user settings now you should not have to have change local workspace settings
+ - preview with `Ctrl-Shift-V`
 
 
 
  ## Python Project 
- To figure out:
- 
-  ![alt text](PythonProject.png "Python Project")
+ To figure out:<br>
+   ![alt text](PythonProject.png "Python Project")

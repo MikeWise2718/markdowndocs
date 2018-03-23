@@ -18,8 +18,8 @@ What to do:
 - You might need to close VS Code now if you need a python envionment
 
 To activate a particular python environment
-- Go to the top level menu and enter /View/Command Palette..
-- From the Text Box that now opens, select Python: Select Python Interpreter
+- Go to the top level menu and enter `/View/Command Palette..`
+- From the Text Box that now opens, select `Python: Select Python Interpreter`
 - You should get a list of available Python versions with their environments listed underneath them
 
 # Extensions
@@ -40,7 +40,5 @@ https://code.visualstudio.com/docs/languages/python
 
  Things to note
  - You can get to the user settings by clicking on the gear icon/settings in the lower left, or from the menu File/Preferences/Settings
-
-
 
 
