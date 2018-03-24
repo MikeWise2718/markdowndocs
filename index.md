@@ -26,6 +26,7 @@ A compendium of things I have learned that I think I might need again but will l
 # Azure
 [Azure](https://mikewise2718.github.io/markdowndocs/azure/azure)<br>
 [Azure IoT Edge](https://mikewise2718.github.io/markdowndocs/azureiotedge/azureiotedge)<br>
+[Azure CLI](https://mikewise2718.github.io/markdowndocs/azcli/azcli)<br>
 
 # OS
 [Ubuntu](https://mikewise2718.github.io/markdowndocs/ubuntu/ubuntu)<br>
