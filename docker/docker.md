@@ -6,24 +6,34 @@ output: html_document
 
 # Intro
 - Docker is a container service. Arguably *the* container service.
-- Docker Cheat Sheet [here](https://github.com/wsargent/docker-cheat-sheet#registry--repository)
-- This video is useful for getting [started](https://www.youtube.com/watch?v=W3bk2pojLoU)
-- Docker containers vs. VMs (https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-normal-virtual-machine?rq=1)
+- Docker Cheat Sheet https://github.com/wsargent/docker-cheat-sheet#registry--repository
+- This video is useful for getting startedhttps://www.youtube.com/watch?v=W3bk2pojLoU
+- Docker containers vs. VMs https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-normal-virtual-machine?rq=1
 
 # Concepts
 * dockerfile - a list of commands that builds a series of images, resulting in a named image that you can use to start a container
 * image - the bits that need to be instanced to form a container
-* dangling image - an image without a name [https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image]
+* dangling image - an image without a name https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image
 * container - an instance of a running image
 * entry point - the program that will be ruuning
-* container states - containers can be "created", "up" or "exited" [https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker]
+* container states - containers can be "created", "up" or "exited" https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker
 
+# Useful articles and links
+* Pruning images and containers - especially Ulises answer https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker
+* What are \<none\>:\<none\> images - https://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/
+
+# Misc things to know
+- Docker can't give you a listing of the remote repository via its CLI
 
 # Windows
 - Docker uses a single hyper-v, and thus is subject to any hyper-v nuances and limitations
 - When docker is running there will be tray app running where you can get some info
 - However most interaction with docker is via command line, be it cmd, PowerShell, or some form of bash
+ 
 
+# Pruning things
+- `docker rmi $(docker images -f "dangling=true" -q)`   # prune dangline images             
+- `docker rmi $(docker images --quiet test*)`           # prune images begin with word "test"
 
 # Basic commands
 * `docker -?`                  ( list all commands)
