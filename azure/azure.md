@@ -7,17 +7,14 @@ output: html_document
 # Intro
 Azure is huge, so we can't handle much of it here, but there are some things I need again and again that I forget.
 
+One used to do things with PowerShell, but the Azure CLI 2.0 is a much better way, it is a python shell on top of PowerShell. See my page on the Azure CLI for more info here.
 
 # Services
- - What services are avalable where is [here](https://azure.microsoft.com/en-us/global-infrastructure/services/)
-
+ - What services are avalable in which region is [here](https://azure.microsoft.com/en-us/global-infrastructure/services/)
+ - In general these days (early 2018) West Europe has more things on offer than North Europe
+ - South Central used to be my go-to region for new stuff, but I don't think that is true anymore.
+ - capacity problems abound...
 
  # Azure IoT Hub
-  - Simulate Linux Device Tutorial [here](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux)
-  - C# Module Tutorial [here](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module)
-  - Deleting a device
-     - Just delete the device out of the device list on the IoT Edge portal
-     - Then delete the associated running and exited dockers (for the "Simulated Linux Device Tutorial" there were 3 of them)
+  - I moved this stuff to a dedicated page on it
 
-## Device String
-  - sudo iotedgectl setup --connection-string "HostName=MikesIoThub1618.azure-devices.net;DeviceId=abratemp;SharedAccessKey=Lm6hmGFhBbDn8hzvdR+tUyVtKoCkgo6EaNwD7w7nimQ=" --auto-cert-gen-force-no-passwords

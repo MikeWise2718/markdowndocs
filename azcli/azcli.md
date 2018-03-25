@@ -8,32 +8,35 @@ output: html_document
  - Azure command line interface.
  - 2.0 is a rewrite in Python from Node.js - who knows why?
  - Runs on Linux nicely, freeing Azure from PowerShell dependence.
- - Docs [here](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest)
- - Scripts [here](https://docs.microsoft.com/en-us/azure/batch/scripts/batch-cli-sample-run-job)
+ - Docs here -  https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
+ - Scripts here - https://docs.microsoft.com/en-us/azure/batch/scripts/batch-cli-sample-run-job
 
 # Upgrade version
-- Check current version number [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+- Check current version number here - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - Upgrade on Windows
    - Just download the MSI installer under Windows from above and reinstall
 - Upgrade on Linux:
-   - sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+   - `sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli`
 
 
 
 # Account Commands
-- `az account show                                  `  # What account am I using
-- `az account set -s "Account Name"`  # 
-- `az account list-locations --output table         `  # List azure locations
+- `az login                               `  # Makes you go to a web page and enter an 8 digit alfanum code 
+- `az account show                        `  # What account am I using
+- `az account list --output table`        `  # List all the accounts you have
+- `az account set -s "Account Name"       `  # Set a particular account     
+
+# What locations are there   
+- `az account list --output table         `  # List azure locations
 
 ```
 D:\transfer\azurecrtest>az account list --output table
 Name                                  CloudName    SubscriptionId                        State    IsDefault
 ------------------------------------  -----------  ------------------------------------  -------  ---------
-Mike Wise's EA Azure Account          AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled  True
+Mike Wise's XX Azure Account          AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled  True
 Microsoft Azure Internal Consumption  AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
-Reykjavik Test                        AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
-AppliedInnovation                     AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
-Microsoft Azure Sponsorship 2         AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
+Another Account                       AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
+Yet Another Account                   AzureCloud   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  Enabled
 ```
 
 # Locations
