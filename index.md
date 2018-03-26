@@ -33,7 +33,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Docker](https://mikewise2718.github.io/markdowndocs/docker/docker)<br>
 
 ## Markdown
-[R-Markdown](https://mikewise2718.github.io/markdowndocs/rmarkdown/rmarkdown-notes)<br>
+[R-Markdown](https://mikewise2718.github.io/markdowndocs/rmarkdown/rmarkdown)<br>
 [Jupyter](https://mikewise2718.github.io/markdowndocs/jupyter/jupyter)<br>
 
 # Graphics

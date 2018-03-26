@@ -11,19 +11,28 @@ output: html_document
 - Docker containers vs. VMs https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-normal-virtual-machine?rq=1
 
 # Concepts
-* dockerfile - a list of commands that builds a series of images, resulting in a named image that you can use to start a container
-* image - the bits that need to be instanced to form a container
-* dangling image - an image without a name https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image
-* container - an instance of a running image
-* entry point - the program that will be ruuning
-* container states - containers can be "created", "up" or "exited" https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker
+* `dockerfile` - a list of commands that builds a series of images, resulting in a named image that you can use to start a container
+* `image` - the bits that need to be instanced to form a container
+* `dangling image` - an image without a name https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image
+* `container` - an instance of a running or exited image
+* `entry point` - the program that will be runing
+* `tag` - Tag is alphanumeric identifier of the image within a repository like `vafsb/faketemp:latest`
+* `numeric ID` - a 12 digit hex numeric id identifying a running or exited container like `15fa59af0e7d` 
+* `container ID` - anothor word for numeric ID
+* `container states` - containers can be "created", "up" or "exited" https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker
+* `registry` - a Docker registry is a service that stores docker images like `vafsb.azurecr.io`
+* `repository` - a collection of different images with the same nab, but that have different tags, like `vafsb.azurecr.io/faketemp`
 
 # Useful articles and links
 * Pruning images and containers - especially Ulises answer https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker
 * What are \<none\>:\<none\> images - https://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/
 
 # Misc things to know
-- Docker can't give you a listing of the remote repository via its CLI
+- Docker can't give you a listing of the remote repository via its CLI, you need to use the R
+- Get rid of need for sudo on Linux
+   -  `sudo usermod -aG docker user_name`  # add user_name to docker group
+   -  `groups`                             # check your group membership
+   -  `cut -d: -f1 /etc/group`             # list all groups on that machine 
 
 # Windows
 - Docker uses a single hyper-v, and thus is subject to any hyper-v nuances and limitations
@@ -31,17 +40,14 @@ output: html_document
 - However most interaction with docker is via command line, be it cmd, PowerShell, or some form of bash
  
 
-# Pruning things
-- `docker rmi $(docker images -f "dangling=true" -q)`   # prune dangline images             
-- `docker rmi $(docker images --quiet test*)`           # prune images begin with word "test"
-
 # Basic commands
 * `docker -?`                  ( list all commands)
 * `docker -v`                  (version)
 * `docker version`             (long client/server version)
 * `docker -p2`                 (list running containers)
-* `docker search tensorvlow`   (search docker hub for an imagte)
-* `docker ps`                  (see what dockers are running)
+* `docker search tensorvlow`   (search docker hub for an image)
+* `docker ps`                  (see what containers are running)
+* `docker ps -q`               (see running containers but just show their numeric IDs)
 * `docker kill containername`  (kill a particular container)
 * `docker ps -a`               (see running and exited container)
 * `docker rm containername`    (remove an exited container)
@@ -49,14 +55,27 @@ output: html_document
 * `docker -t`                  (keep STDIN open even if not attached)
 * `docker -e`                  (set environment variable)
 * `docker images`
-* `docker rm -v $(docker ps -a -q -f status=exited)` (delete all stopped containers)
-* `docker rm -f $(docker ps -qa)` (delete all stopped and running containers)
 
-# Useful commands 
-* docker exec -it tf /bin/bash  # Open a terminal on a docker
+# Building
+* `docker build -t tag .` (build an image using the Docker file in the cwd)
+
+# Repositories
+* `docker vafsb/faketemp login -u vafsb -p xxxxxxx`   (login)
+* `docker pull vafsb/faketemp:arm-latest` (pull an image)
+* For Azure Container Registries you need to enable the use of the registry name as a user
+   * The password can be found there too - see below<br>
+   ![acr](AzureContainerRegistrySettings.png)
+
+# Pruning and deleting things
+* `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all stopped containers)
+* `docker rm -f $(docker ps -qa)`                     # !!! delete all stopped and running containers !!!
+- `docker rmi $(docker images -f "dangling=true" -q)` # prune dangline images             
+- `docker rmi $(docker images --quiet test*)`         # prune images begin with word "test"
+
+# Terminal commands
+* `docker exec -it tf /bin/bash`  # Open a terminal on a docker
 
 # Useful 
-* `sudo usermod -aG docker user_name`  # gets rid of need for sudo for docker
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow`
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow`
 

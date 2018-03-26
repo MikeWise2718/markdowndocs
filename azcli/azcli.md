@@ -11,6 +11,9 @@ output: html_document
  - Docs here -  https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
  - Scripts here - https://docs.microsoft.com/en-us/azure/batch/scripts/batch-cli-sample-run-job
 
+# Installation
+- Linux Install Instructions - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
+
 # Upgrade version
 - Check current version number here - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - Upgrade on Windows

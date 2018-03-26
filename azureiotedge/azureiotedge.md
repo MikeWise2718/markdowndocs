@@ -81,16 +81,15 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
             - `az iot hub device-identity create --device-id edge001 -hub-name MikesIoThub1618 --edge-enabled`
       - This actually enrolls it - provided the device exists       
           - `sudo iotedgectl setup --connection-string "HostName=MikesIoThub1618.azure-devices.net;DeviceId=edge001;SharedAccessKey=xxxxSharedAccessKeyxxxx" --auto-cert-gen-force-no-passwords`
-          - WRONG--- use device connection string obtained by clicking on the device in the Azure IotEdge UI
-             - XXXX Note that the SharedAccess Key can be found in the Azure IoT Edge UI under `Shared Access Keys` (SAK) - use the primary key.<br>
-          ![sak](SharedAccessKeys.png)
+          - Use the `device connection string` obtained by clicking on the device in the Azure IotEdge UI - not the primary key found under `Shared Access Keys` (SAK<br>
+          ![devconstr](DeviceConnectionString.png)<br>
   - You may need to change the `edgeAgent` docker image that is downloaded depending on your architecture
     - configuration is in `/etc/azure-iot-ege/config.json`
     - For example to specify ARM use `"edgeRuntimeImage": "microsoft/azureiotedge-agent:1.0.0-preview021-linux-arm32v7",`
   - Let the device know the credentials it needs to pull docker images
       - `sudo iotedgectl login --address mikescontainers.azurecr.io --username MikesContainers --password xxx-PrimaryKey-xxxx`
-      - `user` is the repository name repeated, `password` is the SAK we used above.
-      - Note thare is a setting (enabled by default) in the Azure Repository UI that allows you to use the repository name as the user, and the SAK as the password, check this if it does not work.
+      - You need to enable Azure Container Repository UI to allows you to use the repository name as the user - it is not enabled by default.<br>
+          ![azconregpass](AzureContainerRegistryPassword.png)<br>
       - If the `edgeAgent` is running it will then stop and restart - probably the `edgeHub` too
   - Start the `edgeAgent`
       - `sudo iotedgectl start`
