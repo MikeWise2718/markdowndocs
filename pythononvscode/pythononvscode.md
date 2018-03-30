@@ -22,6 +22,31 @@ To activate a particular python environment
 - From the Text Box that now opens, select `Python: Select Python Interpreter`
 - You should get a list of available Python versions with their environments listed underneath them
 
+# Debugging
+ - Check link [here](https://code.visualstudio.com/docs/python/debugging)
+ - and [here(https://code.visualstudio.com/docs/editor/debugging)]
+ - It creates the `launch.json` when you click the gear after you clicked on the debugger bug icon.
+ - Then you have to set things
+ - The following `launch.json` worked for me when I loaded `main.py` from that directory, and made it the current file. 
+``` 
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-e 1"
+            ]
+        }
+    ]
+}
+```
+ - Note that it specifies an "-e 1" parameter as an argument.
+ - specifying `main.py` as the program curiously did not work.
+
 # Extensions
 You will want make sure the following extensions are up to date:
  - Don Jaymanne python extention (0.7.0 as of 2017-10-02)
