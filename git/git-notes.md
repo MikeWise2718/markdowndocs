@@ -12,6 +12,8 @@ output:
 [Visual Git Doc](https://marklodato.github.io/visual-git-guide/index-en.html)<br>
 [Basic Git Commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)<br>
 [Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)<br>
+[Things to hate about it](https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/)
+[GitHub etiquette](https://help.github.com/articles/fork-a-repo/)
 
 
 # Newest version
