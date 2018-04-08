@@ -15,6 +15,10 @@ Stuff I do every time I reinstall windows.
 # Getting a windows dump
 - Open Event viewer and look for "bugcheck"
 
+# Windows Update Tips
+ - https://serverfault.com/questions/625332/windows-update-not-working-on-windows-2012-r2-standard
+
+
 # Things I like to install
 
 ###	General Utils
@@ -25,6 +29,7 @@ Stuff I do every time I reinstall windows.
 ###	Office
    -	Outlook, Word, Ppt, Excel, Visio
    - Greenshot
+   
 ###	Compilers
    - VS Code
    -	Newest Visual Studio
