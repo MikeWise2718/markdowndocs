@@ -21,8 +21,6 @@ output: html_document
 - Upgrade on Linux:
    - `sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli`
 
-
-
 # Account Commands
 - `az login                               `  # Makes you go to a web page and enter an 8 digit alfanum code 
 - `az account show                        `  # What account am I using

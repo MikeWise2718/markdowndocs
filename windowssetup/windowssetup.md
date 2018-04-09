@@ -50,7 +50,7 @@ Stuff I do every time I reinstall windows.
   - Preview Config at https://chocolatey.org/packages/previewconfig 
    - See this post: https://superuser.com/questions/970951/how-can-i-get-a-file-preview-in-file-explorer-in-windows-10 
   -	Configure previews for 
-    	Text
-    •	R,CS,Csv, what else
-    	Bitmaps?
-    	What else?
+     - 	Text
+         - 	r,cs,csv,js,json,py
+     - 	Bitmaps?
+     - 	What else?

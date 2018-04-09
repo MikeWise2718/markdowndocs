@@ -13,7 +13,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Visual Studio](https://mikewise2718.github.io/markdowndocs/visualstudio/visualstudio)<br>
 [RTVS](https://mikewise2718.github.io/markdowndocs/rtvs/rtvs)<br>
 [Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript)<br>
-[Git](https://mikewise2718.github.io/markdowndocs/git/git-notes)<br>
+[Git](https://mikewise2718.github.io/markdowndocs/git/git)<br>
 [Anaconda](https://mikewise2718.github.io/markdowndocs/anaconda/anaconda)<br>
 
 # Misc Frameworks
@@ -53,7 +53,7 @@ A compendium of things I have learned that I think I might need again but will l
 
 ## Hardware
 [Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik-notes)<br>
-[HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens-notes)<br>
+[HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens)<br>
 [Jetson](https://mikewise2718.github.io/markdowndocs/jetson/jetson)<br>
 [Unifi-NVR (Vidcam)](https://mikewise2718.github.io/markdowndocs/unifinvr/unifinvr)<br>
 [FritzBox](https://mikewise2718.github.io/markdowndocs/fritzbox/fritzbox)<br>

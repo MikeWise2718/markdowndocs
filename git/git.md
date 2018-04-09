@@ -19,6 +19,30 @@ output:
 # Newest version
 [Download](http://git-scm.com/downloads)
 
+
+## User Profile Information
+ - There are 3 default paths for the config file (on linux at least).
+   - ref: https://stackoverflow.com/questions/7328826/curious-where-does-git-store-user-information 
+   - Repository itself: `<your_git_repository>/.git/config`
+   - User home directory: `~/.gitconfig`
+   - System-wide directory: `$(prefix)/etc/gitconfig`
+
+
+## Command line sequence
+- `git add -A .`
+- `git commit -m "message"`
+- `git push`
+git config --global credential.helper 'cache --timeout=3600'
+
+## Password Caching
+- There are lots of ways to approach this
+- Login using `ssh` instead of `https`
+- Use "Credential Helper"
+   - $ git config --global credential.helper cache  # Tell git to use the credential helper
+   - $ git config --global credential.helper 'cache --timeout=3600' # Set the timeout to 1 hour 
+
+## Favorites
+
 <style
   type="text/css">
 
@@ -37,7 +61,7 @@ table td {
 
 </style>
 
-## Favorites
+
 
 | Construct	| git | git gui | VSCode | 	Visual Studio
 | --------- |:----|:--------|:-------|:--------------|
