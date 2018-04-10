@@ -30,6 +30,7 @@ Download the driver version 375.20 from here
 - There is a script to copy the samples to your local directory in `/usr/local/cuda-8-0/bin`
   - Example usage: `mike@Abra:/usr/local/cuda-8.0/bin$ ./cuda-install-samples-8.0.sh /home/mike`
 - It didn't really get my installed driver (384.130) as compile failures and the following command show:
+- This is how I found things: `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
 ```
 mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +
 ./7_CUDALibraries/randomFog/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"

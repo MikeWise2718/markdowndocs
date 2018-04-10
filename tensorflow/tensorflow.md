@@ -57,6 +57,11 @@ Then you might want to install jupyter
  - Get version with conda 
     - "--upgrade "
 
+# Bazel
+- A build and testing tool
+- Installation instructions here: https://docs.bazel.build/versions/master/install-ubuntu.html
+- Some usage tips here: https://stackoverflow.com/questions/34204551/run-tensorflow-unit-tests 
+- This worked well: `bazel test //tensorflow/python/...`
 
 # Running Models 
 These are examples basically
