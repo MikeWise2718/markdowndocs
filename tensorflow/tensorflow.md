@@ -4,13 +4,55 @@ output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
+![TensorFlow logo](tflogo.png)
+
 # Intro
 Tensorflow - main install link: [link](https://www.tensorflow.org/install/)
  - 9 March 2017 TF 1.0.1 installed into Anaconda3 (from file dates)
  - Actually installing TF is a royal pia every time. Switching to Docker.
+    - That turned out to be a bad idea as Docker does not support GPUs on Windows
+
+# Installing with GPU on Ubuntu
+- It is a pain in the butt. The drivers, Cuda, CuDNN, must all fit to the version of TF, and it can be hard to tell.
+- Following all these steps are key: https://www.tensorflow.org/install/install_linux
+
+### Drivers
+- In the end I need to install the correct driver version
+    - once via the Ubuntu GUI `Software & Updates` then click on `Additional Drivers`
+    - and then once using the run file installtion variant you can download from Nvidia - here is the archive: http://www.nvidia.com/object/unix.html 
+        - You have to stop X to do this `sudo stop service lightdm` 
+        - I ignored the errors
+    - If you don't do that Tensorflow will not see the GPU as a device, although you can see it in `nvidia-smi`, and even if Cuda samples work
+- You can see your driver version with `cat /proc/driver/nvidia/version`
+- You can also see it with `nvidia-smi`
+    
+
+### Cuda
+- you can use `sudo apt-get cuda-9-0` or whatever for this. Works fine.
+- I think you need to do `sudo apt-get cuda` afterwards to get the right links.
+- You can test with the samples although that is no guarentee that TF will see it
+   - I actually to fixup the samples with Grep and Sed to have the right driver version numbered directories, see my Nvidia notes
+- There is a script in `/usr/local/cuda/bin` that you can use to copy the examples to your home directory.
+- Don't forget the export command for the environment variables.
+
+### CuDNN
+- Go to the Nvidia Download site (you have to login) https://developer.nvidia.com/cudnn 
+- Then download the version of CuDNN (as a deb file) you need for your version of TF and Cuda. Important!!!!
+- You can install it with `dpgk -i libcudnn7...deb` which does the right fixup thing
+- If it is not installed completely (links, etc.) you will get a core dump, but no useful message.
+- If it is the wrong version (too high or too low) TF will complain when it tries to load it.
+- You can test with the samples although that is no guarentee that TF will see it
+- It is quite possible for TF to see Cuda but not CuDNN - took me half a day to find that.
+
+### Extra stuff
+- You need the export commands for PATH and LD_LIBRARY_PATH in your `.bashrc`
+- Maybe you need `CUDA_HOME` there too....
+- You may need this: For CUDA Toolkit <= 7.5 do: `$ sudo apt-get install libcupti-dev`
+    - I installed it, didn't seem to hurt although I am on version 9.0
+- You need this: ` sudo apt-get install cuda-command-line-tools-9-0` (or whatever Cuda version you are on)
+    - Installation is wrong, it omits the version numbers and then it cannot be found
 
 
-![TensorFlow logo](tflogo.png)
 
 # Docker
 - First you ahve to install docker of course. Try [this](https://docs.docker.com/get-started/#container-diagram)
@@ -36,6 +78,7 @@ Then test it
 
 Then you might want to install jupyter
  - pip install jupyter --upgrade 
+
 
 
 # Reactivating an old anaconda
