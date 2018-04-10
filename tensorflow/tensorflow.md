@@ -135,6 +135,8 @@ These are examples basically
  - `pip install h5py`
  - `pip install keras`
 
+# tensorflow logging
+  - my wonderful post: https://stackoverflow.com/questions/44853059/tensorflow-logging-messages-do-not-appear/49756653#49756653 
 
  # tensorflow object detection models on abra
   - These are the github google Tensorflow models found [here](https://github.com/tensorflow/models/tree/master/research/object_detection)
