@@ -7,6 +7,7 @@ output: html_document
 # Intro
 Ubuntu seems to be the data science standard now.
 
+
 # Terminal windows
 - You pretty much do all system stuff via the terminal with good old Linux commands
 - Ctrl-Shift-V to paste
@@ -50,17 +51,19 @@ Windows:
 - It is commercial, but free for home use
 
 # Misc Unix commands
-- grep stuff files - grep -r tqdm *.py .
-- find files with a mask find . -path "*/src/*.h"
-- find filew with masks - find . -path '*/src/*.h' -o -path '*/src/*.cpp'
-- find files and pipe to greap - find . -path '*/src/*.h' -exec grep PATTERN {}
-- change field 3 to AD - awk '{$3 = "AD"; print}' infile > outfile
+- find a library file - `find / -name libnvcuvid.*`
+- grep stuff files - `grep -r tqdm *.py .`
+- find files with a mask - `find . -path "*/src/*.h"`
+- find filew with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
+- find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {}`
+   - see this https://unix.stackexchange.com/questions/131535/recursive-grep-vs-find-type-f-exec-grep-which-is-more-efficient-faster 
+- change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
 
 # File manager
-- Under Ubuntu it is called nautilus
+- Under Ubuntu it is called `nautilus`
 - If it doesn't open, try killing the process and restarting
 - for command line too long
-   - for f in *.pdf; do chmod 664 "$f"; done
+   - `for f in *.pdf; do chmod 664 "$f"; done`
 
 # Terminal Window
 - Note that the "super" key is the "windows" key in the docs. 
