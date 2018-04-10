@@ -32,7 +32,8 @@ Ubuntu seems to be the data science standard now.
 
 # VNC
 Finally got something working, but it is not great.
-Ubuntu:
+
+## Ubuntu:
 - installed mir on Ubuntu with sudo apt-get install unity8-desktop-session-mir
 - this was a heavy install that apparently installs the unity8 desktop (although I did not see it)
 - Changed the configuration to enable remote desktop with "dconf-editor"
@@ -41,7 +42,8 @@ Ubuntu:
 - you can get a connection by settting "require-encryption" above to false
 - Left it disabled for now
 - Next steps: substitute tigervnc for vino-server
-Windows:
+
+## Windows:
 - Installed tigervnc on windows
 - used the tigervnc "vncviewer" to connect to the server addess and port 5900
 
@@ -54,7 +56,7 @@ Windows:
 - find a library file - `find / -name libnvcuvid.*`
 - grep stuff files - `grep -r tqdm *.py .`
 - find files with a mask - `find . -path "*/src/*.h"`
-- find filew with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
+- find files with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
 - find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {}`
    - see this https://unix.stackexchange.com/questions/131535/recursive-grep-vs-find-type-f-exec-grep-which-is-more-efficient-faster 
 - change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
