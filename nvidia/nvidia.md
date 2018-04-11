@@ -25,84 +25,10 @@ Download the driver version 375.20 from here
 3. $ sudo apt-get update
 4. $ sudo apt-get upgrade
 ```
-# CUDA on Ubuntu
-- Only got cuda to work after installing the drivers in the GUI, and then reinstalling them with the Nvidia run file
-- There is a script to copy the samples to your local directory in `/usr/local/cuda-8-0/bin`
-  - Example usage: `mike@Abra:/usr/local/cuda-8.0/bin$ ./cuda-install-samples-8.0.sh /home/mike`
-- It didn't really get my installed driver (384.130) as compile failures and the following command show:
-- This is how I found things: `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
-```
-mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +
-./7_CUDALibraries/randomFog/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./6_Advanced/FunctionPointers/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./common/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/volumeFiltering/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/volumeRender/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/simpleGLES_screen/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/simpleGLES_EGLOutput/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/simpleGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/simpleTexture3D/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/marchingCubes/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/Mandelbrot/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/bindlessTexture/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./2_Graphics/simpleGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/SobelFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/recursiveGaussian/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/cudaDecodeGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/boxFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/postProcessGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/simpleCUDA2GL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/bicubicTexture/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/EGLStreams_CUDA_Interop/findegl.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/imageDenoising/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./3_Imaging/bilateralFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/nbody_screen/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/nbody/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/fluidsGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/smokeParticles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/nbody_opengles/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/oceanFFT/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/fluidsGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-./5_Simulations/particles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
-```
-- This is how you replace it
-   - `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
-```
-mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;
-mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +
-./7_CUDALibraries/randomFog/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./6_Advanced/FunctionPointers/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./common/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/volumeFiltering/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/volumeRender/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/simpleGLES_screen/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/simpleGLES_EGLOutput/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/simpleGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/simpleTexture3D/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/marchingCubes/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/Mandelbrot/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/bindlessTexture/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./2_Graphics/simpleGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/SobelFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/recursiveGaussian/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/cudaDecodeGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/boxFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/postProcessGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/simpleCUDA2GL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/bicubicTexture/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/EGLStreams_CUDA_Interop/findegl.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/imageDenoising/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./3_Imaging/bilateralFilter/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/nbody_screen/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/nbody/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/fluidsGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/smokeParticles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/nbody_opengles/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/oceanFFT/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/fluidsGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-./5_Simulations/particles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
-
-```
+- you can check what drivers are installed with the following command:
+- You can see your driver version with `cat /proc/driver/nvidia/version`
+- You can also see it with `nvidia-smi` if you have Cuda installed on windows or Ubuntu (but not on L4T apparently)
+- But for windows you need the path set to include `C:\Program Files\NVIDIA Corporation\NVSMI`
 
 # CUDNN
 - Have had a lot of intermittent initialization problems with CUDNN

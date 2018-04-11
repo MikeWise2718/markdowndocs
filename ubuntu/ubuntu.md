@@ -19,6 +19,14 @@ Ubuntu seems to be the data science standard now.
 - Installed chrome with sudo gdebi -i google-chrome-stable_current_amd64.deb
 - Found "Google Chrome" in /usr/share/applications
 
+# Drivers
+- You can see your driver version with `cat /proc/driver/nvidia/version`
+- You can also see it with `nvidia-smi` if you have Cuda installed on windows or Ubuntu (but not on L4T apparently)
+- You can set the drivers via the GUI
+     - Select `System & Updates` - a dialog will then open up
+     - Then select the `Additional Drivers` Tab
+     - It claims the NVIDIA binary drivers are open source but I have my doubts.
+
 # RDP (Remote Deskttop from Windows)
 - For a long time this did not work at all as Ubuntu uses a Desktop Environment as opposed to a window manager.
 - There are two ways to do remote desktop, VNC or RDP (the latter is kind of Windows specific and has better graphics than Generic VNC which is JPEG vased).
