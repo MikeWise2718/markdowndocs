@@ -32,3 +32,46 @@ One you run that the environment is setup so you can run the C++ compiler:  cl.e
 
 And so on...
 ```
+# CUDA on Ubuntu
+- Only got cuda to work after installing the drivers in the GUI, and then reinstalling them with the Nvidia run file
+- There is a script to copy the samples to your local directory in `/usr/local/cuda-8-0/bin`
+  - Example usage: `mike@Abra:/usr/local/cuda-8.0/bin$ ./cuda-install-samples-8.0.sh /home/mike`
+- It didn't really get my installed driver (384.130) as compile failures and the following command show:
+- This is how I found things: `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
+```
+mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +
+./7_CUDALibraries/randomFog/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./6_Advanced/FunctionPointers/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./common/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./2_Graphics/volumeFiltering/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+......
+......
+./5_Simulations/nbody/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/fluidsGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/smokeParticles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/nbody_opengles/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/oceanFFT/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/fluidsGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+./5_Simulations/particles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-367"
+```
+- This is how you replace it
+   - `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
+```
+mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;
+mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +
+./7_CUDALibraries/randomFog/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./6_Advanced/FunctionPointers/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./common/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./2_Graphics/volumeFiltering/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./2_Graphics/volumeRender/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+......
+......
+./5_Simulations/nbody/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/fluidsGLES/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/smokeParticles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/nbody_opengles/findgleslib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/oceanFFT/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/fluidsGL/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+./5_Simulations/particles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
+
+```

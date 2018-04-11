@@ -22,7 +22,20 @@ To activate a particular python environment
 - From the Text Box that now opens, select `Python: Select Python Interpreter`
 - You should get a list of available Python versions with their environments listed underneath them
 
-# Debugging
+# Usint it as a REPL
+- To run right-click on a python file in explorer and select `Run Python File in Terminal`
+- This should cause a terminal window to open up with the correct environment activated (you can see the command in the terminal window)
+- You then need to start python by typing `python` (huh?)
+- Now you can select code portions, right click and select `Run Selection/Line in Python`
+- On the command line you can query the variable stats with print statmenets
+
+### Things that kind of suck about this REPL Experience
+- There is no variable window like in R-Studio, RTVS, or Spyder
+- There is no up-arror or down arrow to select recent statements
+- There is no "source" button or command anywhere
+- Sometimes when you right click on the code, there is no `Run Selection/Line in Python`, but something similar that send it to a non-existent Jupyter notebook and give you a "Noteboook not selected/started" error from the Jupyter Extension. Horrible...
+
+# Running with Debugging
  - Check link [here](https://code.visualstudio.com/docs/python/debugging)
  - and [here(https://code.visualstudio.com/docs/editor/debugging)]
  - It creates the `launch.json` when you click the gear after you clicked on the debugger bug icon.
@@ -46,6 +59,10 @@ To activate a particular python environment
 ```
  - Note that it specifies an "-e 1" parameter as an argument.
  - specifying `main.py` as the program curiously did not work.
+
+# Running without Debugging
+- Just do this from a seperate CLI window, or from the Terminal window
+- You have to make sure the directory is correct
 
 # Extensions
 You will want make sure the following extensions are up to date:

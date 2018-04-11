@@ -53,7 +53,8 @@ Finally got something working, but it is not great.
 - It is commercial, but free for home use
 
 # Misc Unix commands
-- find a library file - `find / -name libnvcuvid.*`
+- find a library file - `find / -name lib*`
+- find a library file locally - `find . -name lib*`
 - grep stuff files - `grep -r tqdm *.py .`
 - find files with a mask - `find . -path "*/src/*.h"`
 - find files with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
