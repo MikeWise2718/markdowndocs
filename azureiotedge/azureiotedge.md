@@ -40,10 +40,13 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
         - it is easiest to use VS Code with its built in commands
         - but you can figure out what is happening by looking at the powershell output
      - Install Azure IoT Edge Extentsion in VS Code
-     - Update the AzureIoTEdgeModule template and generate a new module project with: 
+     - Update the AzureIoTEdgeModule template 
         - `dotnet new -i Microsoft.Azure.IoT.Edge.Module` 
+     - Now generate a new module project with:         
         - `dotnet new aziotedgemodule -n FilterModule`
-     - Make your code edits adding your real biz logic
+     - Use VS Code to make your code edits adding your real biz logic (see above tutorial link)
+        - it will ask to add missing assets to your project (not sure what these were)
+        
      - compile by right clicking on the `.csproj` file
      - build the docker by right-clicking on the docker file in the right sub-directory
         - you will be asked to brows to the `publish` subdirectory (how stupid is this?)

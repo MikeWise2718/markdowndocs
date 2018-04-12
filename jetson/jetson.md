@@ -48,7 +48,11 @@ Not really that trival, described in some detail in the github repo [here](https
    2. one on actually installing docker on the TX2 and running "deviceQuery" in that container.
    3. The scripts there do not actually run CUDA samples using OpenGL, I made some modifications that handle that as well, see my entry under the issues tab on the above repo.
 
-
+# Utilities
+- There is no `nvidia-smi`, however there is `~/tegrastats` which is not bad.
+- `sudo ~/tegrastats` gets you a few more columns.
+- It doesn't set up a `~/bin` for your utilities. Boo hiss...
+- More info: https://devtalk.nvidia.com/default/topic/928386/gpu-usage-monitoring-on-tx1/?offset=10
 
 # Installation of CudNN
 - You have to install the sources and build it - don't forget to build the samples
