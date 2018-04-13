@@ -66,26 +66,31 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - `az acr login --name mikescontainers`
       - `docker push mikescontainers.azurecr.io/filtermodule:latest`
 
-# How tos on a device you are deploying to
+# How tos on an Edge device you are deploying to
  - Install the IoT edge runtime - basically, install pip (for python) and then use pip to install the runtime
     - `sudo apt-get install python-pip`
     - `sudo pip install update`
     - `sudo pip install azure-iot-edge-runtime-ctl`
- - Enroll device with the hub
-    - First create the device on the hub
-      - Can use the Azure Web Interface
-      - From Azure CLI - but note you don't actually need to install this on the device, `iotedgectl` does everything you really need except create the device on Azure, which you can do elsewhere.
-        - Login to Azure
-        - `az login`
-            - Make sure you have the right account with  `az account show` 
-            - if not use `az account list --output table` to find the right one
-            - and set it with `az account set xxxx`
-        - Now use the following command to create the device on the hub
-            - `az iot hub device-identity create --device-id edge001 -hub-name MikesIoThub1618 --edge-enabled`
-      - This actually enrolls it - provided the device exists       
-          - `sudo iotedgectl setup --connection-string "HostName=MikesIoThub1618.azure-devices.net;DeviceId=edge001;SharedAccessKey=xxxxSharedAccessKeyxxxx" --auto-cert-gen-force-no-passwords`
-          - Use the `device connection string` obtained by clicking on the device in the Azure IotEdge UI - not the primary key found under `Shared Access Keys` (SAK<br>
-          ![devconstr](DeviceConnectionString.png)<br>
+
+
+ ### Enroll device with the hub
+
+ - First create the device on the hub
+   - Can use the Azure Web Interface
+   - From Azure CLI - but note you don't actually need to install this on the device, `iotedgectl` does everything you really need except create the device on Azure, which you can do elsewhere.
+     - Login to Azure
+     - `az login`
+         - Make sure you have the right account with  `az account show` 
+         - if not use `az account list --output table` to find the right one
+         - and set it with `az account set xxxx`
+     - Now use the following command to create the device on the hub
+        - `az iot hub device-identity create --device-id edge001 -hub-name MikesIoThub1618 --edge-enabled`
+   - This actually enrolls it - provided the device exists in azure      
+       - `sudo iotedgectl setup --connection-string "HostName=MikesIoThub1618.azure-devices.net;DeviceId=edge001;SharedAccessKey=xxxxSharedAccessKeyxxxx" --auto-cert-gen-force-no-passwords`
+       - Use the `device connection string` obtained by clicking on the device in the Azure IotEdge UI - not the primary key found under `Shared Access Keys` (SAK<br>
+       ![devconstr](DeviceConnectionString.png)<br>
+
+### Edge Device client debugging and maintenance
   - You may need to change the `edgeAgent` docker image that is downloaded depending on your architecture
     - configuration is in `/etc/azure-iot-ege/config.json`
     - For example to specify ARM use `"edgeRuntimeImage": "microsoft/azureiotedge-agent:1.0.0-preview021-linux-arm32v7",`
@@ -94,12 +99,14 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - You need to enable Azure Container Repository UI to allows you to use the repository name as the user - it is not enabled by default.<br>
           ![azconregpass](AzureContainerRegistryPassword.png)<br>
       - If the `edgeAgent` is running it will then stop and restart - probably the `edgeHub` too
-  - Start the `edgeAgent`
+  - Start the `edgeAgent` on the edge client
       - `sudo iotedgectl start`
-  - Kill a running instance of the `edgeAgent`
+  - Stopt the `edgeAgent` on eht edge client
+      - `sudo iotedgectl stop`
+  - Kill a running instance of the `edgeAgent` on the edge client
     - `docker rm -f edgeAgent`
     - You will have to restart it manually
-  - Kill a running instance of the `edgeHub`
+  - Kill a running instance of the `edgeHub`  on the edge client
     - `docker rm -f edgeHub`
     - if the `edgeAgent` is up it will restart the `edgeHub` now immediately (if the current deployment indicates that it should)
   - Kill one fo your modules`
