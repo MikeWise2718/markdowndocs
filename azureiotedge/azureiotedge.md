@@ -8,12 +8,14 @@ output: html_document
 Living close to the edge.
 
 # Documentation
-  - Simulate Linux Device Tutorial - `https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux`
-  - C# Module Tutorial - `https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module`
-  - Deploying via Azure CLI 2.0 - `https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension`
-  - Deployment Manifests - `https://docs.microsoft.com/en-us/azure/iot-edge/module-composition`
+  - API Docs: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet 
+  - GitHub C# API Code and Docs: https://github.com/Azure/azure-iot-sdk-csharp 
+  - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
+  - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
+  - Deploying via Azure CLI 2.0 - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
+  - Deployment Manifests - https://docs.microsoft.com/en-us/azure/iot-edge/module-composition
   - A device is controled with the python `iotedgectl` utility
-      - some docs are here - `https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl`
+      - some docs are here - https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl
   - Important things you do with `iotedgectl`
      - Enroll your device with your Azure IoT Edge instance so you can start `edgeAgent`
      - Start and stop the `edgeAgent`
