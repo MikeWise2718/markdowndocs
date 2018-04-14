@@ -23,6 +23,10 @@ output: html_document
 * `registry` - a Docker registry is a service that stores docker images like `vafsb.azurecr.io`
 * `repository` - a collection of different images with the same nab, but that have different tags, like `vafsb.azurecr.io/faketemp`
 
+# Questions
+* What is the short name of the running docker container called? For example "edgeAgent" in IoT Edge. "Name" maybe? "ModuleID"?
+
+
 # Useful articles and links
 * Pruning images and containers - especially Ulises answer https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker
 * What are \<none\>:\<none\> images - https://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/
@@ -65,6 +69,9 @@ output: html_document
 * For Azure Container Registries you need to enable the use of the registry name as a user
    * The password can be found there too - see below<br>
    ![acr](AzureContainerRegistrySettings.png)
+
+# Inspecting a rurning docker
+* `docker inpsect edgeHub`   # outputs various parameters formated in json
 
 # Pruning and deleting things
 * `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all stopped containers)

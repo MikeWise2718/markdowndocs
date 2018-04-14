@@ -8,12 +8,18 @@ output: html_document
 Living close to the edge.
 
 # Documentation
+
+  ### Code
   - API Docs: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet 
   - GitHub C# API Code and Docs: https://github.com/Azure/azure-iot-sdk-csharp 
+  ### Tutorials
   - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
   - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
+  ### Guidance
   - Deploying via Azure CLI 2.0 - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
   - Deployment Manifests - https://docs.microsoft.com/en-us/azure/iot-edge/module-composition
+  - Temp Sensor Code - https://github.com/Azure/iot-edge/tree/master/v2/samples/azureiotedge-simulated-temperature-sensor 
+  - Troubleshooting: - https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot 
   - A device is controled with the python `iotedgectl` utility
       - some docs are here - https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl
   - Important things you do with `iotedgectl`
@@ -74,6 +80,18 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
     - `sudo pip install update`
     - `sudo pip install azure-iot-edge-runtime-ctl`
 
+    - Latest docker edgeAgent: https://hub.docker.com/r/microsoft/azureiotedge-hub/tags/
+    - Latest docker edgeHub: https://hub.docker.com/r/microsoft/azureiotedge-hub/tags/
+    - To update (assuming you are ok with gat `1.0-preview`- otherwise change it here and in the config below):
+        - `iotedgectl stop`
+        - `sudo pip install azure-iot-edge-runtime-ctl -update`
+        - `docker pull microsoft/azureiotedge-agent:1.0-preview`
+        - `docker pull microsoft/azureiotedge-hub:1.0-prevew`
+        - `iotedgectl start`
+    - Config in: `/etc/azure-iot-ege/config.json`
+
+ ### Troubleshooting docs
+ - Here: https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot 
 
  ### Enroll device with the hub
 
