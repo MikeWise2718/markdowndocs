@@ -78,8 +78,14 @@ output: html_document
    * The password can be found there too - see below<br>
    ![acr](AzureContainerRegistrySettings.png)
 
-# Inspecting a rurning docker
-* `docker inpsect edgeHub`   # outputs various parameters formated in json
+# Inspecting a docker image
+* `docker image inpsect 19caaf3fbbf3`   # outputs various parameters formated in json
+* `docker run -it edgeHub bash`         # run an image, login to it and poke around
+
+
+# Inspecting a running docker container
+* `docker inpsect edgeHub`        # outputs various parameters formated in json
+* `docker exec -it edgeHub bash`  # login to a running container and poke around
 
 # Pruning and deleting things
 * `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all exited containers)
