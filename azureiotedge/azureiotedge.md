@@ -121,7 +121,7 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - If the `edgeAgent` is running it will then stop and restart - probably the `edgeHub` too
   - Start the `edgeAgent` on the edge client
       - `sudo iotedgectl start`
-  - Stopt the `edgeAgent` on eht edge client
+  - Stop the `edgeAgent` on the edge client
       - `sudo iotedgectl stop`
   - Kill a running instance of the `edgeAgent` on the edge client
     - `docker rm -f edgeAgent`
@@ -142,3 +142,42 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
 
 
 
+# Issues
+ - Issue: Image was building but was not writing tag (ended up taged with <none> <none>>)
+   - Date 2018-04-15 11:20
+   - Resolution: Deleted a 3 day old image with the same tag and rebuilt - then it worked
+
+ - Issue: Docker run Image gets error msg:`Did you mean to run dotnet SDK commands? Please install dotnet SDK from:`
+   - Date 2018-04-15 11:30
+   - Resolution: dll name `h-camcap.dll` was incorrectly specified in Docker build file as `ENTRYPOINT ["dotnet", "h_camcap.dll"]`
+
+ - Issue: On Windows Docker run Image gets `Unhandled Exception: System.InvalidOperationException: Missing path to certificate file.`
+   - Date 2018-04-15 11:40
+   - Resolution: None yet - running on Ubuntu box instead
+
+ 
+ - Issue: iotedgectl somehow could not pull the images, although I could locally
+   - Date 2018-04-15 12:07 
+   - Resolution:  `sudo iotedgectl login --address vafsb.azurecr.io --username vafsb --password IBcNH....3lvVz68`
+   - Notes: `az acr login --name vafsb` and `docker login vafsb.azurecr.io -u vafsb -p IBcNH...v68` were not enough
+     - Even the the `sudo iotedgect` variant did not work at first - probably because I had `iotedgectl` stopped. 
+     - When I did it while it was running, it worked
+     - Afterwards this registry data should be in the `/etc/azure.../config.json` file so you will only need to do it onces
+   - Complete Error Message:
+ ```
+2018-04-15 10:07:47.841 +00:00 [ERR] - Step failed in deployment 10, continuing execution. Failure when running command Command Group: (
+  [docker pull vafsb.azurecr.io/h-camcap:latest-amd64]
+  [docker create --name h-camcap vafsb.azurecr.io/h-camcap:latest-amd64]
+  [docker start h-camcap]
+)
+2018-04-15 10:07:47.841 +00:00 [INF] - Plan execution ended for deployment 10
+2018-04-15 10:07:47.841 +00:00 [ERR] - Edge agent plan execution failed.
+System.AggregateException: One or more errors occurred. (Docker API responded with status code=InternalServerError, image=vafsb.azurecr.io/h-camcap, tag=latest-amd64. Check container registry (possible authorization failure or container registry down).) ---> Microsoft.Azure.Devices.Edge.Agent.Docker.InternalServerErrorException: Docker API responded with status code=InternalServerError, image=vafsb.azurecr.io/h-camcap, tag=latest-amd64. Check container registry (possible authorization failure or container registry down). ---> Docker.DotNet.DockerApiException: Docker API responded with status code=InternalServerError, response=
+   at Docker.DotNet.DockerClient.HandleIfErrorResponse(HttpStatusCode statusCode, String responseBody, IEnumerable`1 handlers)
+ ```
+
+ 
+
+- Issue: Template
+   - Date 2018-XX-XX xx:xx
+   - Resolution: 

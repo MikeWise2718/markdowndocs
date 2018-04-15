@@ -45,23 +45,31 @@ output: html_document
  
 
 # Basic commands
-* `docker -?`                  ( list all commands)
-* `docker -v`                  (version)
-* `docker version`             (long client/server version)
-* `docker -p2`                 (list running containers)
-* `docker search tensorvlow`   (search docker hub for an image)
-* `docker ps`                  (see what containers are running)
-* `docker ps -q`               (see running containers but just show their numeric IDs)
-* `docker kill containername`  (kill a particular container)
-* `docker ps -a`               (see running and exited container)
-* `docker rm containername`    (remove an exited container)
-* `docker -i`                  (allocate a pseudo-tty)
-* `docker -t`                  (keep STDIN open even if not attached)
-* `docker -e`                  (set environment variable)
-* `docker images`
+* `docker -?`                    (list all commands)
+* `docker -v`                    (version)
+* `docker version`               (long client/server version)
+* `docker -p2`                   (list running containers)
+* `docker search tensorvlow`     (search docker hub for an image)
+* `docker ps`                    (see what containers are running)
+* `docker ps -q`                 (see running containers but just show their numeric IDs)
+* `docker kill containername`    (kill a particular container)
+* `docker ps -a`                 (see running and exited container)
+* `docker rm containername`      (remove an exited container)
+* `docker -i`                    (allocate a pseudo-tty)
+* `docker -t`                    (keep STDIN open even if not attached)
+* `docker -e`                    (set environment variable)
+* `docker images`                (list all the images)
+* `docker images | grep vafsb`   (filtered image list)
 
 # Building
 * `docker build -t tag .` (build an image using the Docker file in the cwd)
+
+
+# Docker Daemon
+- https://docs.docker.com/config/daemon/#configure-the-docker-daemon
+- Directories:
+    - `/var/lib/docker`
+    - `c:\ProgramData\docker`
 
 # Repositories
 * `docker vafsb/faketemp login -u vafsb -p xxxxxxx`   (login)
@@ -74,7 +82,7 @@ output: html_document
 * `docker inpsect edgeHub`   # outputs various parameters formated in json
 
 # Pruning and deleting things
-* `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all stopped containers)
+* `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all exited containers)
 * `docker rm -f $(docker ps -qa)`                     # !!! delete all stopped and running containers !!!
 - `docker rmi $(docker images -f "dangling=true" -q)` # prune dangline images             
 - `docker rmi $(docker images --quiet test*)`         # prune images begin with word "test"
