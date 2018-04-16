@@ -129,7 +129,7 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
   - Kill a running instance of the `edgeHub`  on the edge client
     - `docker rm -f edgeHub`
     - if the `edgeAgent` is up it will restart the `edgeHub` now immediately (if the current deployment indicates that it should)
-  - Kill one fo your modules`
+  - Kill one of your modules`
     - `docker rm -f mymodule`
     - if the `edgeAgent` is up it will restart the `mymodule` now immediately (if the current deployment indicates that it should)
   - Troubleshoot
@@ -141,6 +141,13 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - `docker logs mycontainer`
 
 
+# Base images
+- Audi hack
+    - most things based off `FROM microsoft/dotnet:2.0.0-runtime-stretch`
+    - ml based off `FROM  audimunichacr.azurecr.io/audi_tf_models`
+ - New style
+    - FROM microsoft/dotnet:2.0-sdk AS build-env
+    - FROM microsoft/dotnet:2.0-runtime
 
 # Issues
  - Issue: Image was building but was not writing tag (ended up taged with <none> <none>>)
@@ -150,6 +157,7 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
  - Issue: Docker run Image gets error msg:`Did you mean to run dotnet SDK commands? Please install dotnet SDK from:`
    - Date 2018-04-15 11:30
    - Resolution: dll name `h-camcap.dll` was incorrectly specified in Docker build file as `ENTRYPOINT ["dotnet", "h_camcap.dll"]`
+   - Resolution2: Files were not in the build exe copy directory, so they were not being copied - so the ENTRYPOINT could not find them
 
  - Issue: On Windows Docker run Image gets `Unhandled Exception: System.InvalidOperationException: Missing path to certificate file.`
    - Date 2018-04-15 11:40
@@ -176,7 +184,7 @@ System.AggregateException: One or more errors occurred. (Docker API responded wi
    at Docker.DotNet.DockerClient.HandleIfErrorResponse(HttpStatusCode statusCode, String responseBody, IEnumerable`1 handlers)
  ```
 
- 
+
 
 - Issue: Template
    - Date 2018-XX-XX xx:xx
