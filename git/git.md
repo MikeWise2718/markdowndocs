@@ -41,6 +41,10 @@ git config --global credential.helper 'cache --timeout=3600'
    - $ git config --global credential.helper cache  # Tell git to use the credential helper
    - $ git config --global credential.helper 'cache --timeout=3600' # Set the timeout to 1 hour 
 
+
+## Git Ignore
+- `**.jpg` - No jpgs in this direcory and any others
+
 ## Favorites
 
 <style

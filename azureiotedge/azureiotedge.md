@@ -185,6 +185,9 @@ System.AggregateException: One or more errors occurred. (Docker API responded wi
  ```
 
 
+- Issue: Docker was not pulling the latest images
+   - Date 2018-04-17 12:30
+   - Resolution: I was entering the wrong name (duh...)
 
 - Issue: Template
    - Date 2018-XX-XX xx:xx

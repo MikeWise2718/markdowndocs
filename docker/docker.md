@@ -43,8 +43,7 @@ output: html_document
 - When docker is running there will be tray app running where you can get some info
 - However most interaction with docker is via command line, be it cmd, PowerShell, or some form of bash
  
-
-# Basic commands
+ # Basic commands
 * `docker -?`                    (list all commands)
 * `docker -v`                    (version)
 * `docker version`               (long client/server version)
@@ -70,6 +69,9 @@ output: html_document
 - Directories:
     - `/var/lib/docker`
     - `c:\ProgramData\docker`
+- Docker Daemon logs
+    - SO Post: https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log 
+    - Ubuntu: `sudo journalctl -fu docker.service`
 
 # Repositories
 * `docker vafsb/faketemp login -u vafsb -p xxxxxxx`   (login)
@@ -80,7 +82,7 @@ output: html_document
 
 # Inspecting a docker image
 * `docker image inpsect 19caaf3fbbf3`   # outputs various parameters formated in json
-* `docker run -it edgeHub bash`         # run an image, login to it and poke around
+* `docker run -it f7190e39d56b bash`         # run an image, login to it and poke around
 
 
 # Inspecting a running docker container
@@ -101,6 +103,11 @@ output: html_document
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow`
 
 
+# Remove all images with <none>
+* 
+* `docker rmi $(docker images | grep none\> | tr -s ' ' | cut -d ' ' -f 3)`
+
 # Docker foreground/background process killing advice
 - See the comments from GHETTO.CHILD in his answer
 - https://stackoverflow.com/questions/32224101/kill-a-running-process-like-a-webserver-inside-a-docker-container-without-killin
+docke
