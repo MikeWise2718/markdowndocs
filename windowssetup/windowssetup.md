@@ -54,3 +54,6 @@ Stuff I do every time I reinstall windows.
          - 	r,cs,csv,js,json,py
      - 	Bitmaps?
      - 	What else?
+
+### Tray Management
+ - https://www.howtogeek.com/75510/beginner-how-to-customize-and-tweak-your-system-tray-icons-in-windows-7/

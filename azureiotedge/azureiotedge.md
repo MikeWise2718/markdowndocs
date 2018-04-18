@@ -187,8 +187,53 @@ System.AggregateException: One or more errors occurred. (Docker API responded wi
 
 - Issue: Docker was not pulling the latest images
    - Date 2018-04-17 12:30
-   - Resolution: I was entering the wrong name (duh...)
+   - Resolution: I was entering the wrong name on the docker pull command  (h-objdet instead of h-camcap ... I think...)
 
-- Issue: Template
-   - Date 2018-XX-XX xx:xx
-   - Resolution: 
+- Issue: After getting h-camcap and h-objdet working, I tried to setup a shared library so they could share definitions of the communication objects. That did not work
+   - Date 2018-04-18 17:00
+   - Resolution: Still working on it, but I think I have to make sure I have no conficts and rebuild the shared library project from the correct .Net Core template.
+```
+Time Elapsed 00:00:02.17
+PS D:\transfer\vafsb\h-mod\h-objdet> dotnet publish
+Microsoft (R) Build Engine version 15.5.179.9764 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 15.3 ms for D:\transfer\vafsb\h-mod\h-common\h-common.csproj.
+  Restore completed in 63.73 ms for D:\transfer\vafsb\h-mod\h-objdet\h-objdet.csproj.
+  h-common -> D:\transfer\vafsb\h-mod\h-common\bin\Debug\netstandard2.0\h-common.dll
+  h-objdet -> D:\transfer\vafsb\h-mod\h-objdet\bin\Debug\netcoreapp2.0\h-objdet.dll
+  h-objdet -> D:\transfer\vafsb\h-mod\h-objdet\bin\Debug\netcoreapp2.0\publish\
+PS D:\transfer\vafsb\h-mod\h-objdet> docker build --rm -f "d:\transfer\vafsb\h-mod\h-objdet\Dockerfile.amd64" -t vafsb.azurecr.io/h-objdet:latest-amd64 "d:\transfer\vafsb\h-mod\h-objdet"
+Sending build context to Docker daemon  10.85MB
+Step 1/10 : FROM microsoft/dotnet:2.0-sdk AS build-env
+ ---> 2e537f28e47b
+Step 2/10 : WORKDIR /app
+ ---> Using cache
+ ---> 31122610aea5
+Step 3/10 : COPY *.csproj ./
+ ---> Using cache
+ ---> 1a0ab7f05c5b
+Step 4/10 : RUN dotnet restore
+ ---> Using cache
+ ---> c730cdeb6000
+Step 5/10 : COPY . ./
+ ---> Using cache
+ ---> 153f8a62546c
+Step 6/10 : RUN dotnet publish -c Release -o out
+ ---> Running in 66cd7047773e
+Microsoft (R) Build Engine version 15.6.84.34536 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+/usr/share/dotnet/sdk/2.1.104/NuGet.targets(895,5): warning MSB3202: The project file "/h-common/h-common.csproj" was not found. [/app/h-objdet.csproj]
+/usr/share/dotnet/sdk/2.1.104/NuGet.targets(986,5): warning MSB3202: The project file "/h-common/h-common.csproj" was not found. [/app/h-objdet.csproj]
+  Restoring packages for /app/h-objdet.csproj...
+  Generating MSBuild file /app/obj/h-objdet.csproj.nuget.g.props.
+  Generating MSBuild file /app/obj/h-objdet.csproj.nuget.g.targets.
+  Restore completed in 655.05 ms for /app/h-objdet.csproj.
+/usr/share/dotnet/sdk/2.1.104/Microsoft.Common.CurrentVersion.targets(1823,5): warning : The referenced project '../h-common/h-common.csproj' does not exist. [/app/h-objdet.csproj]
+Program.cs(17,11): error CS0246: The type or namespace name 'vafsb' could not be found (are you missing a using directive or an assembly reference?) [/app/h-objdet.csproj]
+Score.cs(18,11): error CS0246: The type or namespace name 'vafsb' could not be found (are you missing a using directive or an assembly reference?) [/app/h-objdet.csproj]
+Score.cs(20,9): error CS0246: The type or namespace name 'AudiBatchFrame' could not be found (are you missing a using directive or an assembly reference?) [/app/h-objdet.csproj]
+Score.cs(37,16): error CS0246: The type or namespace name 'AudiBatchFrame' could not be found (are you missing a using directive or an assembly reference?) [/app/h-objdet.csproj]
+The command '/bin/sh -c dotnet publish -c Release -o out' returned a non-zero code: 1
+```
