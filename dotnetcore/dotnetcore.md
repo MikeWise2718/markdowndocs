@@ -16,13 +16,13 @@ output: html_document
 
 # Dotnet commands
 - They are documented here: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
-- `dotnet new console` - makes a .dot net console app in the current directory
+- `dotnet new console` - makes a .dot net console app using the console template in the current directory
 - `dotnet restore` - adds all the crap to make it work (from version 2.0 run automatically by new, build and run)
 - `dotnet build` - build from the csproj in the directory
 - `dotnet publish` - go get all the dlls and things you need to run this and copy everything needed to the bin directory
 - `dotnet run something.dll` - runs it - note that if your program has changed, dotnet will run the 
 - `dotnet --version` - query the version
-- `dotnet list templates` - list all the templates
+- `dotnet new -l` - list all the templates
 
 # Build File
 - The build file is ths `*.csproj` file.
