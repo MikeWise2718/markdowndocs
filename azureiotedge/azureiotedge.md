@@ -192,6 +192,8 @@ System.AggregateException: One or more errors occurred. (Docker API responded wi
 - Issue: After getting h-camcap and h-objdet working, I tried to setup a shared library so they could share definitions of the communication objects. That did not work
    - Date 2018-04-18 17:00
    - Resolution: Still working on it, but I think I have to make sure I have no conficts and rebuild the shared library project from the correct .Net Core template.
+   - Update 2018-04-20 10:00: Never got a fix, but an acceptable workaround is to communicate with modules with base types like `List<string>`
+   - Update 2018-04-20 12:30: Turns out that is not acceptable, if you want to talk to IoT Stream Analytics you need to use json messages. However doubly declaring the structures works for now.
 ```
 Time Elapsed 00:00:02.17
 PS D:\transfer\vafsb\h-mod\h-objdet> dotnet publish
