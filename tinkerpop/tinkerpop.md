@@ -7,8 +7,8 @@ output: html_document
 # Intro
 Apache TinkerPop is a generalized graph traversal languauge. While a bit complicated (feels like it could be simpler) it is exceedingly powerful.
 
-- The main documentation is here: [http://tinkerpop.apache.org/docs/current/reference] 
-- Recipes is probably the best place to look for how to do things -[]([http://tinkerpop.apache.org/docs/current/recipes) 
+- The main documentation is here: [lin](http://tinkerpop.apache.org/docs/current/reference) 
+- Recipes is probably the best place to look for how to do things -[link] (http://tinkerpop.apache.org/docs/current/recipes) 
 
 # Installation
 Didn't take notes. Opps.
@@ -24,17 +24,17 @@ There seems to be no integration with R.
 I wrote a few routines in R to transfer the data. Probably should have just written Groovy commands to load the data.
 Used something called GraphSON which is not even legal JSON (can't have a single root so that it is easily divied up to multiple processes) - and there seem to be a couple different versions that are not exactly compatible. Under the covers GraphSON appears to just be Java serialzation which is NOT a good thing since it is probably the root of the unnecssary reducnancy (links coded twice).<br>
 
-Documentation is here: [http://tinkerpop.apache.org/docs/current/reference/#_gremlin_i_o] 
+Documentation is [here](http://tinkerpop.apache.org/docs/current/reference/#_gremlin_i_o) 
 
 
 # Structure and Concepts
 This link - [The Graph Process](http://tinkerpop.apache.org/docs/current/reference/#the-graph-process) explains a lot of the structure of how Gremlin works from the point of view of types and objects.
 
-- Vertex - have identifiers - not sure if they are always assigned or internally managed.
-- Edge - have identifiers - not sure if they are always assigned or internally managed. 
-- Properties - both edges and vertices have properties, although they are different in certain aspects - edge properties can be multi-valued I think and a bit more.
-- Graph - Graphs, Vertices and Edges are described [http://tinkerpop.apache.org/docs/current/reference/#_the_graph_structure]
- - Graph Process - described here - [http://tinkerpop.apache.org/docs/current/reference/#the-graph-process] and referred to mostly as a "traversal".
+- `Vertex` - have identifiers - not sure if they are always assigned or internally managed.
+- `Edge` - have identifiers - not sure if they are always assigned or internally managed. 
+- `Properties` - both edges and vertices have properties, although they are different in certain aspects - edge properties can be multi-valued I think and a bit more.
+- `Graph` - Graphs, Vertices and Edges are described [here]( [http://tinkerpop.apache.org/docs/current/reference/#_the_graph_structure)
+ - `Graph Process` - described [here](http://tinkerpop.apache.org/docs/current/reference/#the-graph-process) and referred to mostly as a "traversal".
 
  # Example
 
