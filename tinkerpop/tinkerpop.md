@@ -7,8 +7,8 @@ output: html_document
 # Intro
 Apache TinkerPop is a generalized graph traversal languauge. While a bit complicated (feels like it could be simpler) it is exceedingly powerful.
 
-- The main documentation is here: [lin](http://tinkerpop.apache.org/docs/current/reference) 
-- Recipes is probably the best place to look for how to do things -[link] (http://tinkerpop.apache.org/docs/current/recipes) 
+- The main documentation is here: [link](http://tinkerpop.apache.org/docs/current/reference) 
+- Recipes is probably the best place to look for how to do things -[link](http://tinkerpop.apache.org/docs/current/recipes) 
 
 # Installation
 Didn't take notes. Opps.
