@@ -38,8 +38,13 @@ Ubuntu seems to be the data science standard now.
 - Had to install with gdebi to get the dependencies installed.
 - Useful post setting screen size is [here](https://askubuntu.com/questions/948774/configure-tigervnc-server-to-start-with-system-in-ubuntu-gnome-16-04)
 
+# Scripts
+ - write scripts and dump then in your `~/bin` directory to save typing
+ - begin then with `#!/bin/bash` remember "shebang bin bash"
+ - you can't used them to change directory unless you run them in your shell with a dot command like `. cdobjdet` 
+
 # VNC
-Finally got something working, but it is not great.
+- Finally got something working, but it is not great.
 
 ## Ubuntu:
 - installed mir on Ubuntu with sudo apt-get install unity8-desktop-session-mir
