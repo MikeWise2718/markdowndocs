@@ -72,6 +72,7 @@ output: html_document
 - Docker Daemon logs
     - SO Post: https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log 
     - Ubuntu: `sudo journalctl -fu docker.service`
+    - Windows (PowerShell): `Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time`
 
 # Repositories
 * `docker vafsb/faketemp login -u vafsb -p xxxxxxx`   (login)

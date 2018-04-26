@@ -239,3 +239,8 @@ Score.cs(20,9): error CS0246: The type or namespace name 'AudiBatchFrame' could 
 Score.cs(37,16): error CS0246: The type or namespace name 'AudiBatchFrame' could not be found (are you missing a using directive or an assembly reference?) [/app/h-objdet.csproj]
 The command '/bin/sh -c dotnet publish -c Release -o out' returned a non-zero code: 1
 ```
+
+ - Issue: Messages were not passing from h-camcap to h-objdet, no error messages in any module included edgeHub and edgeAgent, lost like an hour on this
+   - Date 2018-04-36 14:00
+   - Resolution: Reboot of abra did not help, but stoping the containers and deleteing the exited modules seemed to fix it (?) - seems odd
+
