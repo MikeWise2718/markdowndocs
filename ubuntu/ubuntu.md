@@ -71,12 +71,13 @@ Ubuntu seems to be the data science standard now.
 - grep stuff files - `grep -r tqdm *.py .`
 - find files with a mask - `find . -path "*/src/*.h"`
 - find files with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
-- find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {}`
+- find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {} \;`
+- same with filename and line - `find . -path '*/src/*.h' -exec grep -Hn PATTERN {} \;`
    - see this https://unix.stackexchange.com/questions/131535/recursive-grep-vs-find-type-f-exec-grep-which-is-more-efficient-faster 
 - Another example of finding with grep:   `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
 - After finding things we need to change: `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
 - change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
-- lookin in markdown for a pattern 'iot' -- `find . -name '*.md' -exec grep iot {}`
+- lookin in markdown for a pattern 'iot' -- `find . -name '*.md' -exec grep  iot {}`
 
 # File manager
 - Under Ubuntu it is called `nautilus`

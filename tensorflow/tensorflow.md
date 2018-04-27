@@ -79,7 +79,15 @@ Then test it
 Then you might want to install jupyter
  - pip install jupyter --upgrade 
 
+# List Available devices (CPU,GPU)
 
+```
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
+```
+
+# Log stuff
+TF_CPP_MIN_VLOG_LEVEL=3 python tf-program.py
 
 # Reactivating an old anaconda
 - conda info --envs

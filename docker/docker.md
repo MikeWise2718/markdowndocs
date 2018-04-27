@@ -112,3 +112,6 @@ output: html_document
 - See the comments from GHETTO.CHILD in his answer
 - https://stackoverflow.com/questions/32224101/kill-a-running-process-like-a-webserver-inside-a-docker-container-without-killin
 docke
+
+# Clearing logs
+* Haven't found an explict way to do this, but stopping the tasks and deleting the exited containers does the trick.
