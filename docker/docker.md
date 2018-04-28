@@ -60,6 +60,10 @@ output: html_document
 * `docker images`                (list all the images)
 * `docker images | grep vafsb`   (filtered image list)
 
+
+# Copying stuff
+* `docker cp CONTAINER:SRC_PATH DEST_PATH`
+
 # Building
 * `docker build -t tag .` (build an image using the Docker file in the cwd)
 
@@ -106,7 +110,7 @@ output: html_document
 
 # Remove all images with <none>
 * 
-* `docker rmi $(docker images | grep none\> | tr -s ' ' | cut -d ' ' -f 3)`
+* `oi
 
 # Docker foreground/background process killing advice
 - See the comments from GHETTO.CHILD in his answer

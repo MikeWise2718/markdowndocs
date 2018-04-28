@@ -144,9 +144,13 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - `docker logs mycontainer`
 
 # Internals
+- the current config is stored in `/etc/azure-iot-edge/config.json`
+- there is a flag that can be usefully set there to increase the agent logging level
+     -  `"logLevel": "debug",`
+- The entire manfiest is grabbed from the iot hub and (possibly) saveed in a `/tmp/edgeAgent` file, but then deleted for reasons unknown - it does not seem possible to see the current manifest.
 - agents run from `/app` directory in docker - look here to find the compiled code (dlls)
 - `iotedgectl` is a python controler, source is found in `/usr/local/lib/python2.7/dist-packages/edgectl`
-- configuration strings are mostly in `./config.y`
+- configuration strings are mostly in `./config.py`
 - Linux:
 ```
  14 class EdgeDefault(object):

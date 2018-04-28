@@ -77,3 +77,13 @@ Korea South             35.1796     129.076   koreasouth
 France Central          46.3772       2.373   francecentral
 France South            43.8345       2.1972  francesouth
 ```
+
+
+# Clone from vsts from Linux
+Go to vsts
+Go to profile
+Go to security
+Add an access token for that machine
+Copy the login token to notepad or something
+go to where you want to clone it
+enter "get clone https://repsol-digital
