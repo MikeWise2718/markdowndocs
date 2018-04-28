@@ -12,6 +12,9 @@ Living close to the edge.
   ### Code
   - API Docs: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet 
   - GitHub C# API Code and Docs: https://github.com/Azure/azure-iot-sdk-csharp 
+  - Open source - kind of... "The second version of Azure IoT Edge is in public preview. We intend to open source the code when the product enters general availability and will place the code here."
+  - Found that here: https://github.com/Azure/iot-edge
+  
   ### Tutorials
   - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
   - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
@@ -140,6 +143,116 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - `docker logs edgeHub`
       - `docker logs mycontainer`
 
+# Internals
+- agents run from `/app` directory in docker - look here to find the compiled code (dlls)
+- `iotedgectl` is a python controler, source is found in `/usr/local/lib/python2.7/dist-packages/edgectl`
+- configuration strings are mostly in `./config.y`
+- Linux:
+```
+ 14 class EdgeDefault(object):
+ 15     """
+ 16     This class implements accessor APIs to OS and deployment
+ 17     specific configuration data.
+ 18     """
+ 19     _edge_dir = 'azure-iot-edge'
+ 20     _edge_config_file_name = 'config.json'
+ 21     _edge_meta_dir_name = '.iotedgectl'
+ 22     _edge_meta_config_file = 'config.json'
+ 23     _edge_ref_config_file = 'azure-iot-edge-config-reference.json'
+ 24     _edge_agent_dir_name = "__AzureIoTEdgeAgent"
+ 25     _edge_runtime_log_levels = [EC.EDGE_RUNTIME_LOG_LEVEL_INFO,
+ 26                                 EC.EDGE_RUNTIME_LOG_LEVEL_DEBUG]
+ 27     _windows_config_path = os.getenv('PROGRAMDATA', '%%PROGRAMDATA%%')
+ 28
+ 29     _cert_default_dict = {
+ 30         EC.SUBJECT_COUNTRY_KEY: 'US',
+ 31         EC.SUBJECT_STATE_KEY: 'Washington',
+ 32         EC.SUBJECT_LOCALITY_KEY: 'Redmond',
+ 33         EC.SUBJECT_ORGANIZATION_KEY: 'Default Edge Organization',
+ 34         EC.SUBJECT_ORGANIZATION_UNIT_KEY: 'Edge Unit',
+ 35         EC.SUBJECT_COMMON_NAME_KEY: 'Edge Device CA'
+ 36     }
+ 37
+ 38     _platforms = {
+ 39         EC.DOCKER_HOST_LINUX: {
+ 40             'supported_deployments': [EC.DEPLOYMENT_DOCKER],
+ 41             'default_deployment': EC.DEPLOYMENT_DOCKER,
+ 42             'default_edge_conf_dir': '/etc/' + _edge_dir,
+ 43             'default_edge_data_dir': '/var/lib/' + _edge_dir,
+ 44             'default_edge_meta_dir_env': 'HOME',
+ 45             'deployment': {
+ 46                 EC.DEPLOYMENT_DOCKER: {
+ 47                     EC.DOCKER_ENGINE_LINUX: {
+ 48                         'default_uri': 'unix:///var/run/docker.sock'
+ 49                     },
+ 50                 }
+ 51             }
+ 52         },
+```
+- startup trace
+```
+mike@Abra:/usr/local/lib/python2.7/dist-packages/edgectl/deployment$ sudo iotedgectl --verbose DEBUG start
+DEBUG: Command: start
+DEBUG: Searching Edge config dir in env var EDGECONFIGDIR
+DEBUG: Searching Edge config dir in config file /home/mike/.iotedgectl/config.json
+DEBUG: Using default Edge config dir /etc/azure-iot-edge
+DEBUG: Found config directory: /etc/azure-iot-edge
+DEBUG: Found config File: /etc/azure-iot-edge/config.json
+INFO: Using default IoT Edge configuration dir: /etc/azure-iot-edge
+DEBUG: User certificate option: selfSigned
+DEBUG: Found Edge Agent image: microsoft/azureiotedge-agent:1.0-preview
+DEBUG: Found registry: microsoft
+DEBUG: Found image name: azureiotedge-agent
+DEBUG: Found image tag: 1.0-preview
+DEBUG: Executing command 'start'
+DEBUG: Trying paths: ['/home/mike/.docker/config.json', '/home/mike/.dockercfg']
+DEBUG: Found file at path: /home/mike/.docker/config.json
+DEBUG: Found 'auths' section
+DEBUG: Found an IdentityToken entry for registry vafsb.azurecr.io
+DEBUG: Found an IdentityToken entry for registry mikescontainers.azurecr.io
+DEBUG: Trying paths: ['/home/mike/.docker/config.json', '/home/mike/.dockercfg']
+DEBUG: Found file at path: /home/mike/.docker/config.json
+DEBUG: Found 'auths' section
+DEBUG: Found an IdentityToken entry for registry vafsb.azurecr.io
+DEBUG: Found an IdentityToken entry for registry mikescontainers.azurecr.io
+DEBUG: http://localhost:None "GET /v1.35/info HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/info HTTP/1.1" 200 None
+INFO: Executing 'start'
+Using configuration:
+
+Schema Version:         1
+Connection String:      HostName=vafsb.azure-devices.net;DeviceId=abra-ubu-amd64;SharedAccessKey=******
+Config Directory:       /etc/azure-iot-edge
+Home Directory:         /var/lib/azure-iot-edge
+Hostname:               abra
+Log Level:              info
+Security Option:        selfSigned
+Force No Passwords:     True
+Certificate Subject:
+                        countryCode: US, state: Washington, locality: Redmond
+                        organization: Default Edge Organization, organizationUnit: Edge Unit, commonName: Edge Device CA
+Deployment Type:        docker
+Docker Engine URI:      unix:///var/run/docker.sock
+Edge Agent Image:       microsoft/azureiotedge-agent:1.0-preview
+Registries:
+                        Address: vafsb.azurecr.io, Username: vafsb, Password:******
+Logging Driver:         json-file
+                        max-size: 10m
+
+DEBUG: http://localhost:None "GET /v1.35/containers/json?all=1&limit=-1&trunc_cmd=0&size=0 HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/e0709c285e54eabae220ea2339cb8b6824abfff5b263d901a44e38fd639efa35/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/9f72bb0de5a182590f955399a86f0b1721d21f5dec09253897efb29dc42042ec/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/c1aa9d63fd01f942c08e977d4a00729e5826f74c8a97364b358a21df3dbcf6e5/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/ed5f911c1753e07c7cdfb32d0790e01b00474851096ffb79ea2c835dcedfa4b9/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/cd8453e7b03f03add5e44eee09a331052637a992dbcb54dde305ded46fdd01e2/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/10eff4e66f903def05abecfc41e49e3e1d6b8e52f7ac26fca25a620906c70bec/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "GET /v1.35/containers/0177527e9e601383db9f4da5e40cec33121e4f95922c44554f97ad9a763672db/json HTTP/1.1" 200 None
+INFO: Starting container: edgeAgent
+DEBUG: http://localhost:None "GET /v1.35/containers/edgeAgent/json HTTP/1.1" 200 None
+DEBUG: http://localhost:None "POST /v1.35/containers/cd8453e7b03f03add5e44eee09a331052637a992dbcb54dde305ded46fdd01e2/start HTTP/1.1" 204 0
+Runtime started.
+
+```
 
 # Base images
 - Audi hack

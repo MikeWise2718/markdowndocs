@@ -91,6 +91,11 @@ Ubuntu seems to be the data science standard now.
 - Paste into Terminal Window - Ctrl-Shift-V
 - Other shortcuts can be found [here](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
 
+# System trace
+- use `strace` for tracing system calls
+- try `strings` first
+
+
 
 # Applications
 - Application launch icons can be found in /usr/share/applications
