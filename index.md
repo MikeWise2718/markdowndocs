@@ -15,6 +15,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Javascript](https://mikewise2718.github.io/markdowndocs/javascript/javascript)<br>
 [Git](https://mikewise2718.github.io/markdowndocs/git/git)<br>
 [Anaconda](https://mikewise2718.github.io/markdowndocs/anaconda/anaconda)<br>
+[VI](https://mikewise2718.github.io/markdowndocs/vi/vi)<br>
 
 # Misc Frameworks
 [Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/xamarin)<br>
