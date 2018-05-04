@@ -5,17 +5,24 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-Explain what this thing is and what kind of help can be expected of this file.
+- Power BI - it could be better...
+- My site: https://msit.powerbi.com/groups/me/contentlist
 
-Note that to get a preview of this document in VS Code use Ctrl-Shift-V
+# Overview 
+- It is all about licnsening: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
+- REST API Limitations: https://msdn.microsoft.com/en-us/library/dn950053.aspx
+- Embedded complications: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
 
-Github markdown is explained here: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 
-Example link: [jQuery FAQs](https://learn.jquery.com/using-jquery-core/faq/)
+# Settings
+- They are under Gear/Settings:<br>
+![gears](gearsettings.png)
 
-Example image:
-![Red Fish](SmallerFish.png)
-
+# License type
+- What kind of License do I have? http://community.powerbi.com/t5/Service/Power-BI-Pro-how-to-tell/td-p/186195
+- It is under Gear/Manage Personal Settings<br>
+- According to this Picture I am a "Pro User" - so I can use the REST API:<br>
+![gears](ManagePersonalSettings.png)
 
 # Streaming Real-time data
 - Go to the PBI web thing (https://msit.powerbi.com/groups/me/contentlist/ )
@@ -23,3 +30,5 @@ Example image:
 - Add a tile (+ Add tile in menu)
 - Click on "Custom Streaming Data" then next
 - Add streaming data set
+
+# My m
