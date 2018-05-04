@@ -24,6 +24,14 @@ output: html_document
 - `dotnet --version` - query the version
 - `dotnet new -l` - list all the templates
 
+
+# Packages
+- `dotnet add package packagename` 
+- `dotnet uninstall package packagename` 
+- `dotnet nuget locals all --list` 
+
+More info here: https://docs.microsoft.com/en-us/nuget/tools/dotnet-commands 
+
 # Build File
 - The build file is ths `*.csproj` file.
 

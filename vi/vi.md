@@ -48,4 +48,5 @@ For more see this: - https://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Mo
 - `:set wrapmargin=0`
 - `:set formatoptions-=t` turns off autowrapping (this one actually works)
 
-# Something Else
+# Swap files
+- Don't know where these are stored since `ls -a *.swp` give me an empty result in `$cwd`, `/home/mike`, and in `/tmp`
