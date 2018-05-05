@@ -95,7 +95,8 @@ Ubuntu seems to be the data science standard now.
 - use `strace` for tracing system calls
 - try `strings` first
 
-
+# Get BIOS Information
+- sudo dmidecode | grep "BIOS Information" -A10 | grep -e "Version:" -e "Vendor:"
 
 # Applications
 - Application launch icons can be found in /usr/share/applications
