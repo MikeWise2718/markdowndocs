@@ -7,7 +7,7 @@ output: html_document
 # Intro
 Azure REST API
 
-# John Gallant
+# John Gallant and Postman
 - Blog post - https://blog.jongallant.com/2017/11/azure-rest-apis-postman/
 - youtube post - shows how to do a call the the mangement api with Postman to get a list of your IoT Hubs
     - https://www.youtube.com/watch?v=ujzrq8Fg9Gc (in 7:44 minutes instead of 2...)
@@ -90,7 +90,7 @@ In Postman
 - add the tenant_id parameter to the POST
 - add the body parameters(the other 4 ) using bluk edit
 - send
-Examine the parmaeters iwth the eye
+Examine the parameters with the "eye" icon
 ```
 
 
@@ -102,6 +102,10 @@ Examine the parmaeters iwth the eye
 - And this is the Chrome App:<br>
 ![ChromeApp](PostmanChromeApp.png)
 - Hard to see a request in raw form - see this post for how to do it: http://blog.getpostman.com/2015/06/13/debugging-postman-requests/ 
+
+
+# Other posts
+- This helped a lot: https://developers.de/blogs/damir_dobric/archive/2016/05/24/aad-authentication-with-rest-api-client.aspx 
 
 
 # Issues
