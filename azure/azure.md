@@ -18,3 +18,99 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
  # Azure IoT Hub
   - I moved this stuff to a dedicated page on it
 
+# Azure AD
+- This is fundamental: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios
+- Basics of registering an application: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad 
+- Application types and scenrios: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#application-types-and-scenarios
+- Code! (and a useful table) - https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-code-samples#desktop-and-mobile-public-client-applications-calling-microsoft-graph-or-a-web-api 
+
+Options available
+- AD Join /AAD Join/Add Work Account - https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/
+- How domain join is different now - https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/
+- AD and MPW in WIndows 10 - https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/ 
+
+
+# Acronyms
+- MDM means Mobile Device Managment
+- NgcSet means: "NgcSet refers to whether the user has provisioned Windows Hello for Business (WHfB). Azure AD joined devices provision WHfB by default when the user signs in for the first time to the device. Hybrid Azure AD joined devices is off by default. There is Group Policy that you can enable, however there is additional configuration needed on-prem to support WHfB authentication to DCs. When the user provisions WHfB, NgcSet must show YES."
+
+# Joining AAD
+- Tips - https://docs.microsoft.com/en-us/azure/active-directory/device-management-troubleshoot-hybrid-join-windows-current
+
+- My current status on Uxie - 5 May 2018
+```
+C:\WINDOWS\system32>dsregcmd /status
+
++----------------------------------------------------------------------+
+| Device State                                                         |
++----------------------------------------------------------------------+
+
+          AzureAdJoined : NO
+       EnterpriseJoined : NO
+               DeviceId : a926cbb6-f302-4978-83d4-57ea3c3769d8
+             Thumbprint : C0D030EEAA8F3145E2976E17A256ADF72220F253
+         KeyContainerId : 9c83c8f4-a902-4b9e-bef1-fc1098cc8d91
+            KeyProvider : Microsoft Platform Crypto Provider
+           TpmProtected : YES
+           KeySignTest: : PASSED
+                    Idp : login.windows.net
+               TenantId : 72f988bf-86f1-41af-91ab-2d7cd011db47
+             TenantName : Microsoft
+            AuthCodeUrl : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/authorize
+         AccessTokenUrl : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token
+                 MdmUrl : https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
+              MdmTouUrl : https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
+       MdmComplianceUrl :
+            SettingsUrl : eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ==
+         JoinSrvVersion : 1.0
+             JoinSrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/device/
+              JoinSrvId : urn:ms-drs:enterpriseregistration.windows.net
+          KeySrvVersion : 1.0
+              KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
+               KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
+     WebAuthNSrvVersion : 1.0
+         WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/72f988bf-86f1-41af-91ab-2d7cd011db47/
+          WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
+ DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/72f988bf-86f1-41af-91ab-2d7cd011db47/
+  DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
+           DomainJoined : YES
+             DomainName : WISEDOM
+
++----------------------------------------------------------------------+
+| User State                                                           |
++----------------------------------------------------------------------+
+
+                 NgcSet : NO
+        WorkplaceJoined : YES
+      WorkplaceDeviceId : a926cbb6-f302-4978-83d4-57ea3c3769d8
+    WorkplaceThumbprint : C0D030EEAA8F3145E2976E17A256ADF72220F253
+           WorkplaceIdp : login.windows.net
+      WorkplaceTenantId : 72f988bf-86f1-41af-91ab-2d7cd011db47
+    WorkplaceTenantName : Microsoft
+        WorkplaceMdmUrl : https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
+   WorkplaceSettingsUrl : eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ==
+          WamDefaultSet : YES
+    WamDefaultAuthority : consumers
+           WamDefaultId : https://login.microsoft.com
+         WamDefaultGUID : {D7F9888F-E3FC-49B0-9EA6-A85B5F392A4F} (MicrosoftAccount)
+             AzureAdPrt : NO
+    AzureAdPrtAuthority : NO
+          EnterprisePrt : NO
+ EnterprisePrtAuthority : NO
+
++----------------------------------------------------------------------+
+| Ngc Prerequisite Check                                               |
++----------------------------------------------------------------------+
+
+          IsUserAzureAD : NO
+          PolicyEnabled : YES
+         DeviceEligible : NO
+     SessionIsNotRemote : YES
+         CertEnrollment : mobile device management
+              ScepReady : YES
+      AadRecoveryNeeded : NO
+           PreReqResult : WillNotProvision
+
+
+C:\WINDOWS\system32>
+```
