@@ -40,3 +40,7 @@ output: html_document
 - 403 (Not Autorized) - This can mean a bad token, or you haven't given your app the right permissiosn
 - 404 (URL not found) - you used the wrong URL somehow
 - 400 (Bad Request) - I got this trying to use a Guid (which is not a valid datatype I suppose, but I also got it when I didn't have matching brackets, etc)
+- Streaming Data Set wasn't showing up in PBI even though I had provisioned and authenticated it in ASA - Turned out I had everything going to storage endpoints (using routes), so there was no data going to PBI, and it seemingly only provisions the dataset visibly when the first data arrives. Killed an hour or so of work looking for that.
+
+# Tiles
+- https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/16982443-text-tile-for-real-time-data
