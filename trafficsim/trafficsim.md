@@ -27,3 +27,5 @@ So what is there out there?
 VANETS - https://en.wikipedia.org/wiki/Vehicular_ad_hoc_network
 
 
+# Route Planning
+- MSR Paper - https://www.microsoft.com/en-us/research/wp-content/uploads/2014/01/MSR-TR-2014-4.pdf
