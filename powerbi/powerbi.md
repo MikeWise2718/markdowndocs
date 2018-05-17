@@ -44,3 +44,29 @@ output: html_document
 
 # Tiles
 - https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/16982443-text-tile-for-real-time-data
+
+
+# Custom Visuals
+- Usage docs - https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals
+- Github sources and instructions - https://github.com/Microsoft/PowerBI-visuals
+- R Custom Visuals - https://github.com/Microsoft/PowerBI-visuals/blob/master/RVisualTutorial/CreateNewVisual.md
+
+
+# Creating R Custom Visuals
+- Installation notes:
+        - Just followed the instructions.
+            - Install the PBI tools. `npm install -g powerbi-visuals-tools`
+            - Test it: `pbiviz`
+            - Create an SSL cert: `pbiviz --create-cert` (note the password)
+            - Install the SSL cert: `pbiviz --install-cert` 
+                - Browse to the "Trusted Root Certification Authorities" Certificate Store
+            - Enable "Developer Visual" in "Settings" on the PBI Web Page 
+        - Have to install a cert for it to work.
+        - Got `ERR_SSL_VERSION_OR_CIPHER_MISMATCH` error in browser (after digging past the "Could not connect to server")
+        - https://github.com/Microsoft/PowerBI-visuals/issues/107
+        - Had to  `npm install` a couple of times, and then reinstall the certs aftwards or the browser complained it could not get a secure SSL connection
+        - `pbiviz` - General usage instructions https://github.com/Microsoft/PowerBI-visuals/blob/master/tools/usage.md 
+
+- Starting a new  project
+    - `pbiviz new myProjectName -t rvisual`
+        
