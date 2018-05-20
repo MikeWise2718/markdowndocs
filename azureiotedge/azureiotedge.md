@@ -23,7 +23,7 @@ Living close to the edge.
   - Deployment Manifests - https://docs.microsoft.com/en-us/azure/iot-edge/module-composition
   - Temp Sensor Code - https://github.com/Azure/iot-edge/tree/master/v2/samples/azureiotedge-simulated-temperature-sensor 
   - Troubleshooting: - https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot 
-  - A device is controled with the python `iotedgectl` utility
+  - A device is controlled with the python `iotedgectl` utility
       - some docs are here - https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl
   - Important things you do with `iotedgectl`
      - Enroll your device with your Azure IoT Edge instance so you can start `edgeAgent`

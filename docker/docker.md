@@ -109,8 +109,8 @@ output: html_document
 
 
 # Remove all images with <none>
-* 
-* `oi
+* `docker rm -v $(docker ps -a -q -f status=exited)`
+* `docker rmi $(docker images | grep \<none\> | tr -s ' ' | cut -d ' ' -f 3)`
 
 # Docker foreground/background process killing advice
 - See the comments from GHETTO.CHILD in his answer
@@ -119,3 +119,14 @@ docke
 
 # Clearing logs
 * Haven't found an explict way to do this, but stopping the tasks and deleting the exited containers does the trick.
+
+# Docker and .NET core and Python
+* Blog - https://andrewlock.net/exploring-the-net-core-docker-files-dotnet-vs-aspnetcore-vs-aspnetcore-build/
+* Docker images for Python - https://snarky.ca/what-are-the-popular-docker-images-for-python/
+* COTW - Container of the Week - https://elegantinfrastructure.com/tag/cotw/
+
+
+# Important things to understand
+* COPY vs. ADD - https://stackoverflow.com/questions/24958140/what-is-the-difference-between-the-copy-and-add-commands-in-a-dockerfile
+* #(nop) - https://forums.docker.com/t/what-is-nop-and-where-does-it-come-from/32665
+* Docker and TensorFlow - https://medium.com/@cswiggz/quick-start-to-tensorflow-in-docker-with-a-gui-39414245251f

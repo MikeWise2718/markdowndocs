@@ -45,6 +45,25 @@ Turns out I didn't have an ISDN phone line anymore, I have only Internet telepho
 
 - Getting the wiring right was complicated. I need to use some kind of an adapter.
 
+# Language
+* Apparently the 7490 German edition does not have a language setting
+* https://en.avm.de/service/fritzbox/fritzbox-7490/knowledge-base/publication/show/428_Selecting-the-menu-language-on-your-FRITZ-Fon/
+* https://www.facebook.com/fritzboxinternational/posts/662292577180496
+
+
+
+#DNS
+- Static addresses - you need to do two things
+        - Tell it to always respond to a DHCP address with a fixed IP4 address under the details in the `Netwerk` entry for that device
+        - Enter it as an exception in the `DNS-Rebind-Shutz` box
+        - Details here: https://blog.lobraun.de/2015/05/03/static-ips-and-dns-names-for-devices-in-your-home-network/
+- Doesn't seem to work like that though
+    - Ping `abra` from `uxie` give me an `192.168.25.187` (the wireless interface)
+    - Ping `abra.fritz.box` from `uxie` give me an `192.168.25.187` (the wireless interface)
+    - What's going on?
+    - Have to investigate with some tool (nslookup?)
+    - https://serverfault.com/questions/41064/whats-the-command-line-utility-in-windows-to-do-a-reverse-dns-look-up/352556
+
 
 # Wifi
 To do
