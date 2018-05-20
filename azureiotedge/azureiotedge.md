@@ -14,10 +14,13 @@ Living close to the edge.
   - GitHub C# API Code and Docs: https://github.com/Azure/azure-iot-sdk-csharp 
   - Open source - kind of... "The second version of Azure IoT Edge is in public preview. We intend to open source the code when the product enters general availability and will place the code here."
   - Found that here: https://github.com/Azure/iot-edge
+  - Runtime repositories - https://hub.docker.com/r/microsoft/dotnet/tags/
+  
   
   ### Tutorials
   - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
   - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
+
   ### Guidance
   - Deploying via Azure CLI 2.0 - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
   - Deployment Manifests - https://docs.microsoft.com/en-us/azure/iot-edge/module-composition
@@ -76,6 +79,8 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
     - Then from the command line windows you need to do
       - `az acr login --name mikescontainers`
       - `docker push mikescontainers.azurecr.io/filtermodule:latest`
+
+# Latest code reposotiries
 
 # How tos on an Edge device you are deploying to
  - Install the IoT edge runtime - basically, install pip (for python) and then use pip to install the runtime
