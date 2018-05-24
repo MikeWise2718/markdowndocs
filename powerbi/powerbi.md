@@ -13,8 +13,11 @@ output: html_document
 - REST API Limitations: https://msdn.microsoft.com/en-us/library/dn950053.aspx
 - Embedded complications: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
 
+# PBI Developer Links
+- PBBWI Developer Center (link changed) - https://pbiwebprod-docs.azurewebsites.net/en-us/developers 
 
-# Settings
+
+# PBI Web Settings
 - They are under Gear/Settings:<br>
 ![gears](gearsettings.png)
 
@@ -44,6 +47,7 @@ output: html_document
 
 # Tiles
 - https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/16982443-text-tile-for-real-time-data
+
 
 
 # Custom Visuals

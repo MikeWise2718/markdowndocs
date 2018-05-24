@@ -63,6 +63,7 @@ Not really that trival, described in some detail in the github repo [here](https
 - You need to download this guy's pip wheels and install from there
   - git clone https://github.com/peterlee0127/tensorflow-nvJetson
   - He lists what combinations of Jetpack, cuDNN, Cuda, and Python he managed to get to to work - stick with those versions
+- Compilation instructions from someone else: https://gist.github.com/vellamike/7c26158c93e89ef155c1cc953bbba956  
 
 # Installation of Object Detection Zoo
   - git clone https://github.com/tensorflow/models/object_detection

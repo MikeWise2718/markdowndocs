@@ -18,6 +18,7 @@ output: html_document
 # Basic share
 * see my ubuntu question for cd /a sample write up
 * create a share directory (`/media/transfer`) with mask 755 and owner being the user (`mike` in this example)
+* the smb user needs to be a valid user on the machine
 * config is in `/etc/samba/smb.conf`
 * don't forget to set an extra SMB password with `sudo smbpasswd -a mike`
 * restart with `sudo service smbd restart`
