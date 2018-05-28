@@ -96,3 +96,13 @@ Properties        : {
                       "location": "West Europe"
                     }
 ```
+
+
+# Issues
+- Could not configure the diagnostics page?
+- Started getting error as follows:
+```
+Received a batch with inconsistent schemas. Please ensure that the schemas of output events are consistent and then restart the job.
+```
+![inconsistentschemaerr](InconsistentSchemasError.png)
+Problem was I was sending two messahage schemas with `SendMessage` with the same `messageType` parameter

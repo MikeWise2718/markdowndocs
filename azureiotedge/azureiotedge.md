@@ -20,6 +20,8 @@ Living close to the edge.
   ### Tutorials
   - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
   - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
+      - `dotnet new -i Microsoft.Azure.IoT.Edge.Module`
+      - `dotnet new aziotedgemodule -n FilterModule -r <your container registry address>/filtermodule`
 
   ### Guidance
   - Deploying via Azure CLI 2.0 - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
