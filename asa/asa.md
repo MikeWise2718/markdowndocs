@@ -98,11 +98,19 @@ Properties        : {
 ```
 
 
+
 # Issues
+- Configuring logs - took me a long time to get these to work. They use the common Azure Log service
+     - You configure them with the "Diagnostic Logs Setting"
+     - To get them you then use storage exploer
+     - If you chose "archive logs" - then the error logs appear in deeply burried in a container you specified:<br>
+![storageview](AzureStorageExplorerExecLogs.png)<br?>
+
+
 - Could not configure the diagnostics page?
 - Started getting error as follows:
 ```
 Received a batch with inconsistent schemas. Please ensure that the schemas of output events are consistent and then restart the job.
 ```
-![inconsistentschemaerr](InconsistentSchemasError.png)
+![inconsistentschemaerr](InconsistentSchemasError.png)<br>
 Problem was I was sending two messahage schemas with `SendMessage` with the same `messageType` parameter
