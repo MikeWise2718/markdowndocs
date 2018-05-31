@@ -23,7 +23,8 @@ output: html_document
 
 # License type
 - What kind of License do I have? http://community.powerbi.com/t5/Service/Power-BI-Pro-how-to-tell/td-p/186195
-- It is under Gear/Manage Personal Settings<br>
+- Pricing: https://powerbi.microsoft.com/en-us/pricing/
+- It is under Gear/Manage Storage (oddly)<br>
 - According to this Picture I am a "Pro User" - so I can use the REST API:<br>
 ![gears](ManagePersonalSettings.png)
 
