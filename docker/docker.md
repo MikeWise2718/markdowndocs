@@ -103,6 +103,7 @@ output: html_document
 # Terminal commands
 * `docker exec -it tf /bin/bash`  # Open a terminal on a docker
 * `docker run -it f7190e39d56b bash`         # run an image, login to it and poke around
+* Get `ps -ax` in that docker : `apt-get update && apt-get install procps`
 
 # Useful 
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow`
