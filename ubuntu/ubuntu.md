@@ -78,6 +78,8 @@ Ubuntu seems to be the data science standard now.
 - After finding things we need to change: `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
 - change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
 - lookin in markdown for a pattern 'iot' -- `find . -name '*.md' -exec grep  iot {}`
+- ls just directories: `ls  -d */`
+
 
 # File manager
 - Under Ubuntu it is called `nautilus`
