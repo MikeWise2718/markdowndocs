@@ -56,6 +56,10 @@ output: html_document
 - Github sources and instructions - https://github.com/Microsoft/PowerBI-visuals
 - R Custom Visuals - https://github.com/Microsoft/PowerBI-visuals/blob/master/RVisualTutorial/CreateNewVisual.md
 
+# Workspaces
+- Works spaces are created from the icon menu on the left - the one with all the overlaping-overlaid boxes
+- This opens up a list of all the workshapces you have access to. At the very bottom is an option to create a workspace
+- This option (the right to create PBI groups (workspaces apparenatly) can be turned off by an administrator.
 
 # Creating R Custom Visuals
 - Installation notes:
