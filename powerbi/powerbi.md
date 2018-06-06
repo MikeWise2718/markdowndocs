@@ -75,7 +75,33 @@ output: html_document
         - https://github.com/Microsoft/PowerBI-visuals/issues/107
         - Had to  `npm install` a couple of times, and then reinstall the certs aftwards or the browser complained it could not get a secure SSL connection
         - `pbiviz` - General usage instructions https://github.com/Microsoft/PowerBI-visuals/blob/master/tools/usage.md 
+        - Controlling R Script from Property Pane
+        https://github.com/Microsoft/PowerBI-visuals/blob/master/RVisualTutorial/PropertiesPane.md
+
 
 - Starting a new  project
-    - `pbiviz new myProjectName -t rvisual`
+    - Always create it in a new directory so as not to destroy the old project
+        - This creates a templateed `pbiviz new parkmapviz1 -t rvisual` project
+        - To get your visual to work you then just have to replace `script.R`
+        - To get a custom PBI "Property Pane" for you have to edit:
+            - `../capabilities.json`
+            - `../src/visual.ts`
+            - See above PropertiesPane link for what to change (it is obsolete now and does not work - see below) - there is also a github repo
+        - To build the package you do:
+            - `pbiviz package`
+            - This creates a `*.pbiviz` file in the `../dist` subdirectory
+            - Documented here: https://github.com/Microsoft/PowerBI-visuals/blob/master/tools/usage.md#packaging-your-visual-for-distribution 
+            - Updating to version 1.6
+                - had a lot of trouble compiling with the pane extension, the guidance above is obsolete
+                - Did a `git clone` of the `PowerBi-visual-sampleCorrPlotRVisual`
+                - Did a `pbiviz update 1.6.0` in order to get the `pbiviz package` to work
+                - Then copyied over the `src/*.ts` files
+                - And the `capabilites.json` file
+            - To test you have to run `pbiviz start` from the root of your pbi visual project directory
+            - Then create a report in your PBI workspace, and add a visualization with the "</>" icon  in it (near the end nex to the world icon (the ARCgis Maps for PBI icon.)<br>
+            ![customvisual in pbi](customVisualInPbi.png)<br>
+    
+# Complaints
+* No Text Tiles - https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/16982443-text-tile-for-real-time-data
+
         
