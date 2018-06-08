@@ -114,3 +114,5 @@ Ubuntu seems to be the data science standard now.
 - Installation straightforward
 - Installed Chrome next (via Firefox)
 
+# Crontab
+

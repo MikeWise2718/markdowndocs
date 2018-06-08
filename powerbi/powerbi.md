@@ -101,6 +101,61 @@ output: html_document
             - Then create a report in your PBI workspace, and add a visualization with the "</>" icon  in it (near the end nex to the world icon (the ARCgis Maps for PBI icon.)<br>
             ![customvisual in pbi](customVisualInPbi.png)<br>
     
+
+# PowerBIPS
+* PowerShell wrapper for PBI REST API
+* GitHub repo - https://github.com/DevScope/powerbi-powershell-modules/
+* Available on PowerShell Gallery: https://www.powershellgallery.com/packages/PowerBIPS
+* Install with `Install-Module -Name PowerBIPS`
+
+* https://stackoverflow.com/questions/6354317/how-do-i-retrieve-the-available-commands-from-a-module
+* No real API doc but here is a listing of the commands. They don't correpsond closely to the REST API at first glance: https://docs.microsoft.com/en-us/rest/api/power-bi/ - more like a subset
+```
+PS C:\WINDOWS\system32> Import-Module PowerBIPS
+PS C:\WINDOWS\system32> Get-Command -Module PowerBIPS
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Alias           Get-PBIWorkspace                                   2.0.1.0    PowerBIPS
+Alias           Get-PBIWorkspaceUsers                              2.0.1.0    PowerBIPS
+Alias           New-PBIWorkspace                                   2.0.1.0    PowerBIPS
+Alias           New-PBIWorkspaceUser                               2.0.1.0    PowerBIPS
+Alias           Set-PBIWorkspace                                   2.0.1.0    PowerBIPS
+Alias           Update-PBIDataset                                  2.0.1.0    PowerBIPS
+Function        Add-PBITableRows                                   2.0.1.0    PowerBIPS
+Function        Clear-PBITableRows                                 2.0.1.0    PowerBIPS
+Function        Copy-PBIReports                                    2.0.1.0    PowerBIPS
+Function        Export-PBIReport                                   2.0.1.0    PowerBIPS
+Function        Get-PBIAuthToken                                   2.0.1.0    PowerBIPS
+Function        Get-PBIDashboard                                   2.0.1.0    PowerBIPS
+Function        Get-PBIDashboardTile                               2.0.1.0    PowerBIPS
+Function        Get-PBIDataSet                                     2.0.1.0    PowerBIPS
+Function        Get-PBIDatasetParameters                           2.0.1.0    PowerBIPS
+Function        Get-PBIDatasetRefreshHistory                       2.0.1.0    PowerBIPS
+Function        Get-PBIDataSetTables                               2.0.1.0    PowerBIPS
+Function        Get-PBIDatasources                                 2.0.1.0    PowerBIPS
+Function        Get-PBIGroup                                       2.0.1.0    PowerBIPS
+Function        Get-PBIGroupUsers                                  2.0.1.0    PowerBIPS
+Function        Get-PBIImports                                     2.0.1.0    PowerBIPS
+Function        Get-PBIModuleConfig                                2.0.1.0    PowerBIPS
+Function        Get-PBIReport                                      2.0.1.0    PowerBIPS
+Function        Import-PBIFile                                     2.0.1.0    PowerBIPS
+Function        Invoke-PBIRequest                                  2.0.1.0    PowerBIPS
+Function        New-PBIDashboard                                   2.0.1.0    PowerBIPS
+Function        New-PBIDataSet                                     2.0.1.0    PowerBIPS
+Function        New-PBIGroup                                       2.0.1.0    PowerBIPS
+Function        New-PBIGroupUser                                   2.0.1.0    PowerBIPS
+Function        Out-PowerBI                                        2.0.1.0    PowerBIPS
+Function        Request-PBIDatasetRefresh                          2.0.1.0    PowerBIPS
+Function        Set-PBIDatasetParameters                           2.0.1.0    PowerBIPS
+Function        Set-PBIGroup                                       2.0.1.0    PowerBIPS
+Function        Set-PBIModuleConfig                                2.0.1.0    PowerBIPS
+Function        Set-PBIReportContent                               2.0.1.0    PowerBIPS
+Function        Set-PBIReportsDataset                              2.0.1.0    PowerBIPS
+Function        Test-PBIDataSet                                    2.0.1.0    PowerBIPS
+Function        Update-PBIDatasetDatasources                       2.0.1.0    PowerBIPS
+Function        Update-PBITableSchema                              2.0.1.0    PowerBIPS
+```
 # Complaints
 * No Text Tiles - https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/16982443-text-tile-for-real-time-data
 
