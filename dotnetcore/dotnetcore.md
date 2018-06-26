@@ -5,39 +5,43 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- The new open-sourced cross-platform version of .Net
-- Current version is 2.0
-- Main Repo: https://github.com/dotnet/core
+* The new open-sourced cross-platform version of .Net
+* Current version is 2.0
+* Main Repo: https://github.com/dotnet/core
 
 # Docs
-- Docs: https://dotnet.github.io/
-- Get Started: https://www.microsoft.com/net/learn/get-started/windows
+* Docs: https://dotnet.github.io/
+* Get Started: https://www.microsoft.com/net/learn/get-started/windows
 
 
 # Dotnet commands
-- They are documented here: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
-- `dotnet new console` - makes a .dot net console app using the console template in the current directory
-- `dotnet restore` - adds all the crap to make it work (from version 2.0 run automatically by new, build and run)
-- `dotnet build` - build from the csproj in the directory
-- `dotnet publish` - go get all the dlls and things you need to run this and copy everything needed to the bin directory
-- `dotnet run something.dll` - runs it - note that if your program has changed, dotnet will run the 
-- `dotnet --version` - query the version
-- `dotnet new -l` - list all the templates
+* They are documented here: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
+* `dotnet new console` - makes a .dot net console app using the console template in the current directory
+* `dotnet restore` - adds all the crap to make it work (from version 2.0 run automatically by new, build and run)
+* `dotnet build` - build from the csproj in the directory
+* `dotnet publish` - go get all the dlls and things you need to run this and copy everything needed to the bin directory
+* `dotnet run something.dll` - runs it - note that if your program has changed, dotnet will run the 
+* `dotnet --version` - query the version
+* `dotnet new -l` - list all the templates
 
 
 # Packages
-- `dotnet add package packagename` 
-- `dotnet uninstall package packagename` 
-- `dotnet nuget locals all --list` 
+* Can add from command window in VS Code (Open with ctrl-` (ctrl-backtick))
+* `dotnet add package packagename` 
+    * `dotnet add package Newtonsoft.Json` 
+* `dotnet uninstall package packagename` 
+* `dotnet nuget locals all --list` 
 
 More info here: https://docs.microsoft.com/en-us/nuget/tools/dotnet-commands 
 
 # Build File
-- The build file is ths `*.csproj` file.
+* The build file is ths `*.csproj` file.
 
 
 # Linking Libraries
-- You need a section added to the build file that looks like this:
+* You probably want to start with a library template
+
+* You need a section added to the build file that looks like this:
 ```
   <ItemGroup>
     <ProjectReference Include="..\h-common\h-common.csproj" />
@@ -51,7 +55,8 @@ C:\Users\mike>dotnet --version
 2.1.2
 ```
 
-# Curent Templates
+# Templates
+* `dotnet new -l`   - list available templates
 ```
 C:\Users\mike>dotnet new -l
 Usage: new [options]
