@@ -7,11 +7,15 @@ output: html_document
 # Intro
 Azure REST API
 
+
+# OAuth
+* this seems pretty good: http://oauthbible.com/ 
+
 # John Gallant and Postman
-- Blog post - https://blog.jongallant.com/2017/11/azure-rest-apis-postman/
-- youtube post - shows how to do a call the the mangement api with Postman to get a list of your IoT Hubs
-    - https://www.youtube.com/watch?v=ujzrq8Fg9Gc (in 7:44 minutes instead of 2...)
-- My notes:
+* Blog post - https://blog.jongallant.com/2017/11/azure-rest-apis-postman/
+* youtube post - shows how to do a call the the mangement api with Postman to get a list of your IoT Hubs
+    * https://www.youtube.com/watch?v=ujzrq8Fg9Gc (in 7:44 minutes instead of 2...)
+* My notes:
 ```
 John Gallant - How to Execute Azure REST APIs with Postman
 

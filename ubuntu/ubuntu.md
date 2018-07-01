@@ -77,7 +77,8 @@ Ubuntu seems to be the data science standard now.
 - Another example of finding with grep:   `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
 - After finding things we need to change: `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
 - change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
-- lookin in markdown for a pattern 'iot' -- `find . -name '*.md' -exec grep  iot {}`
+- lookin in markdown for a whole word pattern 'iot' with file name and line number -- `find . -name '*.md' -exec grep -Hn -w iot {} \;`
+- count how many hits -- `find . -name '*.md' -exec grep  -w iot {} \; | wc -l`
 - ls just directories: `ls  -d */`
 
 
