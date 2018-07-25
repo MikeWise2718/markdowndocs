@@ -46,7 +46,7 @@ output: html_document
 * Click on "Custom Streaming Data" then next
 * Add streaming data set
 
-# Authentication
+# Swagger
 * PowerBI and Swagger - Doesn't really work - https://community.powerbi.com/t5/Report-Server/Swagger-URL-for-PBI-Report-Server/td-p/295076
 * See the login script in PowerBIPS for one way to do this
 
