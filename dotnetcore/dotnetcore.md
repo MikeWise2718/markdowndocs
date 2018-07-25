@@ -90,3 +90,18 @@ Razor Page                                        page                          
 MVC ViewImports                                   viewimports                            Web/ASP.NET
 MVC ViewStart                                     viewstart                              Web/ASP.NET
 ```
+
+## Separate Libraries
+* Creating class library in vscode: https://stackoverflow.com/questions/46504322/creating-a-class-library-in-visual-studio-code 
+
+
+## csproj format
+* ms-build schema - https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference 
+* csproj schema - https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference
+* newish additions - https://docs.microsoft.com/en-us/dotnet/core/tools/csproj
+
+
+## Solution (Sln) files
+* See this: https://stackoverflow.com/questions/42730877/net-core-when-to-use-dotnet-new-sln 
+* Docs: https://docs.microsoft.com/en-us/dotnet/co e/tools/dotnet-sln
+
