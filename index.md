@@ -16,6 +16,8 @@ A compendium of things I have learned that I think I might need again but will l
 [Git](https://mikewise2718.github.io/markdowndocs/git/git)<br>
 [Anaconda](https://mikewise2718.github.io/markdowndocs/anaconda/anaconda)<br>
 [VI](https://mikewise2718.github.io/markdowndocs/vi/vi)<br>
+[VSTS](https://mikewise2718.github.io/markdowndocs/vsts/vsts)<br>
+[pip](https://mikewise2718.github.io/markdowndocs/pip/pip)<br>
 
 # Misc Frameworks
 [Xamerin](https://mikewise2718.github.io/markdowndocs/xamarin/xamarin)<br>
@@ -26,23 +28,32 @@ A compendium of things I have learned that I think I might need again but will l
 
 # Azure
 [Azure](https://mikewise2718.github.io/markdowndocs/azure/azure)<br>
-[Azure IoT Edge](https://mikewise2718.github.io/markdowndocs/azureiotedge/azureiotedge)<br>
 [Azure CLI](https://mikewise2718.github.io/markdowndocs/azcli/azcli)<br>
+[Azure Functions](https://mikewise2718.github.io/markdowndocs/azurefunctions/azurefunctions)<br>
+[Azure IoT Edge](https://mikewise2718.github.io/markdowndocs/azureiotedge/azureiotedge)<br>
+[Azure IoT Hub](https://mikewise2718.github.io/markdowndocs/azureiothub/azureiothub)<br>
+[Azure REST API](https://mikewise2718.github.io/markdowndocs/azurerestapi/azurerestapi)<br>
+[Azure Stream Analytics](https://mikewise2718.github.io/markdowndocs/asa/asa)<br>
 
 # OS
 [Ubuntu](https://mikewise2718.github.io/markdowndocs/ubuntu/ubuntu)<br>
 [Docker](https://mikewise2718.github.io/markdowndocs/docker/docker)<br>
+[Samba](https://mikewise2718.github.io/markdowndocs/smb/smb)<br>
+[Windows Setup](https://mikewise2718.github.io/markdowndocs/windowssetup/windowssetup)<br>
+[Zeromq](https://mikewise2718.github.io/markdowndocs/zeromq/zeromq)<br>
 
 ## Markdown
 [R-Markdown](https://mikewise2718.github.io/markdowndocs/rmarkdown/rmarkdown)<br>
 [Jupyter](https://mikewise2718.github.io/markdowndocs/jupyter/jupyter)<br>
 
 # Graphics
-[Plotly](https://mikewise2718.github.io/markdowndocs/plotly/plotly-notes)<br>
+[Plotly](https://mikewise2718.github.io/markdowndocs/plotly/plotly)<br>
+[r-grid](https://mikewise2718.github.io/markdowndocs/r-grid/r-grids)<br>
 
 # 3D Modeling
 [Revit](https://mikewise2718.github.io/markdowndocs/revit/revit-notes)<br>
 [Unity](https://mikewise2718.github.io/markdowndocs/unity/unity-notes)<br>
+[TrafficSim](https://mikewise2718.github.io/markdowndocs/trafficsim/trafficsim)<br>
 
 ## Neural Networks and Machine Learning
 [Keras](https://mikewise2718.github.io/markdowndocs/keras/keras)<br>
@@ -53,10 +64,12 @@ A compendium of things I have learned that I think I might need again but will l
 [Civ6](https://mikewise2718.github.io/markdowndocs/civ6/civ6-notes)<br>
 
 ## Hardware
-[Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik-notes)<br>
+[Microtik](https://mikewise2718.github.io/markdowndocs/mikrotik/mikrotik)<br>
 [HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens)<br>
 [Jetson](https://mikewise2718.github.io/markdowndocs/jetson/jetson)<br>
 [Unifi-NVR (Vidcam)](https://mikewise2718.github.io/markdowndocs/unifinvr/unifinvr)<br>
+[Reolink](https://mikewise2718.github.io/markdowndocs/reolink/reolink)<br>
+[Nvidia](https://mikewise2718.github.io/markdowndocs/nvidia/nvidia)<br>
 [FritzBox](https://mikewise2718.github.io/markdowndocs/fritzbox/fritzbox)<br>
 
 

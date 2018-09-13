@@ -32,7 +32,9 @@ I think of Jupyter as R-Markdown for Python, but that is not really true.
 # Log
 - login with putty
 - `source ~/tf27gpu/bin/activate`   # prompt should change
+- `. tfon` 
 - `cd tfrepos/models/research/object_detection`
+- `. cdod` 
 - `jupyter notebook --ip='192.168.25.12' object_detection_tutorial.ipynb`
 - You get a command like ` http://192.168.25.12:8888/?token=f6982adb2e4bcb93bf0f15f2bd5e64ef22b22d7                                                                                                                                                     9bc8c0f75` 
 - you can login with that, or just enter the token subsequently

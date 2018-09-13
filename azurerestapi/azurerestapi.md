@@ -99,17 +99,29 @@ Examine the parameters with the "eye" icon
 
 
 # Postman
-- There are two, the desktop client, and the Chrome App (shortcut points to `C:\Users\mike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps`)
-- All Chrome Apps are going away, but Postman started out that way and it is the version most referred to in posts and documenation.
-- It is easy to confuse the two the desktop client looks like this:<br>
+* There are two, the desktop client, and the Chrome App (shortcut points to `C:\Users\mike\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Chrome Apps`)
+* All Chrome Apps are going away, but Postman started out that way and it is the version most referred to in posts and documenation.
+* It is easy to confuse the two the desktop client looks like this:<br>
 ![Desktop](PostmanDesktop.png)
-- And this is the Chrome App:<br>
+* And this is the Chrome App:<br>
 ![ChromeApp](PostmanChromeApp.png)
-- Hard to see a request in raw form - see this post for how to do it: http://blog.getpostman.com/2015/06/13/debugging-postman-requests/ 
+* Hard to see a request in raw form - see this post for how to do it: http://blog.getpostman.com/2015/06/13/debugging-postman-requests/ 
 
 
 # Other posts
-- This helped a lot: https://developers.de/blogs/damir_dobric/archive/2016/05/24/aad-authentication-with-rest-api-client.aspx 
+* This helped a lot: https://developers.de/blogs/damir_dobric/archive/2016/05/24/aad-authentication-with-rest-api-client.aspx 
+
+# JWT Token Inspection
+* A good way to tell what is going on: https://jwt.io/<br>
+![jwt inspections](jwtinspection.png)
+
+
+# Application Registration
+* Do it in Azure Active Directory Blade
+* Native Client vs. Web App boils down to whether or not you have client secrets, Native Cliets do not
+* Entire definition is in the manifest, look there if you don't understnad something
+* Often entries named URL or URI are actually Guids
+
 
 
 # Issues
