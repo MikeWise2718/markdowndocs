@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-* Smaba on Ubuntu - https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!
+* Smaba on Ubuntu - <https://help.ubuntu.com/community/How%20to%20Create%20a%20Network%20Share%20Via%20Samba%20Via%20CLI%20%28Command-line%20interface/Linux%20Terminal%29%20-%20Uncomplicated,%20Simple%20and%20Brief%20Way!>
 
 # Smb debugging
 * Get the versions of everthing - `dpkg-query -W -f='${Package} ${Version} ${Source} ${Status}\n' | grep samb`
