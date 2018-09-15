@@ -27,22 +27,22 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
   * If you get an error it probably has the wrong user, try in another browser or incognito
 
 # Support Requests
-* you can see all your support requests here: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
+* you can see all your support requests here: <https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview>
 * In the portal, the icon for it is a blue little guy with a halo (sort of) towards the end
 
  # Azure IoT Hub
   - I moved this stuff to a dedicated page on it
 
 # Azure AD
-- This is fundamental: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios
-- Basics of registering an application: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad 
-- Application types and scenrios: https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#application-types-and-scenarios
-- Code! (and a useful table) - https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-code-samples#desktop-and-mobile-public-client-applications-calling-microsoft-graph-or-a-web-api 
+- This is fundamental: <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios<>
+- Basics of registering an application: ,<https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#basics-of-registering-an-application-in-azure-ad>
+- Application types and scenrios: <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-authentication-scenarios#application-types-and-scenarios>
+- Code! (and a useful table) - <https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-code-samples#desktop-and-mobile-public-client-applications-calling-microsoft-graph-or-a-web-api>
 
 Options available
-- AD Join /AAD Join/Add Work Account - https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/
-- How domain join is different now - https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/
-- AD and MPW in WIndows 10 - https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/ 
+- AD Join /AAD Join/Add Work Account - <https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/>
+- How domain join is different now - <https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/>
+- AD and MPW in WIndows 10 - <https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/>
 
 
 # Acronyms
@@ -50,7 +50,7 @@ Options available
 - NgcSet means: "NgcSet refers to whether the user has provisioned Windows Hello for Business (WHfB). Azure AD joined devices provision WHfB by default when the user signs in for the first time to the device. Hybrid Azure AD joined devices is off by default. There is Group Policy that you can enable, however there is additional configuration needed on-prem to support WHfB authentication to DCs. When the user provisions WHfB, NgcSet must show YES."
 
 # Joining AAD
-- Tips - https://docs.microsoft.com/en-us/azure/active-directory/device-management-troubleshoot-hybrid-join-windows-current
+- Tips - <https://docs.microsoft.com/en-us/azure/active-directory/device-management-troubleshoot-hybrid-join-windows-current>
 
 - My current status on Uxie - 5 May 2018
 ```
