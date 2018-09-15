@@ -42,6 +42,13 @@ git config --global credential.helper 'cache --timeout=3600'
    - $ git config --global credential.helper 'cache --timeout=3600' # Set the timeout to 1 hour 
 
 
+## Git Log
+- `git log --oneline` - one line form of log
+- `git log --pretty=format:"%h%x09%an%x09%ad%x09%s"` - short form with date (see this: https://stackoverflow.com/a/1441062/3458744)
+- `git log --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s"` - colors log with date 
+- `git log -p Assets/_scripts/GraphAlgos.cs` - get the diff history of a file
+- 
+
 ## Git Ignore
 - `**.jpg` - No jpgs in this direcory and any others
 

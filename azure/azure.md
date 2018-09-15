@@ -17,14 +17,14 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
 
 
 # Billing
-* You can see all your subscriptions here: https://account.azure.com/Subscriptions 
+* You can see all your subscriptions here: <https://account.azure.com/Subscriptions>
 ![Azure Billing Subs](AzBillingSubs.png)
 * Select a sub and you can download to a csv
-* Understand your bill here: https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill
+* Understand your bill here: <https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill>
 * But because the rates are blank for internal subs, you can't really see what things cost
-* There is a possiblity to estimate costs ahead of time: https://docs.microsoft.com/en-us/azure/billing/billing-getting-started 
-* The cube can be accessed over: https://azuremsregistration.cloudapp.net 
-* If you get an error it probably has the wrong user, try in another browser or incognito
+* There is a possiblity to estimate costs ahead of time: <https://docs.microsoft.com/en-us/azure/billing/billing-getting-started> 
+* The cube can be accessed over: <https://azuremsregistration.cloudapp.net> 
+  * If you get an error it probably has the wrong user, try in another browser or incognito
 
 # Support Requests
 * you can see all your support requests here: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
