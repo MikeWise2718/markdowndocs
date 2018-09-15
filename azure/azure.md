@@ -53,6 +53,7 @@ Options available
 - Tips - <https://docs.microsoft.com/en-us/azure/active-directory/device-management-troubleshoot-hybrid-join-windows-current>
 
 - My current status on Uxie - 5 May 2018
+
 ```
 C:\WINDOWS\system32>dsregcmd /status
 
@@ -130,4 +131,3 @@ C:\WINDOWS\system32>dsregcmd /status
 C:\WINDOWS\system32>
 ```
 
-## 
