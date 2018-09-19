@@ -36,6 +36,7 @@ A compendium of things I have learned that I think I might need again but will l
 [Azure Stream Analytics](https://mikewise2718.github.io/markdowndocs/asa/asa)<br>
 
 # OS
+[TF on Azure](https://mikewise2718.github.io/markdowndocs/tfonazure/tfonazure)<br>
 [Ubuntu](https://mikewise2718.github.io/markdowndocs/ubuntu/ubuntu)<br>
 [Docker](https://mikewise2718.github.io/markdowndocs/docker/docker)<br>
 [Samba](https://mikewise2718.github.io/markdowndocs/smb/smb)<br>

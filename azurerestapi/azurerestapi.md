@@ -9,12 +9,12 @@ Azure REST API
 
 
 # OAuth
-* this seems pretty good: http://oauthbible.com/ 
+* this seems pretty good: <http://oauthbible.com/>
 
 # John Gallant and Postman
-* Blog post - https://blog.jongallant.com/2017/11/azure-rest-apis-postman/
+* Blog post - <https://blog.jongallant.com/2017/11/azure-rest-apis-postman/>
 * youtube post - shows how to do a call the the mangement api with Postman to get a list of your IoT Hubs
-    * https://www.youtube.com/watch?v=ujzrq8Fg9Gc (in 7:44 minutes instead of 2...)
+    * <https://www.youtube.com/watch?v=ujzrq8Fg9Gc> (in 7:44 minutes instead of 2...)
 * My notes:
 ```
 John Gallant - How to Execute Azure REST APIs with Postman
@@ -105,14 +105,14 @@ Examine the parameters with the "eye" icon
 ![Desktop](PostmanDesktop.png)
 * And this is the Chrome App:<br>
 ![ChromeApp](PostmanChromeApp.png)
-* Hard to see a request in raw form - see this post for how to do it: http://blog.getpostman.com/2015/06/13/debugging-postman-requests/ 
+* Hard to see a request in raw form - see this post for how to do it: <http://blog.getpostman.com/2015/06/13/debugging-postman-requests/>
 
 
 # Other posts
-* This helped a lot: https://developers.de/blogs/damir_dobric/archive/2016/05/24/aad-authentication-with-rest-api-client.aspx 
+* This helped a lot: <https://developers.de/blogs/damir_dobric/archive/2016/05/24/aad-authentication-with-rest-api-client.aspx>
 
 # JWT Token Inspection
-* A good way to tell what is going on: https://jwt.io/<br>
+* A good way to tell what is going on: <https://jwt.io/><br>
 ![jwt inspections](jwtinspection.png)
 
 
@@ -133,6 +133,6 @@ Examine the parameters with the "eye" icon
 
 - Issue: "The client xyx' with object id 'xyx' does not have authorization to perform action
    - Date 2018-05-06 9:20
-   - Resolution: Due to instroduction of RBAC. See https://github.com/Azure/vagrant-azure/issues/164 - for Portal See: https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal 
+   - Resolution: Due to instroduction of RBAC. See <https://github.com/Azure/vagrant-azure/issues/164> - for Portal See: <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal>
   
 
