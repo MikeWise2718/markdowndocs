@@ -22,6 +22,9 @@ Config page: <https://www.ssh.com/ssh/config/>
 - The server deamon is configured with `/etc/ssh/sshd_config`
 - Password auth can be runed off in the `sshd_config` file by setting the line `PasswordAuthentication no`
 - `sshd_config` described here <https://www.ssh.com/ssh/sshd_config/>
+- Inspect successful logins `zgrep -i "Accepted password" /var/log/auth.log*`
+- Inspect failed logins `zgrep -i "Failed password" /var/log/auth.log*`
+- Count failed logins: `zgrep -i "Failed password" /var/log/auth.log* | wc -l`
 
 # Putty
 - Putty has its own private key format. There is a way to convert from the normal ssh keys to Putty format keys.
