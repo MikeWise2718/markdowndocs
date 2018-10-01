@@ -43,6 +43,10 @@ A compendium of things I have learned that I think I might need again but will l
 [Windows Setup](https://mikewise2718.github.io/markdowndocs/windowssetup/windowssetup)<br>
 [Zeromq](https://mikewise2718.github.io/markdowndocs/zeromq/zeromq)<br>
 
+# Misc config
+[ssh](https://mikewise2718.github.io/markdowndocs/ssh/ssh)<br>
+[grep](https://mikewise2718.github.io/markdowndocs/grep/grep)<br>
+
 ## Markdown
 [R-Markdown](https://mikewise2718.github.io/markdowndocs/rmarkdown/rmarkdown)<br>
 [Jupyter](https://mikewise2718.github.io/markdowndocs/jupyter/jupyter)<br>
