@@ -20,6 +20,9 @@ Config page: <https://www.ssh.com/ssh/config/>
 
 ## sshd
 - The server deamon is configured with `/etc/ssh/sshd_config`
+- `Loglevel` can be cranked to `VERBOSE`
+- Messages can be viewed with `tail -f /var/log/auth.log`
+- Restart: `sudo systemctl restart sshd`
 - Password auth can be runed off in the `sshd_config` file by setting the line `PasswordAuthentication no`
 - `sshd_config` described here <https://www.ssh.com/ssh/sshd_config/>
 - Inspect successful logins `zgrep -i "Accepted password" /var/log/auth.log*`
@@ -29,4 +32,4 @@ Config page: <https://www.ssh.com/ssh/config/>
 # Putty
 - Putty has its own private key format. There is a way to convert from the normal ssh keys to Putty format keys.
 - If a converted private key does not work, check the format. It is easy to write out the public key by mistake (done this at least twice)
-
+- Formatting text Putty public keys: <https://serverfault.com/questions/797044/openssh-adding-an-ssh-key-from-putty-to-authorized-keys>
