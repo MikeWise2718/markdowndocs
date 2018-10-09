@@ -7,7 +7,9 @@ output: html_document
 ![TensorFlow logo](tflogo.png)
 
 # Intro
-Also known as the Object Detection API link: [link](https://github.com/tensorflow/models/tree/master/research/object_detection)
+- Also known as the Object Detection API link: <https://github.com/tensorflow/models/tree/master/research/object_detection>
+- A good post on building and training the model <https://stackoverflow.com/questions/44973184/train-tensorflow-object-detection-on-own-dataset/44973203#44973203>
+
 
 # tensorflow logging
   - my wonderful post: https://stackoverflow.com/questions/44853059/tensorflow-logging-messages-do-not-appear/49756653#49756653 
