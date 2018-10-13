@@ -30,6 +30,12 @@ output: html_document
   - On ubuntu the `arial.ttf` font is not installed by default. See this:   
     - https://stackoverflow.com/a/50006012/3458744 
 
+
+# Training a new model
+- Described fairly well in this answer: <https://stackoverflow.com/questions/44973184/train-tensorflow-object-detection-on-own-dataset/44973203#44973203>
+- 
+
+
 # zoo Object Ids
 
 ```

@@ -194,4 +194,16 @@ These are examples basically
 # tensorflow logging
   - my wonderful post: https://stackoverflow.com/questions/44853059/tensorflow-logging-messages-do-not-appear/49756653#49756653 
 
- 
+ # Tensorflow formats - protobuf
+ - Tensorflow Models: <https://www.tensorflow.org/extend/tool_developers/>
+
+ # Tensorflow and R
+ - Tensorflow and R: <https://tensorflow.rstudio.com/>
+
+ # Compiling Tensorflow
+ - Relied a lot on the following two github repos:
+    - <https://github.com/nathtest/Tutorial-Ubuntu-18.04-Install-Nvidia-driver-and-CUDA-and-CUDNN-and-build-Tensorflow-for-gpu>
+    - <https://gist.github.com/ljaraque/d18d3dd198dcff3bc40cbe91889564d0?>
+    - Had to do a seperate compilation for python2 and python2, not clear how the precompiled TensorFlow binaries handle this
+    - had to install some extra things for Python3 as it seems to need some keras stuff
+        - <https://github.com/tensorflow/tensorflow/issues/21518>

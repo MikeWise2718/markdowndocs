@@ -8,4 +8,7 @@ output: html_document
 Python needs no stinkin' intro
 
 # Environments
-* PSF VEs Explained here: <https://docs.python.org/3//tutorial/venv.html>
+* It is a confusing space - differneces: <https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe>
+* `virtualenv` is here: <https://virtualenv.pypa.io/en/stable/>
+* VEs Explained here: <https://docs.python.org/3//tutorial/venv.html>
+
