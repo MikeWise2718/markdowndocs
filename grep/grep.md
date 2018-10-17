@@ -6,6 +6,11 @@ output: html_document
 
 # Intro
 I use grep all the time but forget how to use it rather often.
+It has some issues as there are several versions with different execution models.
+
+# Grep
+* Find proto messages `grep -r message . --include=*.proto`
+* Sometimes there is a bug where it only finds things in the current direcotry - watch out for that
 
 
 # Windows
@@ -16,7 +21,7 @@ I use grep all the time but forget how to use it rather often.
 
 
 # Linux
-The whole `{} \;` thing is a bit mystyfing, sometimes it works without it, sometimes it doesn't work no matter what you do. Googling didn't help. Don't know why they just don't add a recursive flag to grep.
+The whole `{} \;` thing is a bit mystifying, sometimes it works without it, sometimes it doesn't work no matter what you do. Googling didn't help. Probably should just use the grep recursive flag, but that has issues too.
 
 - find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {} \;`
 - same with filename and line - `find . -path '*/src/*.h' -exec grep -Hn PATTERN {} \;`

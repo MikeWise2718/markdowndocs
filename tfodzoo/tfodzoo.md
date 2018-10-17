@@ -33,7 +33,12 @@ output: html_document
 
 # Training a new model
 - Described fairly well in this answer: <https://stackoverflow.com/questions/44973184/train-tensorflow-object-detection-on-own-dataset/44973203#44973203>
-- 
+- Compilation notes
+  - After converting to 18.04 my Tensorflow 1.07 was dead. Getting it back was hard
+  - After I got the inference to work with both Python2 and Python3, I thought I was there, but it was not so strightfoward.
+  - Turns out training in Python3 was broken, and my original training above looks wrong now.
+  - I had to reinstall `pycocotools`, which would not remake everything until I installed cython (`pip install cython`) there was no explicit error message
+
 
 
 # zoo Object Ids
