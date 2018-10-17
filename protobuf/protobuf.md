@@ -10,7 +10,8 @@ Googles Json.
 
 # Links
 - short example - <https://stackoverflow.com/a/43875180/3458744>
-
+- Tutorial - <https://developers.google.com/protocol-buffers/docs/tutorials>
+- Some warts - <https://github.com/protocolbuffers/protobuf/issues/3028>
 
 # Samples
 
@@ -194,6 +195,7 @@ people {
 <https://stackoverflow.com/questions/51233023/extract-graph-def-from-model-ckpt-meta>
 <https://stackoverflow.com/questions/34343259/is-there-an-example-on-how-to-generate-protobuf-files-holding-trained-tensorflow>
 <https://tensorflow.github.io/haskell/haddock/tensorflow-proto-0.2.0.0/Proto-Tensorflow-Core-Protobuf-MetaGraph.html>
+<>
 
 Currently stuck here:
 ```
