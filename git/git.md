@@ -14,7 +14,23 @@ output:
 [Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)<br>
 [Things to hate about it](https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/)
 [GitHub etiquette](https://help.github.com/articles/fork-a-repo/)
+[Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
+# Concepts you should know
+ - blob (how it is hashed, how it is compressed)
+ - trees (what is in them, how to look at them)
+ - commits (what is in them, how to look at them)
+ - refs (what is in them, how to look at them)
+ - index
+ - branches
+ - remotes
+
+## More advanced stuff
+ - plumbing instead of porceline (git is a content-addressable file system) [git internals](https://git-scm.com/book/en/v1/Git-Internals)
+ - what your mental model should be [git for computer scientists](http://eagain.net/articles/git-for-computer-scientists/)
+ - Driessen on branching models [a successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+ - Git is your friend not a foe (v2,v3,v4 are great) [git as friend](https://hades.github.io/2010/01/git-your-friend-not-foe/)
+ - git didn't beat SVN, GitHub [did](https://blog.gitprime.com/git-didnt-beat-svn-github-did/)
 
 # Newest version
 [Download](http://git-scm.com/downloads)

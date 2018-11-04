@@ -188,11 +188,9 @@ people {
 ```
 
 # Tensorflow protobuf stuff
-
+- Trolling for protobufs in tensorflow source - From `~/tfrepos/tf11_cp27$` do `grep -ri syntax --include='*.proto'`
 - Very weak documentation - <https://www.tensorflow.org/extend/tool_developers/>
-- Had to add `/home/mike/tfrepos/google/protobuf/any.proto`
-`protoc  --proto_path=/home/mike/tfrepos/tf11_cp27/ --decode GraphDef /home/mike/tfrepos/tf11_cp27/tensorflow/core/protobuf/meta_graph.proto <  /home/mike/tfrepos/tbex_mnist/export/1/saved_model.pb`
-`protoc  --proto_path=/home/mike/tfrepos/tf11_cp27/ --decode MetaGraphDef /home/mike/tfrepos/tf11_cp27/tensorflow/core/protobuf/meta_graph.proto <  /home/mike/tfrepos/models/research/export/Servo_0/1539552921/saved_model.pb`
+`protoc  --proto_path=/home/mike/tfrepos/tf11_cp27/ --decode tensorflow.SavedModel /home/mike/tfrepos/tf11_cp27/tensorflow/core/protobuf/saved_model.proto <  /home/mike/tfrepos/models/research/export/Servo_0/1539552921/saved_model.pb`
 
 - <https://stackoverflow.com/questions/21159451/protobuffs-import-from-another-directory>
 - <https://stackoverflow.com/questions/51233023/extract-graph-def-from-model-ckpt-meta>
