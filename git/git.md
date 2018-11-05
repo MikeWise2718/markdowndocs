@@ -22,6 +22,8 @@ output:
      * they don't know anything about themselves (no metadata) 
      * they are compressed using something or other
      * you can garbage collect blobs that are not being pointed to from anyone
+     * short sha-1 hashes (https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
+     * `git show aa5f86`  - shows the object that belongs to the hash
  * trees  
     * trees are blob objects
     * they contain a list of the blobs they hold and maybe a subdirectory tree
@@ -31,21 +33,31 @@ output:
     * have a message in their body
     * have a pointer to a tree that belongs to them
     * Viewing commits  `git log` - see below, but this is [good](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
+    * commit branch membership is fluent - original branch of a commit is not tracked
  * refs (what is in them, how to look at them)
      * refs are also blob objects (I think)
      * refs point to a commit
      * each branches has a head refs
+     * `git show-ref`
  * index
      * a binary file in .git/index
      * not a blob object
      * lists everything that has been staged up to now
  * branches
      * just a head ref really, I think
+     * `git branch` lists all branches
+     * `git checkout master` changes HEAD (current branch) to point to master REF
+     * `git merge branch1910`  merges current branch with branch1910 (merged the commit corresponding to the head of branch1910 with the commit cooresponding to the current HEAD)
+     * `git checkout -b newbranch` - create a new branch "newbranch" (create a ref pointint go the current commit)
+     * `git push --set-upstream origin locredwest` -- create that branch upstream
  * remotes
      * a listing of remote repositories (their ip address) that you can fetch from
      * if you pull, that does a merge right after as well
+     * `git remotes -v`
+     * `git remote show origin`
  * HEAD
-     * the head you are currently working on 
+     * the commit you are currently working on 
+     * `git show HEAD`
 
 
 ## Branching concepts
@@ -63,6 +75,7 @@ output:
  * git didn't beat SVN, GitHub [did](https://blog.gitprime.com/git*didnt*beat*svn*github*did/)
  * why you should not [rebase](https://medium.com/@fredrikmorken/why-you-should-stop-using-git-rebase-5552bee4fed1)
  * git [workflows](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows)
+ * commits do not know their branch (https://community.atlassian.com/t5/Bitbucket-questions/Knowing-from-which-branch-the-current-branch-was-created-from/qaq-p/570135)
 
 # Newest version
 [Download](http://git*scm.com/downloads)
