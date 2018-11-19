@@ -19,6 +19,13 @@ If there is one thing I forget faster than how to configure Android, I don't kno
  * Accessed in VS Menu under `Tools/Android/Android SDK Manager`
  * Installation directory in bar on top - this time it was `C:\Program Files (x86)\Android\android-sdk`
 
+# Xamarin notes
+  * Have to install all the Xamerin tools with Visual Studio Installer
+  * If you have the device plugged in and `adb connect` (see below) it should appear in the dropdown ![VS Menu](vsmenu.png) as a build option
+  * You can build an APK by right clicking on the project in the Solution Explorer with the `archive` command
+  * You will get app not installed unless you sign it - instructions here: <https://docs.microsoft.com/en-us/xamarin/android/deploy-test/signing/?tabs=windows>
+  * 
+
 # File Manager
  * There is an android file manager normally
  * Downloaded files go into download
