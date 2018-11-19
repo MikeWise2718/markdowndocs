@@ -14,6 +14,50 @@ If there is one thing I forget faster than how to configure Android, I don't kno
  * Home screen - a configurable number of screens that appear after you unlock
  * App pages?
 
+# Android SDK
+ * Installed using Visual Studio
+ * Accessed in VS Menu under `Tools/Android/Android SDK Manager`
+ * Installation directory in bar on top - this time it was `C:\Program Files (x86)\Android\android-sdk`
+
+# File Manager
+ * There is an android file manager normally
+ * Downloaded files go into download
+
+# Debugging
+* In the Android SDK you can use `adb` - needs to be in path
+* If you connect the android device and enablue USB debugging it should be recognized that way
+* Using logcat - <https://logmatic.io/blog/a-how-to-guide-to-debugging-with-android-logcat/>
+* You can also debug without the USB with 
+* Examples
+  * Look at error level adb commands `adb logcat "*:E"`
+  * Connect via IP: `adb connect 192.168.1.179`
+  * Start a server on an attached device (?) `adb tcpip 5555`
+  
+```
+C:\Program Files (x86)\Android\android-sdk\platform-tools>adb devices
+List of devices attached
+690f6134d160303a        device
+```
+
+```
+C:\Program Files (x86)\Android\android-sdk\platform-tools>adb logcat | grep "PackageInstaller:"
+11-19 15:37:28.480  3113  4276 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@8b93d95 user id 0
+11-19 15:47:55.160  3113  7707 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@f933ca8 user id 0
+11-19 15:48:31.266  3113  5920 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@81a45d8 user id 0
+11-19 15:52:54.880  3113  5921 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@8c76581 user id 0
+11-19 15:54:26.621  3113  3554 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@3d16d27 user id 0
+11-19 15:59:40.275  3113  4273 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@397973c user id 0
+11-19 15:59:40.546  3113  4273 D PackageInstaller: InstallLogger: PackageInstallerSession(): createInstallTimeInfo(112542398)
+11-19 15:59:40.842  3113  3424 E PackageInstaller: Commit of session 112542398 failed: Failed to collect certificates from /data/app/vmdl112542398.tmp/PackageInstaller: Attempt to get length of null array
+11-19 16:00:47.750 26891 26891 E adbd    : service_to_fd: shell:export ANDROID_LOG_TAGS="''"; exec logcat 'PackageInstaller:'
+11-19 16:01:47.063  3113  3554 I PackageInstaller:  getting through the check android.content.pm.PackageInstaller$SessionParams@3ca8ed user id 0
+11-19 16:01:47.345  3113  3554 D PackageInstaller: InstallLogger: PackageInstallerSession(): createInstallTimeInfo(569127848)
+11-19 16:01:47.830  3113  3424 E PackageInstaller: Commit of session 569127848 failed: Failed to collect certificates from /data/app/vmdl569127848.tmp/PackageInstaller: Attempt to get length of null array
+```
+
+# APKs
+ * Android Package files are applications
+ * Seemingly they need to be signed
 
 # Home Screen
  - Launcher - Settings / Apps & Notifications / Deafult Apps / Lanucher
