@@ -13,6 +13,9 @@ output: html_document
 * Docs: https://dotnet.github.io/
 * Get Started: https://www.microsoft.com/net/learn/get-started/windows
 
+# Ubuntu
+* Installing (`snap` did not work, had to use ) Microsoft <https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current>
+* Note that you need to registert the Microsoft Key and feed first...
 
 # Dotnet commands
 * They are documented here: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
