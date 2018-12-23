@@ -10,7 +10,9 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 
 [Unity Technical Forums](http://answers.unity3d.com/page/faq.html)
 
-
+# Coordinate Systems
+* Haven't found a definitive doc yet on the Unity site
+* There is this SO question/answer: <https://stackoverflow.com/questions/21937544/working-with-the-coordinate-system-and-game-screen-in-unity-2d>
 
 # Layout notes
 * There are game windows but only one scene window. New The game windows get associated with a display (can be set on the upper left), and a camera is associated with a dispaly too. That is how it is done. Input goes to only one game window though, not sure which one.
