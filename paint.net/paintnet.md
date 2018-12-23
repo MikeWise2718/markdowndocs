@@ -20,4 +20,3 @@ It costs like 8 dollars if you buy it in the Windows Store, but you can also dow
 * 3D Text - "TR's Monolithic" is pretty good. <https://forums.getpaint.net/topic/108312-trs-monolithic-3d-text-generator-dec-3rd-2018/>
 * Making things transparent - use the "Color to Alpha" plug-in from Tanel <https://forums.getpaint.net/topic/7767-color-to-alpha-v22-2008-12-24/>
 
-# Something Else
