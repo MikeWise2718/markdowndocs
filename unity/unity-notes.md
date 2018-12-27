@@ -14,7 +14,7 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 * Haven't found a definitive doc yet on the Unity site
 * There is this SO question/answer: <https://stackoverflow.com/questions/21937544/working-with-the-coordinate-system-and-game-screen-in-unity-2d>
 
-# Layout notes
+# Editor Layout notes
 * There are game windows but only one scene window. New The game windows get associated with a display (can be set on the upper left), and a camera is associated with a dispaly too. That is how it is done. Input goes to only one game window though, not sure which one.
 * To create a new window, you create a new tab in an old window, and then drag it to a new location. Can even be detached from the application, so on another screen.
 * You can grab the tag of a game window and drag it to another window in the layout,or even to a new place in the same window, which will cause it to create a new window there splitting up the space. 
@@ -60,5 +60,10 @@ Now to make both windows simulatiously visible
 
 ![Finding Pivot](FindingPivot.png)
 
-# Unity Networking (Multi-player)
+# UI stuff
+* It's all about the Rect Transform, best explained here: <https://docs.unity3d.com/Manual/UIBasicLayout.html>
+* Note there are differences for how the Rect tool works when you have a rect transform attached or not (see above
+## Anchors
+* Anchors anchor a UI element to its parent
+* All anchor points in one place mean that only the position will shift, not its size
 
