@@ -21,7 +21,8 @@ If there is one thing I forget faster than how to configure Android, I don't kno
 
 # Xamarin notes
   * Have to install all the Xamerin tools with Visual Studio Installer
-  * If you have the device plugged in and have enabled USB debugging on the Android, and `adb devices` lists the device (see below),then it should appear in the Visusl Studio Debug dropdown ![VS Menu](vsmenu.png) as a build option
+  * If you have the device plugged in and have enabled USB debugging on the Android, and `adb devices` lists the device (see below),then it should appear in the Visusl Studio Debug dropdown<br>
+   ![VS Menu](vsmenu.png) as a build option
   * You can build an APK by right clicking on the project in the Solution Explorer with the `archive` command
   * You will get app not installed unless you sign it - instructions here: <https://docs.microsoft.com/en-us/xamarin/android/deploy-test/signing/?tabs=windows>
   * 
@@ -42,6 +43,14 @@ If there is one thing I forget faster than how to configure Android, I don't kno
   * Connect via IP: `adb connect 192.168.1.179`
   * Start a server on an attached device (?) `adb tcpip 5555`
 
+# Unity remote touch debugging
+* Download "Unity Remote 5" app from Google Playstore <https://play.google.com/store/apps/details?id=com.unity3d.genericremote&hl=en>
+* Enable USB Debugging on android device in Settings/Developer
+* Connect device with USB (might want to check if `adb` can see it - see above)
+* Start it running on the remote app
+* In Unity project Enable it with "Edit/Project Settings" then under Editor there is a "Unity Remote" section
+* Make sure the Device is "Any Android Device" <br>
+![RemoteDebug](RemoteDebug.png) 
 
   
 ```
