@@ -30,15 +30,19 @@ If there is one thing I forget faster than how to configure Android, I don't kno
  * There is an android file manager normally
  * Downloaded files go into download
 
-# Debugging
-* In the Android SDK you can use `adb` - needs to be in path
-* If you connect the android device and enablue USB debugging it should be recognized that way
+# Using adb to examine the Android system log (logcat)
+* In the Android SDK you can use `adb` - but it needs to be in path (`c:\program files\android\platform-toos\`)
+* If you connect the android device and enable USB debugging it should be recognized by `adb` without further commands
+* You can use then `adb logcat` to see all the "Android System Messages" being logged - you can filter them with grep - see below
+* I think that Unity `debug.log` sends commands to the Android System Messages log
 * Using logcat - <https://logmatic.io/blog/a-how-to-guide-to-debugging-with-android-logcat/>
-* You can also debug without the USB with 
-* Examples
+* You can also debug without the USB with various commands: 
+* Examples:
   * Look at error level adb commands `adb logcat "*:E"`
   * Connect via IP: `adb connect 192.168.1.179`
   * Start a server on an attached device (?) `adb tcpip 5555`
+
+
   
 ```
 C:\Program Files (x86)\Android\android-sdk\platform-tools>adb devices
