@@ -46,6 +46,7 @@ If there is one thing I forget faster than how to configure Android, I don't kno
 # Unity remote touch debugging
 * Download "Unity Remote 5" app from Google Playstore <https://play.google.com/store/apps/details?id=com.unity3d.genericremote&hl=en>
 * Enable USB Debugging on android device in Settings/Developer
+* Start the above remote app on the Android device
 * Connect device with USB (might want to check if `adb` can see it - see above)
 * Start it running on the remote app
 * In Unity project Enable it with "Edit/Project Settings" then under Editor there is a "Unity Remote" section
