@@ -49,8 +49,8 @@ If there is one thing I forget faster than how to configure Android, I don't kno
 * Start the above remote app on the Android device
 * Connect device with USB (might want to check if `adb` can see it - see above)
 * Start it running on the remote app
-* In Unity project Enable it with "Edit/Project Settings" then under Editor there is a "Unity Remote" section
-* Make sure the Device is "Any Android Device" <br>
+* In Unity project Enable it with `Edit/Project Settings` then under Editor there is a`"Unity Remote` section
+* Make sure the Device is `Any Android Device` - top line <br>
 ![RemoteDebug](RemoteDebug.png) 
 
   
