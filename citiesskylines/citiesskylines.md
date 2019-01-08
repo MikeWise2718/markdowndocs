@@ -18,10 +18,14 @@ It's all about the mods
 - Help with RICO <https://www.reddit.com/r/CitiesSkylines/comments/8auhg3/help_with_assets_and_rico_settings/>
 - Some Youtube about RICO: <https://www.youtube.com/watch?v=42wcR4FBEVQ>
 - Real Time <https://steamcommunity.com/sharedfiles/filedetails/?id=1420955187>
+- crp parser <https://community.simtropolis.com/forums/topic/70728-crp-file-unpacker-prototype/>
 
 # Modding Docs
 - Really great modding info <https://cslmodding.info/>
 - Reddit Posts Tool <https://github.com/mabako/reddit-for-city-skylines>
+- CRP file format <http://fileformats.archiveteam.org/wiki/Cities_Skylines_CRP>
+- CRP file paths <https://skylines.paradoxwikis.com/User_path>
+- Asset Editor <https://skylines.paradoxwikis.com/Asset_Editor>
 
 # Github Repos
 
@@ -37,6 +41,7 @@ It's all about the mods
 - Prefab hook <https://github.com/boformer/PrefabHook>
 - Skeleton Source <https://github.com/SkylinesModEngineer/CitiesSkylinesSkeletonSrc>
 - Options Framework <https://github.com/bloodypenguin/OptionsFramework>
+- Crp parser Source (see above for link) <https://github.com/tony56a/crp-parser>
 
 
 ## Interesting Features
