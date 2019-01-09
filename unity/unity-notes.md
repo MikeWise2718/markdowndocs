@@ -60,10 +60,24 @@ Now to make both windows simulatiously visible
 
 ![Finding Pivot](FindingPivot.png)
 
+
+# Cameras
+
+
+## Multi-display mode
+- Not available in Andorid, selections goes away if you have android selected as a target
+
+## "No cameras rendering" in Editor
+- Right click on the "game" tag and disable warning in dropdown that appears
+
 # UI stuff
 * It's all about the Rect Transform, best explained here: <https://docs.unity3d.com/Manual/UIBasicLayout.html>
 * Note there are differences for how the Rect tool works when you have a rect transform attached or not (see above
+
 ## Anchors
 * Anchors anchor a UI element to its parent
 * All anchor points in one place mean that only the position will shift, not its size
+
+## Text
+* Text now appearing after I add to a panel....
 
