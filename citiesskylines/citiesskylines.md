@@ -9,6 +9,7 @@ A Unity game - the spiritual sucessor to SIMCITY
 
 # Mods
 It's all about the mods
+- Workshop <https://steamcommunity.com/app/255710/workshop/>
 - Large Parking Garage: <https://steamcommunity.com/sharedfiles/filedetails/?id=485015540>
 - Realistic walking speeds <https://steamcommunity.com/workshop/discussions/18446744073709551615/1733216893877711224/?appid=255710>
 - Creating real maps using openstreet maps <https://steamcommunity.com/sharedfiles/filedetails/?id=1571369737>
@@ -19,6 +20,12 @@ It's all about the mods
 - Some Youtube about RICO: <https://www.youtube.com/watch?v=42wcR4FBEVQ>
 - Real Time <https://steamcommunity.com/sharedfiles/filedetails/?id=1420955187>
 - crp parser <https://community.simtropolis.com/forums/topic/70728-crp-file-unpacker-prototype/>
+- ModTools <https://steamcommunity.com/sharedfiles/filedetails/?id=450877484>
+
+# OSM MOds
+- cimtographer <https://steamcommunity.com/sharedfiles/filedetails/?id=416064574>
+- <https://www.spielerheim.de/forum/index.php?thread/6951-cimtographer-reales-stra%C3%9Fennetz-importieren/>
+- OSM Import Instructions <https://github.com/rdiekema/cs-osm-import/wiki>
 
 # Modding Docs
 - Really great modding info <https://cslmodding.info/>
@@ -26,6 +33,7 @@ It's all about the mods
 - CRP file format <http://fileformats.archiveteam.org/wiki/Cities_Skylines_CRP>
 - CRP file paths <https://skylines.paradoxwikis.com/User_path>
 - Asset Editor <https://skylines.paradoxwikis.com/Asset_Editor>
+- Importing OSM Maps <https://steamcommunity.com/app/255710/discussions/0/1456202492182996717/>
 
 # Github Repos
 
