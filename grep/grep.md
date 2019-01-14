@@ -13,11 +13,13 @@ It has some issues as there are several versions with different execution models
 * Sometimes there is a bug where it only finds things in the current direcotry - watch out for that
 
 
-# Windows
+# Windows and Findstr
 * There are various greps, you should use `where grep` to find out which one you are using
 * But it is probably best to use `findstr` instead of `grep` to avoid the whole piping from `find` thing
-* `findstr /S grep *.md` 
-* if you forget to add a wildcard file specifier it just seems to hang while pretending to work - this has been a huge waste of my time in the past.
+* `findstr /S /I grep *.md` 
+* `findstr /S Findstr *.md` 
+* Findstr Caveats: 
+  *  if you forget to add a wildcard file specifier it just seems to hang while pretending to work - this has been a huge waste of my time in the past.
 
 
 # Linux
