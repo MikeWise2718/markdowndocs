@@ -35,6 +35,11 @@ It's all about the mods
 - Asset Editor <https://skylines.paradoxwikis.com/Asset_Editor>
 - Importing OSM Maps <https://steamcommunity.com/app/255710/discussions/0/1456202492182996717/>
 
+# What I used
+- Modding guide: <https://media.readthedocs.org/pdf/citiesskylinesmoddingguide/latest/citiesskylinesmoddingguide.pdf>
+ - REferences (Assemblies) Import Dir: `C:\Program Files (x86)\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed`
+
+
 # Github Repos
 
 ## System Info
@@ -64,4 +69,7 @@ It's all about the mods
 
 # C:S Limits
 ![Limits](cs_limits.png)
+
+# Modding
+- 
 
