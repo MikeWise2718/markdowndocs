@@ -18,6 +18,9 @@ output: html_document
 - "T" - brings up your oSAS (Stability Assist System) - makes it unnessary to keep correcting your yaw and pitch commands - also has auto positioning for various rocket orientations
 - "+" and "-" - zooms view
 
+# Misc
+- Keybindings <https://wiki.kerbalspaceprogram.com/wiki/Key_bindings>
+
 # In general
 - Lauch with space bar
 - Start tipping the rocket with "d" at 1000 m

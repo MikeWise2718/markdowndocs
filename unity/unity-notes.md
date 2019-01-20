@@ -61,6 +61,10 @@ Now to make both windows simulatiously visible
 ![Finding Pivot](FindingPivot.png)
 
 
+# System Stuff
+## Build date
+- Boo script here - see both answers: <https://forum.unity.com/threads/build-date-or-version-from-code.59134/>
+
 # Cameras
 
 

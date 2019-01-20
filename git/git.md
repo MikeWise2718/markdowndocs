@@ -89,18 +89,31 @@ output:
    * System*wide directory: `$(prefix)/etc/gitconfig`
 
 
-## Command line sequence
-* `git add *A .`
-* `git commit *m "message"`
+## Stage changes, commit, and push t omaster command line sequence
+* `git add -A .`
+* `git commit -m "message"`
 * `git push`
-git config   *global credential.helper 'cache   *timeout=3600'
+
+## Checkout a new branch
+* Git help: <https://gist.github.com/markSci5/5916003>
+* `git branch <branch_name>` followed by `git checkout <branch_name>`
+* or just `git checkout -b <branch_name>`
+
+## Merge branch
+* Git Help <https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/>
+*  `git checkout master` 
+*  `git pull` 
+*  Resolve conflicts
+* 
+
+git config   -global credential.helper 'cache   -timeout=3600'
 
 ## Password Caching
 * There are lots of ways to approach this
 * Login using `ssh` instead of `https`
 * Use "Credential Helper"
-   * $ git config   *global credential.helper cache  # Tell git to use the credential helper
-   * $ git config   *global credential.helper 'cache   *timeout=3600' # Set the timeout to 1 hour 
+   * $ git config   -global credential.helper cache  # Tell git to use the credential helper
+   * $ git config   -global credential.helper 'cache   -timeout=3600' # Set the timeout to 1 hour 
 
 
 ## Git Log

@@ -43,7 +43,10 @@ If there is one thing I forget faster than how to configure Android, I don't kno
   * Connect via IP: `adb connect 192.168.1.179`
   * Start a server on an attached device (?) `adb tcpip 5555`
 
-# Unity remote touch debugging
+
+# Unity and Android Notes
+
+## Unity remote touch debugging
 * Download "Unity Remote 5" app from Google Playstore <https://play.google.com/store/apps/details?id=com.unity3d.genericremote&hl=en>
 * Enable USB Debugging on android device in Settings/Developer
 * Start the above remote app on the Android device
@@ -76,11 +79,11 @@ C:\Program Files (x86)\Android\android-sdk\platform-tools>adb logcat | grep "Pac
 11-19 16:01:47.830  3113  3424 E PackageInstaller: Commit of session 569127848 failed: Failed to collect certificates from /data/app/vmdl569127848.tmp/PackageInstaller: Attempt to get length of null array
 ```
 
-# APKs
+## APKs
  * Android Package files are applications
  * Seemingly they need to be signed
 
-# Home Screen
+## Home Screen
  - Launcher - Settings / Apps & Notifications / Deafult Apps / Lanucher
  - Number of home screens - 
     - Go to a blank area of a home screen
