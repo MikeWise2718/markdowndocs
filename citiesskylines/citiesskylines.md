@@ -24,11 +24,17 @@ It's all about the mods
    - F7 opens debug log window
    - Ctrl-Q for  modtool options
  
+ # Harmony Framework
+ - Wierd stuff: <https://github.com/pardeike/Harmony/>
+ - Transpilers: <https://gist.github.com/pardeike/c02e29f9e030e6a016422ca8a89eefc9>
 
-# OSM MOds
+# Important OSM MOds
 - cimtographer <https://steamcommunity.com/sharedfiles/filedetails/?id=416064574>
 - <https://www.spielerheim.de/forum/index.php?thread/6951-cimtographer-reales-stra%C3%9Fennetz-importieren/>
 - OSM Import Instructions <https://github.com/rdiekema/cs-osm-import/wiki>
+- Move It - Repo here: <https://github.com/Quboid/CS-MoveIt>
+- Plop the Growables <https://steamcommunity.com/sharedfiles/filedetails/?id=924884948>
+   - Discussion: <https://www.reddit.com/r/CitiesSkylines/comments/7l1owj/plop_the_growables/>
 
 # Modding Docs
 - Really great modding info <https://cslmodding.info/>
