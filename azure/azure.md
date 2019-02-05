@@ -30,6 +30,13 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
 * you can see all your support requests here: <https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview>
 * In the portal, the icon for it is a blue little guy with a halo (sort of) towards the end
 
+# Naming Conventions
+Complicated topic because there are a lot of wierd restrictions and requirements that limit your flebility. See the Cogworks article or the Reddit discussion for a good discussion of these.
+
+- Microsoft's recommendations: <https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions>
+- This Cogworks article is good: <https://thecogworks.com/blog/posts/azure-naming-guidelines/>
+- Reddit dicsussion: <https://www.reddit.com/r/AZURE/comments/8u9t5i/what_do_you_use_for_naming_conventions_in_azure/>
+
  # Azure IoT Hub
   - I moved this stuff to a dedicated page on it
 
