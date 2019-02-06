@@ -46,6 +46,8 @@ ConnectionState    ConnectionStateUpdatedTime    DeviceId                  Gener
 Disconnected       0001-01-01T00:00:00           joltik-l4t-aarch64  636573115187857662  0001-01-01T00:00:00  enabled   0001-01-01T00:00:00
 Disconnected       0001-01-01T00:00:00           abra-ubu-x86        636573076267454124  0001-01-01T00:00:00  enabled   0001-01-01T00:00:00
 ```
+  - Overview of Azure CLI <https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>
+     - Update to newest version on Linux: `sudo apt-get install azure-cli` 
   - Deleting a device
      - Just delete the device out of the device list on the IoT Edge portal
      - Then delete the associated running and exited dockers (for the "Simulated Linux Device Tutorial" there were 3 of them)

@@ -25,7 +25,9 @@ output: html_document
 - `az login                               `  # Makes you go to a web page and enter an 8 digit alfanum code 
 - `az account show                        `  # What account am I using
 - `az account list --output table`        `  # List all the accounts you have
-- `az account set -s "Account Name"       `  # Set a particular account     
+- `az account set -s "Account Name"       `  # Set a particular account  (did not work on Ubuntu)
+- `az account set --subscription "2 - Smart Parking Solution"` # This worked on Ubutntu
+
 
 # What locations are there   
 - `az account list --output table         `  # List azure locations
