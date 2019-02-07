@@ -17,5 +17,18 @@ output: html_document
 * Uses corp login so no password
 
 # How to
+* See your packages - login with your account and go to username/Manage Packages: <https://www.nuget.org/account/Packages>
 * Create and publish with the dotnet CLI - https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
 
+# Example
+- Manage your published nugets on <https://www.nuget.org/>
+    - Login name is `MikeWise`
+    - Email is `mwise@somecompany.com`
+- API key: `oy2dmxphhoxdtce2bxxxxxxxxxxxxxxxxxqou5ihhmljqfnj23m`
+- Key will expire one year from 7 Feb 2019 (when I created it)
+- Command to push library to nuget.org: 
+    - increment the version number in `common.csproj`
+    - `dotnet build` as usual
+    - then change to directory with nuget package (`.\bin\Debug\`) 
+    - then enter `dotnet nuget push .\VafspLib.1.0.0.nupkg -k oy2dmxphhoxdtce2bxxxxxxxxxxxxxxxxxqou5ihhmljqfnj23m -s https://api.nuget.org/v3/index.json`
+    - then wait for it to publish, which can take up to an hour
