@@ -50,6 +50,7 @@ More info here: https://docs.microsoft.com/en-us/nuget/tools/dotnet-commands
     <ProjectReference Include="..\h-common\h-common.csproj" />
   </ItemGroup>
 ```
+*   See the nuget page for instructions on how to make this into a nuget package and publish it
 
 # Current Version
 As of 18 April 2018
