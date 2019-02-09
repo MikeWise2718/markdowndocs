@@ -151,6 +151,9 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
       - `docker logs edgeAgent`
       - `docker logs edgeHub`
       - `docker logs mycontainer`
+      - Truncate logs `sudo sh -c "truncate -s 0 /var/lib/docker/containers/*/*-json.log"`
+         - see <>
+
 
 # Internals
 - the current config is stored in `/etc/azure-iot-edge/config.json`

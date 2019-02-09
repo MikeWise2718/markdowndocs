@@ -18,6 +18,9 @@ output: html_document
 * REST API Limitations: https://msdn.microsoft.com/en-us/library/dn950053.aspx
 * Embedded complications: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
 
+# Duplicating Workspaces, Reports, Dashboards, etc.
+* Tutorial <https://powerbi.microsoft.com/en-us/blog/duplicate-workspaces-using-the-power-bi-rest-apis-a-step-by-step-tutorial/>
+
 # PBI Service Data Export
 * You cannot use the REST API to do this (https://community.powerbi.com/t5/Developer/Get-data-using-REST-API/td-p/122055)
 * You have to create a report from a dataset and select all the columns, then export to Excel (or sometimes CSV is possible directly)
