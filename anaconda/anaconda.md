@@ -17,3 +17,29 @@ Anaconda - probably the main Python package for scientific computing.
 - WHen you install it you can choose a directory.
 - My default when installing on windows was "C:\Users\mike\Anaconda3"
 - Seems that in the past it might have put it in "C:\Users\mike\AppData"
+
+# Always work in environments
+- Managing environment link <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually>
+
+
+# Creating a first environment
+- `conda env creae -f first.yml`
+
+
+first.yml:
+
+```
+name: osm-bld-heights
+channels:
+  - anaconda
+  - conda-forge
+  - anaconda-fusion
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pip
+  - scikit-learn
+  - scipy
+  - jupyterlab
+```
