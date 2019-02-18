@@ -38,6 +38,7 @@ channels:
 dependencies:
   - numpy
   - matplotlib
+  - pandas
   - pip
   - scikit-learn
   - scipy

@@ -73,8 +73,55 @@ output: html_document
 
 # Workspaces
 * Works spaces are created from the icon menu on the left - the one with all the overlaping-overlaid boxes
--*This opens up a list of all the workshapces you have access to. At the very bottom is an option to create a workspace
+* This opens up a list of all the workshapces you have access to. At the very bottom is an option to create a workspace
 * This option (the right to create PBI groups (workspaces apparenatly) can be turned off by an administrator.
+
+# Clearing out data
+*  the data builds up over time. You cannot clear out a subset, you can only clear all the data from a single table at a time.
+* Relvant post: <https://github.com/DevScope/powerbi-powershell-modules/issues/12>
+* Following is a PowerShell script using the PBI Rest api to do this
+```
+# Upload to CSV using PowerBIPS: https://powerbi.microsoft.com/en-us/blog/using-a-power-bi-app-to-upload-csv-files-to-a-dataset/
+# PowerBIPS page (including installation): https://github.com/DevScope/powerbi-powershell-modules
+# Docs https://github.com/DevScope/powerbi-powershell-modules/tree/master/Modules/PowerBIPS/doc
+
+Import-Module PowerBIPS
+
+
+# ClientID is Azure Application Id with PBI permissions and Reply Url: https://login.live.com/oauth20_desktop.srf and https://localhost
+# Don't forget to "grant permissions" in the Azure Portal as well
+$authToken = Get-PBIAuthToken -clientId 9c74176a-8437-4e92-94f5-2041a54c3b2c
+
+# Get-PBIWorkspace
+# Set-PBIWorkspace -guid 
+
+$dataSetName = "vafsbsumdata"
+$tableName = "vafsbobjsumtable"
+
+$dataSet = Get-PBIDataSet -authToken $authToken -name $dataSetName 
+Clear-PBITableRows -authToken $authToken -DataSetId $dataSet.Id -TableName $tableName
+
+$dataSetName = "vafsbhitdata"
+$tableName = "vafsbhittable"
+
+$dataSet = Get-PBIDataSet -authToken $authToken -name $dataSetName 
+Clear-PBITableRows -authToken $authToken -DataSetId $dataSet.Id -TableName $tableName
+
+
+$dataSetName = "vafsbtrndata"
+$tableName = "vafsbtrntable"
+
+$dataSet = Get-PBIDataSet -authToken $authToken -name $dataSetName 
+Clear-PBITableRows -authToken $authToken -DataSetId $dataSet.Id -TableName $tableName
+
+
+$dataSetName = "vafsbcamdata"
+$tableName = "vafsbcamtable"
+
+$dataSet = Get-PBIDataSet -authToken $authToken -name $dataSetName 
+Clear-PBITableRows -authToken $authToken -DataSetId $dataSet.Id -TableName $tableName
+
+```
 
 # Creating R Custom Visuals
 * Installation notes:
