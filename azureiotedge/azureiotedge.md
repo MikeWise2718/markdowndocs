@@ -373,3 +373,23 @@ The command '/bin/sh -c dotnet publish -c Release -o out' returned a non-zero co
    - Date 2018-04-36 14:00
    - Resolution: Reboot of abra did not help, but stoping the containers and deleteing the exited modules seemed to fix it (?) - seems odd
 
+- Issue: Could not do an `az login` from my Server Domain Joined laptop, it kept saying "That code didn't work" followed by "The code you entered has expired" when I retried. I think it was trying to login as miwise@live.com, when I do an `az login -u mwise@microsoft.com -p xxxxxx` it brought a more interesting message:
+```
+Get Token request returned http error: 400 and server response: {"error":"interaction_required","error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, youmust enroll in multi-factor authentication to access '797f4846-ba00-4fd7-ba43-dac1f8f63013'.\r\nTrace ID: 80c61215-0a6a-493a-8d19-bda18c072500\r\nCorrelation ID: f36f408b-b1ed-4ca9-84b4-52a8939b8c35\r\nTimestamp: 2019-02-24 15:42:23Z","error_codes":[50079],"timestamp":"2019-02-24 15:42:23Z","trace_id":"80c61215-0a6a-493a-8d19-bda18c072500","correlation_id":"f36f408b-b1ed-4ca9-84b4-52a8939b8c35","suberror":"basic_action"}PS C:\vafsp\mod\objdet>
+```
+```
+- Trying this: https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest 
+- 
+- PS D:\githubpages\markdownnotes> az ad sp create-for-rbac --name vafsp-svp --create-cert --cert authcert1 --keyvault vafsp-kvt
+Retrying role assignment creation: 1/36
+Retrying role assignment creation: 2/36
+Retrying role assignment creation: 3/36
+Retrying role assignment creation: 4/36
+{
+  "appId": "7ba64db8-eadf-4362-9703-beb900b87bab",
+  "displayName": "vafsp-svp",
+  "name": "http://vafsp-svp",
+  "password": null,
+  "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+}
+```
