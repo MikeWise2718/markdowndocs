@@ -15,16 +15,23 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
  - South Central used to be my go-to region for new stuff, but I don't think that is true anymore.
  - capacity problems abound...
 
+# Azure App Service for Linux
+- Docs here: https://politics.stackexchange.com/questions/39688/why-did-the-eu-agree-to-delay-the-brexit-deadline 
+- Had to install App Service Extension 0.13.0: 
+
 
 # Billing
-* You can see all your subscriptions here: <https://account.azure.com/Subscriptions>
+- You can see all your subscriptions here: <https://account.azure.com/Subscriptions>
 ![Azure Billing Subs](AzBillingSubs.png)
-* Select a sub and you can download to a csv
-* Understand your bill here: <https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill>
-* But because the rates are blank for internal subs, you can't really see what things cost
-* There is a possiblity to estimate costs ahead of time: <https://docs.microsoft.com/en-us/azure/billing/billing-getting-started> 
-* The cube can be accessed over: <https://azuremsregistration.cloudapp.net> 
-  * If you get an error it probably has the wrong user, try in another browser or incognito
+- Select a sub and you can download to a csv
+- Understand your bill here: <https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill>
+- But because the rates are blank for internal subs, you can't really see what things cost
+- There is a possiblity to estimate costs ahead of time: <https://docs.microsoft.com/en-us/azure/billing/billing-getting-started> 
+- The cube can be accessed over: <https://azuremsregistration.cloudapp.net> 
+  - If you get an error it probably has the wrong user, try in another browser or incognito
+- 2019-03-24 - Clicking on the Azure subscriptions (the key icon) and then a subscription now brings up the current and projected costs:<br>
+![Azure Subscription costs](subcosts.png)
+
 
 # Support Requests
 * you can see all your support requests here: <https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview>
