@@ -114,3 +114,10 @@ Received a batch with inconsistent schemas. Please ensure that the schemas of ou
 ```
 ![inconsistentschemaerr](InconsistentSchemasError.png)<br>
 Problem was I was sending two messahage schemas with `SendMessage` with the same `messageType` parameter
+
+
+- Trying to configure 8 SQL queries failed because of a message I forgot to record - something like this
+  - When trying to configure two sources against my IoT Edge Hub, I ran into this issue:
+     - Too many readers for the consumer group: https://stackoverflow.com/a/41912572/3458744 
+  - Decided to have one IoT Edge Hub per installation going forward
+     - http://winterttr.me/2015/09/05/Concurrent-Reader-on-a-specific-EventHub-Partition-within-one-consumer-group/
