@@ -85,3 +85,17 @@ Now to make both windows simulatiously visible
 ## Text
 * Text now appearing after I add to a panel....
 
+## Mixamo animation import
+- 1. Select an character/animation and download - you will get a fbx in the downloads file
+- 2. Import it into a folder in Assets
+- 3. Give the animation a name and create an "Animator Controler" in some folder in Assets. Note that the icon is 3 boxes and a run button. Don't confuse with the "Animation" (has a simple play button)
+- 4. Double click and open it. It is empty.
+- 5. Locate a character/prefab that is rigged correctly already (humanoid)
+- 6. Add an "Animator" component to that character/prefab
+- 7. Add your new empty Animator Controller to the "Controller" selector box in the component
+- 8. Now drag and drop into the Animator Controller. It will add an orange box with the label "mixamo_com". You can rename this if you want but there seems to be no real reason at this point...
+- 9. **Double click** on that orange box - an import settings window will open (I was using single click for awhile, went in circles)
+- 10. Switch to the "Rig" tab
+- 11. Set the animation type to "Humanoid".
+- 12. Click the Apply button, it should import the animation into the contoller now.
+- 13. Now if you hit the "Play" button, the character should animate as desired.
