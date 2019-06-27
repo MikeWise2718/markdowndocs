@@ -37,7 +37,10 @@ This link - [The Graph Process](http://tinkerpop.apache.org/docs/current/referen
  - `Graph Process` - described [here](http://tinkerpop.apache.org/docs/current/reference/#the-graph-process) and referred to mostly as a "traversal".
 
  # Example
-
+- Currently this is setup on Uxie on `D:\tinkerpop`
+- Change Directory to `D:\tinkerpop\apache-gremlin-console-3.1.1-incubating>`
+- There is a file in the `bin` sub-directory that you can run with:`bin\gremlink.bat`
+- Session follows:
 ```
 gremlin> g = TinkerGraph.open()
 ==>tinkergraph[vertices:0 edges:0]
