@@ -7,9 +7,9 @@ output: html_document
 # Intro
 Rain meter is a desktop custimization tool with a huge selection of user built content, for example for overclocking monitoring.
 
+ - Main site: (https://www.rainmeter.net/)
+
 # HwINFO
 The HwWINFO Plugin seems to the best way forward, even though I haven't found source code to it.
 
 
-
-# Something Else
