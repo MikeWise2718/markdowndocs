@@ -8,6 +8,10 @@ output: html_document
 - Open Street Map (OSM)  - main page: (https://www.openstreetmap.org/#map=6/51.337/10.459)
 - Query Service - Overpass Turbo (https://overpass-turbo.eu/)
 
+
+# Types
+- Highway types - (https://wiki.openstreetmap.org/wiki/Key:highway)
+
 # Overpass API
 - Explained here: https://wiki.openstreetmap.org/wiki/Overpass_API 
 - Uses Overpass QL 
@@ -26,11 +30,11 @@ output: html_document
 out meta;
 ```
 - The bbox value can be found under `Export/Map/Current Map View`
-
+- Useful OSM queries (https://github.com/posm/OpenMapKitAndroid/wiki/OSM-Data-from-the-Overpass-API)
 
 # Python Overpass API
 - Overview and Installation Page: (https://python-overpy.readthedocs.io/en/latest/introduction.html)
-
+- More docs (https://buildmedia.readthedocs.org/media/pdf/python-overpy/latest/python-overpy.pdf)
 
 ## Setup and Test
 - conda create -n overpass python=3
