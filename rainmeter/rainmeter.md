@@ -22,25 +22,32 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
 ![Manage Rainmeter](ManageRainmeter.png)
 
 
-
+# HwINFO Skin and Plugin
+- The HwINFO Plugin seems to the best way forward, even though I haven't found source code to it.
+- The HWiNFO64 app needs to be installed and running for the HwINFO Rainmeter plugin to work in Rainmeter. See Below.
+- Can onfigure with a right click on Skin Windows!!!! (keep forgetting this)
+- Also the "Shared Memory" app needs to be installed. See furthur below.
+- Everything is located in: `C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\`
+- Demo skin location: `HWiNFO.ini`
+- Skin measures reference variables location: `@Resources\HWiNFO.inc`
+- Values for those measure referenc variables can be found in the HwINFO Shared Memory Viewer described below.
+- Default skin has sections for
+  - CPU0 (worked fine but temp did not work)
+  - GPU0- is the Intel GPU that is on my Mobo, HwINFO seemingly doesn't see its sensors 
+  - GPU1 - My MSI 1060 worked fine
+- Remote Machine windows - didn't configure any, no Linux monitors apparently
 
 # HwINFO App
-The HwINFO Plugin seems to the best way forward, even though I haven't found source code to it.
-- The HWiNFO64 app needs to be installed and running for the HwINFO Rainmeter plugin to work in Rainmeter.
-- Also the "Shared Memory
+- Has blue icon when running, can be viewed in tray.
 - This is how it needs to be configured
    - "Minimize Sensors instead of Closing" is checked
    - "Shared Memory support" is checked<br>
 ![HwINFO64 ScreenShot](HwINFO64-ShowAll.png)
 - Some rather old docs in a forum from the author (https://www.hwinfo.com/forum/Thread-Rainmeter-plug-in-for-HWiNFO)
 - New docs (pointing out how badly documented it is) (https://www.hwinfo.com/forum/Thread-Getting-Started-Confusion)
-- Everything is located in: `C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\`
-- Demo skin location: `HWiNFO.ini`
-- Skin measures reference variables location: `@Resources\HWiNFO.inc`
-- Values for those measure referenc variables can be found in the HwINFO Shared Memory Viewer described below
 
 # HwINFO Shared Memory Viewer
-- Seperate app to view the Shared Memory values with purple instead of blue icon
+- Seperate app to view the Shared Memory values with purple instead of blue icon.
  - Looks like this:<br>
  ![HwINFO64 ScreenShot](HwINFO64smv1.png)
 - The CPU temp was not registering, we had to make the following change to HWINFO.Inc:
