@@ -67,7 +67,7 @@ C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\@Resources>diff HWiNFO.inc HWiNFO
 # Second draft 2029-07-10
 - retrived documented what I did back then 
 ## To Do
-- Get rid of the unused windows
+- Get rid of the unused windows (check)
 - Add wattage values
 - Add new windows for all 4 different cores 
 
