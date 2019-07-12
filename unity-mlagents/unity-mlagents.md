@@ -15,7 +15,7 @@ output: html_document
 You can follow it along with a newer version of Unity and the current ml-agents, however note that the tutorial is over a year old and uses a different version, so some of the code and Editor controls are not quite the same.
 
 
-Install and run:
+# Install and run a test training session:
 -	Install ml-agents (see link below)
 -	Start an Anaconda DOS prompt
 -	Start the Unity example that you want to test (like pushblock)
@@ -24,10 +24,15 @@ Install and run:
 -	Make sure the academy is configured with a learning brain 
 -	`activate ml-agents`
 -	`cd d:\unity\mlagents`
--	`mlagents-learn config/trainer_config.yaml  -–train --run-id=smth_1 `
+-	`mlagents-learn config/trainer_config.yaml  -–train --run-id=something_1 `
 -	It will emit a bunch of messages and then ask you to "Hit Play" in the Unity Editor
+-   Training will run the number of steps configured in `trainer_config.yaml`
+-   After the run is finished (or interrrupted) the trained brain should be in:
+    - `unity/ml-agents/models/<run-identifier>/<brain_name>.nn`
+-   To use in your app copy it to the `Assets/../TFmodels` folder and configure it into your player brain
 
-
+# Training a brain and installing it end-to-end
+- Here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Basic-Guide.md)
 
 
 ## Steps to generalizing an SDK example
