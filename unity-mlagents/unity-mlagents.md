@@ -24,8 +24,34 @@ Install and run:
 -	Make sure the academy is configured with a learning brain 
 -	`activate ml-agents`
 -	`cd d:\unity\mlagents`
--	`mlagents-learn config/trainer_config.yaml  --run-id=smth_1 –train`
+-	`mlagents-learn config/trainer_config.yaml  -–train --run-id=smth_1 `
 -	It will emit a bunch of messages and then ask you to "Hit Play" in the Unity Editor
+
+
+
+
+## Steps to generalizing an SDK example
+-   Opened the UnitySDK project
+-	Copyied Hallway Example `Assets/ML-Agents/Examples/Hallway` over to a new folder `Assets/ML-Agents/Examples/CrowdMove`
+-	Renamed `HallwayLearning` Scene to `CrowdMoveLearning` and deleted the other scenes
+-	Renamed the `HallwayLearning` brain to `CrowdMoveLearning` brain
+-	Renamed the `HallwayLearning` TFmodel to `CrowdMoveLearning` TFmodel
+-	Created new Scripts `CrowdMoveAcademy` and `CrowdMoveAgent` by renaming the `.cs` files and renaming the class names – and then deleted the old ones
+-	Renamed `HallwayAcademy` GameObject in Hierarchy view to `CrowdMoveAcademy`, deleted the `HallwallAcademy` component in it, and added the new `CrowdMoveAcademy` component
+-	Renamed the `HallwayArea` Prefab to `CrowdMovearea` Prefab and deleted the `HallwayAgent` component in the `Agent` GameObjec and added the `CrowdMoveAgent` Component
+-	Deleted all 16 `HallwayArea` prefab instances from `CrowdMoveLearning` scene and added a single `CrowdMoveArea` Prefab instance (for now only want one)
+-	Assigned all the local GameObject reference variables (6 of them) in the `CloudMoveAgent` component in the prefab. They pointed at other GameOjects in the prefab
+-	Assigned the `CrowdMoveLearning` brain to the `CrowdMoveAgent` component in the prefab
+-	Checked the `Use Vector Obs` checkbox in the `CrowdMoveAgent` component in the prefab
+-   Checked the variable values in the `CrowdMoveAcademy` to see if they were the same as the `HallwayAcademy` prefab. They weren't....
+   - Did this by screenshoting `HallwayAcademy` component settings and hand copied them into `CrowdMoveAcademy` component
+-	Added `CrowdMoveLearning` TFmodel to `CrowdMoveLearning` brain (initializes empty)
+-	Changed 2 lines of code Initialization routine in `CrowMoveAgent` Script to:
+     - `CrowdMoveAcademy academy;`
+     - `academy = FindObjectOfType<CrowdMoveAcademy>();`  
+-	Added `CrowdMoveLearning` Brain to Broadcast Hub in `CrowdMoveAcademy` component and checked Control checkbox
+-	Make sure `Control` checkbox is ticked in `CrowdMoveAcademy` component or you will get a timeout when you start the learn python script and some useless suggestions on how to fix it
+-   It worked .... may have forgotten to document a step or two here though
 
 
 ## More Links
