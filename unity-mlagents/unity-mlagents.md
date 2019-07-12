@@ -34,6 +34,13 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 # Training a brain and installing it end-to-end
 - Here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Basic-Guide.md)
 
+# Training code
+- It is compiled, probably with `py2exe`
+- But you can run direct:
+    - `cd unity/ml-agents`
+    - `python3 ml-agents/mlagents/trainers/learn.py config/trainer_config.yaml  -–train --run-id=something_1` 
+    - The way to do it is to create a subclass of `Trainer`, similar to `PPOTrainer`
+    - `class Trainer` is in  `trainer.py` and `class PPOTrainer` is in `ppo/trainer.py` which is a bit confusing
 
 ## Steps to generalizing an SDK example
 -   Opened the UnitySDK project
