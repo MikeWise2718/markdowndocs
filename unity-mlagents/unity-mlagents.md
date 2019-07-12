@@ -53,6 +53,28 @@ Install and run:
 -	Make sure `Control` checkbox is ticked in `CrowdMoveAcademy` component or you will get a timeout when you start the learn python script and some useless suggestions on how to fix it
 -   It worked .... may have forgotten to document a step or two here though
 
+## Tensorboard
+- Explained here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Using-Tensorboard.md)
+- The essential bit
+```
+The ML-Agents toolkit saves statistics during learning session that you can view with a TensorFlow utility named, TensorBoard.
+
+The mlagents-learn command saves training statistics to a folder named summaries, organized by the run-id value you assign to a training session.
+
+In order to observe the training process, either during training or afterward, start TensorBoard:
+
+1. Open a terminal or console window:
+
+2. Navigate to the directory where the ML-Agents Toolkit is installed (cloned to - e.g. `~/Unity/ml-agents`)
+
+3. From the command line run :
+      tensorboard --logdir=summaries
+
+4. Open a browser window and navigate to localhost:6006.
+
+Note: If you don't assign a run-id identifier, mlagents-learn uses the default string, "ppo". All the statistics will be saved to the same sub-folder and displayed as one session in TensorBoard. After a few runs, the displays can become difficult to interpret in this situation. You can delete the folders under the summaries directory to clear out old statistics.
+```
+- worked without problem from my windows host remotely `http://192.168.25.12:6006` - seems like it should not have?
 
 ## More Links
 - Installing ml-agents on Windows: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
