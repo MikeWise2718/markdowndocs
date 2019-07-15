@@ -83,7 +83,8 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 
 # Restarting Training
 - Here is a discussion:(https://github.com/Unity-Technologies/ml-agents/issues/532)
-- Basically just use `--load` as in: `python learn.py name --run-id=13 --train --load`
+- Basically just use `--load` as in: `python learn.py name --run-id=13 --train --load` 
+- `run-id` has to be the same of course, `Step:` count will continue from interruption but `Time Elapsed:` will reset tp zero
 - Here is a more involved one:(https://github.com/Unity-Technologies/ml-agents/issues/138
 )
 
