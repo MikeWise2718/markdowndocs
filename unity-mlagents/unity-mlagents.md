@@ -16,7 +16,7 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 
 
 # Install and run a test training session:
--	Install ml-agents (see link below)
+-	Install `ml-agents` (see link below)
 -	Start an Anaconda DOS prompt
 -	Start the Unity example that you want to test (like pushblock)
 -	Load a scene with an academy in it 
@@ -31,16 +31,32 @@ You can follow it along with a newer version of Unity and the current ml-agents,
     - `unity/ml-agents/models/<run-identifier>/<brain_name>.nn`
 -   To use in your app copy it to the `Assets/../TFmodels` folder and configure it into your player brain
 
+
 # Training a brain and installing it end-to-end
 - Here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Basic-Guide.md)
 
 # Training code
 - It is compiled, probably with `py2exe`
-- But you can run direct:
+- But you can run the python directly:
     - `cd unity/ml-agents`
     - `python3 ml-agents/mlagents/trainers/learn.py config/trainer_config.yaml  -–train --run-id=something_1` 
     - The way to do it is to create a subclass of `Trainer`, similar to `PPOTrainer`
     - `class Trainer` is in  `trainer.py` and `class PPOTrainer` is in `ppo/trainer.py` which is a bit confusing
+
+# Code Structure
+- Code is in `ml-agents/ml-agents`
+- There is a `README.md` there worth reading: (https://github.com/Unity-Technologies/ml-agents/tree/master/ml-agents)
+- There are two sub-packagtres
+   -  `mlagents.env` a low-level PAPI to talk to Unity 
+   -  `mlagents.trainers` A set of RL learning algorithms that works with the above
+
+## mlagents.env
+- code in `ml-agents/ml-agent-envs`
+- There is a readme there too: (https://github.com/Unity-Technologies/ml-agents/tree/master/ml-agents-envs)
+- Can apparently be installed on its own
+- Data transported to Unity and back in `ml-agents/ml-agents-envs/mlagents/envs/brain.py`
+
+
 
 ## Steps to generalizing an SDK example
 -   Opened the UnitySDK project
@@ -65,7 +81,7 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 -	Make sure `Control` checkbox is ticked in `CrowdMoveAcademy` component or you will get a timeout when you start the learn python script and some useless suggestions on how to fix it
 -   It worked .... may have forgotten to document a step or two here though
 
-## Tensorboard
+# Tensorboard
 - Explained here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Using-Tensorboard.md)
 - The essential bit
 ```
@@ -87,9 +103,25 @@ In order to observe the training process, either during training or afterward, s
 Note: If you don't assign a run-id identifier, mlagents-learn uses the default string, "ppo". All the statistics will be saved to the same sub-folder and displayed as one session in TensorBoard. After a few runs, the displays can become difficult to interpret in this situation. You can delete the folders under the summaries directory to clear out old statistics.
 ```
 - worked without problem from my windows host remotely `http://192.168.25.12:6006` - seems like it should not have?
+### To Add Observations
+- The `custom_observations` field in `Brain_info` seems to be appropriate for this 
+- Docs are here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Creating-Custom-Protobuf-Messages.md)
+- You have to declare the data in protobuf, then compile to get the C# and Python code 
+- Protobuf files found in: `D:\Unity\ml-agents\protobuf-definitions\proto\mlagents\envs\communicator_objects` (`dir /s *.proto`)
+- Seems to be that PPO does not use `custom_observations` in training (`D:\Unity\ml-agents\ml-agents\mlagents\trainers\ppo\trainer.py` does not reference it)
+- Need to add field to stats and see if it comes over in the above `ppo\trainer.py` file
+- To do:
+   - Add field to stats in `ppo/trainer.py` and append dummy data to it every step
+   - See if it displays
+   - Change the dummy data to be something from the observations
+   - See if it displays
+   - Add a custom_observation field and compile it
+   - Populate it from Unity and see if it comes over
+   - Then use it
+
 
 ## More Links
-- Installing ml-agents on Windows: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
+- Installing ml-agents on Windows: `https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
 - ml-agents GitHub repo: https://github.com/Unity-Technologies/ml-agents
 - ml-agents Documentation: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md
 - Unity ml-agents at GDC 2018: https://www.youtube.com/watch?v=YsEDv13W1RI
