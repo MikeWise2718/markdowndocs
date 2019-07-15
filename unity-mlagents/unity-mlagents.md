@@ -81,6 +81,12 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 -	Make sure `Control` checkbox is ticked in `CrowdMoveAcademy` component or you will get a timeout when you start the learn python script and some useless suggestions on how to fix it
 -   It worked .... may have forgotten to document a step or two here though
 
+# Restarting Training
+- Here is a discussion:(https://github.com/Unity-Technologies/ml-agents/issues/532)
+- Basically just use `--load` as in: `python learn.py name --run-id=13 --train --load`
+- Here is a more involved one:(https://github.com/Unity-Technologies/ml-agents/issues/138
+)
+
 # Tensorboard
 - Explained here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Using-Tensorboard.md)
 - The essential bit
