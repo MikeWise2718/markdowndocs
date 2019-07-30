@@ -12,9 +12,6 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
  - Getting Help on Forums (https://forum.rainmeter.net/viewtopic.php?f=5&t=28421)
  - Rainmeter Measures: (https://docs.rainmeter.net/manual/measures/)
  
-
-
-
 # Config
 - Installed into `C:\Users\mike\Documents\Rainmeter`
 - Skins are best managed from app loaded from Tray icon (teardop)
@@ -39,6 +36,7 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
 
 # HwINFO App
 - Has blue icon when running, can be viewed in tray.
+  - Keystrokes: `Alt-Windows Key-HwInfo`
 - This is how it needs to be configured
    - "Minimize Sensors instead of Closing" is checked
    - "Shared Memory support" is checked<br>
@@ -48,8 +46,9 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
 
 # HwINFO Shared Memory Viewer
 - Seperate app to view the Shared Memory values with purple instead of blue icon.
- - Looks like this:<br>
- ![HwINFO64 ScreenShot](HwINFO64smv1.png)
+  - Keystrokes: `Alt-Windows Key-HwInfoShared`
+  - Looks like this:<br>
+   ![HwINFO64 ScreenShot](HwINFO64smv1.png)
 - The CPU temp was not registering, we had to make the following change to HWINFO.Inc:
 ```
 C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\@Resources>diff HWiNFO.inc HWiNFOorig.inc
