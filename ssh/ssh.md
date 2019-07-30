@@ -18,6 +18,9 @@ Config page: <https://www.ssh.com/ssh/config/>
 - Multiple keys can be used here, just append them one after the other. This should allow you to logon as the same user with different keys.
 - `ssh mike@192.168.25.12` for example, note that user is specified in host address
 
+
+
+
 ## sshd
 - The server deamon is configured with `/etc/ssh/sshd_config`
 - `Loglevel` can be cranked to `VERBOSE`
@@ -28,6 +31,16 @@ Config page: <https://www.ssh.com/ssh/config/>
 - Inspect successful logins `zgrep -i "Accepted password" /var/log/auth.log*`
 - Inspect failed logins `zgrep -i "Failed password" /var/log/auth.log*`
 - Count failed logins: `zgrep -i "Failed password" /var/log/auth.log* | wc -l`
+
+# Persistent Terminal Sessions
+- Sometimes you need a terminal session to stay around after you log out.<br>
+
+- How to keep processes running after ending ssh session:
+  - ssh into your remote box. type `screen` Then start the process you want.
+  - Press `Ctrl-A` then `Ctrl-D`. This will detach your screen session but leave your processes running. ...
+  - If you want to come back later, log on again and type `screen -r` This will resume your screen session, and you can see the output of your process.
+
+- There is also the option of starting a process with a trailing ampersand `&` which detaches it from your process so it will keep running
 
 # Putty private keys
 - Putty has its own private key format. There is a way to convert from the normal ssh keys to Putty format keys.
