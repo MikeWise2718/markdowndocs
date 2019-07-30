@@ -22,7 +22,7 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
 # HwINFO Skin and Plugin
 - The HwINFO Plugin seems to the best way forward, even though I haven't found source code to it.
 - The HWiNFO64 app needs to be installed and running for the HwINFO Rainmeter plugin to work in Rainmeter. See Below.
-- Can onfigure with a right click on Skin Windows!!!! (keep forgetting this)
+- Can configure with a right click on Skin Windows!!!! (keep forgetting this)
 - Also the "Shared Memory" app needs to be installed. See furthur below.
 - Everything is located in: `C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\`
 - Demo skin location: `HWiNFO.ini`
@@ -33,6 +33,15 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
   - GPU0- is the Intel GPU that is on my Mobo, HwINFO seemingly doesn't see its sensors 
   - GPU1 - My MSI 1060 worked fine
 - Remote Machine windows - didn't configure any, no Linux monitors apparently
+
+
+# Installing Skin
+- The instructions were broken, but I got it installed by 
+- Downloaded the `HWiNFO.zip` file
+- Unpacked it
+- Copied the `HWiNFO` subfoldoer containing the `HWiNFO.ini` file and a subfolder called `@Resources` 
+the `Documents\Rainmeter\Skins` subfolder
+ 
 
 # HwINFO App
 - Has blue icon when running, can be viewed in tray.
