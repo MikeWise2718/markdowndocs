@@ -126,8 +126,22 @@ Note: If you don't assign a run-id identifier, mlagents-learn uses the default s
    - Populate it from Unity and see if it comes over
    - Then use it
 
+# Starting a remote run on an DSVM
+- Request Just-In-Time access to the box
+- Login: `ssh mike@23.98.150.186`
+- Start a detachable session (persistent screen) `screen` then return after the startup text
+   - you can check it with `screen -r` now
+- Activate the right Python Environment `source activate py36`
+- Go to the directory: `cd ~/UnityProjects/ml_agents_modded`
+- Start the script: `./run02`
 
-## More Links
+run01:
+```
+#!/bin/bash
+mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/UnityProjects/m_agents_modded/UnitySDK/PMLbuild/rlsimple01.x86_64
+```
+
+# More Links
 - Installing ml-agents on Windows: `https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
 - ml-agents GitHub repo: https://github.com/Unity-Technologies/ml-agents
 - ml-agents Documentation: https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md
