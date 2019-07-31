@@ -41,10 +41,12 @@ Rainmeter is a desktop custimization tool with a huge selection of user built co
 - Unpacked it
 - Copied the `HWiNFO` subfoldoer containing the `HWiNFO.ini` file and a subfolder called `@Resources` 
 the `Documents\Rainmeter\Skins` subfolder
+- Look for errors in Rainmeter log (open Rainmeter from Tray (raindrop icon), `Manage` Rainmeter, `Open Log` button towards the bottom)
+- 126 load error means it can't find the plugin dll
 - Useful discussion of where plugin dlls go (https://forum.rainmeter.net/viewtopic.php?f=103&t=22019&sid=8e218e71d52c0edb378e052012598c26&start=10#p116764)
   - Plugins dlls that come with Rainmeter go directly into  `C:\Program Files\Rainmeter\Plugins`
   - custom Plugins dlls go directly into  `C:\Users\YourName\AppData\Roaming\Rainmeter\Plugins`
-
+   
 # HwINFO App
 - Has blue icon when running, can be viewed in tray.
   - Keystrokes: `Alt-Windows Key-HwInfo`
