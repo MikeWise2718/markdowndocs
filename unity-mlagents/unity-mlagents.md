@@ -9,6 +9,7 @@ output: html_document
 - It has been out for a couple of years, and there is a wealth of information on it available. 
 - The downloadable SDK has 10 example implementations and we will be using the “Push Block” tutorial  to base our hackathon on as it has most of the features we will need (notably a ray based environment sensing setup). 
 - The SDK can be found here: (https://github.com/Unity-Technologies/ml-agents)
+- Docs: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md)
 - This tutorial is a good place to start as it goes over the PushBlock example:
 (https://www.youtube.com/playlist?list=PLX2vGYjWbI0R08eWQkO7nQkGiicHAX7IX)
 
@@ -140,6 +141,14 @@ run01:
 #!/bin/bash
 mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/UnityProjects/m_agents_modded/UnitySDK/PMLbuild/rlsimple01.x86_64
 ```
+
+# Tensorboard
+- Docs: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Using-Tensorboard.md)
+- Go to the directory: `cd ~/UnityProjects/ml_agents_modded`
+- Start tensorboard `tensorboard --logdir=summaries`
+- Go to azure portal and find the NSG (Network Security Group) associated with the VM (should have the same name+"_nsg")
+- Add an inbound rule for port 6006 allowing everything
+- Test using browser at `http://xxx.xxx.xxx.xxx:6006`
 
 # More Links
 - Installing ml-agents on Windows: `https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
