@@ -8,12 +8,13 @@ output: html_document
 HWiNFO is a Windows only tool for reading sensor values - particularly those from the Motherboard, GPU, CPU, etc.
 
  - Main site: (https://www.hwinfo.com/)
-
+ 
 
 # HwINFO Rainmeter Skin and Plugin
 - The HwINFO Rainmeter Plugin seems to the best sensor reading system, even though it is not open source.
 - The HWiNFO64 app needs to be installed and running for the HwINFO Rainmeter plugin to work in Rainmeter. See Below.
 - Can configure with a right click on Skin Windows!!!! (keep forgetting this)
+- Some docs on how to use it with rainmeter: (https://forum.rainmeter.net/viewtopic.php?f=15&t=21939)
 - Also the "Shared Memory" app needs to be installed. See furthur below.
 - Everything is located in: `C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\`
 - Demo skin location: `HWiNFO.ini`
