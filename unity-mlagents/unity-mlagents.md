@@ -150,6 +150,10 @@ mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/Uni
 - Add an inbound rule for port 6006 allowing everything
 - Test using browser at `http://xxx.xxx.xxx.xxx:6006`
 
+# Tensorboard - Custom Protobuf Messages
+- Documented here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Creating-Custom-Protobuf-Messages.md)
+- ML-Agents Protobuf Definitions: (https://github.com/Unity-Technologies/ml-agents/blob/master/protobuf-definitions/README.md)
+
 # More Links
 - Installing ml-agents on Windows: `https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Installation-Windows.md
 - ml-agents GitHub repo: https://github.com/Unity-Technologies/ml-agents

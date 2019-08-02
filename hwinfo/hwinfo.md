@@ -8,10 +8,14 @@ output: html_document
 HWiNFO is a Windows only tool for reading sensor values - particularly those from the Motherboard, GPU, CPU, etc.
 
  - Main site: (https://www.hwinfo.com/)
- 
+ - Site based in Slovakia - Author:  `Martin Malik`
+ - 
 
 # HwINFO Rainmeter Skin and Plugin
 - The HwINFO Rainmeter Plugin seems to the best sensor reading system, even though it is not open source.
+- Plugin can be downloaded from: (https://www.hwinfo.com/files/RainmeterPlugin/HWiNFO_3.2.0.rmskin)
+- Plugin page on Rainmeter forum site: (https://forum.rainmeter.net/viewtopic.php?f=127&t=13670)
+- Author of plugin is not Martin, it seems to be `Nick Conners` (stangowner) according to plugin installation information.
 - The HWiNFO64 app needs to be installed and running for the HwINFO Rainmeter plugin to work in Rainmeter. See Below.
 - Can configure with a right click on Skin Windows!!!! (keep forgetting this)
 - Some docs on how to use it with rainmeter: (https://forum.rainmeter.net/viewtopic.php?f=15&t=21939)
@@ -26,8 +30,14 @@ HWiNFO is a Windows only tool for reading sensor values - particularly those fro
   - GPU1 - My MSI 1060 worked fine
 - Remote Machine windows - didn't configure any, no Linux monitors apparently
 
+# Bug report
+- HWiFO site: (https://www.hwinfo.com/forum/threads/getting-two-hostids-for-one-remote-machine.5819/)
+- Rainmeter site: (https://forum.rainmeter.net/viewtopic.php?f=127&t=13670&p=164062#p164062)
 
 # Installing Skin
+- Link to Rainmeter plug-in forum: (https://www.hwinfo.com/forum/forums/rainmeter-plug-in.12/)
+  - My user is MikeWise1618
+- This thread seems to have the best installation instructions (https://www.hwinfo.com/forum/threads/rainmeter-plug-in-for-hwinfo-3-2.2172/)
 - Instructions were broken because the web site was changed and google was confused
 - Plugin installation instructions:
 - The instructions were broken, but I got it installed by the following 
