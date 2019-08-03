@@ -125,7 +125,10 @@ git config   -global credential.helper 'cache   -timeout=3600'
 * `git log --follow -p -- filename`   -follow the history of a file
 
 ## Git Ignore
-* `  *.jpg` * No jpgs in this direcory and any others
+* `  *.jpg` * No jpgs in this directory and any others
+* Note that gitignore will not ignore a directory that is alread in the repo
+* You have to delete it explicity - see this: (https://stackoverflow.com/questions/24290358/remove-a-folder-from-git-tracking)
+
 
 ## Git Aliases
 * Explained here
