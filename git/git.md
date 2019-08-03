@@ -128,7 +128,8 @@ git config   -global credential.helper 'cache   -timeout=3600'
 * `  *.jpg` * No jpgs in this directory and any others
 * Note that gitignore will not ignore a directory that is alread in the repo
 * You have to delete it explicity - see this: (https://stackoverflow.com/questions/24290358/remove-a-folder-from-git-tracking)
-
+* Whitelisting files -  mostly doesn't work becaues after blacklisting the directory won't be scanned and indexed so the whitelisted files will not be known by git
+* See this: (https://stackoverflow.com/a/52295765/3458744)
 
 ## Git Aliases
 * Explained here
