@@ -107,6 +107,7 @@ In order to observe the training process, either during training or afterward, s
 Note: If you don't assign a run-id identifier, mlagents-learn uses the default string, "ppo". All the statistics will be saved to the same sub-folder and displayed as one session in TensorBoard. After a few runs, the displays can become difficult to interpret in this situation. You can delete the folders under the summaries directory to clear out old statistics.
 ```
 - worked without problem from my windows host remotely `http://192.168.25.12:6006` - seems like it should not have?
+
 ### To Add Observations
 - The `custom_observations` field in `Brain_info` seems to be appropriate for this 
 - Docs are here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Creating-Custom-Protobuf-Messages.md)
