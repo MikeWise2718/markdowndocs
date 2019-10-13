@@ -13,5 +13,10 @@ output: html_document
 - Windows 8.1 sample: (https://code.msdn.microsoft.com/Local-Map-Tile-Layers-in-b1d6136b)
 - Browsable code: (https://code.msdn.microsoft.com/Local-Map-Tile-Layers-in-b1d6136b/sourcecode?fileId=111468&pathId=144952919)
 
+
+# Creating Mesh for tile
+- 
+
+
 # Reading tiles from a tile server
 - Explained here: (https://docs.microsoft.com/en-us/bingmaps/rest-services/directly-accessing-the-bing-maps-tiles)
