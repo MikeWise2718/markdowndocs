@@ -102,3 +102,13 @@ Now to make both windows simulatiously visible
 
 # ml-agents
 - Split this off into a seperate file
+
+# Unity Unit Testing
+- This is pretty good (https://www.raywenderlich.com/9454-introduction-to-unity-unit-testing)
+
+# Packages
+- In a state of flux at the moment with a new package manager, etc. (9.10.2019)
+- Official "Export Package" doc: (https://docs.unity3d.com/2018.4/Documentation/Manual/HOWTO-exportpackage.html)
+- Doing it programatically (https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html)
+- Some code: (https://stackoverflow.com/a/52883697/3458744)
+- Fairly recent custom package creation instructions: (https://neogeek.dev/creating-custom-packages-for-unity-2018.3/)
