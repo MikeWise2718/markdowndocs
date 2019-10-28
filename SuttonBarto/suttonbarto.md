@@ -18,6 +18,7 @@ Example equation: $c^2 = \sqrt{a^2 + b^2}$
 ## 1.3	Elements of Reinforcement Learning <br>
 ## 1.4	Limitations and Scope <br>
 ## 1.5	An Extended Example: Tic-Tac-Toe <br>
+- They talk of "evolutionary methods" and how they only make use of the state at the end. I suppose they mean the Monte-carlo methods of Chapter 5.
 - Interesting early (in book) discussion of "Temporal Differencing"
 ### Exercise 1.1: Self Play
 Suppose, instead of playing against a random opponent, the reinforcement
@@ -25,33 +26,34 @@ learning algorithm described above played against itself, with both sides learni
 - It would fairly quickly reach a state where it would never win
 
 Would it learn a different policy for selecting moves?
-- Probably not
+- If the opponent was not perfect them (as per assumtion), then it would learn a different policy.
 
 ### Exercise 1.2: Symmetries 
 Many tic-tac-toe positions appear different but are really the same because
 of symmetries. How might we amend the learning process described above to take advantage of this?
-- To Do
+- We could wire the values of the states together, and update all wired symetric values together.
 
 In what ways would this change improve the learning process? 
-- To Do
+- It would cover the space of possible moves quicker, so in the case of playing a very good player it would probably learn faster.
 
 Now think again. Suppose the opponent did not take advantage of symmetries. In that case, should we? 
-- To Do
+- No, because then we could not identify opponent weakeness that result from symmetry differences.
 
 Is it true, then, that symmetrically equivalent positions should necessarily have the same value?
-- To Do
+- No
+
+
 ### Exercise 1.3: Greedy Play 
 
 Suppose the reinforcement learning player was greedy, that is, it always
 played the move that brought it to the position that it rated the best. Might it learn to play better, or worse, than a nongreedy player? What problems might occur? 
 
-- To Do
+- No, because it will not be able to disciver when its ratings are wrong.
 
 
 ### Exercise 1.4: Learning from Exploration 
 
-Suppose learning updates occurred after all moves, including exploratory moves. If the step-size parameter is appropriately reduced over time (but not the tendency
-to explore), then the state values would converge to a set of probabilities. What are the two sets of probabilities computed when we do, and when we do not, learn from exploratory moves? 
+Suppose learning updates occurred after all moves, including exploratory moves. If the step-size parameter is appropriately reduced over time (but not the tendency to explore), then the state values would converge to a set of probabilities. What are the two sets of probabilities computed when we do, and when we do not, learn from exploratory moves? 
 
 - To Do
 
@@ -78,14 +80,88 @@ Can you think of any better way to solve the tic-tac-toe problem as posed?
 
 #  2  - Multi-armed Bandits
 ## 2.1 A k-armed Bandit Problem
+
 ## 2.2	Action-value Methods 
+
+### Exercise 2.1 
+In epsilon-greedy action selection, for the case of two actions and $\epsilon$ = 0.5, what is the probability that the greedy action is selected?
+- ToDo
+
+### Exercise 2.2: Bandit example 
+
+Consider a k-armed bandit problem with k = 4 actions, denoted 1, 2, 3, and 4. Consider applying to this problem a bandit algorithm using $\epsilon$-greedy action selection,
+sample-average action-value estimates, and initial estimates of Q1(a) = 0, for all a. Suppose the initial sequence of actions and rewards is:
+
+ $A_1$ = 1, $R_1$ = 1, $A_2$ = 2, $R_2$ = 1, $A_3$ = 2, $R_3$ = 2, $A_4$ = 2, $R_4$ = 2, $A_5$ = 3, $R_5$ = 0
+
+ On some of these time steps the $\epsilon$ case may have occurred, causing an action to be selected at random. On which time steps did this definitely occur? 
+
+- ToDo
+
+On which time steps could this possibly have occurred? 
+
 ## 2.3	The 10-armed Testbed 
+
+### Exercise 2.3 
+In the comparison shown in Figure 2.2, which method will perform best in the long run
+in terms of cumulative reward and probability of selecting the best action? 
+- ToDo
+
+How much better will it be? Express your answer quantitatively.
+
+- ToDo
+
 ## 2.4	Incremental Implementation 
 ## 2.5	Tracking a Nonstationary Problem 
+
+### Exercise 2.4 
+
+If the step-size parameters, $\alpha_n$, are not constant, then the estimate $Q_n$ is a weighted
+average of previously received rewards with a weighting different from that given by (2.6). What is the weighting on each prior reward for the general case, analogous to (2.6), in terms of the sequence of step-size parameters? 
+
+
+### Exercise 2.5 (programming) 
+
+Design and conduct an experiment to demonstrate the difficulties that sample-average methods have for nonstationary problems. Use a modified version of the 10-armed
+testbed in which all the $q_∗(a)$ start out equal and then take independent random walks (say by adding a normally distributed increment with mean zero and standard deviation 0.01 to all the $q_∗(a)$ on each step). 
+
+Prepare plots like Figure 2.2 for an action-value method using sample averages, incrementally computed, and another action-value method using a constant step-size parameter, $\alpha$ = 0.1. Use $\epsilon$ = 0.1
+and longer runs, say of 10,000 steps. 
+
 ## 2.6	Optimistic Initial Values 
+
+### Exercise 2.6: Mysterious Spikes 
+
+The results shown in Figure 2.3 should be quite reliable because they are averages over 2000 individual, randomly chosen 10-armed bandit tasks. Why, then, are there oscillations and spikes in the early part of the curve for the optimistic method? 
+
+In other words, what might make this method perform particularly better or worse, on average, on particular early steps?
+
+- Todo
+
 ## 2.7	Upper-Confidence-Bound Action Selection 
+
+### Exercise 2.7 
+
+Show that in the case of two actions, the **soft-max** distribution is the same as that given by the **logistic**, or **sigmoid**, function often used in statistics and artificial neural networks. 
+
 ## 2.8	Gradient Bandit Algorithms 
+
+
 ## 2.9	Associative Search (Contextual Bandits) 
+
+### Exercise 2.8 
+
+Suppose you face a 2-armed bandit task whose true action values change randomly from
+time step to time step. Specifically, suppose that, for any time step, the true values of actions 1 and 2 are respectively 0.1 and 0.2 with probability 0.5 (case A), and 0.9 and 0.8 with probability 0.5 (case B). 
+
+If you are not able to tell which case you face at any step, what is the best expectation of success you can achieve and how should you behave to achieve it? 
+- Todo
+
+Now suppose that on each step you are told whether you are facing case A or case B (although you still don’t know the true action values). This is an associative search task. What is the best expectation of success you can achieve in this task, and
+how should you behave to achieve it?
+
+- Todo
+
 ## 2.10	Summary 
 
 
