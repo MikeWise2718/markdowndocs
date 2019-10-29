@@ -106,9 +106,9 @@ class banditman:
 
 
 if __name__ == "__main__":
-    bman = banditman(200,10)
+    bman = banditman(2000,10)
     start = time.time()
-    bman.run(100,banditstep.epsilonGreed,0.1)
+    bman.run(400,banditstep.epsilonGreed,0.1)
     elap = time.time()-start
     print("Total steps:{} took {:.3f} secs".format(ntotsteps,elap))
     vhist = bman.getvhistory()
