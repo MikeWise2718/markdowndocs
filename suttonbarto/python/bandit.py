@@ -1,8 +1,17 @@
+import numpy as np
+import pandas as pd
+import time
+
 from random import seed,random
 from enum import Enum
 from numpy.random import normal
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 seed(1234)
+
+ntotsteps = 0
 
 class banditstep:
     epsilonGreed = 1
@@ -11,17 +20,14 @@ class banditstep:
 
 class bandit:
 
-    nstep = 0
-    narms = None
-    mu = []
-    sg = []
-
-    sumemu = []
-    emu = []
-
     def __init__(self,narms):
         self.narms = narms
         self.nstep = 0
+        self.vhistory = []
+        self.mu = []
+        self.sg = []
+        self.emu = []
+        self.sumemu = []
         for i in range(narms):
             mui = random()*10
             self.mu.append(mui)
@@ -42,12 +48,15 @@ class bandit:
         v = self.mu[q] + normal(0,self.sg[q])
         return v
 
-    def updateemu(self,q,v):
+    def update(self,q,v):
         self.sumemu[q] += v
         self.emu[q] = self.sumemu[q]/self.nstep
+        self.vhistory.append(v)
         return v
 
     def step(self,bstep,parm):
+        global ntotsteps
+        ntotsteps += 1
         self.nstep += 1
         if (bstep==banditstep.epsilonGreed):
             ran = random()
@@ -56,31 +65,60 @@ class bandit:
             else:
                 q = self.argmaxemu()
             v = self.sample(q)
-            self.updateemu(q,v)
+            self.update(q,v)
         else:
             print("{} not implemented".format(bstep))
 
+    def getvhistory(self):
+        npv = np.asarray(self.vhistory)
+        return npv
 
 class banditman:
 
-    nbandits = None
-    narms = None
-    bandit = []
 
     def __init__(self,nbandits,narms):
         self.nbandits = nbandits
         self.narms = narms
+        self.bandit = []
         for i in range(nbandits):
             b = bandit(narms)
             self.bandit.append(b)
 
-    def step(self,bstep):
+    def step(self,bstep,eps):
         for i in range(self.nbandits):
-            self.bandit[i].step(bstep,0.01)
+            self.bandit[i].step(bstep,eps)
+
+    def run(self,nsteps,bstep,eps=0.1):
+        for i in range(nsteps):
+            bman.step(bstep,eps)
+
+    def getvhistory(self):
+        vsum = None
+        for i in range(self.nbandits):
+            if (i==0):
+                vsum = self.bandit[i].getvhistory()
+            else:
+                v1 = self.bandit[i].getvhistory()
+                vsum = vsum + v1
+        vhist = vsum / self.nbandits
+        return vhist
 
 
 
 if __name__ == "__main__":
-    bman = banditman(2,10)
-    for i in range(10):
-        bman.step(banditstep.epsilonGreed)
+    bman = banditman(20,10)
+    start = time.time()
+    bman.run(10,banditstep.epsilonGreed,0.1)
+    elap = time.time()-start
+    print("Total steps:{} took {:.3f} secs".format(ntotsteps,elap))
+    vhist = bman.getvhistory()
+    nrow = vhist.shape[0]
+    print("vhist has {} rows".format(nrow))
+    idx = range(1,nrow)
+
+    # df = pd.DataFrame(data = vhist,index = idx,columns="vhist")
+    df = pd.DataFrame(data = zip(idx,vhist),columns=["index","vhist"])
+    print(df)
+
+    sns.lineplot(x="index",y="vhist",data=df )
+    plt.show()
