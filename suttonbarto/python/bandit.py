@@ -106,19 +106,19 @@ class banditman:
 
 
 if __name__ == "__main__":
-    bman = banditman(20,10)
+    bman = banditman(200,10)
     start = time.time()
-    bman.run(10,banditstep.epsilonGreed,0.1)
+    bman.run(100,banditstep.epsilonGreed,0.1)
     elap = time.time()-start
     print("Total steps:{} took {:.3f} secs".format(ntotsteps,elap))
     vhist = bman.getvhistory()
     nrow = vhist.shape[0]
     print("vhist has {} rows".format(nrow))
-    idx = range(1,nrow)
+    steps = range(1,nrow)
 
     # df = pd.DataFrame(data = vhist,index = idx,columns="vhist")
-    df = pd.DataFrame(data = zip(idx,vhist),columns=["index","vhist"])
+    df = pd.DataFrame(data = zip(steps,vhist),columns=["step","vhist"])
     print(df)
 
-    sns.lineplot(x="index",y="vhist",data=df )
+    sns.lineplot(x="step",y="vhist",data=df )
     plt.show()
