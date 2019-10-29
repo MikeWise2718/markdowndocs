@@ -26,7 +26,7 @@ learning algorithm described above played against itself, with both sides learni
 - It would fairly quickly reach a state where it would never win
 
 Would it learn a different policy for selecting moves?
-- If the opponent was not perfect them (as per assumtion), then it would learn a different policy.
+- If the opponent was not perfect them (as per assumtion), then it would learn a different policy...
 
 ### Exercise 1.2: Symmetries 
 Many tic-tac-toe positions appear different but are really the same because

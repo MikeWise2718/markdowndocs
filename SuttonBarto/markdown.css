@@ -12,6 +12,10 @@ body, body * {
   color: black;
 }
 
+h2  {
+  color: red;
+}
+
 a {
   color: blue 
 }

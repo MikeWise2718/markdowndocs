@@ -72,8 +72,22 @@ Go to Command Palette and type in Settings and then choose the one you want - tw
  - Because we have the settings to search for `markdown.css` in the user settings now you should not have to have change local workspace settings
  - preview with `Ctrl-Shift-V`
 
+## Integrated Command Shell Terminals
+- Described here: (https://code.visualstudio.com/docs/editor/integrated-terminal)
+- Open settings with `Ctrl-,` (Control comma) and select User settings then search for "terminal" (it is at the bottom)
+- What I put into the user `settings.json` to get the Anaconda prompt as my terminal:
+```
+...
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.shell.windows.old": "C:\\WINDOWS\\Sysnative\\cmd.exe",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+  "terminal.integrated.shellArgs.windows": "/K \"C:\\Program Files (x86)\\Microsoft Visual Studio\\VS15Preview\\Anaconda3_64\\Scripts\\activate.bat\"  C:\\Users\\mike\\AppData\\Local\\conda\\conda\\envs\\py27",
+  "workbench.iconTheme": "material-icon-theme",
+  "sync.gist": "b87eb69b843edf2e04b46f1174ed051b"
+}
+```
 
 
  ## Python Project 
- To figure out:<br>
+ To figure out what is being set look in the `launch.json` fie in `.vscode` sub-directory of the folder you opened as vscode:<br>
    ![alt text](PythonProject.png "Python Project")
