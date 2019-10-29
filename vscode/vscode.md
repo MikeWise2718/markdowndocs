@@ -19,6 +19,17 @@ A good place to start is the Help/Welcome command
 For some reason this is not always visible, if it is hidden to go to View/Command Palette or Ctrl-Shift-P.
 There is also Ctrl-P, no idea what the difference is.
 
+## Language Mode
+- The current language mode (like `Markdown` or `Python`) is shown in the bottom status bar on the right.
+- You can change it by clicking on it.
+
+## Settings
+- bring up the settings page with `ctrl-,` (Control comma)
+- Then toggle between User and Workspace with the displayed tab
+- Switch to direct editing of the `settings.json` file with the `Open Settings` command in the command palette
+- Everything is explained here: (https://code.visualstudio.com/docs/getstarted/settings)
+
+
 ## Extensions
 Extensions are the lifeblood of VS Code, lots of people write them. To get to them click on the square in a square icon on the left naviagtion bar. You can then search for new ones.
 
