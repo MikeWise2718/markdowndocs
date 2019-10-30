@@ -13,17 +13,17 @@ seed(1234)
 
 ntotsteps = 0
 
-class banditstep:
+class BanditStep:
     epsilonGreed = 1
     ucb = 2
 
 
-class bandit:
+class Bandit:
 
     def __init__(self,narms):
         self.narms = narms
         self.nstep = 0
-        self.vhistory = []
+        self.rhistory = []
         self.mu = []
         self.sg = []
         self.emu = []
@@ -35,7 +35,7 @@ class bandit:
             self.emu.append(0)
             self.sumemu.append(0)
 
-    def argmaxemu(self):
+    def ArgMaxEmu(self):
         max = -1
         maxi = -1
         for i in range(self.narms):
@@ -44,74 +44,112 @@ class bandit:
                 maxi = i
         return i
 
-    def sample(self,q):
-        v = self.mu[q] + normal(0,self.sg[q])
-        return v
+    def Sample(self,a):
+        r = self.mu[a] + normal(0,self.sg[a])
+        return r
 
-    def update(self,q,v):
-        self.sumemu[q] += v
-        self.emu[q] = self.sumemu[q]/self.nstep
-        self.vhistory.append(v)
-        return v
+    def UpdateHistory(self,a,r):
+        self.sumemu[a] += r
+        self.emu[a] = self.sumemu[a]/self.nstep
+        self.rhistory.append(r)
+        return 
 
-    def step(self,bstep,parm):
+    def Step(self,bstep,parm):
         global ntotsteps
         ntotsteps += 1
         self.nstep += 1
-        if (bstep==banditstep.epsilonGreed):
+        if (bstep==BanditStep.epsilonGreed):
             ran = random()
             if (ran<parm):
-                q = int(random()*self.narms)
+                a = int(random()*self.narms)
             else:
-                q = self.argmaxemu()
-            v = self.sample(q)
-            self.update(q,v)
+                a = self.ArgMaxEmu()
+            r = self.Sample(a)
+            self.UpdateHistory(a,r)
         else:
             print("{} not implemented".format(bstep))
 
-    def getvhistory(self):
-        npv = np.asarray(self.vhistory)
+    def GetRhistory(self):
+        npv = np.asarray(self.rhistory)
         return npv
 
-class banditman:
+    def AddViolinPlotPoints(self,arms,rews,npts):
+        for a in range(self.narms):
+            for i in range(npts):
+                r = self.Sample(a)
+                arms.append(a)
+                rews.append(r)
+        return
 
+    def ViolinPlot(self):
+        arms = []
+        rews = []
+        self.AddViolinPlotPoints(arms,rews,100)
+        df = pd.DataFrame(data = zip(arms,rews),columns=["action","reward"]) 
+        print(df)
+        sns.violinplot(x="action",y="reward",data=df )       
+        plt.show()
+
+
+class BanditMan:
 
     def __init__(self,nbandits,narms):
         self.nbandits = nbandits
         self.narms = narms
         self.bandit = []
         for i in range(nbandits):
-            b = bandit(narms)
+            b = Bandit(narms)
             self.bandit.append(b)
+      #      if i==0:
+      #          b.violinplot()
 
-    def step(self,bstep,eps):
-        for i in range(self.nbandits):
-            self.bandit[i].step(bstep,eps)
+    def Step(self,bstep,eps):
+        for iid in range(self.nbandits):
+            self.bandit[iid].Step(bstep,eps)
 
-    def run(self,nsteps,bstep,eps=0.1):
+    def ViolinPlot(self):
+        ids = []
+        arms = []
+        rews = []
+        nsamples_per_arm = 100
+        for iid in range(self.nbandits):
+            b = self.bandit[iid]
+            b.AddViolinPlotPoints(arms,rews,nsamples_per_arm)
+            ilst = [iid for i in range(nsamples_per_arm*self.narms)]
+            ids.extend(ilst)
+
+        df = pd.DataFrame(data = zip(ids,arms,rews),columns=["ids","action","reward"]) 
+        print(df)
+        fg = sns.FacetGrid(df, col="ids",col_wrap=5)
+        fg.map(sns.violinplot, "action","reward")
+        plt.show()
+
+
+    def Run(self,nsteps,bstep,eps=0.1):
         for i in range(nsteps):
-            bman.step(bstep,eps)
+            bman.Step(bstep,eps)
 
-    def getvhistory(self):
+    def GetRhistory(self):
         vsum = None
         for i in range(self.nbandits):
             if (i==0):
-                vsum = self.bandit[i].getvhistory()
+                vsum = self.bandit[i].GetRhistory()
             else:
-                v1 = self.bandit[i].getvhistory()
+                v1 = self.bandit[i].GetRhistory()
                 vsum = vsum + v1
         vhist = vsum / self.nbandits
         return vhist
 
-
-
 if __name__ == "__main__":
-    bman = banditman(2000,10)
+    nbandits = 20
+    narms = 10
+    bman = BanditMan(nbandits,narms)
+    bman.ViolinPlot()
     start = time.time()
-    bman.run(400,banditstep.epsilonGreed,0.1)
+    bman.Run(400,BanditStep.epsilonGreed,0.1)
     elap = time.time()-start
     print("Total steps:{} took {:.3f} secs".format(ntotsteps,elap))
-    vhist = bman.getvhistory()
+    vhist = bman.GetRhistory()
     nrow = vhist.shape[0]
     print("vhist has {} rows".format(nrow))
     steps = range(1,nrow)
