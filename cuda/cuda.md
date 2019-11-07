@@ -37,6 +37,8 @@ And so on...
 ```
 
 # Downgrading on Ubuntu
+Got it from here: (https://dmitry.ai/t/topic/33)
+
 ```
 apt-get --purge remove "*cublas*" "cuda*"
 reboot
