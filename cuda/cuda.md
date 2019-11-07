@@ -18,6 +18,9 @@ Note that everything requirecs "nvcc" a compiler driver for what every compiler 
 - While the documentation claims that sample binaries and utilities are installed, this is not true, you have to compile everything on your machine first.
 - This is also required to do any compilation yourself, perhaps it first compiles some needed utilities first.
 
+
+
+
 # C++
 Upgrading to the latest Visual Studio (2017) was a bit of a pain. The command line bat file is hidden under:
     `C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\vsDevCmd.bat`
@@ -32,6 +35,18 @@ One you run that the environment is setup so you can run the C++ compiler:  cl.e
 
 And so on...
 ```
+
+# Downgrading on Ubuntu
+```
+apt-get --purge remove "*cublas*" "cuda*"
+reboot
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+apt install cuda-10-0
+reboot
+```
+
 # CUDA on Ubuntu
 - Only got cuda to work after installing the drivers in the GUI, and then reinstalling them with the Nvidia run file
 - There is a script to copy the samples to your local directory in `/usr/local/cuda-8-0/bin`
