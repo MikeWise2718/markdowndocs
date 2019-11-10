@@ -64,7 +64,7 @@ Example:
 
 ## Python debugging
 - See if you get the same settings in your terminal window that you do in the command line
-- `which python` is your friend
+- `which python` and `which conda` is your friend
 
 ## Extensions
 Extensions are the lifeblood of VS Code, lots of people write them. To get to them click on the square in a square icon on the left naviagtion bar. You can then search for new ones.
