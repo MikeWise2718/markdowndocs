@@ -29,6 +29,42 @@ There is also Ctrl-P, no idea what the difference is.
 - Switch to direct editing of the `settings.json` file with the `Open Settings` command in the command palette
 - Everything is explained here: (https://code.visualstudio.com/docs/getstarted/settings)
 
+## .vscode
+- vscode file is loaded when you open a directory and a .vscode subdirectory is there
+- To create it make a `launch.json` and save it
+Example:
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type":"python",
+            "request":"launch",
+            "program":"${file}",
+            "console":"integratedTerminal"
+        },
+        {
+            "name": "Python: launch.py",
+            "type":"python",
+            "request":"launch",
+            "program":"${workspaceFolder}/ml-agents/mlagents/trainers/learn.py",
+            "args": ["config/trainer_config.yaml","--train", "--run-id=codetest01"],
+            "console":"integratedTerminal",
+            "pythonPath": "${config:python.pythonPath}" 
+        },
+    ]
+}
+```
+
+
+## Python debugging
+- See if you get the same settings in your terminal window that you do in the command line
+- `which python` is your friend
 
 ## Extensions
 Extensions are the lifeblood of VS Code, lots of people write them. To get to them click on the square in a square icon on the left naviagtion bar. You can then search for new ones.
