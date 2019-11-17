@@ -5,13 +5,16 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- Unity ml-agents is an RL framework for Unity that is quite powerful - and a lot of fun.
+- Unity ml-agents is an Open Source (Apache License) RL framework for Unity that is quite powerful - and a lot of fun.
+- Web site is github site (https://github.com/Unity-Technologies/ml-agents)
 - It has been out for a couple of years, and there is a wealth of information on it available. 
 - The downloadable SDK has 10 example implementations and we will be using the “Push Block” tutorial  to base our hackathon on as it has most of the features we will need (notably a ray based environment sensing setup). 
 - The SDK can be found here: (https://github.com/Unity-Technologies/ml-agents)
 - Docs: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md)
 - This tutorial is a good place to start as it goes over the PushBlock example:
 (https://www.youtube.com/playlist?list=PLX2vGYjWbI0R08eWQkO7nQkGiicHAX7IX)
+- mlagents 0.11.0 implenets two algorithems, PPO and SAC
+ 
 
 You can follow it along with a newer version of Unity and the current ml-agents, however note that the tutorial is over a year old and uses a different version, so some of the code and Editor controls are not quite the same.
 
@@ -30,7 +33,7 @@ You can follow it along with a newer version of Unity and the current ml-agents,
 -   After the run is finished (or interrrupted) the trained brain should be in:
     - `unity/ml-agents/models/<run-identifier>/<brain_name>.nn`
 -   To use in your app copy it to the `Assets/../TFmodels` folder and configure it into your player brain
-
+-  `pip freeze | grep mlagents` currently idenfities version as `0.11.0` (17 Nov 2019)
 # Training a brain and installing it end-to-end
 - Here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Basic-Guide.md)
 
@@ -42,18 +45,43 @@ You can follow it along with a newer version of Unity and the current ml-agents,
     - The way to do it is to create a subclass of `Trainer`, similar to `PPOTrainer`
     - `class Trainer` is in  `trainer.py` and `class PPOTrainer` is in `ppo/trainer.py` which is a bit confusing
 
-# Code Structure
+# Python Code Structure
 - Code is in `ml-agents/ml-agents`
 - There is a `README.md` there worth reading: (https://github.com/Unity-Technologies/ml-agents/tree/master/ml-agents)
 - There are two sub-packagtres
-   -  `mlagents.env` a low-level PAPI to talk to Unity 
+   -  `mlagents.env` an API that exchanges environment information with Unity using protobuf  
    -  `mlagents.trainers` A set of RL learning algorithms that works with the above
+- If you want to run that code, you have to make sure the PYTHONPATH points.
+   - Otherwise it will pick up the modules you installed with `pip`
+   - You can find out what module is being used for an open using the `inspect` module - see below
+Examples:
+```
+(ml-agents) D:\Unity\ml-agents>env | grep PYTHONPATH
+PYTHONPATH=d:\Unity\ml-agents\ml-agents;d:\Unity\ml-agents\ml-agents-envs;
+```
+```
+print(f"PythonPath:{os.environ.get('PYTHONPATH')}")
+
+import types
+def imports():
+    for name, val in globals().items():
+        if isinstance(val, types.ModuleType):
+            yield val.__name__
+print("imported modules:"+str(list(imports())))
+
+
+import inspect
+print("UnityEnvironment imported from :"+inspect.getfile(UnityEnvironment))
+print("TrainerFactory imported from :"+inspect.getfile(TrainerFactory))
+```
+
 
 ## mlagents.env
 - code in `ml-agents/ml-agent-envs`
 - There is a readme there too: (https://github.com/Unity-Technologies/ml-agents/tree/master/ml-agents-envs)
 - Can apparently be installed on its own
-- Data transported to Unity and back in `ml-agents/ml-agents-envs/mlagents/envs/brain.py`
+- Data transported to Unity and back in `ml-agents/ml-agents-envs/mlagents/envs/rpc_communicator.py` in the    `exchange` function
+- Can't be easily debugged because it is 
 
 ## Steps to generalizing an SDK example
 -   Opened the UnitySDK project

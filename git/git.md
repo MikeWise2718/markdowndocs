@@ -131,6 +131,14 @@ git config   -global credential.helper 'cache   -timeout=3600'
 * Whitelisting files -  mostly doesn't work becaues after blacklisting the directory won't be scanned and indexed so the whitelisted files will not be known by git
 * See this: (https://stackoverflow.com/a/52295765/3458744)
 
+## Git Replace
+- Finally - as of version 2.23 (https://stackoverflow.com/a/58019011/3458744)
+```
+git fetch
+git restore -s origin/master -- path/to/file
+```
+
+
 ## Git Aliases
 * Explained here
 * a good template can be found here:(https://stackoverflow.com/a/52896091/3458744)
