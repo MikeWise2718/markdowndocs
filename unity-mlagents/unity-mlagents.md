@@ -136,7 +136,7 @@ Note: If you don't assign a run-id identifier, mlagents-learn uses the default s
 ```
 - worked without problem from my windows host remotely `http://192.168.25.12:6006` - seems like it should not have?
 
-### To Add Observations
+### To Add Observations (obsolete)
 - The `custom_observations` field in `Brain_info` seems to be appropriate for this 
 - Docs are here: (https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Creating-Custom-Protobuf-Messages.md)
 - You have to declare the data in protobuf, then compile to get the C# and Python code 
@@ -151,6 +151,86 @@ Note: If you don't assign a run-id identifier, mlagents-learn uses the default s
    - Add a custom_observation field and compile it
    - Populate it from Unity and see if it comes over
    - Then use it
+
+# Notes on adding tensorboard observations
+- Data comes in through protobuf
+## Protobuf
+Only had to add one and change one protbuf file 
+- Defintions in  `/ml-agents/protobuf-definitions/proto/mlagents/envs/communicator_objects ml-agents/protobuf_definitions`)
+- New file: `environment_statistics.proto`
+```
+syntax = "proto3";
+
+option csharp_namespace = "MLAgents.CommunicatorObjects";
+package communicator_objects;
+
+message EnvironmentStatisticsProto {
+    map<string, float> float_stat = 1; 
+    map<string, string> string_stat = 2; 
+}
+```
+- changed file:  `unity_rl_outout.proto`
+```
+syntax = "proto3";
+
+import "mlagents/envs/communicator_objects/agent_info.proto";
+import "mlagents/envs/communicator_objects/environment_statistics.proto";
+
+option csharp_namespace = "MLAgents.CommunicatorObjects";
+package communicator_objects;
+
+message UnityRLOutputProto {
+    message ListAgentInfoProto {
+        repeated AgentInfoProto value = 1;
+    }
+    reserved 1; // deprecated bool global_done field
+    map<string, ListAgentInfoProto> agentInfos = 2;
+    EnvironmentStatisticsProto environment_statistics = 3;
+}
+```
+
+## Python ml-agents-env
+- added `EnvStats` definition to `brain.py` line #27
+```
+class EnvStats:
+    float_stat: Dict[str,float]
+    string_stat: Dict[str,str]
+    def __init__(
+        self,
+        float_stat:  Dict[str,float],
+        string_stat: Dict[str,str],
+    ):
+        """
+        Contains all EnvStats parameters.
+        """
+        self.float_stat = dict(float_stat)
+        self.string_stat = dict(string_stat)
+
+    def __str__(self):
+        return f"float_stat:{self.float_stat} str_stat:{self.string_stat}"
+
+    @staticmethod
+    def from_proto(
+        env_stat_proto: EnvironmentStatisticsProto
+    ) -> "EnvStats":
+        """
+        Converts Environment Statistics parameter proto to EnvStats object.
+        :param env_stat_proto: protobuf object.
+        :return: EnvStats object.
+        """
+        env_stats = EnvStats(
+            env_stat_proto.float_stat,
+            env_stat_proto.string_stat,
+        )
+        return env_stats
+```
+- added following line to `UnityEnvironment._get_state` in `environment.py` lin3 #638
+  - `_data["EnvStats"] = EnvStats.from_proto(self.env_stats)`
+- added following line to `UnityEnvironment._update_brain_parameters` in `environment.py` lin3 #638
+  - `self._env_stats = output.rl_output.environment_statistics`
+
+## Python ml-agents-env
+- 
 
 # Starting a remote run on an DSVM
 - Request Just-In-Time access to the box
