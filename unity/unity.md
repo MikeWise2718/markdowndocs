@@ -128,17 +128,103 @@ Now to make both windows simulatiously visible
     "com.unity.ide.rider": "1.1.0",
 ```
 
-What I did to test
-- Created a test project (TestGithubProject)
-- Added a subfolder under Assets to save the package assets in (TestProject)
+## Creating TestGithubProjects
+- Created a test project (`TestGithubProject`)
+- Added a subfolder under Assets to save the package assets in (`TestProject`)
 - Added a scene, materials, a script, and a couple of primitives (sphere, plane) - put them in folders under TestProject
-- added a package.json under TestProject
-- added an assembly definition to the TestProject Script folder
-- Added a .gitignore
+- The script printed out the version number in the `start` event for one of the game objects:
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SphereInfo : MonoBehaviour
+{
+    public string version = "v1.0.0";
+    public int updatecount = 0;
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log($"Version:{version}");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        updatecount++;
+    }
+}
+```
+
+- added a `package.json` in `Assets/TestProject`
+```
+{
+"name": "com.coffee.testgithubproject",
+"displayName": "TestProject",
+"description": "Test Project stored as Unity project in Github",
+"version": "v1.0.0",
+"unity": "2019.3",
+"license": "MIT",
+"dependencies": {
+ }
+}
+```
+- added an assembly definition (`TestProjec.asmdef`)to the TestProject Script folder
+- Added a `.gitignore`
 - Created a project in Github and associated it with this project
 - Subtreed it
    - `git subtree push --prefix Assets/TestProject origin upm`
-- Added a tag
-   - `git tag -a v1.0.0 -m "TestProject version 1.0.0"`
+- Added a tag and pushed it
+   - `git tag -a v1.0.0 -m "TestProject version v1.0.0"`
    - `git push origin v1.0.0`
-- 
+
+- Now used it in another project
+
+# Creating TestUsingTestGithubProjects
+- Created a test project (`TestUsingGithubProject`)
+- Edited the `packages/dependencies.json` file to include my abover project
+```
+{
+  "dependencies": {
+    "com.coffee.testgithubproject": "https://github.com/mikewise2718/TestUsingGithubProjects.git#v1.0.0",
+    "com.unity.collab-proxy": "1.2.16",
+    "com.unity.ide.rider": "1.1.0",
+    "com.unity.ide.vscode": "1.1.3",
+```
+- Saved it, it immediately tried to load and brought an error in the console
+```
+An error occurred while resolving packages:
+  Project has invalid dependencies:
+    com.coffee.testgithubproject: Error when executing git command. remote: Repository not found.
+    fatal: repository 'https://github.com/mikewise2718/TestUsingGithubProjects.git/' not found
+
+
+A re-import of the project may be required to fix the issue or a manual modification of D:/Unity/TestUsingGithubProjects/Packages/manifest.json file.
+```
+- Corrected Repository, then got:
+```
+An error occurred while resolving packages:
+  Project has invalid dependencies:
+    com.coffee.testproject: [https://github.com/mikewise2718/TestGithubProjects.git#v1.0.0] does not point to a valid package repository. No package manifest was found. Verify the repository URL and make sure the package is located in the root folder of the repository.
+
+A re-import of the project may be required to fix the issue or a manual modification of D:/Unity/TestUsingGithubProjects/Packages/manifest.json file.
+```
+- Think it was because I was missing the json where the tag was since I added the tag late
+- Pushed subtree again, no change
+- Decided the tag was probably on master so defined a new tag
+  - `git tag v1.0.1 upm`
+  - `git push v1.0.1`
+- Changed the tag in the import manifest and saved
+- Got a new error :)
+```
+  Project has invalid dependencies:
+    com.coffee.testproject: The requested dependency 'com.coffee.testproject' does not match the `name` 'com.coffee.testgithubproject' specified in the package manifest of [com.coffee.testproject@https://github.com/mikewise2718/TestGithubProjects.git#v1.0.1]
+```
+- so changed the import manfiest URI thingy like this:
+   -  `   "com.coffee.testgithubproject": "https://github.com/mikewise2718/TestGithubProjects.git#v1.0.1",`
+- Now it imported (yay), and the project appeared under "Packages" in the Project window, but when I clicked on a scene I got a new error message:
+```
+Cannot open scene at path Library/PackageCache/com.coffee.testgithubproject@b5d1e3d1e95a43e677d33e61da9f09283f11a23e/Scenes/TestProjectScene.unity. Maybe the scene hasn't been imported. This can be done with an AssetDatabase.Refresh() call.
+UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
+```
+I noticed a mismatch between the version number in the manifest (v1.0.0), in my import line (v1.0.1) and in my tag (v1.0.1) and for that mater in my script. 
