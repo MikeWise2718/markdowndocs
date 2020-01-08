@@ -10,6 +10,11 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 
 [Unity Technical Forums](http://answers.unity3d.com/page/faq.html)
 
+
+# Architecture notes
+* Apparently the various methods are looked up at runtime via reflection - not inheritance
+   * See this for (old) evidence (https://forum.unity.com/threads/inheriting-functions-like-start-or-update.24154/)
+
 # Coordinate Systems
 * Haven't found a definitive doc yet on the Unity site
 * There is this SO question/answer: <https://stackoverflow.com/questions/21937544/working-with-the-coordinate-system-and-game-screen-in-unity-2d>
@@ -112,3 +117,28 @@ Now to make both windows simulatiously visible
 - Doing it programatically (https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html)
 - Some code: (https://stackoverflow.com/a/52883697/3458744)
 - Fairly recent custom package creation instructions: (https://neogeek.dev/creating-custom-packages-for-unity-2018.3/)
+- A definitive thread that could be considered "documentation" (https://forum.unity.com/threads/git-support-on-package-manager.573673/page-4)
+- Example line to add to a `packages/manifest.json`
+```
+{
+  "dependencies": {
+    "com.coffee.qkmaptool": "https://github.com/mikewise2718/Quadkey.git#1.0.0",
+    "com.unity.collab-proxy": "1.2.16",
+    "com.unity.ext.nunit": "1.0.0",
+    "com.unity.ide.rider": "1.1.0",
+```
+
+What I did to test
+- Created a test project (TestGithubProject)
+- Added a subfolder under Assets to save the package assets in (TestProject)
+- Added a scene, materials, a script, and a couple of primitives (sphere, plane) - put them in folders under TestProject
+- added a package.json under TestProject
+- added an assembly definition to the TestProject Script folder
+- Added a .gitignore
+- Created a project in Github and associated it with this project
+- Subtreed it
+   - `git subtree push --prefix Assets/TestProject origin upm`
+- Added a tag
+   - `git tag -a v1.0.0 -m "TestProject version 1.0.0"`
+   - `git push origin v1.0.0`
+- 
