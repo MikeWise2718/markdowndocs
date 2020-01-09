@@ -227,4 +227,9 @@ A re-import of the project may be required to fix the issue or a manual modifica
 Cannot open scene at path Library/PackageCache/com.coffee.testgithubproject@b5d1e3d1e95a43e677d33e61da9f09283f11a23e/Scenes/TestProjectScene.unity. Maybe the scene hasn't been imported. This can be done with an AssetDatabase.Refresh() call.
 UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
 ```
-I noticed a mismatch between the version number in the manifest (v1.0.0), in my import line (v1.0.1) and in my tag (v1.0.1) and for that mater in my script. 
+- I noticed a mismatch between the version number in the manifest (v1.0.0), in my import line (v1.0.1) and in my tag (v1.0.1) and for that mater in my script. But it probably wasn't that...
+- I found a link indicating that scenes cannot be loaded from packages because they are "read-only" and that is a bad experience for samples
+  - https://forum.unity.com/threads/cant-save-scenes-into-packages-cant-load-scenes-from-packages.590764/
+- There is a feature that provides sample import for packages described here:
+  - https://forum.unity.com/threads/samples-in-packages-manual-setup.623080/
+
