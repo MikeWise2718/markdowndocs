@@ -175,7 +175,7 @@ public class SphereInfo : MonoBehaviour
 - Subtreed it
    - `git subtree push --prefix Assets/TestProject origin upm`
 - Added a tag and pushed it
-   - `git tag -a v1.0.0 -m "TestProject version v1.0.0"`
+   - `git tag -a v1.0.0 -m "TestProject version v1.0.0" upm`
    - `git push origin v1.0.0`
 
 - Now used it in another project
@@ -232,4 +232,14 @@ UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
   - https://forum.unity.com/threads/cant-save-scenes-into-packages-cant-load-scenes-from-packages.590764/
 - There is a feature that provides sample import for packages described here:
   - https://forum.unity.com/threads/samples-in-packages-manual-setup.623080/
+
+ - This is the best post around how to do things: https://www.patreon.com/posts/25070968 
+ - It didn't work completely for me though:
+
+ ```
+ Mike Wise
+I had a lot of problems with this. Specifically I added a project with a new branch like described above, and it worked fine for version 1.0.0. Then I went off and developed awhile, added about 100 commits over about a month or two, and then when I did the old "git subtree split", it didn't actually add the new commits (version 1.1.0) to the upm branch, resulting in a "new" version in which the sources were not updated from the 1.0.0. I went around in circles for awhile.
+
+What finally helped was deleting the upm branch remotely and locally, along with the new tags, and redoing it. At least I have an up-to-date version now, but not confident the workflow is all that robust.
+ ```
 

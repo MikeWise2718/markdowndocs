@@ -16,7 +16,18 @@ output:
 [GitHub etiquette](https://help.github.com/articles/fork*a*repo/)
 [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging*vs*rebasing)
 
+# Tutorials
+ * I really liked David Mahler's systematic approach https://www.youtube.com/channel/UCEoaojfEY_6L5TWWjIn9t9Q
+   * lots of great commands in there summarized in the YouTube video header
+ * This guy - Dan Gitschooldude - has a very large number around many specialized topics. Quality varies from very good to "meh": https://www.youtube.com/channel/UCshmCws1MijkZLMkPmOmzbQ
+ * John Britton Pretty detailed tutorial on how git works internally: https://www.youtube.com/watch?v=lG90LZotrpo
+ * John Scott Chacon of GitHubs lecture: https://www.youtube.com/watch?v=ZDR433b0HJY 
+
 # Concepts you should know
+ * Working folder
+     * the folder you are working on
+ * Index or Staging area 
+     * the files that will make up the next commit (if you do one now)
  * blob  (how it is hashed, how it is compressed)
      * blobs are object stored in the .git/objects in subdirectories/files based on their SHA*1 hashes
      * they don't know anything about themselves (no metadata) 
@@ -25,7 +36,8 @@ output:
      * short sha-1 hashes (https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
      * `git show aa5f86`  - shows the object that belongs to the hash
  * trees  
-    * trees are blob objects
+    * trees are blob objects that can be thought of as pointing to a directory
+    * tree-ish is something that might eventual resolve to a tree - like HEA
     * they contain a list of the blobs they hold and maybe a subdirectory tree
     * for every entry they have a limited UNIX*like type permission code and the file/subdir name
  * commits 
@@ -39,6 +51,8 @@ output:
      * refs point to a commit
      * each branches has a head refs
      * `git show-ref`
+ * HEAD
+     * The ref that points to the current checkout commit (the one you can see in the directory)
  * index
      * a binary file in .git/index
      * not a blob object
