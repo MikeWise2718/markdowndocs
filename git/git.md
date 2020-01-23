@@ -129,6 +129,12 @@ git config   -global credential.helper 'cache   -timeout=3600'
    * $ git config   -global credential.helper cache  # Tell git to use the credential helper
    * $ git config   -global credential.helper 'cache   -timeout=3600' # Set the timeout to 1 hour 
 
+## Undo commit
+- From (https://www.reddit.com/r/git/comments/ep40we/how_to_undo_a_commit_in_git/)
+- Medium article: (https://itnext.io/how-to-undo-a-commit-in-git-2c7d49deabe0)
+- Softway: `git revert HEAD` - this leaves a record
+- Hardway: `git reset HEAD~ --hard` - this leaves no record
+
 
 ## Git Log
 * `git log   --oneline` * one line form of log
