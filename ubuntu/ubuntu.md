@@ -93,6 +93,8 @@ Ubuntu seems to be the data science standard now.
 - Open Terminal Window - Ctrl-Alt-T
 - Paste into Terminal Window - Ctrl-Shift-V
 - Other shortcuts can be found [here](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
+- for persistent terminal windows see `ssh.md`
+
 
 # System trace
 - use `strace` for tracing system calls

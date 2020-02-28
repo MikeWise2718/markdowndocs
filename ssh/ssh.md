@@ -34,13 +34,17 @@ Config page: <https://www.ssh.com/ssh/config/>
 
 # Persistent Terminal Sessions
 - Sometimes you need a terminal session to stay around after you log out.<br>
+- Also know as  a `terminal multiplexer` link: (https://linuxize.com/post/how-to-use-linux-screen/)
 
 - How to keep processes running after ending ssh session:
   - ssh into your remote box. type `screen` Then start the process you want.
+  - Or use `screen -S session_name` to give it a name with which you can refer to it
+  - `screen ls` gives you a listing of all the screen sessions
   - Press `Ctrl-A` then `Ctrl-D`. This will detach your screen session but leave your processes running. ...
   - If you want to come back later, log on again and type `screen -r` This will resume your screen session, and you can see the output of your process.
 
 - There is also the option of starting a process with a trailing ampersand `&` which detaches it from your process so it will keep running
+- To see list of s
 
 # Putty private keys
 - Putty has its own private key format. There is a way to convert from the normal ssh keys to Putty format keys.
