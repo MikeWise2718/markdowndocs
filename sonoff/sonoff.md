@@ -11,6 +11,10 @@ output: html_document
 - (https://ewelink.coolkit.cc/?p=149)
 - How to replace the firmware: (https://github.com/arendst/Tasmota)
 
+
+# Based on the ESP8266
+- explanation: (https://hackaday.com/2015/03/18/how-to-directly-program-an-inexpensive-esp8266-wifi-module/)
+
 # Initializig
 - Ewelink didn't work so tried "EPS2866 Smart Config" instead on Jonathans recommendation
 - That did't work either, so went back to Ewelink, and this time it worked.

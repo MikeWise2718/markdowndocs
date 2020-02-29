@@ -53,7 +53,8 @@ You can follow it along with a newer version of Unity and the current ml-agents,
    -  `mlagents.trainers` A set of RL learning algorithms that works with the above
 - If you want to run that code, you have to make sure the PYTHONPATH points.
    - Otherwise it will pick up the modules you installed with `pip`
-   - You can find out what module is being used for an open using the `inspect` module - see below
+   - You can find out what module is being used for an open using the `inspect` module - see below<br>
+
 Examples:
 ```
 (ml-agents) D:\Unity\ml-agents>env | grep PYTHONPATH
