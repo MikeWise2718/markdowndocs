@@ -199,8 +199,25 @@ table td {
 | set user email | git config   *global user.email mwise@oz.ai |
 | ![fish](SmallerFish.png) | git config   *global user.email mwise@oz.ai |
 
+# Unfork Repo
+Got it from here: (https://intellipaat.com/community/21779/unfork-github-how-to-unfork-the-github-repository)
+How to "unfork" a project in four easy steps:
+
+1. git clone --bare https://github.com/{username}/{repository}
+
+2. Delete original repository in https://github.com/{username}/{repository}/settings.
+
+3. Create new repository with the name {repository} at https://github.com/new.
+
+4. cd {repository}.git and git push --mirror https://github.com/{username}/{repository}
 
 
    
-
-
+# Keeping up to date
+- Link here: (https://stefanbauer.me/articles/how-to-keep-your-git-fork-up-to-date)
+- Basiclly
+  - `git fetch upstream`
+  - `git merge upstream/master master`
+  - `git push`
+- If you have been adding work, you should be adding to a branch
+  - `git rebase upstream/master`
