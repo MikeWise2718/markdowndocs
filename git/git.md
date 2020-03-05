@@ -215,7 +215,8 @@ How to "unfork" a project in four easy steps:
    
 # Keeping up to date
 - Link here: (https://stefanbauer.me/articles/how-to-keep-your-git-fork-up-to-date)
-- Basiclly
+- I think this is all assuming you are only working on one branch, "master"
+- Basically
   - `git fetch upstream`
   - `git merge upstream/master master`
   - `git push`
