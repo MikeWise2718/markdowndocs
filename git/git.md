@@ -217,8 +217,22 @@ How to "unfork" a project in four easy steps:
 - Link here: (https://stefanbauer.me/articles/how-to-keep-your-git-fork-up-to-date)
 - I think this is all assuming you are only working on one branch, "master"
 - Basically
-  - `git fetch upstream`
-  - `git merge upstream/master master`
-  - `git push`
+  1. `git fetch upstream`
+  2. `git merge upstream/master master`
+  3. `git push`
+
 - If you have been adding work, you should be adding to a branch
-  - `git rebase upstream/master`
+
+   4. `git rebase upstream/master`
+
+
+# Rename a branch
+A stack overflow answer (https://stackoverflow.com/a/6591218/3458744)
+ 1. Rename with  `git branch -m <oldname> <newname>` 
+ 2. Can use capital M of force rename if newbranch exists, or windows upper/lower case madness
+ 
+ A Better answer: (https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
+ 1. Switch to that local branch with `git checkout <oldname>`
+ 2. Rename the local branch with `git branch -m <newname>`
+ 3. Push new name and reset the upstream branch with: `git push origin -u <newname>`
+ 4. Delete <oldname> remote branch: `git push origin --delete <oldname>`
