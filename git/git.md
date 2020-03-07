@@ -218,8 +218,9 @@ How to "unfork" a project in four easy steps:
 - I think this is all assuming you are only working on one branch, "master"
 - Basically
   1. `git fetch upstream`
-  2. `git merge upstream/master master`
-  3. `git push`
+  2. `git status` (see how up to date it is)
+  3. `git merge upstream/master master`
+  4. `git push`
 
 - If you have been adding work, you should be adding to a branch
 

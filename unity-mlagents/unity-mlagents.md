@@ -230,8 +230,131 @@ class EnvStats:
 - added following line to `UnityEnvironment._update_brain_parameters` in `environment.py` lin3 #638
   - `self._env_stats = output.rl_output.environment_statistics`
 
-## Python ml-agents-env
-- 
+## C#
+- Added file `EnvStatMan.cs` to `UnitySDK\Assets\ML-Agents\Scripts`
+```
+using System;
+using UnityEngine;
+using System.Collections.Generic;
+using Google.Protobuf.Collections;
+
+namespace MLAgents
+{
+    public class EnvStatMan
+    {
+        Dictionary<string, float> floatStat;
+        Dictionary<string, string> stringStat;
+        public EnvStatMan()
+        {
+            Reset();
+        }
+        public void Reset()
+        {
+            floatStat = new Dictionary<string, float>();
+            stringStat = new Dictionary<string, string>();
+        }
+        static string tbprefix = "tb:";
+        public void AddFloatStat(string key,float valf)
+        {
+            floatStat[tbprefix+key] = valf;
+        }
+        public void AddStringStat(string key, string vals)
+        {
+            stringStat[key] = vals;
+        }
+        public void FillFloatMapField(MapField<string,float> mapfield)
+        {
+            foreach( var k in floatStat.Keys)
+            {
+                mapfield[k] = floatStat[k];
+            }
+        }
+        public void FillStringMapField(MapField<string, string> mapfield)
+        {
+            foreach (var k in stringStat.Keys)
+            {
+                mapfield[k] = stringStat[k];
+            }
+        }
+    }
+}
+```
+
+in `Academy.cs`
+```
+    public abstract class Academy : MonoBehaviour
+    {
+        private const string k_ApiVersion = "API-11";
+
+        /// Temporary storage for global gravity value
+        /// Used to restore oringal value when deriving Academy modifies it
+        private Vector3 m_OriginalGravity;
+
+        /// Temporary storage for global fixedDeltaTime value
+        /// Used to restore original value when deriving Academy modifies it
+        private float m_OriginalFixedDeltaTime;
+
+        /// Temporary storage for global maximumDeltaTime value
+        /// Used to restore original value when deriving Academy modifies it
+        private float m_OriginalMaximumDeltaTime;
+
+        public EnvStatMan envStatMan = new EnvStatMan();
+        // ...
+```
+
+in `Academy.cs`
+```
+        private void InitializeEnvironment()
+        {
+            m_OriginalGravity = Physics.gravity;
+            m_OriginalFixedDeltaTime = Time.fixedDeltaTime;
+            m_OriginalMaximumDeltaTime = Time.maximumDeltaTime;
+
+            envStatMan.Reset();
+
+            InitializeAcademy();
+            // ...
+```
+
+in `RpcCommunicator.cs`
+```
+        void SendBatchedMessageHelper()
+        {
+            var message = new UnityOutputProto
+            {
+                RlOutput = m_CurrentUnityRlOutput,
+            };
+            var tempUnityRlInitializationOutput = GetTempUnityRlInitializationOutput();
+            if (tempUnityRlInitializationOutput != null)
+            {
+                message.RlInitializationOutput = tempUnityRlInitializationOutput;
+            }
+            EnvironmentStatisticsProto evo = message.RlOutput.EnvironmentStatistics;
+            var aca = GameObject.FindObjectOfType<Academy>();
+            aca.envStatMan.FillFloatMapField(evo.FloatStat);
+            aca.envStatMan.FillStringMapField(evo.StringStat);
+            aca.envStatMan.Reset();
+            // ...
+```
+
+
+in `CmvAcademy.cs:`
+```
+    public override void AcademyStep()
+    {
+        envStatMan.AddFloatStat("CrowdMove/Attempts", attempts);
+        envStatMan.AddFloatStat("CrowdMove/Successes", successes);
+        envStatMan.AddFloatStat("CrowdMove/Failures", failures);
+        envStatMan.AddFloatStat("CrowdMove/Collisions", collisions);
+        envStatMan.AddFloatStat("CrowdMove/TotSteps", totsteps);
+        envStatMan.AddFloatStat("CrowdMove/AvgSteps", avgsteps);
+        if (timeDelayMsecs>0)
+        {
+            System.Threading.Thread.Sleep(timeDelayMsecs);
+        }
+    }
+
+```
 
 # Starting a remote run on an DSVM
 - Request Just-In-Time access to the box
@@ -269,3 +392,7 @@ mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/Uni
 - PushBlock Tutorial: https://www.youtube.com/playlist?list=PLX2vGYjWbI0R08eWQkO7nQkGiicHAX7IX
 - Vision Zero, Uni Barcelona and Bellevue: https://www.youtube.com/watch?v=YsEDv13W1RI (37:38)
 
+
+# Changes
+- Got rid of `Academy` subclassing and what todo about it: (https://github.com/Unity-Technologies/ml-agents/pull/3184)
+- `SpaceType` is now `ActionType` (although I think it is actually `ModelActionType`) : (https://github.com/Unity-Technologies/ml-agents/pull/3479)
