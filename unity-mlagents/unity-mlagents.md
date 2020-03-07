@@ -164,6 +164,8 @@ Only had to add one and change one protbuf file
 ### Compile things
 - Have to compile the new protobuf definitions and get them to work, which is painful
 - Look at the `README.md` in the `/ml-agents/protobuf-definitions` directory to find the version of Grpc tools you need (in this case 1.14.1)
+- Installation: `nuget install Grpc.Tools -Version 1.14.1 -OutputDirectory $MLAGENTS_ROOT\protobuf-definitions`
+   - I used `nuget install Grpc.Tools -Version 1.14.1 -OutputDirectory .`
 - Afterwards the `COMPILER` variable in the `make_for_win.bat` had to point to the Grpc Tools directory, wherever it was installed 
    -  I installed it in a the same directory which is probably not optimal
    - `set COMPILER=D:\Unity\ml-agents\protobuf-definitions\Grpc.Tools.1.14.1\tools\windows_x64`
