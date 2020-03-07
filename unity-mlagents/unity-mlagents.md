@@ -156,9 +156,20 @@ Note: If you don't assign a run-id identifier, mlagents-learn uses the default s
 # Notes on adding tensorboard observations
 - Data comes in through protobuf
 ## Protobuf
+
+### Protobuf chanegs
 Only had to add one and change one protbuf file 
 - Defintions in  `/ml-agents/protobuf-definitions/proto/mlagents/envs/communicator_objects ml-agents/protobuf_definitions`)
 - New file: `environment_statistics.proto`
+### Compile things
+- Have to compile the new protobuf definitions and get them to work, which is painful
+- Look at the `README.md` in the `/ml-agents/protobuf-definitions` directory to find the version of Grpc tools you need (in this case 1.14.1)
+- Afterwards the `COMPILER` variable in the `make_for_win.bat` had to point to the Grpc Tools directory, wherever it was installed 
+   -  I installed it in a the same directory which is probably not optimal
+   - `set COMPILER=D:\Unity\ml-agents\protobuf-definitions\Grpc.Tools.1.14.1\tools\windows_x64`
+- Then compile with the `make_for_win.bat` - you have to look carefully to find the errors in the output
+- Afterwards you should be able have `EnvironmentStatisticsProto` be a known type in `RpcCommunicator.cs`, just like `UnityOutputProto` is by default
+
 ```
 syntax = "proto3";
 
@@ -336,6 +347,7 @@ in `RpcCommunicator.cs`
             aca.envStatMan.Reset();
             // ...
 ```
+
 
 
 in `CmvAcademy.cs:`
