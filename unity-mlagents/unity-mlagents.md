@@ -203,45 +203,6 @@ message UnityRLOutputProto {
 }
 ```
 
-## Python ml-agents-env
-- added `EnvStats` definition to `brain.py` line #27
-```
-class EnvStats:
-    float_stat: Dict[str,float]
-    string_stat: Dict[str,str]
-    def __init__(
-        self,
-        float_stat:  Dict[str,float],
-        string_stat: Dict[str,str],
-    ):
-        """
-        Contains all EnvStats parameters.
-        """
-        self.float_stat = dict(float_stat)
-        self.string_stat = dict(string_stat)
-
-    def __str__(self):
-        return f"float_stat:{self.float_stat} str_stat:{self.string_stat}"
-
-    @staticmethod
-    def from_proto(
-        env_stat_proto: EnvironmentStatisticsProto
-    ) -> "EnvStats":
-        """
-        Converts Environment Statistics parameter proto to EnvStats object.
-        :param env_stat_proto: protobuf object.
-        :return: EnvStats object.
-        """
-        env_stats = EnvStats(
-            env_stat_proto.float_stat,
-            env_stat_proto.string_stat,
-        )
-        return env_stats
-```
-- added following line to `UnityEnvironment._get_state` in `environment.py` lin3 #638
-  - `_data["EnvStats"] = EnvStats.from_proto(self.env_stats)`
-- added following line to `UnityEnvironment._update_brain_parameters` in `environment.py` lin3 #638
-  - `self._env_stats = output.rl_output.environment_statistics`
 
 ## C#
 - Added file `EnvStatMan.cs` to `UnitySDK\Assets\ML-Agents\Scripts`
@@ -330,6 +291,21 @@ in `Academy.cs`
 ```
 
 in `RpcCommunicator.cs`
+Initialization
+```
+        public UnityRLInitParameters Initialize(CommunicatorInitParameters initParameters)
+        {
+            var academyParameters = new UnityRLInitializationOutputProto
+            {
+                Name = initParameters.name,
+                PackageVersion = initParameters.unityPackageVersion,
+                CommunicationVersion = initParameters.unityCommunicationVersion
+            };
+
+            m_CurrentUnityRlOutput.EnvironmentStatistics = new EnvironmentStatisticsProto();
+```
+
+Per-step
 ```
         void SendBatchedMessageHelper()
         {
@@ -367,8 +343,109 @@ in `CmvAcademy.cs:`
             System.Threading.Thread.Sleep(timeDelayMsecs);
         }
     }
+```
+New Version <br>
+
+
+In `FoodCollectorAgent.cs`
 
 ```
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("food"))
+        {
+            Satiate();
+            collision.gameObject.GetComponent<FoodLogic>().OnEaten();
+            AddReward(1f);
+            if (contribute)
+            {
+                m_FoodCollecterSettings.totalScore += 1;
+                m_FoodCollecterSettings.foodEaten += 1;
+            }
+        }
+        if (collision.gameObject.CompareTag("badFood"))
+        {
+            Poison();
+            collision.gameObject.GetComponent<FoodLogic>().OnEaten();
+
+            AddReward(-1f);
+            if (contribute)
+            {
+                m_FoodCollecterSettings.totalScore -= 1;
+                m_FoodCollecterSettings.poisonEaten += 1;
+            }
+        }
+    }
+```
+In `FoodCollectorSettings.cs`
+```
+public class FoodCollectorSettings : MonoBehaviour
+{
+    [HideInInspector]
+    public GameObject[] agents;
+    [HideInInspector]
+    public FoodCollectorArea[] listArea;
+
+    public int totalScore;
+    public Text scoreText;
+
+    public int foodEaten;
+    public int poisonEaten;
+
+
+    // ....
+
+
+    public void FixedUpdate()
+    {
+        Academy.Instance.envStatMan.AddFloatStat("FoodCollector/TotalScore", totalScore);
+        Academy.Instance.envStatMan.AddFloatStat("FoodCollector/FoodEaten", foodEaten);
+        Academy.Instance.envStatMan.AddFloatStat("FoodCollector/PoisonEaten", poisonEaten);
+    }
+```
+
+## Python ml-agents-env
+- added `EnvStats` definition to `brain.py` line #27
+```
+class EnvStats:
+    float_stat: Dict[str,float]
+    string_stat: Dict[str,str]
+    def __init__(
+        self,
+        float_stat:  Dict[str,float],
+        string_stat: Dict[str,str],
+    ):
+        """
+        Contains all EnvStats parameters.
+        """
+        self.float_stat = dict(float_stat)
+        self.string_stat = dict(string_stat)
+
+    def __str__(self):
+        return f"float_stat:{self.float_stat} str_stat:{self.string_stat}"
+
+    @staticmethod
+    def from_proto(
+        env_stat_proto: EnvironmentStatisticsProto
+    ) -> "EnvStats":
+        """
+        Converts Environment Statistics parameter proto to EnvStats object.
+        :param env_stat_proto: protobuf object.
+        :return: EnvStats object.
+        """
+        env_stats = EnvStats(
+            env_stat_proto.float_stat,
+            env_stat_proto.string_stat,
+        )
+        return env_stats
+```
+- added following line to `UnityEnvironment._get_state` in `environment.py` lin3 #638
+  - `_data["EnvStats"] = EnvStats.from_proto(self.env_stats)`
+- added following line to `UnityEnvironment._update_brain_parameters` in `environment.py` lin3 #638
+  - `self._env_stats = output.rl_output.environment_statistics`
+
+
+
 
 # Starting a remote run on an DSVM
 - Request Just-In-Time access to the box
