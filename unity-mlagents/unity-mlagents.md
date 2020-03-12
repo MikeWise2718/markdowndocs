@@ -487,3 +487,13 @@ mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/Uni
 # Changes
 - Got rid of `Academy` subclassing and what todo about it: (https://github.com/Unity-Technologies/ml-agents/pull/3184)
 - `SpaceType` is now `ActionType` (although I think it is actually `ModelActionType`) : (https://github.com/Unity-Technologies/ml-agents/pull/3479)
+
+
+# Essential Source Files Changed for custom-tb-origin
+
+## Protobuf
+
+## C#
+
+
+## Python
