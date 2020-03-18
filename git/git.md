@@ -237,3 +237,23 @@ A stack overflow answer (https://stackoverflow.com/a/6591218/3458744)
  2. Rename the local branch with `git branch -m <newname>`
  3. Push new name and reset the upstream branch with: `git push origin -u <newname>`
  4. Delete <oldname> remote branch: `git push origin --delete <oldname>`
+
+
+# see what changed betwen branches
+- diff between branches -  `git diff --name-status master`
+```
+git diff --name-status master
+M       com.unity.ml-agents/Runtime/Academy.cs
+M       com.unity.ml-agents/Runtime/Agent.cs
+M       com.unity.ml-agents/Runtime/Communicator/RpcCommunicator.cs
+A       ml-agents/ml-agents-env/mlagents_envs/base_env.py
+A       ml-agents/ml-agents-env/mlagents_envs/communicator.py
+A       ml-agents/ml-agents-env/mlagents_envs/environment.py
+A       ml-agents/ml-agents-env/mlagents_envs/exception.py
+A       ml-agents/ml-agents-env/mlagents_envs/rpc_communicator.py
+A       ml-agents/ml-agents-env/mlagents_envs/rpc_utils.py
+A       ml-agents/ml-agents/mlagents/trainers/agent_processor.py
+M       ml-agents/mlagents/trainers/agent_processor.py
+A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/environment_statistics.proto
+A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/unity_rl_output.proto
+```

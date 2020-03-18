@@ -491,9 +491,22 @@ mlagents-learn config/trainer_config.yaml --train --run-id=dsvmrun01 --env=~/Uni
 
 # Essential Source Files Changed for custom-tb-origin
 
-## Protobuf
+### Overview
+Here is a summary of the important changes I had to do to get this to work
 
-## C#
+#### Protobuf changes:
+- Added a new type to the protobuf defintions (**EnvironmentStatisticsProto**) to communicate data to the Python UnityEnvironment and merge it into **BatchedStepResult**. 
+- Added **EnvironmentStatisticsProto** to **UnityRLOutputProto**
 
+#### Python changes:
+- Modified **base_env.py**, **rpc_utils.py**, and **environment.py** to read those.
+- Modified **agent_processor.py** to pass those values to TensorBoard
 
-## Python
+#### C# Changes:
+- Added a class to manage the collections **EnvStatMan.cs** in **com.unity.agents/Runtime**
+- Made some minor modifications to **Academy.cs** and **RpcCommunication.cs** to integrate the **EnvStatMan** class into the RPC communicatino.
+- Added a couple of counters (**foodEaten**, **poisonEaten**) to the **FoodCollectionSettings.cs**
+- Added a FixedUpdate event handler to **FoodCollectionSettings.cs** to update those settings.
+
+#### Other Changes
+- There are a lot of little unimportant changes in this pull request that should not be there, but I am not sure how to quickly get rid of these so I am leaving them in for now. I think it is obvious what is signal and what is noise.
