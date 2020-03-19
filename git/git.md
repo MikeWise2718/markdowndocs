@@ -257,3 +257,19 @@ M       ml-agents/mlagents/trainers/agent_processor.py
 A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/environment_statistics.proto
 A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/unity_rl_output.proto
 ```
+- diff between branches and one specific file
+    - `git diff  custom-tb-obs -- Project/ProjectSettings/ProjectVersion.txt`
+```
+diff --git a/Project/ProjectSettings/ProjectVersion.txt b/Project/ProjectSettings/ProjectVersion.txt
+index d364145c..9bebbca9 100644
+--- a/Project/ProjectSettings/ProjectVersion.txt
++++ b/Project/ProjectSettings/ProjectVersion.txt
+@@ -1,6 +1 @@
+-<<<<<<< HEAD
+-m_EditorVersion: 2019.3.3f1
+-m_EditorVersionWithRevision: 2019.3.3f1 (7ceaae5f7503)
+-=======
+ m_EditorVersion: 2018.4.18f1
+->>>>>>> upstream/master
+
+```
