@@ -258,7 +258,7 @@ A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/
 A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/unity_rl_output.proto
 ```
 - diff between branches and one specific file
-    - `git diff  custom-tb-obs -- Project/ProjectSettings/ProjectVersion.txt`
+    - `git diff  custom-tb-obs -- Project/ProjectSettings/ProjectVersion.txt`   
 ```
 diff --git a/Project/ProjectSettings/ProjectVersion.txt b/Project/ProjectSettings/ProjectVersion.txt
 index d364145c..9bebbca9 100644
@@ -271,5 +271,6 @@ index d364145c..9bebbca9 100644
 -=======
  m_EditorVersion: 2018.4.18f1
 ->>>>>>> upstream/master
-
 ```
+- replace that file with the one in another branch
+   - `git  checkout  custom-tb-obs Project/ProjectSettings/ProjectVersion.txt`   
