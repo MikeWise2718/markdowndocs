@@ -243,3 +243,27 @@ I had a lot of problems with this. Specifically I added a project with a new bra
 What finally helped was deleting the upm branch remotely and locally, along with the new tags, and redoing it. At least I have an up-to-date version now, but not confident the workflow is all that robust.
  ```
 
+# Updating Maptool project
+- Edit  `package.json` in `Assets/Qkmaptool`
+```
+{
+"name": "com.aiskwk.qkmaptool",
+"displayName": "TestProject",
+"description": "Test Project stored as Unity project in Github",
+"version": "1.4.0",
+"unity": "2018.0",
+"license": "MIT",
+"dependencies": {
+ }
+}
+- Subtreed it
+   - `git subtree push --prefix Assets/Qkmaptool origin upm`
+
+
+- ?? Added a tag and pushed it
+   - ?? `git tag -a v1.0.0 -m "TestProject version v1.0.0" upm`
+   - ?? `git push origin v1.0.0`
+
+- Pushed a new tag
+  - `git tag 1.4.0 -m "Qkmaptool version 1.4.0 with namespace" upm`
+  - `git push --follow-tags`
