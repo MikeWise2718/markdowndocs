@@ -21,7 +21,7 @@ view=azure-devops)
 -  `git push --mirror https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
 -    oddly it didn't dual auth me?
 - `git lfs fetch origin --all`
--   Took like 10 minutes to fetch all 1074 objects
+-   Took like 10 minutes to fetch all 1074 objects - 5.3 GB, 7.9 MB/s
 - `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
 
 
