@@ -21,7 +21,19 @@ view=azure-devops)
 -  `git push --mirror https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
 -    oddly it didn't dual auth me?
 - `git lfs fetch origin --all`
--   Took like 10 minutes to fetch all 1074 objects - 5.3 GB, 7.9 MB/s
+   - Took like 10 minutes to fetch all 1074 objects - 5.3 GB, 7.9 MB/s
 - `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
+- Failed with 37 LFS Server timeout errors:
 
 
+- Adjusted timeouts according to this: (https://github.com/git-lfs/git-lfs/issues/2636)
+  - `git config lfs.activitytimeout 120`
+  - `git config lfs.dialtimeout 120`
+  - Reduced errors to 3 Client Errors (413 request too large)
+  - Solution here: (https://developercommunity.visualstudio.com/content/problem/862165/cant-push-large-git-lfs-files-to-repository-from-p.html?inRegister=true)
+ 
+- Finally fixed it with this
+  - `git config http.version HTTP/1.1`
+  - `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
+  - `Uploading LFS objects: 100% (1074/1074), 5.3 GB | 4.2 MB/s, done.` in about 3 minutes
+   
