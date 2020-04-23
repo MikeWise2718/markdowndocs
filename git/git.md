@@ -274,3 +274,10 @@ index d364145c..9bebbca9 100644
 ```
 - replace that file with the one in another branch
    - `git  checkout  custom-tb-obs Project/ProjectSettings/ProjectVersion.txt`   
+
+## Interactive rebasing
+- Useful commands
+- `git log --oneline --graph`
+- `git log --oneline --graph -10`
+- `git rev-parse HEAD~2`
+- `git -i rebase HEAD~2
