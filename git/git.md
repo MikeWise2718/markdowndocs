@@ -280,4 +280,6 @@ index d364145c..9bebbca9 100644
 - `git log --oneline --graph`
 - `git log --oneline --graph -10`
 - `git rev-parse HEAD~2`
-- `git -i rebase HEAD~2
+- `git -i rebase HEAD~2`
+- `git checkout --ours PATH/FILE`
+- `git checkout --theirs PATH/FILE`

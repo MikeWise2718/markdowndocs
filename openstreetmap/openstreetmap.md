@@ -17,6 +17,19 @@ output: html_document
 - Uses Overpass QL 
 - Python API: (https://github.com/mocnik-science/osm-python-tools/blob/master/docs/overpass.md)
 
+
+# Scale
+ - One millionth of latitude is (one mil or 0.000001) 11.11 centimeters
+  - one mil * 10km * 1000 m/mk / 90 degrees of latitude
+  - `0.000001*10000*1000 / 90  = 0.111111111111111`
+
+# some good queries
+- eb12 -  `way(49.99272, 8.67512, 49.99642, 8.67843) ["highway"];(._;>;);out body;`
+- msft - `way(47.63145, -122.14424, 47.66053, -122.11329) ["highway"];(._;>;);out body;`
+- Can also try with "building" or "barrier", see map features below for more
+
+- Map features (like buildings, highways,etc.) - (https://wiki.openstreetmap.org/wiki/Map_Features#Boundary)
+
 # Overpass Turbo
 - Overpass turbo is a web based data mining toolf for OSM (https://overpass-turbo.eu/)
 - Wiki page: (https://wiki.openstreetmap.org/wiki/Overpass_turbo)
