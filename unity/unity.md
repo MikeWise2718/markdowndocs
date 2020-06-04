@@ -267,3 +267,10 @@ What finally helped was deleting the upm branch remotely and locally, along with
 - Pushed a new tag
   - `git tag 1.4.0 -m "Qkmaptool version 1.4.0 with namespace" upm`
   - `git push --follow-tags`
+```
+# Unity Log messages
+  - Old docs are here: (https://docs.unity3d.com/560/Documentation/Manual/LogFiles.html#:~:text=On%20Windows%2C%20the%20Editor%20log,%5CUnity%5CEditor%5CEditor.)
+
+# Unity Player Preferences:
+ - Editor: `Computer\HKEY_CURRENT_USER\Software\Unity\UnityEditor\DefaultCompany\campusim`
+ - Player: `Computer\HKEY_CURRENT_USER\Software\DefaultCompany\campusim`
