@@ -283,3 +283,31 @@ index d364145c..9bebbca9 100644
 - `git -i rebase HEAD~2`
 - `git checkout --ours PATH/FILE`
 - `git checkout --theirs PATH/FILE`
+
+## Find biggest files in repo:
+
+This works using the bash subsystem:
+```
+D:\unity\CampSim-Mapmerge>bash
+
+mike@Absol  /d/unity/CampSim-Mapmerge (Mapmerge)
+$ git rev-list --objects --all | git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | sed -n 's/^blob //p' | /usr/bin/sort   --numeric-sort --key=2 | tail -n 10 | cut -c 1-12,41- | $(command -v gnumfmt || echo numfmt) --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+cc20c43e0b78  4.1MiB Assets/Treespackage/Scenes/Tree1/Tree1/Terrain1.asset
+0a016c3a0fed  4.3MiB Assets/GoogleARCore/CLI/augmented_image_cli_win.exe
+d53515fe2507  4.8MiB Assets/Scenes/Tutorial-vpm.unity
+b282d8c14c72  5.0MiB Assets/GoogleARCore/CLI/augmented_image_cli_linux
+2c08231c25e4  5.1MiB Assets/Treespackage/Scenes/Tree2/Tree2/Terrain2.asset
+941f673ac9ae  5.1MiB Assets/Race Pack/Scenes/Example_Track1/LightingData.asset
+37844848fcea  6.0MiB Assets/Mobile devices/Mobile_devices_/CubeMap/Cubemap_.cubemap
+3fc68a9b6cd3  9.3MiB Assets/GoogleARCore/CLI/augmented_image_cli_osx
+d498aa04d2ad  9.5MiB Assets/Real Materials/Showcase/Scenes/Real Materials vol.0 showcase/LightingData.asset
+920eee3f7585   12MiB Assets/Mobile devices/Mobile_devices_/CubeMap/Cubemap_.cubemap
+
+mike@Absol  /d/unity/CampSim-Mapmerge (Mapmerge)
+```
+These came from here:
+ - (https://stackoverflow.com/questions/9456550/how-to-find-the-n-largest-files-in-a-git-repository)
+
+Two other interesting solutions
+- ls -lSh `git ls-files` | head`
+- `git ls-files | xargs ls -l | sort -nrk5 | head -n 10`
