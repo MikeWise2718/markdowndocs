@@ -57,3 +57,9 @@ Stuff I do every time I reinstall windows.
 
 ### Tray Management
  - https://www.howtogeek.com/75510/beginner-how-to-customize-and-tweak-your-system-tray-icons-in-windows-7/
+
+## Seconds Display in Tray
+- https://winaero.com/blog/taskbar-clock-show-seconds-windows-10/
+- `Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced`
+- Create a DWORD32 key `ShowSecondsInSystemCLock` and set it equal to 1
+- Log in and log out

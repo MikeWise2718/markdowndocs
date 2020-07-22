@@ -311,3 +311,13 @@ These came from here:
 Two other interesting solutions
 - ls -lSh `git ls-files` | head`
 - `git ls-files | xargs ls -l | sort -nrk5 | head -n 10`
+
+# Tracing errors in git
+- Set the environment variable `set GIT_TRACE=1`
+- Then do your command i.e. `git push`
+
+# Azurerepos git lfs size limit
+- `git push azurerepos` failed on gitlfs failed with http errior 503 (service unavailable)
+- Could only see error with `GIT_TRACE=1`, otherwise we just got a perpetual loop
+- Seemed to fix with: `git config http.version HTTP/1.1`
+- Got from this source: (https://github.com/MicrosoftDocs/azure-devops-docs/issues/4179)
