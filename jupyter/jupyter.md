@@ -9,7 +9,10 @@ I think of Jupyter as R-Markdown for Python, but that is not really true.
 
 # Installation
 * pip install jupyter
-* Anaconda has it by default
+* Anaconda has it by default 
+* 29.12.2020 - https://medium.com/analytics-vidhya/making-a-new-conda-environment-and-using-it-inside-jupyter-notebook-3191e3362dc9
+* 29.12.2020 - Anaconda does not have it by default now and I had to do this to install the kernels:
+* `conda install nb_conda_kernels -y`
 
 # Configuration
  * There is no configuration by default. 

@@ -37,3 +37,29 @@ view=azure-devops)
   - `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
   - `Uploading LFS objects: 100% (1074/1074), 5.3 GB | 4.2 MB/s, done.` in about 3 minutes
    
+
+- My Azure DevOps Orgs (the ones I can assess)
+  - (https://aex.dev.azure.com/me?mkt=en-US)
+
+
+  # Building Pipelines
+  - Key concepts Pipeline, Job, Task, Agent
+  - This is about ADO Pipelines, there are also Data Factory Pipelines and Azure ML Pipelines
+
+  ## ADO Pipelines
+  - There are two kinds of pipelines, one that is defined by a YAML script, one that is managed by a GUI editor
+  - You can go from Editor to YAML, but not from YAML to Editor
+  - Default is YAML, if you want the GUI editor way of building tasks you need to click on the "Classic editor link" when you create ht pipeline, you can't change it afterwards
+
+  ## Agents
+  - Docs: (https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser)
+  - Essentially two kinds of agents, Microsoft Hosted, and Self Hosted
+  - Microsoft Hosted are containers where you can't (?) install anything
+  - Self Hosted are manchines you manage yourself (say an Azure VM or your local machine)
+  - For Self Hosted you will need an Personal Access Token (PAT), you get that in the "User Settings" menu
+  - Setup self hosted agent instructions: (https://www.clouddev.engineering/azure-devops-microsoft-hosted-and-self-hosted-build-agents/)
+  - The "User Settings" menus is next to your personal icon which brings up the "Account Manager" which is not the "User Settings"- You need to download it and install it in a directory 
+  - You need to configure it with powershell (I guess in Admin mode) in that directory with `.\config.cmd`
+  - You can configure it as a service, if you don't to that you need to run it manually when you need it
+  - Youcan run it manually with powershell (I guess in Admin mode) in that directory with `.\run.cmd`
+  

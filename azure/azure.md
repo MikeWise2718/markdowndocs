@@ -9,6 +9,12 @@ Azure is huge, so we can't handle much of it here, but there are some things I n
 
 One used to do things with PowerShell, but the Azure CLI 2.0 is a much better way, it is a python shell on top of PowerShell. See my page on the Azure CLI for more info here.
 
+
+# Latest login - keeps changing
+- https://ms.portal.azure.com
+- login with mwise@microsoft.com
+- Switch directory from default to `microsoft.onmicrosoft.com` directory
+
 # Services
  - What services are avalable in which region is [here](https://azure.microsoft.com/en-us/global-infrastructure/services/)
  - In general these days (early 2018) West Europe has more things on offer than North Europe
