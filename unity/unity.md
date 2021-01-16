@@ -24,6 +24,9 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 * To create a new window, you create a new tab in an old window, and then drag it to a new location. Can even be detached from the application, so on another screen.
 * You can grab the tag of a game window and drag it to another window in the layout,or even to a new place in the same window, which will cause it to create a new window there splitting up the space. 
 * This is kind of odd, but it does make it easy to do pretty much any kind of layout quickly
+* Current window layout stored in `Library/CurrentLayout-default.dwlt`
+* Default layouts stored in `C:\Users\mike\AppData\Roaming\Unity\Editor-5.x\Preferences\Layouts>` (see `%AppData%` command shell variable)
+
 
 # Github
  * There is a github component that you have to import into a project if you want github integration. Well worth it.
