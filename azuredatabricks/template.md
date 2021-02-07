@@ -11,11 +11,32 @@ output: html_document
   - Shows how to configure secrets
   - Part 2 - advanced, but not step-by-step (https://jcbaey.com/getting-started-on-databricks-with-python-examples)
 
+# Delta Lake
+- Delta Lake on Databricks - (https://databricks.com/discover/getting-started-with-delta-lake-tech-talks/making-apache-spark-better-with-delta-lake)
+
+
+# Lamda, Kappa, and Delta Architectures in Databricks
+- Databricks Delta - (https://jixjia.com/delta-architecture/)
+- CAP Theeorem - (https://en.wikipedia.org/wiki/CAP_theorem) 
+- Lambda - How to beat CAP - (http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html)
+  - retains input data unchanged
+- Kappa - Questioning Lambda - (https://www.oreilly.com/radar/questioning-the-lambda-architecture/)
+- Delta 
+
+
+#  Data Wrangling
+- Data Wrangling with PySpark for Data Scientists Who Know Pandas - Andrew Ray (https://www.youtube.com/watch?v=XrpSRCwISdk)
+
+
+# Databrick Connect
+- Docs - (https://docs.databricks.com/dev-tools/databricks-connect.html#:~:text=Download%20and%20unpack%20the%20open,%2Flocal%2Flib%2Fpython3.)
+- Includes how to set up with VS Code and Miniconda
 
 # Secret Scopes  
 - Secret Scopes - (https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
 
 # ADB CLI - Command line interface
+- Docs - (https://docs.databricks.com/dev-tools/cli/index.html)
 - There is a python based command line databricks CLI 
   - `pip install databricks-cli`
 - Azure install and configuration: (https://docs.microsoft.com/en-us/azure/databricks/dev-tools/cli/)
