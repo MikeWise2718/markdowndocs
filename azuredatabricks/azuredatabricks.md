@@ -49,6 +49,9 @@ output: html_document
 - Install JRE 8
   - Install JRE  8 without logging into Oracle: (https://www.java.com/en/download/)
 - Install winutils - (https://stackoverflow.com/questions/50637728/pyspark-failed-to-locate-the-winutils-binary-in-the-hadoop-binary-path)
+   - Copied downloaded `bin` and `something` into a `d:\python\winutils`
+   - Added `HADOOP_HOME=d:\python\winutils` to environment
+   - Restarted command shell
 - `databricks-connect test`
     - to get around mismatched client/server use `set DEBUG_IGNORE_VERSION_MISMATCH=1` as error message says
 Successful Test:
