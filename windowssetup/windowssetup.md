@@ -19,6 +19,26 @@ Stuff I do every time I reinstall windows.
  - https://serverfault.com/questions/625332/windows-update-not-working-on-windows-2012-r2-standard
 
 
+# Windows Evaluation Version Expiring workarounds
+- An evaluation version of Windows Enterprise restarts after 90 days
+- You can "rearm" it up to 3 times with `slmgr -rearm`
+- 3 times 90 is 260 days, after expiration of the eval version it will start to autoboot after one hour of running
+- Skip autoboot after expiry: (https://medium.com/tech-learn-share/how-to-stop-expired-windows-server-auto-shutdown-every-hour-c0cd74e0974e) 
+   - Initially download PsTools
+   - Create folder called — PSTOOLS on C: drive
+   - Extract all the contents of the zip file in C:\ drive into the folder PSTOOLS (which we just created)
+   - After that you need to start command prompt with Administrator privileges and go to PSTOOLS
+   - Enter `psexec -i -d -s cmd` and click-agree on the license agreement dialog box
+   - Then you will get another command prompt running under `nt authoriy\system`
+   - To check this enter `whoami` and check that it is the case
+   - Enter `sc delete WLMS`
+   - `regedit` go to `HKLM\System\CurrentControlSet\Service\WLMS` key and delete it
+   - Now reboot
+   - You can control uptime by looking in task manager under CPU, it should display up time 
+   - The simple way of doing it would be to open command prompt with administrator privileges and run the command `sc delete WLMS` and then delete the WLMS key from the registry. However, if this doesn’t work, you can try the above method which will work for sure..
+
+
+
 # Things I like to install
 
 ###	General Utils

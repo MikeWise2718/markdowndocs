@@ -54,6 +54,12 @@ the `Documents\Rainmeter\Skins` subfolder
 # HwINFO App
 - Has blue icon when running, can be viewed in tray.
   - Keystrokes: `Alt-Windows Key-HwInfo`
+- Configuration page can be hard to find
+   - One place is on the Sensor Status Page lower right (a big gear icon)
+   - Another place is right clicking on the tray icon and getting to settings - which does not reliably appear for some reason
+ - Shared Memory
+   - The Shared Memory is only available on the Pro version - it goes away after 12 hours on the Free Version
+   - The StreamDeck plugin can only reliably get to the Shared Memory if it starts as administrator - oddly it works sometimes anyway, but usually not
 - This is how it needs to be configured
    - "Minimize Sensors instead of Closing" is checked
    - "Shared Memory support" is checked<br>
@@ -76,6 +82,15 @@ C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\@Resources>diff HWiNFO.inc HWiNFO
 ```
 - The values was found using the HwINFO Share Memory Viewer here:<br>
  ![HwINFO64 ScreenShot](HwINFO64smv2.png)
+- As of some version (maybe 7.02?) the shared memory viewer is no longer a seperate app
+
+
+# StreamDeck Pluging Notes
+- StreamDeck Plugin Repo: (https://github.com/shayne/hwinfo-streamdeck)
+- Cloned it into transfer
+- Only can access hwinfo64 shared memory if streamdeck started with admin rights
+- Plugin runs from `C:\Users\mike\AppData\Roaming\Elgato\StreamDeck\Plugins\com.exension.hwinfo.sdPlugin\hwinfo.exe`
+- If run with admin the process explorer can only see it running in admin itself
 
 # Installed and first draft on 2019-06-24
 - Rudimentary docs
@@ -95,6 +110,8 @@ C:\Users\mike\Documents\Rainmeter\Skins\HWiNFO\@Resources>diff HWiNFO.inc HWiNFO
 - Upgraded to 6.10
 - 
 
+# 2021-06-19
+- Subscribed to the new pro version after I figured out why Shared Memory no longer worked
 
 
 

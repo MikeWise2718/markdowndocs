@@ -15,6 +15,7 @@ output: html_document
 - Linux Install Instructions - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
 
 # Upgrade version
+- `az version`
 - Check current version number here - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - Upgrade on Windows
    - Just download the MSI installer under Windows from above and reinstall
@@ -28,6 +29,15 @@ output: html_document
 - `az account set -s "Account Name"       `  # Set a particular account  (did not work on Ubuntu)
 - `az account set --subscription "2 - Smart Parking Solution"` # This worked on Ubutntu
 
+
+# MetLife
+```
+az version
+az account set -s "ProjectSomethingOrOther"
+az storage account list --output table
+az storage container list --account-name pvxdeveusst001 --output table
+az storage blob list --container vaxdecodingdata --account-name pvxstorageaccount001 --output table
+```
 
 # What locations are there   
 - `az account list --output table         `  # List azure locations

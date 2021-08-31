@@ -102,16 +102,19 @@ output:
    * User home directory: `~/.gitconfig`
    * System*wide directory: `$(prefix)/etc/gitconfig`
 
-
 ## Stage changes, commit, and push t omaster command line sequence
 * `git add -A .`
 * `git commit -m "message"`
 * `git push`
 
-## Checkout a new branch
+## Checkout a new branch (vaxtest)
 * Git help: <https://gist.github.com/markSci5/5916003>
 * `git branch <branch_name>` followed by `git checkout <branch_name>`
-* or just `git checkout -b <branch_name>`
+* or just `git checkout -b vaxtest`
+
+## Checkout a new branch based on current commit and track remote branch
+*  Link: (https://stackoverflow.com/a/1783426/3458744)
+* `git push -u origin origin/mikewise/vaxtest`
 
 ## Merge branch
 * Git Help <https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/>

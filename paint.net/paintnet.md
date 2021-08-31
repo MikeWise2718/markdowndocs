@@ -11,6 +11,17 @@ It is quite powerful becuse of the huge amount of plug-ins that are available.
 
 It costs like 8 dollars if you buy it in the Windows Store, but you can also download it for free (what is with that?)
 
+
+
+# Outline a rect in red
+- Chose shapes tool (for example in Tool dropdown)
+- Make sure Recrang is selected next to it
+- Brush width 4 maybe
+- primary color red
+- Outline your thing
+- Now just save it
+
+
 # Installation
 * The windows store installation apparently has some issues and you have to create some folders
 

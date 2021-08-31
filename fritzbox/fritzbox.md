@@ -24,6 +24,23 @@ A ubiquitous router - in Germany at least.
 
 7. Now you can wire it up to your LAN with a cable and you should be able to get to the setup with http://192.168.12.1 <br>
 
+
+# Backup
+- Definitely worthwhile making a backup
+- Instructions from this video: (Austausch einer FritzBox!) (a 7490) : (https://www.youtube.com/watch?v=cdfbdjdY6B8)
+    - 1. Just login 
+    - 2. then go to the poitn "System/Sichering"
+    - 3. Select the "Sicherung" tab
+    - 4. Add a password then it will download to a file
+    - 5. Sample name: `FRITZ.Box 7490 113.07.21_13.02.21_1616.export`
+- To restore
+    - 3. Select the "Wiederherstellen" tab
+    - 4. Select your backup and upload the file
+    - 5. Select whether or not all services be restored or just selected ones
+    - 6. enter password
+
+- Can be restored to another FritzBox - not sure if the model can change, but probably
+
 # DSL
 - Here is a section from the PDF letter with my signing data from Vodafone with my user data:<br>
 ![vodafone user data](VodafoneUserData.png).<br>
@@ -31,6 +48,10 @@ A ubiquitous router - in Germany at least.
 - I simply had to add my username and password - like this:<br> ![this](ZugangsDaten.png).<br>
 
 
+
+# Name
+- Don't forget to switch to advanced mode
+- Name can be set in the menu Heimnets/Fritz!Box-Name blade
 
 # ISDN Phones
 Turns out I didn't have an ISDN phone line anymore, I have only Internet telephony from Vodafone. Took me awhile to realize this.
