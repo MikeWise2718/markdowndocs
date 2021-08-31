@@ -165,6 +165,27 @@ git restore -s origin/master -- path/to/file
 ## Git Aliases
 * Explained here
 * a good template can be found here:(https://stackoverflow.com/a/52896091/3458744)
+* a good link (https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date)
+This makes `git hs -10` display the first 10 lines of history nicely
+```
+git config --global alias.hs "log --pretty='%C(yellow)%h %C(cyan)%ad %Cgreen%aN%C(auto)%d %Creset%s' --date=relative --date-order --graph"
+```
+
+```
+C:\cse\pyvaxdecoder\PFH.FURS\PFH.FURS.Vaccination\pyvaxdecoder>git hs -10
+* 4daa064c4 5 minutes ago Mike Wise (HEAD -> pyvaxdecoder, origin/pyvaxdecoder) kluge fixed %3D error for saskey
+* 12682e91a 2 hours ago Mike Wise fixed requirements.txt for azure
+*   0924548b1 4 hours ago Mike Wise merged
+|\
+| * be4b2feb0 6 hours ago erhunse added required packages in requirements.txt
+| * dfc295efc 10 hours ago erhunse changed json return
+| * 38388b0b9 10 hours ago erhunse Should read file with filename given and return vaccine. TODO: base64. to check (sas)
+* | 55be8fe95 13 hours ago erhunse Should read file with filename given and return vaccine. TODO: base64. to check (sas)
+|/
+* d159f3b1e 32 hours ago erhunse added  record and updated extractor
+* 3f01d3de2 35 hours ago erhunse python port vaxdecoder
+* ff08a69e8 35 hours ago erhunse containerize function
+```
 
 ## Favorites
 
