@@ -73,7 +73,7 @@ Turns out I didn't have an ISDN phone line anymore, I have only Internet telepho
 
 
 
-#DNS
+# DNS
 - Static addresses - you need to do two things
         - Tell it to always respond to a DHCP address with a fixed IP4 address under the details in the `Netwerk` entry for that device
         - Enter it as an exception in the `DNS-Rebind-Shutz` box
@@ -85,6 +85,20 @@ Turns out I didn't have an ISDN phone line anymore, I have only Internet telepho
     - Have to investigate with some tool (nslookup?)
     - https://serverfault.com/questions/41064/whats-the-command-line-utility-in-windows-to-do-a-reverse-dns-look-up/352556
 
+
+
+# Mesh Mode
+- You can set up Mesh mode under the menu point "Mesh"
+- There in the tab "Mesheinstellungen" you determine (at the bottom) what gets propagated over from the mesh master
+<br>![Mesheinstellungen](MeshSettings.png).<br>
+
+
+# Phones in mesh mode
+- (https://en.avm.de/service/knowledge-base/dok/FRITZ-Box-7490/3412_Setting-up-telephony-on-the-Mesh-Repeater/)
+- You have to set up to have everything propagated in the "Mesheinstellungen" (Mesh Settings) otherwise you can't enable it number propagation
+- You then have to enable it in the Mesh Phone Settings
+- This is what it looks like after enablement - the menu selection at the bottom is confusing...
+<br>![MeshPhoneSettings](MeshPhoneSettings.png).<br>
 
 # Wifi
 To do
