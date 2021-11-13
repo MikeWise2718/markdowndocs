@@ -79,13 +79,13 @@ Turns out Revit has (for historical reasons) a very complicated materials model.
 
 
 ## FBX Export
-You can export the data sets as FBX, a propiatary format from AutoDesk but with good public support. It is meant for importing into 3DS (another AutoDesk product) and because of the complicated Revit material specifications, transfer of material information has only worked into 3DS since 2011. And it does not work on import into Unity, although the information must clearly be in the FBX file somewhere.
+You can export the data sets as FBX, a proprietary format from AutoDesk but with good public support. It is meant for importing into 3DS (another AutoDesk product) and because of the complicated Revit material specifications, transfer of material information has only worked into 3DS since 2011. And it does not work on import into Unity, although the information must clearly be in the FBX file somewhere.
 
 Here is a picture of the data imported into Unity:
 
 ![B43 in Unity](B43inUnityNoMaterials.png)
 
-## NExt Steps
+## Next Steps
  - Measure Memory Usage in Revit
  - Measure Memory Usage in Unity
  - Create North

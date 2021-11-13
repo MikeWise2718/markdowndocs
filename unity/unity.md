@@ -20,7 +20,7 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 * There is this SO question/answer: <https://stackoverflow.com/questions/21937544/working-with-the-coordinate-system-and-game-screen-in-unity-2d>
 
 # Editor Layout notes
-* There are game windows but only one scene window. New The game windows get associated with a display (can be set on the upper left), and a camera is associated with a dispaly too. That is how it is done. Input goes to only one game window though, not sure which one.
+* There are game windows but only one scene window. New The game windows get associated with a display (can be set on the upper left), and a camera is associated with a display too. That is how it is done. Input goes to only one game window though, not sure which one.
 * To create a new window, you create a new tab in an old window, and then drag it to a new location. Can even be detached from the application, so on another screen.
 * You can grab the tag of a game window and drag it to another window in the layout,or even to a new place in the same window, which will cause it to create a new window there splitting up the space. 
 * This is kind of odd, but it does make it easy to do pretty much any kind of layout quickly
@@ -33,7 +33,7 @@ Unity3D is a powerful game engine. Here I keep notes on things that took me awhi
 
 # Things that are hard to find
  * Scene Window
-    * To turn off that silly camera icon in the or the lighting blub, or a lot of other thigns, you can go to the "Gizmos" button in the top window bar and find the appropriate checkbox.
+    * To turn off that silly camera icon in the or the lighting blub, or a lot of other things, you can go to the "Gizmos" button in the top window bar and find the appropriate checkbox.
     * To get rid of the UI hovering in the air, go to the Layers dropdown button in the button tool bar under the main window (it is on the right) and turn off the UI layer.
 
 # Where to find new things
@@ -49,7 +49,7 @@ The "pivot point" is the point that the object rotates around when you chose the
 * Select the object
 * then select the rotate tool (pressed in button below)
 * Then create a cylinder or a sphere at that point. 
-* now just examine the coordinates of its "Postion" in the Inspector window.
+* now just examine the coordinates of its "Position" in the Inspector window.
 * Those coordinates are the pivot point
 
 # How to add a new window with a new camera view
@@ -62,9 +62,9 @@ This is somehow hard to stumble across:
 * In the new tab select an unused "Display" number (a choice widget on the top-left of the top status bar)
 * Now go back to your camera and select that Display number for that camera. It should show (if it does not it may be that two cameras have that display number)
 
-Now to make both windows simulatiously visible
+Now to make both windows simultaneously visible
  - Grab one of the tabs and drag it lower in the window.
- - Unity will take the hint and let you position the windows somewhere else in the original window - but as a seperate and new game window.
+ - Unity will take the hint and let you position the windows somewhere else in the original window - but as a separate and new game window.
 
 ![Finding Pivot](FindingPivot.png)
 
@@ -77,7 +77,7 @@ Now to make both windows simulatiously visible
 
 
 ## Multi-display mode
-- Not available in Andorid, selections goes away if you have android selected as a target
+- Not available in Android, selections goes away if you have android selected as a target
 
 ## "No cameras rendering" in Editor
 - Right click on the "game" tag and disable warning in dropdown that appears
@@ -94,9 +94,9 @@ Now to make both windows simulatiously visible
 * Text now appearing after I add to a panel....
 
 ## Mixamo animation import
-- 1. Select an character/animation and download - you will get a fbx in the downloads file
+- 1. Select an character/animation and download - you will get a FBX in the downloads file
 - 2. Import it into a folder in Assets
-- 3. Give the animation a name and create an "Animator Controler" in some folder in Assets. Note that the icon is 3 boxes and a run button. Don't confuse with the "Animation" (has a simple play button)
+- 3. Give the animation a name and create an "Animator Controller" in some folder in Assets. Note that the icon is 3 boxes and a run button. Don't confuse with the "Animation" (has a simple play button)
 - 4. Double click and open it. It is empty.
 - 5. Locate a character/prefab that is rigged correctly already (humanoid)
 - 6. Add an "Animator" component to that character/prefab
@@ -105,11 +105,11 @@ Now to make both windows simulatiously visible
 - 9. **Double click** on that orange box - an import settings window will open (I was using single click for awhile, went in circles)
 - 10. Switch to the "Rig" tab
 - 11. Set the animation type to "Humanoid".
-- 12. Click the Apply button, it should import the animation into the contoller now.
+- 12. Click the Apply button, it should import the animation into the controller now.
 - 13. Now if you hit the "Play" button, the character should animate as desired.
 
 # ml-agents
-- Split this off into a seperate file
+- Split this off into a separate file
 
 # Unity Unit Testing
 - This is pretty good (https://www.raywenderlich.com/9454-introduction-to-unity-unit-testing)
@@ -117,7 +117,7 @@ Now to make both windows simulatiously visible
 # Packages
 - In a state of flux at the moment with a new package manager, etc. (9.10.2019)
 - Official "Export Package" doc: (https://docs.unity3d.com/2018.4/Documentation/Manual/HOWTO-exportpackage.html)
-- Doing it programatically (https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html)
+- Doing it programmatically (https://docs.unity3d.com/ScriptReference/AssetDatabase.ExportPackage.html)
 - Some code: (https://stackoverflow.com/a/52883697/3458744)
 - Fairly recent custom package creation instructions: (https://neogeek.dev/creating-custom-packages-for-unity-2018.3/)
 - A definitive thread that could be considered "documentation" (https://forum.unity.com/threads/git-support-on-package-manager.573673/page-4)
@@ -223,7 +223,7 @@ A re-import of the project may be required to fix the issue or a manual modifica
   Project has invalid dependencies:
     com.coffee.testproject: The requested dependency 'com.coffee.testproject' does not match the `name` 'com.coffee.testgithubproject' specified in the package manifest of [com.coffee.testproject@https://github.com/mikewise2718/TestGithubProjects.git#v1.0.1]
 ```
-- so changed the import manfiest URI thingy like this:
+- so changed the import manifest URI thingy like this:
    -  `   "com.coffee.testgithubproject": "https://github.com/mikewise2718/TestGithubProjects.git#v1.0.1",`
 - Now it imported (yay), and the project appeared under "Packages" in the Project window, but when I clicked on a scene I got a new error message:
 ```

@@ -83,4 +83,6 @@ https://code.visualstudio.com/docs/languages/python
  Things to note
  - You can get to the user settings by clicking on the gear icon/settings in the lower left, or from the menu File/Preferences/Settings
 
-
+# Virtual Environments with Python
+- If it is after October, install new python and include path in environment variable
+- 

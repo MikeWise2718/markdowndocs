@@ -18,6 +18,7 @@ output: html_document
 - Have to follow a certain file folder layout: (https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#folder-structure)
 - You probably want to develop against Microsoft Store Python because that is what is deployed
 - The Azure Function Template configured an environment in the `.venv` directory
+- How to configure that: (https://code.visualstudio.com/docs/python/environments)
 - This environment gets set and initialized with the `requirements.txt` before start up
 - staring the host is the `func host start` command (or something like that)
 - You can activate that environment from the terminal with `.venv\Scripts\activate.bat`
