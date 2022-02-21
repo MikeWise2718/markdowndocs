@@ -8,9 +8,17 @@ output: html_document
 - Pixar's baby - homepage: (https://graphics.pixar.com/usd/release/index.html)
 
 
+# Tutorials
+- (https://graphics.pixar.com/usd/release/tut_usd_tutorials.html)
+
+# Unity USD Package
+- Unity USD Package - (https://github.com/Unity-Technologies/usd-unity-sdk)
+- Examples are in Package, but you have to specify them to be exported or they wont be there
+- Scene Docs - (https://docs.unity3d.com/Packages/com.unity.formats.usd@3.0/api/USD.NET.Scene.html)
+
 # USDTools
 - you need these
-- Hard to compliple
+- Hard to compile
   - Followed instructions mostly
   - X86 command prompt
   - Needed cmake, NASM, and python to execute build
@@ -19,11 +27,11 @@ output: html_document
   - Had to use conda because I needed a different version of python
     - 
   - had to use python 2.7 in the end because conda has forgotten about python 3.4 and below
-    - conda create --name USDtools python=2.7
+    - `conda create --name USDtools python=2.7`
   - Had to get the x86 to use the conda environment
      - `C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools`
   - Couldn't have a space in the installation directory (like they suggested)
-     - `python build_scripts\build_usd.py "C:\Program Files\USD" does not work`, fails building TBB or maybe Boos
+     - `python build_scripts\build_usd.py "C:\Program Files\USD" does not work`, fails building TBB or 
 ```
 STATUS: Installing zlib...
 STATUS: Installing boost...
@@ -33,7 +41,7 @@ Building Boost.Build engine
 =C:\Program was unexpected at this time.
 ```
 
-
+- This is what success looks like:
 ```
 (USDtools) D:\transfer\USD>python build_scripts\build_usd.py "D:\transfer\USDtools"
 
@@ -86,3 +94,15 @@ Success! To use USD, please ensure that you have:
     D:\transfer\USDtools\bin
     D:\transfer\USDtools\lib
 ```
+
+Bat file to setup environment to use USDtools:
+```
+set PYTHONPATH=D:\transfer\USDtools\lib\python
+C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools
+```
+
+# Examples
+- Activate Python
+   - `conda activate USDtools`
+   - `cd D:\transfer\USD\extras\usd\tutorials\animatedTop`
+   - `usdview top.geom.usd`

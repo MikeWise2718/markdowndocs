@@ -23,7 +23,7 @@ Anaconda - probably the main Python package for scientific computing.
 
 
 # Creating a first environment
-- `conda env creae -f first.yml`
+- `conda env create -f first.yml`
 
 
 first.yml:
