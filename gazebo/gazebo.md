@@ -65,14 +65,28 @@ output: html_document
    - sudo apt-get install ros-noetic-eigenpy
    - sudo apt-get install ros-noetic-rosparam
 
+
+# sawyer_simulator compilation error
+- Error:
+```
+/home/mike/ros/catkin_ws/src/sawyer_simulator/sawyer_gazebo/src/head_interface.cpp:71:44: error: ‘CV_LOAD_IMAGE_UNCHANGED’ was not declared in this scope
+   71 |       cv_ptr->image = cv::imread(img_path, CV_LOAD_IMAGE_UNCHANGED);
+```
+- changed line  #71 in `~/ros/catkin_ws/src/sawyer_simulator/sawyer_gazebo/src/head_interface.cpp`
+-          `CV_LOAD_IMAGE_UNCHANGED` to `cv::IMREAD_UNCHANGED`
+-    as per: (https://github.com/pietern/goestools/issues/95)
 # Write some services
 
 - `catkin_ws` was there, but the catkin command was not found
     - To get catkin working: `sudo apt install python3-catkin-tools python3-osrf-pycommon`
 
 # Commands
-- `roslaunch khi_robot_bringup rs007n_bringup.launch simulation:=true`
-- `roslaunch khi_rs007n_moveit_config moveit_planning_execution.launch`
+- Brings up the arm in Gazebo
+    - `roslaunch khi_rs_gazebo rs007n_world.launch` 
+- Not completely sure about this one
+    - `roslaunch khi_robot_bringup rs007n_bringup.launch simulation:=true`
+- After you have installed `ros-noetic-moveit` you can do this:
+    - `roslaunch khi_rs007n_moveit_config moveit_planning_execution.launch`
 
 # Compiling
 - ign-cmake
@@ -82,3 +96,10 @@ output: html_document
     - Had to add `set ignition-math4_DIR=d:\gz-ws\ign-math\build\` to get it to find the math4 cmake
     - Had to add `set dlfcn-win32_DIR=D:\gz-ws\dlfcn-win32-vc15-x64-dll-MD\share\dlfcn-win32' to get it to find the dlfcn-win32 cmake
 - After about 3 hours of getting nowhere I gave up
+
+
+# Conveyer belt
+- code: `https://github.com/rokokoo/gazebo-conveyor`
+- demo: `https://github.com/rokokoo/conveyor_demo`
+    -   `roslaunch demo_world demo.launch`
+    -   `rosservice call /conveyor/control "power: 10.0"`    

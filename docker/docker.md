@@ -11,14 +11,14 @@ output: html_document
 - Docker containers vs. VMs https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-normal-virtual-machine?rq=1
 
 # Concepts
-* `dockerfile` - a list of commands that builds a series of images, resulting in a named image that you can use to start a container
+* `dockerfile` - a file with a list of commands that builds a series of images, resulting in a named image that you can use to start a container
 * `image` - the bits that need to be instanced to form a container
 * `dangling image` - an image without a name https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image
 * `container` - an instance of a running or exited image
-* `entry point` - the program that will be runing
+* `entry point` - the program that will be running
 * `tag` - Tag is alphanumeric identifier of the image within a repository like `vafsb/faketemp:latest`
 * `numeric ID` - a 12 digit hex numeric id identifying a running or exited container like `15fa59af0e7d` 
-* `container ID` - anothor word for numeric ID
+* `container ID` - another word for numeric ID
 * `container states` - containers can be "created", "up" or "exited" https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker
 * `registry` - a Docker registry is a service that stores docker images like `vafsb.azurecr.io`
 * `repository` - a collection of different images with the same nab, but that have different tags, like `vafsb.azurecr.io/faketemp`
@@ -34,7 +34,7 @@ output: html_document
 # Misc things to know
 - Docker can't give you a listing of the remote repository via its CLI, you need to use the R
 - Get rid of need for sudo on Linux
-   -  `sudo usermod -aG docker user_name`  # add user_name to docker group
+   -  `sudo usermod -aG docker user_name`  # add user_name to docker groupdo
    -  `groups`                             # check your group membership
    -  `cut -d: -f1 /etc/group`             # list all groups on that machine 
 
@@ -86,18 +86,18 @@ output: html_document
    ![acr](AzureContainerRegistrySettings.png)
 
 # Inspecting a docker image
-* `docker image inpsect 19caaf3fbbf3`   # outputs various parameters formated in json
+* `docker image inpsect 19caaf3fbbf3`   # outputs various parameters formatted in json
 * `docker run -it f7190e39d56b bash`         # run an image, login to it and poke around
 
 
 # Inspecting a running docker container
-* `docker inpsect edgeHub`        # outputs various parameters formated in json
+* `docker inpsect edgeHub`        # outputs various parameters formatted in json
 * `docker exec -it edgeHub bash`  # login to a running container and poke around
 
 # Pruning and deleting things
 * `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all exited containers)
 * `docker rm -f $(docker ps -qa)`                     # !!! delete all stopped and running containers !!!
-- `docker rmi $(docker images -f "dangling=true" -q)` # prune dangline images             
+- `docker rmi $(docker images -f "dangling=true" -q)` # prune dangling images             
 - `docker rmi $(docker images --quiet test*)`         # prune images begin with word "test"
 
 # Terminal commands
@@ -113,7 +113,7 @@ output: html_document
 # Remove all images with <none>
 * `docker rm -v $(docker ps -a -q -f status=exited)`
 * `docker rmi $(docker images | grep \<none\> | tr -s ' ' | cut -d ' ' -f 3)`
-
+* `docker run -v /mnt/d:/var/ddrive -it --rm -p 10000:10000 unity-robotics:pick-and-place /bin/bash`
 # Docker foreground/background process killing advice
 - See the comments from GHETTO.CHILD in his answer
 - https://stackoverflow.com/questions/32224101/kill-a-running-process-like-a-webserver-inside-a-docker-container-without-killin
