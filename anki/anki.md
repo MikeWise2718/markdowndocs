@@ -1,20 +1,19 @@
 ---
-title: "Template Titles"
+title: "Anki"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-Explain what this thing is and what kind of help can be expected of this file.
-
-Note that to get a preview of this document in VS Code use Ctrl-Shift-V
-
-Github markdown is explained here: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-Example link: [jQuery FAQs](https://learn.jquery.com/using-jquery-core/faq/)
-
-Example image:
-![Red Fish](SmallerFish.png)
+- Anki is "the" flash card program
+- Docs are a bit spotty but can be found here: (https://apps.ankiweb.net/docs/manual.html)
+- There is a desktop version, a web version, and a few client versions
+- You need to be logged in to use it properly, and you back up your decks in the cloud. For some reason this is free.
+- There are a number of shared uploaded decks you can download for study here: (https://ankiweb.net/shared/decks/)
+    - You download them and load them into your Anki 
 
 
-# Something Else
+# Object Model
+- Decks ... kind of confusing, they can be heirarchical if you name them that way
+- Notes
+- Fields

@@ -25,6 +25,9 @@ output: html_document
 - Worked
     - `docker run -v /mnt/d:/var/ddrive -it --rm -p 10005:10005 unity-robotics:pick-and-place /bin/bash`
     - `roslaunch niryo_moveit part_2.launch tcp_port:=10005` this worked
+    - `roslaunch niryo_moveit part_3.launch tcp_port:=10005` this worked
+    - `c` this worked
+
 - Verification
     - `docker ps`
     - `docker exec -it optimistic_joliot /bin/bash`
