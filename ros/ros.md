@@ -96,4 +96,39 @@ C:\Users\mike>netstat -a | grep 1000
 
 - https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/pick_and_place/2_ros_tcp.md
 
-ros settings: localhost and 10005
+ - ros settings: localhost and 10005
+
+
+# KHI Robotics Repo
+- Oriented on Noetic Moveit Tutorial Page (https://ros-planning.github.io/moveit_tutorials/)
+- Build in a catkin_ws according to instructions here: (https://ros-planning.github.io/moveit_tutorials/doc/getting_started/getting_started.html)
+    - Updated packages
+    - Installed catkin
+    - installed `wstool`
+    - Created a catkin workspace and downloaded Moveit source
+    - Installed panda robot somewhere...
+- Got RViz to work 
+    - `roslaunch panda_moveit_config demo.launch rviz_tutorial:=true`
+- Went to Tutorial on "Move Group Python Interface"
+    - (https://ros-planning.github.io/moveit_tutorials/doc/move_group_python_interface/move_group_python_interface_tutorial.html)
+    - Needed two windows
+        - `roslaunch panda_moveit_config demo.launch`
+        - `rosrun moveit_tutorials move_group_python_interface_tutorial.py`
+- Black screen problem on Surface Book laptop solved with `export LIBGL_ALWAYS_SOFTWARE=1` 
+- See also (https://github.com/microsoft/wslg/issues/455)
+
+## Working with KHI_ROBOT
+- Open wsl window
+- ros bash script
+        - `cd ~/ros/catkin_ws`
+        - `source devel/setup.bash`
+        - `conda activate ros_khi` (on Absol)
+        - `roslaunch khi_rs007n_moveit_config demo.launch`
+        - This should bring up a ros window with the RS007n robot (without an end effector however)
+
+- ros bash script
+        - `cd ~/ros/catkin_ws/src/khi_robot/khi_rs007n_moveit_config/script`
+        - `python rs007n_demo.py`
+        - This should cause the robot arm to move around randomly forever
+
+
