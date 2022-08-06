@@ -173,6 +173,11 @@ C:\Users\mike>netstat -a | grep 1000
      - `colcon build  --merge-install --packages-select rviz_common --event-handlers console_direct+`
      - `colcon build  --packages-select moveit_common --event-handlers console_direct+`
 
+
+### rviz_common ROS 2 package problem 
+Was compiling on my hyper-v installation but not on absol.
+
+
 ```
 >colcon build --merge-install
 ...       
@@ -183,7 +188,11 @@ Summary: 247 packages finished [9min 7s]
   46 packages not processed
   ```
 
+  `colcon graph --packages-up-to rviz_common --dot >rviz_common_graph.dot`
+  `dot rviz_common_graph.dot`
+  `dot rviz_common_graph.dot -Tpng -o rviz_common_graph.png`
 
+`colcon build --merge-install --packages-select rviz_common --event-handlers console_direct+`
   ```
   Starting >>> rviz_common
 -- Selecting Windows SDK version 10.0.19041.0 to target Windows 10.0.22000.
@@ -253,5 +262,43 @@ Failed   <<< rviz_common [17.2s, exited with code 1]
 
 Summary: 0 packages finished [18.3s]
   1 package failed: rviz_common
+```
 
-  ```
+
+# Current Status
+
+
+## fails with missing  stuff "InvalidNode in yaml thing
+- Loglevels: DEBUG INFO WARNING ERROR CRITICAL
+- `colcon --log-level DEBUG build --merge-install --packages-select rviz_common --event-handlers console_direct+`
+- first cmake: 
+```
+Invoked command in 'D:\ros\foxy\build\rviz_common' returned '0': AMENT_PREFIX_PATH=D:\ros\foxy\install;%AMENT_PREFIX_PATH% CMAKE_PREFIX_PATH=D:\ros\foxy\install;%CMAKE_PREFIX_PATH% PKG_CONFIG_PATH=D:\ros\foxy\install\lib\pkgconfig;%PKG_CONFIG_PATH% PYTHONPATH=D:\ros\foxy\install\Lib\site-packages;%PYTHONPATH% Path=D:\ros\foxy\install\Scripts;D:\ros\foxy\install\bin;D:\ros\foxy\install\opt\yaml_cpp_vendor\bin;D:\ros\foxy\install\opt\rviz_ogre_vendor\bin;%Path% c:\opt\ros\foxy\x64\Scripts\cmake.EXE D:\ros\foxy\src\ros2\rviz\rviz_common -DCMAKE_INSTALL_PREFIX=D:\ros\foxy\install
+```
+- second cmake:
+```
+D:\ros\foxy\src\ros2\rviz\rviz_common\src\rviz_common\yaml_config_writer.cpp : message : see previous definition of 'YAML_CPP_DLL' [D:\ros\foxy\build\rviz_common\rviz_common.vcxproj]
+     Creating library D:/ros/foxy/build/rviz_common/Release/rviz_common.lib and object D:/ros/foxy/build/rviz_common/Release/rviz_common.exp
+yaml_config_reader.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl YAML::InvalidNode::InvalidNode(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (__imp_??0InvalidNode@YAML@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl YAML::Node::as<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >(void)const " (??$as@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Node@YAML@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) [D:\ros\foxy\build\rviz_common\rviz_common.vcxproj]
+    Hint on symbols that are defined and could potentially match:
+      "__declspec(dllimport) public: __cdecl YAML::InvalidNode::InvalidNode(class YAML::InvalidNode const &)" (__imp_??0InvalidNode@YAML@@QEAA@AEBV01@@Z)
+D:\ros\foxy\build\rviz_common\Release\rviz_common.dll : fatal error LNK1120: 1 unresolved externals [D:\ros\foxy\build\rviz_common\rviz_common.vcxproj]
+  Building Custom Rule D:/ros/foxy/install/src/gtest_vendor/CMakeLists.txt
+  gtest-all.cc
+[Processing: rviz_common]
+  gtest.vcxproj -> D:\ros\foxy\build\rviz_common\gtest\Release\gtest.lib
+  Building Custom Rule D:/ros/foxy/install/src/gtest_vendor/CMakeLists.txt
+  gtest_main.cc
+  gtest_main.vcxproj -> D:\ros\foxy\build\rviz_common\gtest\Release\gtest_main.lib
+[34.290s] colcon.colcon_core.event_handler.log_command DEBUG Invoked command in 'D:\ros\foxy\build\rviz_common' returned '1': AMENT_PREFIX_PATH=D:\ros\foxy\install;%AMENT_PREFIX_PATH% CL=/MP CMAKE_PREFIX_PATH=D:\ros\foxy\install;%CMAKE_PREFIX_PATH% PKG_CONFIG_PATH=D:\ros\foxy\install\lib\pkgconfig;%PKG_CONFIG_PATH% PYTHONPATH=D:\ros\foxy\install\Lib\site-packages;%PYTHONPATH% Path=D:\ros\foxy\install\Scripts;D:\ros\foxy\install\bin;D:\ros\foxy\install\opt\yaml_cpp_vendor\bin;D:\ros\foxy\install\opt\rviz_ogre_vendor\bin;%Path% c:\opt\ros\foxy\x64\Scripts\cmake.EXE --build D:\ros\foxy\build\rviz_common --config Release
+```
+## works
+- On ABSOL Start a command shell and initialize it with "foxy" which does a `c:\opt\...local_setup.bash` initialization
+- ros2 will then run
+- Then go to `d:\ros\foxy\src\ros2\rviz\rviz_common`
+- `rm -r build; md build; cd biuld`
+- `cmake ..`
+- `cmake --build .` fails with a missing ogre obj
+- `cmake --build . --config Release` builds a dll
+
+

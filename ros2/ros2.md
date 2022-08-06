@@ -23,7 +23,7 @@ output: html_document
 ## ROS2 containers
 
 ## Install ROS2 binary package on Windows 11 Native
-- binary install: (https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.htm)l
+- binary install: (https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html)l
 
 
 ## Compile ROS2 Foxy on Windows 11 Native
@@ -44,13 +44,15 @@ output: html_document
        - Make sure that no C++ CMake tools are installed by unselecting them in the list of components to be installed.
     - Install OpenCV
        - Precompiled from: (https://github.com/ros2/ros2/releases/download/opencv-archives/opencv-3.4.6-vc16.VS2019.zip )
-       - Unpack to: `C:\opencv`
-       - Admin privileges`setx /m OpenCV_DIR C:\opencv`
-       - Add `C:\opencv\x64\vc16\bin` to path
+       - Unpack to: `C:\opt\opencv`
+       - Admin privileges`setx /m OpenCV_DIR C:\opt\opencv`
+       - Add `C:\opt\opencv\x64\vc16\bin` to path
+       - Test with `opencv_version.exe` at `3.4.6` a the moment
     - Install random dependencies
        - Install CMake: (`choco install -y cmake`)
           - You will need to append the CMake bin folder `C:\Program Files\CMake\bin` to your PATH.
-       - Download the following:
+          - test with `cmake --version` at `3.22.0` at the moment
+       - Download the following from ROS2 Choco packages repo: (https://github.com/ros2/choco-packages/releases/tag/2022-03-15):
             - `asio.1.12.1.nupkg`
             - `bullet.2.89.0.nupkg`
             - `cunit.2.1.3.nupkg`
