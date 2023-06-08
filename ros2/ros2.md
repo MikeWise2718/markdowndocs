@@ -27,6 +27,7 @@ output: html_document
 
 
 ## Compile ROS2 Foxy on Windows 11 Native
+- Tips and tricks: (https://docs.ros.org/en/galactic/The-ROS2-Project/Contributing/Windows-Tips-and-Tricks.html)
 - Have to install the binary prerequisites first: (https://docs.ros.org/en/foxy/Installation/Windows-Install-Binary.html)
    - Install Chocolatey (1.1.0): (https://chocolatey.org/)\
     - See what packages are installed already with `choco list -l`
@@ -35,13 +36,16 @@ output: html_document
    - Install Visual C++ Redistributables: (`choco install -y vcredist2013 vcredist140`)
    - Install OpenSSL from (https://slproweb.com/products/Win32OpenSSL.html) - dubious location
      - `Win64 OpenSSL v1.1.1n OpenSSL` installer (I used the msi and version is q now)
-     - Creates directory in `C:\Program Files\OpenSSL-Win64` with stuff in it
+     - Creates directory in `C:\Program Files\OpenSSL-Win64` with stuff in it    
      - might need to do this if installer doesn't set it:
         - `setx /m OPENSSL_CONF "C:\Program Files\OpenSSL-Win64\bin\openssl.cfg"`
      - Append `C:\Program Files\OpenSSL-Win64\bin\` to path
-     - Install Visual Studio 2019 (Community?)
+     - Test: `dir "%OPENSSL_CONF%"`
+     - Test: `openssl` should open an OpenSSL prompt that you can exit
+    - Install Visual Studio 2019 (Community?)
        - Make sure `Desktop Development with C++` was selected.
-       - Make sure that no C++ CMake tools are installed by unselecting them in the list of components to be installed.
+       - Make sure that no C++ CMake tools are installed by unselecting them in the list of components to be installed. 
+          - not sure how to check this
     - Install OpenCV
        - Precompiled from: (https://github.com/ros2/ros2/releases/download/opencv-archives/opencv-3.4.6-vc16.VS2019.zip )
        - Unpack to: `C:\opt\opencv`
@@ -63,14 +67,27 @@ output: html_document
         - `choco install -y -s <PATH\TO\DOWNLOADS> asio cunit eigen tinyxml-usestl tinyxml2 log4cxx bullet`
     - Install some python dependencies
       - `python -m pip install -U catkin_pkg cryptography empy ifcfg lark-parser lxml netifaces numpy opencv-python pyparsing pyyaml setuptools rosdistro`
+    - Install QT5
+      - Download install program - select individual
+      - Select only option Qt/QT5.12.12/MSVC 2017 64-bit
+      - Add the following environment vars:
+         - `QT_QPA_PLATFORM_PLUGIN_PATH` = `C:\Qt\Qt5.12.12\5.12.12\msvc2017_64\plugins\platforms`\
+         - `Qt5_DIR` = `C:\Qt\Qt5.12.12\5.12.12\msvc2017_64`
+      - Test:
+         - `dir %QT_QPA_PLATFORM_PLUGIN_PATH%` should show dlls
+         - `dir %Qt5_DIR%` should show directories including `bin`
     - Install RQt dependencies
       - `python -m pip install -U pydot PyQt5`
       - Install `Graphviz`
          - `choco install graphviz`
          -  Add to path: `C:\Program Files\Graphviz\bin`
+         - `dot --help` should work
 
     - Additionally I found I had to install patch
       - `choco install patch`
+
+    - Colcon
+        - `pip install -U colcon-common-extensions`
 
     - At this point you would normally install the Foxy Windows binaries to
          - Go to the releases page: https://github.com/ros2/ros2/releases
@@ -97,6 +114,8 @@ output: html_document
 - Failed as no access to bash tools like "patch"
 - Could try with Cygwin I suppose, or min-gw
 
+
+# Rosdep
 
 ## Compile ROS2 Foxy on Ubuntu Hyper-V
 - Worked and simple test worked

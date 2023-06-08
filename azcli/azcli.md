@@ -28,6 +28,13 @@ output: html_document
 - `az account list --output table`        `  # List all the accounts you have
 - `az account set -s "Account Name"       `  # Set a particular account  (did not work on Ubuntu)
 - `az account set --subscription "2 - Smart Parking Solution"` # This worked on Ubutntu
+- 
+
+# Log into KHI sub
+- `az login`
+- `az account set --subscription 2659c0ca-a6ad-4edc-82ad-4ea8c599bd18`
+- `az acr login --name edgecontainermodule`
+- `sudo docker run -it --rm edgecontainermodule.azurecr.io/ros-signalr-hmi:latency`
 
 
 # MetLife

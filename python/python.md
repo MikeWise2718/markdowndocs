@@ -14,3 +14,20 @@ Python needs no stinkin' intro
 
 # Modules
 - The `PYTHONPATH` environment variable sets the search path for importing python modules
+
+
+# Flake8 
+Useful Flake8 commands
+  - Turn off everything `# flake8: noqa`
+  - Turn off one rule `# flake8: noqa: E501`
+  - just add `# noqa` to the end of a line
+  - in `.vscode\settings.json` (have to start and restart vscode to get it to see changes)
+  ```
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E402,F841,F401,E302,E305",
+    ],    
+}
+  ```

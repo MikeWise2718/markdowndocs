@@ -98,6 +98,85 @@ C:\Users\mike>netstat -a | grep 1000
 
  - ros settings: localhost and 10005
 
+# ROS 1 for Windows
+- https://aka.ms/ros
+- http://wiki.ros.org/Installation/Windows  
+- VS Code Extension Season 1 - 0 (https://www.youtube.com/watch?v=PBbEhRf8QjE)
+- VS Code Extension Season 1 - 1 (https://www.youtube.com/watch?v=bupAju0UAMg&t=126s)
+
+# MyPalletizer
+- A robot from Elephant Robotics: (https://www.elephantrobotics.com/en/mypalletizer-en/)
+- ROS Github: (https://github.com/elephantrobotics/mycobot_ros.git)
+
+## Steps Building on Windows
+  - Start x64 command shell (not x86  - this leads to link erros)
+  - `noetic`
+  - `d:`
+  - `cd /ros/noetic`
+  - `cd catkin_ws`
+  - `catkin_make --use-ninja install`
+
+## Compile errors
+- File names too long for windows - correcting code
+  - `d:`
+  - `cd \ros\noetic\catkin_ws\src\mycobot_ros`
+  - `"C:\Program Files\Git\usr\bin\find.exe" . -type f  -name "*path_planning_and_obstacle_avoidance_demo.py" -exec echo mv {} ppoa_demo.py ;`
+    - `"C:\Program Files\Git\usr\bin\find.exe" . -type f  -name "*path_planning_and_obstacle_avoidance_demo.py" -exec echo rename {} ppoa_demo.py ;`
+       - `"C:\Program Files\Git\usr\bin\find.exe" . -type f  -name "*path_planning_and_obstacle_avoidance_demo.py" -exec echo rename s/{}/ppoa_demo.py/ ;`
+  `"C:\Program Files\Git\usr\bin\find.exe" . -type f  -name "*path_planning_and_obstacle_avoidance_demo.py" -exec bash {} echo $1 \;`
+- What worked
+  - change file names 
+    - `find . -type f  -name "path_planning_and_obstacle_avoidance_demo.py"  -exec rename 's/path_planning_and_obstacle_avoidance_demo/ppoa_demo/' {} \;`
+  - change CMakeLists.txt
+    `find . -type f  -name "CMakeLists.txt"  -exec echo sed -i 's/path_planning_and_obstacle_avoidance_demo/ppoa_demo/' {} \;`
+  - `find . -type f  -name "CMakeLists.txt"  -exec grep path_planning_and_obstacle_avoidance_demo {} \;`
+  - `find . -type f  -name "CMakeLists.txt"  -exec grep -H -n path_planning_and_obstacle_avoidance_demo {} \;`
+  - `find . -type f  -name "CMakeLists.txt"  -exec sed -i 's/path_planning_and_obstacle_avoidance_demo/ppoa_demo/' {} \;`
+
+  - Change name
+    - Find name: `find . -type f  -name "*listen_real_of_topic*" -exec  echo {}  \;`
+    - Find name: `find . -type f  -name "*listen_real_of_topic*" -exec  rename  's/listen_real_of_topic/lrot/' {}  \;`
+  - change CMakeLists.txt
+     - `find . -type f  -name "CMakeLists.txt"  -exec grep -H -n listen_real_of_topic {} \;`
+     - `find . -type f  -name "CMakeLists.txt"  -exec echo sed -i 's/listen_real_of_topic/lrot/' {} \;`
+     - `find . -type f  -name "CMakeLists.txt"  -exec sed -i 's/listen_real_of_topic/lrot/' {} \;`
+  - Copy it to windows
+     - `cp -r mycobot_roswin/ /mnt/d/temp/mycobot_roswin1`
+
+## Missing things in CMakeList.txt
+- Entire URDF directoy not installed
+- `mypalletizer_260\mypalletizer_260` -  launch directory not installed
+  - `install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION} PATTERN "setup_assistant.launch" EXCLUDE)`
+- `mypalletizer_260 \mypalletizer_communication` - launch directory not installed
+  - `install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}  PATTERN "setup_assistant.launch" EXCLUDE)`
+  - `install(DIRECTORY scripts DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION} )`
+
+- "D:\ros\noetic\catkin_ws\install\lib\site-packages\mycobot_communication"
+   - `mypalletizer_260 \mypalletizer_communication` - doesn't have the python code
+   - http://docs.ros.org/en/jade/api/catkin/html/user_guide/setup_dot_py.html
+   - had to add a `setup.py`
+   - and uncomment `catkin_python_setup()` in `CMakeLists.txt`
+
+
+## Serial Debugging
+  - Terminal Window - x64 Visual Studio Community Tools
+  - `d:\bin\noetic.bat`
+  - `cd d:\ros\noetic\catkin_ws\install\`
+  - `d:\ros\noetic\catkin_ws\install\setup.bat`
+  - `cd d:\ros\noetic\catkin_ws\install\share\mypalletizer_communication`
+  - `roslaunch mypalletizer_communication communication_service.launch`
+  - `cd C:\opt\ros\noetic\x64\Lib\site-packages\pymycobot`
+  - `mypalletizer.py` has `MyPalletizer(MyCobotCommandGenerator)`
+  - `generate.py` has `MyCobotCommandGenerator(DataProcssor)` and `self._mesg`
+  - `common.py` has `DataProcessor`, command, codes,  `self._process_single` and lots more
+  - `Serial Debug Assistant` app (installed from Windows Store)
+
+
+
+### Fixes
+  - `rospack list | grep -i mypallet` should show package `mypalletizer_260`
+  - `roslaunch mypalletizer_260 test.launch` should open Rvix and show robot (might have to resize window to get window normed)
+     - It couldn't find the `urdf` files, so I had to copy the `mycobot_roswin/mycobot_description/urdf` subdirectory to `install/share/mycobot_description/`
 
 # KHI Robotics Repo
 - Oriented on Noetic Moveit Tutorial Page (https://ros-planning.github.io/moveit_tutorials/)
@@ -117,6 +196,9 @@ C:\Users\mike>netstat -a | grep 1000
 - Black screen problem on Surface Book laptop solved with 
   - `export LIBGL_ALWAYS_SOFTWARE=1` 
 - See also (https://github.com/microsoft/wslg/issues/455)
+
+
+
 
 ## Working with KHI_ROBOT
 - Open wsl window
@@ -269,8 +351,33 @@ Summary: 0 packages finished [18.3s]
 
 
 ## fails with missing  stuff "InvalidNode in yaml thing
-- Loglevels: DEBUG INFO WARNING ERROR CRITICAL
+### colcon fail
+- start a cmd shell
+- Enter `foxy.bat`
 - `colcon --log-level DEBUG build --merge-install --packages-select rviz_common --event-handlers console_direct+`
+    -- Note - Loglevels: DEBUG INFO WARNING ERROR CRITICAL
+
+    - Invoked command in 'D:\ros\foxy\build\rviz_common' returned '1': 
+    - `AMENT_PREFIX_PATH=D:\ros\foxy\install`
+    - `CL=/MP `
+    - `CMAKE_PREFIX_PATH=D:\ros\foxy\install`
+    - `PKG_CONFIG_PATH=D:\ros\foxy\install\lib\pkgconfig`
+    - `PYTHONPATH=D:\ros\foxy\install\Lib\site-packages`
+    - `Path=D:\ros\foxy\install\Scripts;D:\ros\foxy\install\bin;D:\ros\foxy\install\opt\yaml_cpp_vendor\bin;D:\ros\foxy\install\opt\rviz_ogre_vendor\bin;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;`
+    - `C:\Program Files\Microsoft MPI\Bin\;C:\Users\mike\AppData\Local\Programs\Python\Python310\Scripts\;`
+- result is `1 package failed: rviz_common`
+
+
+## Manual Succeed
+- start a command shell
+- `foxy` (necessary)
+- `cd D:\ros\foxy\src\ros2\rviz\rviz_common`
+- `rm -r build`
+- `mkdir build`
+-  `cd build`
+- `cmake ..`
+- `cmake --build . --config Release`
+## manual fail
 - first cmake: 
 ```
 Invoked command in 'D:\ros\foxy\build\rviz_common' returned '0': AMENT_PREFIX_PATH=D:\ros\foxy\install;%AMENT_PREFIX_PATH% CMAKE_PREFIX_PATH=D:\ros\foxy\install;%CMAKE_PREFIX_PATH% PKG_CONFIG_PATH=D:\ros\foxy\install\lib\pkgconfig;%PKG_CONFIG_PATH% PYTHONPATH=D:\ros\foxy\install\Lib\site-packages;%PYTHONPATH% Path=D:\ros\foxy\install\Scripts;D:\ros\foxy\install\bin;D:\ros\foxy\install\opt\yaml_cpp_vendor\bin;D:\ros\foxy\install\opt\rviz_ogre_vendor\bin;%Path% c:\opt\ros\foxy\x64\Scripts\cmake.EXE D:\ros\foxy\src\ros2\rviz\rviz_common -DCMAKE_INSTALL_PREFIX=D:\ros\foxy\install
