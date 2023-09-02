@@ -6,7 +6,15 @@ output: html_document
 
 # Intro
 - OBS means Open Broadcast Software (https://obsproject.com)
+- Great intro video - (https://www.youtube.com/watch?v=yTkpLd3tdbc) 
+- Apparently you should start it in Administrator mode
 
+# Concepts
+- Source (a video, audio source, image, etc)
+- Scene (a collectoin of sources (kind of as layers))
+- Scene Collections (a collection of sence)
+- Settings (a hellishly large collection of settings)
+- Provile (Collection of settigns)
 
 
 # Starting it

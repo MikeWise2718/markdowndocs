@@ -9,15 +9,78 @@ output: html_document
 
 # Docs
 - Omniverse API docs: (https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/API.html)
-- Omni.ui (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/omni.ui.html)
-   - Overview: (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/Overview.html)
-   - Uses imgui under the hub (I think) (https://github.com/ocornut/imgui)
+
 - Frequently used snippets: (https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/reference_python_snippets.html)
 - Omni Cheat Sheet (a bit old): (https://mtw75.medium.com/omniverse-kit-cheat-sheet-9d2a7cce9fb)
 - USD Cookbook: (https://github.com/ColinKennedy/USD-Cookbook)
 - Finding commands (search in commands): (https://forums.developer.nvidia.com/t/is-there-a-naming-convention-for-commands-in-omni-kit-commands/212926)
+- Packman - (https://packman.readthedocs.io/en/latest/)
+- View Navigation Basics - (https://www.youtube.com/watch?v=kb4ZA3TyMak)
+- Camera Tool - (https://www.youtube.com/watch?v=mAcFVeb0MsE)
+- Licensing -(https://www.nvidia.com/en-us/omniverse/download/)
+- OV Code Samples - (https://docs.omniverse.nvidia.com/dev-guide/latest/programmer_ref.html)
+
+# UI docs
+- Omni.ui (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/omni.ui.html)
+   - Overview: (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/Overview.html)
+   - Uses imgui under the hub (I think) (https://github.com/ocornut/imgui)
+- Went dumpster diving in `_ui.pyi` to find various things like how to find a window handle
+   - Get there by going to the definition of `ui.Window`
+   - The function in question was `handle = ui._ui.Workspace.get_window(wintitle)`
+
+```
+    def DockWindow(self, wintitle="Property"):
+        print(f"Docking to {wintitle} (trc)")
+        handle = ui._ui.Workspace.get_window(wintitle)
+        self.dock_in(handle, ui._ui.DockPosition.SAME)
+        self.deferred_dock_in(wintitle, ui._ui.DockPolicy.TARGET_WINDOW_IS_ACTIVE)
+```
+
+# Interesting Extesions
+- Omni Replicator - shows how it gets hooked into the Window menu
+
+# Stage Events
+- Stage isn't consturcted until around 16 seconds (Create 2022.3.3)
+- ![StageEvents.png](images/StageEvents.png)
+
+# Installing 
+- Can't remember how I installed it
+- There is a "Cleanup tool", which doesn't exactly deinstall it but puts things in the launcher back to before anything was installed
+- So probably the install program just installs the launcher
+
+# Nucleus
+- Localhost sometimes needs you to log in again:
+   - Typical prompt `http://localhost:3180/?server=localhost&nonce=d32cdaca93d245a29e7fc010f0f90ac33975d30900834e3f8975d7b69f66ac6b`
+
+# Version numbers
+- There are a lot of them
+- Kit - was using 104.2 (I think), now up to 105.0
+    - 104.2 used USD version ?? and Python 3.7
+    - 105.0 uses USD version 22.1 and Python 3.10
+
+# Doc Problems
+- "NoSuchKey" Broken links:
+   - ![BrokenLink_CPPdoc.png](images/BrokenLink_CPPdoc.png)
+```
+404 Not Found
+Code: NoSuchKey
+Message: The specified key does not exist.
+Key: kit/docs/repo_docs/0.33.1/docs/DoxygenGuide.html
+RequestId: 6QQZB8Z03XV0E6MN
+HostId: x7pR37eMNpEJANFydOnn6ItWw7oGVL7J2MrLBDZ1YqdVpe4CT4/xj3imniTQXID3lz07zFlqYlQ=
+```
+
+- Incomplete Links 
+   - "No module docstring provided" - (https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/API.html)
+   - `omni.ui` not listed at all
+
 
 # Apps
+- Kit app template github (readme is great): (https://github.com/NVIDIA-Omniverse/kit-app-template)
+   - To start the base app: `_build\windows-x86_64\release\my_name.my_app.bat``
+   - To start the base viewport app: `_build\windows-x86_64\release\my_name.my_app.bat`
+   - To start the base viewport app: `_build\windows-x86_64\release\my_name.my_app.viewport.bat`
+
 - All live in `c:\users\mike\AppData\local\ov\pkg\*`
 - For Spearrow I installed into `d:\nv\ov\pkg`
 - Launcher lives elsewhere `c:\users\mike\AppData\
@@ -36,6 +99,119 @@ Paul Rance's:
 ```
 call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/default_rasterpolicy_enabled=true --/renderer/multiGpu/enabled=true --/exts/omni.kit.widget.graph/raster_nodes=true %*
 ```
+
+# App Adaptation
+- An app will come with lots of names that are inappropriate (like "my_name_, "my-app", etc.) so it must be adapted
+- To deploy an app, deploy the latest kit-app-template ()
+- You can test by runing  `build.bat` and you should do this before you clone it again and rename it
+   - There are three apps it builds, you can run them sa folows:
+      - `_build\windows-x86_64\release\my_name.my_app.bat`
+      - `_build\windows-x86_64\release\my_name.my_app.viewport.bat`
+      - `_build\windows-x86_64\release\my_name.my_app.editor.bat`
+- Don't delete this, use it as a reference to debug things if you break it while editing the config files during adaptation
+- Now reclone it into another directory
+- Rename the directory to a better name for the app (in my example sfapp)
+- Now in the root directory edit the `premake5.lua` and change the names appropriately (I used `wise.sfapp` instead of `my_name.my_app`) 
+   - `define_app("my_name.my_app")`
+   - `define_app("my_name.my_app.viewport")`
+   - `define_app("my_name.my_app.editor")`
+- In the `../source/apps` subdirectory change the names of the kit files in the same wayapproprately
+  -`my_name.my_app.editor.kit`
+  - `my_name.my_app.kit`
+  - `my_name.my_app.viewport.kit`
+- In those `.kit`` files you will want to edit some of the fields like: 
+  - `title`
+  - Maybe some of the dependincies
+- There is a startup extension that creates and positions the windows etc.
+  - It is called `myapp.startup`
+- You may want to change the "Base App" from which this app will draw its extensions (default is `create`). This is set in `repo.toml`
+  - This is documented in the `README.md``
+- Setup extensions:
+  - `my_name.my_app.setup-1.0.0`
+  - `wise.sfapp.view-1.0.0` (this doesn't seem to be an actual extension - it has the word "Launch" on it's extension page for example)
+  - `omni.code.app.setup` is the one for code, fwiw
+  - Layouts can be saved in the setup extension
+- Configuring the extensions you want
+ - In the `source/app.kit` file you can list the dependencies
+ - Copy in entries from the "Base App" configuation kit file you based it on 
+ - In my case that is `d:\nv\ov\pkg\code-2022.3.3\apps\omni.code.kit`
+ - I copied in `# Microservices` 
+ - Note that it will fail to load if an extension is listed twice
+```
+[dependencies]
+# Create Kit UI Based applications
+"omni.kit.uiapp" = {}
+"omni.kit.renderer.core" = {}
+
+# Microservices
+"omni.services.transport.server.http" = {}
+
+
+```
+# Nvidia Sales Docs (pretty good)
+- Brainshark: (https://www.brainshark.com/1/learning/en/my-enrollments)
+
+
+# Extensions
+- Docs: (https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/guide/extensions_advanced.html)
+- Extension
+
+
+# Connectors
+- docs: (https://docs.omniverse.nvidia.com/connect/latest/connect-sample.html)
+- Connectors use the "Omniverse Client Library" - (https://docs.omniverse.nvidia.com/kit/docs/client_library/latest/index.html)
+- Creating a USD app from the connect sample: (https://forums.developer.nvidia.com/t/creating-an-omniverse-usd-app-from-the-connect-sample/189557)
+- YouTube Video of the above: ()
+- I could not get most kit python APIs to work
+
+# Microservices
+- HttyAsyncConsumer is in 
+  - `d:\nv\ov\pkg\code-2022.3.3\extscache\omni.services.transport.client.http_async-1.3.4\omni\services\transport\client\http_async` in `consumer.py`
+
+
+
+
+# VS Code setup
+- Python Language Server is "Pylance" named after Sir Lancealot
+- Pylance docs: (https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+   - Github repo: (https://github.com/microsoft/pylance-release)
+   - Interesting note on caching (https://github.com/microsoft/pylance-release/issues/2932)
+   - Troubleshooting and trace mode: (https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md)
+- Rename was not working (takeing too long then timing out) and trailing whitespace was not being stripped so 
+- in `.vscode\settings.json` I added these things:
+```
+    "editor.rulers": [120],
+    "[python]": {
+        "files.trimTrailingWhitespace": true,
+    },
+    // Python modules search paths:
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/exts/omni.sphereflake",
+    ],
+
+    "python.analysis.exclude": [
+        "${workspaceFolder}/app",
+    ],    
+```
+
+- Couldin't find things so added this:
+```
+                # Write out the python path to a file for the settings.json python.analsys.extraPaths setting
+                pplist = sys.path
+                with open('d:/nv/ov/pythonpath.txt', 'w') as f:
+                    for line in pplist:
+                        nline = line.replace("\\", "/")
+                        nnline = f"        \"{nline}\",\n"
+                        f.write(nnline)
+
+```
+And added those lines to my `.vscode\settings.json`
+```
+    "python.analysis.extraPaths": [
+      ...
+    ]
+```
+- Renamming issue, first rename takes 45 seconds
 
 # API Basics
 - Its all based on Pixar's stuff, you have to know their docs too
@@ -74,6 +250,10 @@ popd
 EXIT /B %ERRORLEVEL%
 ```
 
+
+# Pip
+- The pip api - (https://docs.omniverse.nvidia.com/kit/docs/omni.kit.pipapi/latest/Overview.html)
+- Youtube - (https://www.youtube.com/watch?v=Rp3-jRQ-V0A)
 
 
 
@@ -159,6 +339,11 @@ Select a live session to join: 0
 - `https://forums.developer.nvidia.com/t/create-crashing-on-launch/179671`
 
 
+# Extension Settings
+- carb settings are stored for Kit apps under a seperate data directory - for example for my "Code 2022.3":
+   - `d:\nv\ov\data\Kit\Code\2022.3\user.config.json`
+
+
 # Getting Started writing extensions
 - https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/guide/extensions_basic.html
 - Can create directory wherever you want
@@ -181,3 +366,12 @@ D:\nv\ov\pkg\audio2face-2022.2.1\extscache\omni.kit.mesh_separate-1.1.7
 ```
 D:\nv\ov\pkg\isaac_sim-2022.2.0\exts\omni.isaac.examples\omni\isaac\examples\user_examples
 ```
+
+
+# CloudXR
+- Docs for setting up: (https://docs.nvidia.com/cloudxr-sdk/usr_guide/cxr_server.html)
+- Need to register in CloudXR program
+
+
+## Installation Notes
+- 

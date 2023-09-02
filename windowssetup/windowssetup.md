@@ -21,7 +21,12 @@ Stuff I do every time I reinstall windows.
 
 # Windows Evaluation Version Expiring workarounds
 - An evaluation version of Windows Enterprise restarts after 90 days
-- You can "rearm" it up to 3 times with `slmgr -rearm`
+- Puts off Windows sActivation Checks
+- Check licensing with `slmgr.vbs /dli`\
+- Detailed: `slmgr.vbs /dlv` 
+- You can "rearm" it up to 3 times with `slmgr -rearm` (from an admin window)
+- Expiration date `slmgr.vbs /xpr`\
+- "Windows Notification Mode" means the activation deadline has passed and certain things will be turned off (customizations, auto reboot, etc.)
 - 3 times 90 is 260 days, after expiration of the eval version it will start to autoboot after one hour of running
 - Skip autoboot after expiry: (https://medium.com/tech-learn-share/how-to-stop-expired-windows-server-auto-shutdown-every-hour-c0cd74e0974e) 
    - Initially download PsTools
