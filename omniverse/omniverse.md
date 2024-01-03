@@ -20,6 +20,32 @@ output: html_document
 - Licensing -(https://www.nvidia.com/en-us/omniverse/download/)
 - OV Code Samples - (https://docs.omniverse.nvidia.com/dev-guide/latest/programmer_ref.html)
 
+# Configuration
+- look in `C:/User/mike/.nvidia-omniverse/config/omniverse.toml`
+- Date seems to be updated at boot time?
+```
+[bookmarks]
+localhost = "omniverse://localhost"
+"nucleus.azurenucleus.co.uk" = "omniverse://nucleus.azurenucleus.co.uk"
+
+[cache]
+data_dir = "D:\\nv\\ov\\cache\\Cache"
+proxy_cache_enabled = false
+proxy_cache_server = ""
+
+[connection_library]
+proxy_dict = "*#localhost:8891,f"
+
+[paths]
+cache_root = "D:\\nv\\ov\\cache"
+confirmed = true
+content_root = "H:\\Omniverse"
+data_root = "D:\\nv\\ov\\data"
+extension_root = "C:\\Users\\mike\\Documents\\kit\\shared\\exts"
+library_root = "D:\\nv\\ov\\pkg"
+logs_root = "C:\\Users\\mike\\.nvidia-omniverse\\logs"
+```
+
 # UI docs
 - Omni.ui (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/omni.ui.html)
    - Overview: (https://docs.omniverse.nvidia.com/kit/docs/omni.ui/latest/Overview.html)
@@ -35,6 +61,26 @@ output: html_document
         self.dock_in(handle, ui._ui.DockPosition.SAME)
         self.deferred_dock_in(wintitle, ui._ui.DockPolicy.TARGET_WINDOW_IS_ACTIVE)
 ```
+
+# Omniverse Launcher
+- Overview (https://docs.omniverse.nvidia.com/launcher/latest/index.html)
+- Download (https://www.nvidia.com/en-us/omniverse/download/)
+- An OV installation always starts with launcher installation
+- There is a cleanup tool will delete everything  installed, this is how you "reinstall Omniverse"
+- To get version see "profile-man/About"
+- !!! Make sure you backup your code, it does delete things and it isn' clear exactly what!!!!
+- Need to know your library path, data path, and cache path - see "profile-man/Settings"
+  - library path: `d:\nv\ov\pkg`
+  - data path: `d:\nv\ov\data`
+  - cache path: 
+  - content path: `h:\Omniververse``
+- Cleanup tool: ((https://docs.omniverse.nvidia.com/utilities/latest/cleanup-tool.html))
+- There are brainshark videos on how to configure it
+- Launcher plays a key role in not only launching, but also building apps
+   - Building apps seem to connect to it at build time
+   - It seems to connects to a central OV website and attempt to satisfy missing python and other references
+   - Building apps Create 2023.1.0 didn't work with the newest version of the OV launcher (1.8.11 probably) so downgrade to 1.5.7
+- Old launcher versions: ()
 
 # Interesting Extesions
 - Omni Replicator - shows how it gets hooked into the Window menu
@@ -100,9 +146,9 @@ Paul Rance's:
 call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/default_rasterpolicy_enabled=true --/renderer/multiGpu/enabled=true --/exts/omni.kit.widget.graph/raster_nodes=true %*
 ```
 
-# App Adaptation
+# App Adaptation (104 - so the kit-app-template repo)
 - An app will come with lots of names that are inappropriate (like "my_name_, "my-app", etc.) so it must be adapted
-- To deploy an app, deploy the latest kit-app-template ()
+- To deploy a new app, first clone the latest kit-app-template (https://github.com/NVIDIA-Omniverse/kit-app-template.git)
 - You can test by runing  `build.bat` and you should do this before you clone it again and rename it
    - There are three apps it builds, you can run them sa folows:
       - `_build\windows-x86_64\release\my_name.my_app.bat`

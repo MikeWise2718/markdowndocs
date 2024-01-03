@@ -27,7 +27,7 @@ Useful Flake8 commands
     "python.analysis.typeCheckingMode": "basic",
     "python.linting.flake8Args": [
         "--max-line-length=120",
-        "--ignore=E402,F841,F401,E302,E305",
-    ],    
+        "--ignore=E402,F841,F401,E302,E305"
+    ]    
 }
   ```

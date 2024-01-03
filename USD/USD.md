@@ -6,15 +6,29 @@ output: html_document
 
 # Intro
 - Pixar's baby - homepage: (https://graphics.pixar.com/usd/release/index.html)
-
+- No longer just Pixar's - homepage: (https://openusd.org/)
 
 # Tutorials
-- (https://graphics.pixar.com/usd/release/tut_usd_tutorials.html)
+- Current Link: (https://openusd.org/release/tut_usd_tutorials.html)
+- Old Link: (https://graphics.pixar.com/usd/release/tut_usd_tutorials.html)
 
 # Unity USD Package
 - Unity USD Package - (https://github.com/Unity-Technologies/usd-unity-sdk)
 - Examples are in Package, but you have to specify them to be exported or they wont be there
 - Scene Docs - (https://docs.unity3d.com/Packages/com.unity.formats.usd@3.0/api/USD.NET.Scene.html)
+
+# UsdView
+- Alt (or Windows Key) to modifiy view
+- ALt-left mouse is rotate around center of view
+- ALt-right mouse is zoom in and out
+- ALt-middle mouse is pan
+
+# Unzip tgz
+Have to do it in WSL
+```
+#!/bin/bash
+sudo tar -xvzf /mnt/c/Users/mike/Downloads/island-usd-v2.1.tgz -C /mnt/c/Users/mike/Downloads/island
+```
 
 # USDTools
 - you need these
@@ -106,3 +120,26 @@ C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools
    - `conda activate USDtools`
    - `cd D:\transfer\USD\extras\usd\tutorials\animatedTop`
    - `usdview top.geom.usd`
+
+# Install into a VM
+- Fresh USD install 9 Nov 2023 into a VM on Hyper-V 
+- Setup up Windows 11 Developer VM (rearmed because license expired)
+- Had VS Studio 2022 Community installed
+- Uses Windows 11 Enterprise Edition, Evaluation
+- User is "User"
+- Installed Git 2.42.0 into path (was probably already there)
+- Installed Cmake (maybe that was there too)
+- Had to upgrade the Visual Studio Community installaer
+- no command line with tools, went with powershell "Developer Poweshell for VS 2022"
+- cd build_scripts
+- python build_usd.py c:\usd
+- pip install pyside2
+- pip install pyopengl
+- it started to do it around 12:00
+- failed 
+- pip install ninga2
+- failed again with opensubdiv
+- pokked around
+- tried  python build_usd.py c:\usd1
+- error - no pyside6
+- pip install pyside6

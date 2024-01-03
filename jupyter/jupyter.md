@@ -41,3 +41,15 @@ I think of Jupyter as R-Markdown for Python, but that is not really true.
 - `jupyter notebook --ip='192.168.25.12' object_detection_tutorial.ipynb`
 - You get a command like ` http://192.168.25.12:8888/?token=f6982adb2e4bcb93bf0f15f2bd5e64ef22b22d7                                                                                                                                                     9bc8c0f75` 
 - you can login with that, or just enter the token subsequently
+
+
+# Jupyter Lab
+- Start jupyter lab by installing jupyter, then starting it
+    - `pip install jupyter`
+    - `juptyer lab`
+
+- Has native support for MathJax (I think)
+
+
+# MathJax samples
+- 

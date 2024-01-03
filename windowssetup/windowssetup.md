@@ -19,6 +19,9 @@ Stuff I do every time I reinstall windows.
  - https://serverfault.com/questions/625332/windows-update-not-working-on-windows-2012-r2-standard
 
 
+# Windows keys
+- `aka.ms\mykeys`
+
 # Windows Evaluation Version Expiring workarounds
 - An evaluation version of Windows Enterprise restarts after 90 days
 - Puts off Windows sActivation Checks
@@ -88,3 +91,104 @@ Stuff I do every time I reinstall windows.
 - `Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced`
 - Create a DWORD32 key `ShowSecondsInSystemCLock` and set it equal to 1
 - Log in and log out
+
+## Breaking and repairing the boot loader
+- Good video (https://www.youtube.com/watch?v=CZ17JrgFFhw) from CyberCPU Tech
+- Need Media Creation Tool to create bootable USB stick
+
+### Look at bcd
+Spearow - 26 Dec 2023
+```
+C:\Users\mike>hostname
+Spearow
+
+C:\>bcdedit
+
+Windows Boot Manager
+--------------------
+identifier              {bootmgr}
+device                  partition=\Device\HarddiskVolume1
+path                    \EFI\Microsoft\Boot\bootmgfw.efi
+description             Windows Boot Manager
+locale                  en-US
+inherit                 {globalsettings}
+flightsigning           Yes
+default                 {current}
+resumeobject            {190dd86d-9b23-11ee-a6dd-c3031ed96fe4}
+displayorder            {current}
+toolsdisplayorder       {memdiag}
+timeout                 30
+
+Windows Boot Loader
+-------------------
+identifier              {current}
+device                  partition=C:
+path                    \WINDOWS\system32\winload.efi
+description             Windows 11
+locale                  en-US
+inherit                 {bootloadersettings}
+recoverysequence        {190dd86f-9b23-11ee-a6dd-c3031ed96fe4}
+displaymessageoverride  Recovery
+recoveryenabled         Yes
+isolatedcontext         Yes
+flightsigning           Yes
+allowedinmemorysettings 0x15000075
+osdevice                partition=C:
+systemroot              \WINDOWS
+resumeobject            {190dd86d-9b23-11ee-a6dd-c3031ed96fe4}
+nx                      OptIn
+bootmenupolicy          Standard
+hypervisorlaunchtype    Auto
+claimedtpmcounter       0x10002
+```
+
+### Backing up bcd
+- Good video (https://www.youtube.com/watch?v=CZ17JrgFFhw&t=271s)
+- Enter `bcdedit export c:\bcd.bak` from Admin Command Shell to backup
+- Enter `bcdedit export c:\bcd.bak` from Admin Command Shell to restore (!!!! danger)
+
+## Breaking it
+- `bcdedit /set path \win`
+- `bcdedit /set recoveryenabled no`
+
+
+## Fixing it
+- boot to Blue "Windows, Language to Install, Time and Currency format, Keyboard or input" screen
+- Just hit next to get the next screen
+- "Repair your computer" instead of "Install Now"
+- Then select "Troubleshoot"
+- From "X:\sources" can select bcdedit and diskpart
+
+CyberCPU sequence
+```
+diskpart
+list disk
+sel disk 0 (which ever one Windows is on)
+list vol 
+(look for FAT32 100 MB partiation)
+sel vol 1
+assign letter=v
+list vol (and look and see if it was assigned)
+exit
+v:
+cd EFI
+dir
+cd Microsoft
+dir
+cd boot
+dir
+(look for BCD)
+c:
+format v: /fs:fat32
+proceed (y)
+No volume label
+dir v: (now empty)
+dir c: (should be the normal windows drive)
+bcdboot c:\windows /s v: /f UEFI
+"Boot file sucessfully created"
+v:
+(should see EFI like before, can look at boot and etc again)
+close command prompt
+select "Close your PC"
+You will have lost recovery
+``````
