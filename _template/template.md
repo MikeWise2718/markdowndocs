@@ -1,18 +1,20 @@
 ---
-title: "Browosers"
+title: "Template Titles"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
-# Browsers
+# Intro
+Explain what this thing is and what kind of help can be expected of this file.
 
+Note that to get a preview of this document in VS Code use Ctrl-Shift-V
 
-# Firefox
-- Notifications
-- How to remove annoying Firefox popups 
- - Settings - then use search settings
- - Search for Notifications
- - There wil be a list of websites, with "allow" and "block"
- - Best just to remove them all
+Github markdown is explained here: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+
+Example link: [jQuery FAQs](https://learn.jquery.com/using-jquery-core/faq/)
+
+Example image:
+![Red Fish](SmallerFish.png)
+
 
 # Something Else

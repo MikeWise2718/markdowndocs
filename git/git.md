@@ -1,6 +1,6 @@
   **
 title: "Data Science Languages Cheatsheet"
-output: 
+output:
   html_document:
      css: markdown.css
   **
@@ -21,26 +21,26 @@ output:
    * lots of great commands in there summarized in the YouTube video header
  * This guy - Dan Gitschooldude - has a very large number around many specialized topics. Quality varies from very good to "meh": https://www.youtube.com/channel/UCshmCws1MijkZLMkPmOmzbQ
  * John Britton Pretty detailed tutorial on how git works internally: https://www.youtube.com/watch?v=lG90LZotrpo
- * John Scott Chacon of GitHubs lecture: https://www.youtube.com/watch?v=ZDR433b0HJY 
+ * John Scott Chacon of GitHubs lecture: https://www.youtube.com/watch?v=ZDR433b0HJY
 
 # Concepts you should know
  * Working folder
      * the folder you are working on
- * Index or Staging area 
+ * Index or Staging area
      * the files that will make up the next commit (if you do one now)
  * blob  (how it is hashed, how it is compressed)
      * blobs are object stored in the .git/objects in subdirectories/files based on their SHA*1 hashes
-     * they don't know anything about themselves (no metadata) 
+     * they don't know anything about themselves (no metadata)
      * they are compressed using something or other
      * you can garbage collect blobs that are not being pointed to from anyone
      * short sha-1 hashes (https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Short-SHA-1)
      * `git show aa5f86`  - shows the object that belongs to the hash
- * trees  
+ * trees
     * trees are blob objects that can be thought of as pointing to a directory
     * tree-ish is something that might eventual resolve to a tree - like HEA
     * they contain a list of the blobs they hold and maybe a subdirectory tree
     * for every entry they have a limited UNIX*like type permission code and the file/subdir name
- * commits 
+ * commits
     * commits are also blob objects
     * have a message in their body
     * have a pointer to a tree that belongs to them
@@ -59,18 +59,20 @@ output:
      * lists everything that has been staged up to now
  * branches
      * just a head ref really, I think
-     * `git branch` lists all branches
+     * `git branch` lists all local branches
+     * `git branch -r` lists all remote branches
+     * `git branch -a` lists all branches (remote and local)
      * `git checkout master` changes HEAD (current branch) to point to master REF
      * `git merge branch1910`  merges current branch with branch1910 (merged the commit corresponding to the head of branch1910 with the commit cooresponding to the current HEAD)
-     * `git checkout -b newbranch` - create a new branch "newbranch" (create a ref pointint go the current commit)
-     * `git push --set-upstream origin locredwest` -- create that branch upstream
+     * `git checkout -b newbranch` - create a new branch "newbranch" (create a ref pointing to the current commit)
+     * `git push --set-upstream origin newbranch` -- create that branch upstream
  * remotes
      * a listing of remote repositories (their ip address) that you can fetch from
      * if you pull, that does a merge right after as well
      * `git remotes -v`
      * `git remote show origin`
  * HEAD
-     * the commit you are currently working on 
+     * the commit you are currently working on
      * `git show HEAD`
 
 
@@ -97,7 +99,7 @@ output:
 
 ## User Profile Information
  * There are 3 default paths for the config file (on linux at least).
-   * ref: https://stackoverflow.com/questions/7328826/curious*where*does*git*store*user*information 
+   * ref: https://stackoverflow.com/questions/7328826/curious*where*does*git*store*user*information
    * Repository itself: `<your_git_repository>/.git/config`
    * User home directory: `~/.gitconfig`
    * System*wide directory: `$(prefix)/etc/gitconfig`
@@ -118,10 +120,10 @@ output:
 
 ## Merge branch
 * Git Help <https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/>
-*  `git checkout master` 
-*  `git pull` 
+*  `git checkout master`
+*  `git pull`
 *  Resolve conflicts
-* 
+*
 
 git config   -global credential.helper 'cache   -timeout=3600'
 
@@ -130,7 +132,7 @@ git config   -global credential.helper 'cache   -timeout=3600'
 * Login using `ssh` instead of `https`
 * Use "Credential Helper"
    * $ git config   -global credential.helper cache  # Tell git to use the credential helper
-   * $ git config   -global credential.helper 'cache   -timeout=3600' # Set the timeout to 1 hour 
+   * $ git config   -global credential.helper 'cache   -timeout=3600' # Set the timeout to 1 hour
 
 ## Undo commit
 - From (https://www.reddit.com/r/git/comments/ep40we/how_to_undo_a_commit_in_git/)
@@ -142,7 +144,7 @@ git config   -global credential.helper 'cache   -timeout=3600'
 ## Git Log
 * `git log   --oneline` * one line form of log
 * `git log   --pretty=format:"%h%x09%an%x09%ad%x09%s"` * short form with date - see this: (https://stackoverflow.com/a/1441062/3458744)
-* `git log   --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s"` * colors log with date 
+* `git log   --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s"` * colors log with date
 * `git log --p Assets/_scripts/GraphAlgos.cs` * get the diff history of a file
 * The above commands should have "--" as flag switches
 * `git log --follow -p -- filename`   -follow the history of a file
@@ -236,7 +238,7 @@ How to "unfork" a project in four easy steps:
 4. cd {repository}.git and git push --mirror https://github.com/{username}/{repository}
 
 
-   
+
 # Keeping up to date
 - Link here: (https://stefanbauer.me/articles/how-to-keep-your-git-fork-up-to-date)
 - I think this is all assuming you are only working on one branch, "master"
@@ -253,9 +255,9 @@ How to "unfork" a project in four easy steps:
 
 # Rename a branch
 A stack overflow answer (https://stackoverflow.com/a/6591218/3458744)
- 1. Rename with  `git branch -m <oldname> <newname>` 
+ 1. Rename with  `git branch -m <oldname> <newname>`
  2. Can use capital M of force rename if newbranch exists, or windows upper/lower case madness
- 
+
  A Better answer: (https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/)
  1. Switch to that local branch with `git checkout <oldname>`
  2. Rename the local branch with `git branch -m <newname>`
@@ -282,7 +284,7 @@ A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/
 A       ml-agents/protobuf-definitions/proto/mlagents_envs/communicator_objects/unity_rl_output.proto
 ```
 - diff between branches and one specific file
-    - `git diff  custom-tb-obs -- Project/ProjectSettings/ProjectVersion.txt`   
+    - `git diff  custom-tb-obs -- Project/ProjectSettings/ProjectVersion.txt`
 ```
 diff --git a/Project/ProjectSettings/ProjectVersion.txt b/Project/ProjectSettings/ProjectVersion.txt
 index d364145c..9bebbca9 100644
@@ -297,7 +299,7 @@ index d364145c..9bebbca9 100644
 ->>>>>>> upstream/master
 ```
 - replace that file with the one in another branch
-   - `git  checkout  custom-tb-obs Project/ProjectSettings/ProjectVersion.txt`   
+   - `git  checkout  custom-tb-obs Project/ProjectSettings/ProjectVersion.txt`
 
 ## Interactive rebasing
 - Useful commands

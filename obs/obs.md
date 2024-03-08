@@ -6,20 +6,20 @@ output: html_document
 
 # Intro
 - OBS means Open Broadcast Software (https://obsproject.com)
-- Great intro video - (https://www.youtube.com/watch?v=yTkpLd3tdbc) 
+- Great intro video - (https://www.youtube.com/watch?v=yTkpLd3tdbc)
 - Apparently you should start it in Administrator mode
 
 # Concepts
 - Scene Collections (a collection of scenes)
 - Source (a video, audio source, image, etc)
 - Scene (a collection of sources (kind of as layers))
-- Settings (a hellishly large collection of settings)
+- Settings (a hellishly large collection of settings) (lower right panel Control/Settings)
 - Profile (Collection of settigns)
 
 # Workflow
 - Pick a scene collection that is similar to something you did in the past
 - Duplicate it (you need a new name)
-- Change the output directories (find them in the panel `Contols/Settings/Output` (default in the lower right)
+- Change the output directories (find them in the panel `Contols/Settings/Output` (default in the lower right))
   - Don't forget `Apply`
 - Start recording
 
@@ -27,7 +27,7 @@ output: html_document
 # Powerpointing
 - Select a scene collection that is similar to the one you want (like BaeSlideDeck) under "Scene Collections"
 - Select "Duplicate" and give it a new name
-- Change the output directories (find them in the panel `Contols/Settings/Output` (default in the lower right - probably want to save in a subdirector to videos)
+- Change the output directories (find them in the panel `Contols/Settings/Output` (default in the lower right - probably want to save in a subdirector to videos))
   - Don't forget `Apply`
 - Make sure you have the right sources
   - Audio Input Capture (make sure you don't have two microphones or it might be too faint, test with devices and make sure it is hitting 100 percent)
@@ -54,4 +54,4 @@ output: html_document
 - You free a tab by clicking on the top right corner of thw window (the double window icon)
 
 # Scenes and sources
-- A scene is a group of sources 
+- A scene is a group of sources

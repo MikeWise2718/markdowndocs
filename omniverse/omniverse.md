@@ -72,7 +72,7 @@ logs_root = "C:\\Users\\mike\\.nvidia-omniverse\\logs"
 - Need to know your library path, data path, and cache path - see "profile-man/Settings"
   - library path: `d:\nv\ov\pkg`
   - data path: `d:\nv\ov\data`
-  - cache path: 
+  - cache path:
   - content path: `h:\Omniververse``
 - Cleanup tool: ((https://docs.omniverse.nvidia.com/utilities/latest/cleanup-tool.html))
 - There are brainshark videos on how to configure it
@@ -89,7 +89,7 @@ logs_root = "C:\\Users\\mike\\.nvidia-omniverse\\logs"
 - Stage isn't consturcted until around 16 seconds (Create 2022.3.3)
 - ![StageEvents.png](images/StageEvents.png)
 
-# Installing 
+# Installing
 - Can't remember how I installed it
 - There is a "Cleanup tool", which doesn't exactly deinstall it but puts things in the launcher back to before anything was installed
 - So probably the install program just installs the launcher
@@ -116,12 +116,63 @@ RequestId: 6QQZB8Z03XV0E6MN
 HostId: x7pR37eMNpEJANFydOnn6ItWw7oGVL7J2MrLBDZ1YqdVpe4CT4/xj3imniTQXID3lz07zFlqYlQ=
 ```
 
-- Incomplete Links 
+- Incomplete Links
    - "No module docstring provided" - (https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/API.html)
    - `omni.ui` not listed at all
 
 
+# Extensions
+- There are a few of these too (like Apps below)
+- Extensions in depth (https://docs.omniverse.nvidia.com/kit/docs/kit-manual/latest/guide/extensions_advanced.html)
+- there is `kit-extension-template` (https://github.com/NVIDIA-Omniverse/kit-extension-template)
+- There is C++ `kit-extension-template-cpp` (https://github.com/NVIDIA-Omniverse/kit-extension-template-cpp)
+  - Docs:(https://docs.omniverse.nvidia.com/kit/docs/kit-extension-template-cpp/latest/index.html)
+- There is an example extension (omni.hello.world) in the app template `kit-project-template`
+
+
+# Debugging Extensions
+- Debugging: (https://docs.omniverse.nvidia.com/extensions/latest/ext_vs-code-link.html)
+- Need to enable the Omniverse VS Code Link extensions
+   - KIT DEBUG VSCODE and A DEBUGGER FOR PYTHON
+   - Can find them by filtering on the word "debug"
+   - When enabled there is a VS Code Link window with useful status info (like attached or not)
+   - see link above for more info
+- `launch.json` for debugging an extension - seems some of these parameters are obsolete
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Attach (bla bla)",
+      "type": "python",
+      "request": "attach",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "port":3000,
+      "host": "localhost",
+      "subProcess": true,
+      "runtimeArgs": [
+        "-preserve-symlinks",
+        "-preserve-symlinks-main",
+      ]
+    }
+  ]
+}
+```
 # Apps
+- There are at least two:
+  - https://forums.developer.nvidia.com/t/comparison-between-kit-app-template-and-kit-project-template/271512
+  - `kit-app-template` - (https://github.com/NVIDIA-Omniverse/kit-app-template)
+      - see readme
+      - Think it works with 104 better than with 105
+      - https://docs.omniverse.nvidia.com/kit/docs/kit-app-template/latest/intro.html
+
+  - `kit-project-template` - (https://github.com/NVIDIA-Omniverse/kit-app-template)
+      - https://docs.omniverse.nvidia.com/kit/docs/kit-project-template/latest/tutorial.html
+      - Think it might be version 105 only
+
+
+
 - Kit app template github (readme is great): (https://github.com/NVIDIA-Omniverse/kit-app-template)
    - To start the base app: `_build\windows-x86_64\release\my_name.my_app.bat``
    - To start the base viewport app: `_build\windows-x86_64\release\my_name.my_app.bat`
@@ -157,7 +208,7 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
 - Don't delete this, use it as a reference to debug things if you break it while editing the config files during adaptation
 - Now reclone it into another directory
 - Rename the directory to a better name for the app (in my example sfapp)
-- Now in the root directory edit the `premake5.lua` and change the names appropriately (I used `wise.sfapp` instead of `my_name.my_app`) 
+- Now in the root directory edit the `premake5.lua` and change the names appropriately (I used `wise.sfapp` instead of `my_name.my_app`)
    - `define_app("my_name.my_app")`
    - `define_app("my_name.my_app.viewport")`
    - `define_app("my_name.my_app.editor")`
@@ -165,7 +216,7 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
   -`my_name.my_app.editor.kit`
   - `my_name.my_app.kit`
   - `my_name.my_app.viewport.kit`
-- In those `.kit`` files you will want to edit some of the fields like: 
+- In those `.kit`` files you will want to edit some of the fields like:
   - `title`
   - Maybe some of the dependincies
 - There is a startup extension that creates and positions the windows etc.
@@ -179,9 +230,9 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
   - Layouts can be saved in the setup extension
 - Configuring the extensions you want
  - In the `source/app.kit` file you can list the dependencies
- - Copy in entries from the "Base App" configuation kit file you based it on 
+ - Copy in entries from the "Base App" configuation kit file you based it on
  - In my case that is `d:\nv\ov\pkg\code-2022.3.3\apps\omni.code.kit`
- - I copied in `# Microservices` 
+ - I copied in `# Microservices`
  - Note that it will fail to load if an extension is listed twice
 ```
 [dependencies]
@@ -191,9 +242,18 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
 
 # Microservices
 "omni.services.transport.server.http" = {}
-
-
 ```
+
+
+# Timeline Window
+- Not a lot of docs: (https://docs.omniverse.nvidia.com/extensions/latest/ext_animation-timeline.html)
+- YouTube: (https://www.youtube.com/watch?v=0RRobfS0UgQ)
+- Looks most like Maya Timeline
+- Good video on Maya Timeline: (https://www.youtube.com/watch?v=SYuaAMHzY_8)
+- Another one: (https://www.youtube.com/watch?v=Q6MTI7_zLS0)
+- PlayHead, Keys, etc.
+- Can select keys with "Shift Select"
+
 # Nvidia Sales Docs (pretty good)
 - Brainshark: (https://www.brainshark.com/1/learning/en/my-enrollments)
 
@@ -211,7 +271,7 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
 - I could not get most kit python APIs to work
 
 # Microservices
-- HttyAsyncConsumer is in 
+- HttyAsyncConsumer is in
   - `d:\nv\ov\pkg\code-2022.3.3\extscache\omni.services.transport.client.http_async-1.3.4\omni\services\transport\client\http_async` in `consumer.py`
 
 
@@ -223,7 +283,7 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
    - Github repo: (https://github.com/microsoft/pylance-release)
    - Interesting note on caching (https://github.com/microsoft/pylance-release/issues/2932)
    - Troubleshooting and trace mode: (https://github.com/microsoft/pylance-release/blob/main/TROUBLESHOOTING.md)
-- Rename was not working (takeing too long then timing out) and trailing whitespace was not being stripped so 
+- Rename was not working (takeing too long then timing out) and trailing whitespace was not being stripped so
 - in `.vscode\settings.json` I added these things:
 ```
     "editor.rulers": [120],
@@ -237,7 +297,7 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
 
     "python.analysis.exclude": [
         "${workspaceFolder}/app",
-    ],    
+    ],
 ```
 
 - Couldin't find things so added this:
@@ -321,7 +381,7 @@ EXIT /B %ERRORLEVEL%
 # Cortex
 - Video
 
-# Connectors 
+# Connectors
 - Installed Connectors from "Nvidia Omniverse Launcher"
    - EXCHANGE, then scroll down to connectors, then install "Connect Sample Omniverse Connector" (version 201.0.0)
 ![sample-connector](images/sample-connector.png)
@@ -331,13 +391,13 @@ EXIT /B %ERRORLEVEL%
 - Interested in running "run_py_live_session.bat"
 - Had to run "prebuild.bat" first
 - Had to have a Nucleus server available (used a localhost)
-- Using an OV app like "Create" 
+- Using an OV app like "Create"
 - Created a file with a single object "Sphere" and saved it to:
      - Make sure it is a "Mesh" (should say so in the Stage window)
      - "Omniverse://localhost/mike/testconnector.usda"
      - Clicked on "Live" upper right and created a session "sphere1"
      - Ran it specifying the file and the Sphere, and the session
-     - When I pressed "t" the sphere moved around - so it worked 
+     - When I pressed "t" the sphere moved around - so it worked
 ```
 D:\nv\ov\pkg\connectsample-201.0.0>run_py_live_session.bat -e Omniverse://localhost/Users/mike/testconnector.usda -m Sphere
 [2023-05-31 14:55:05 PyChannelManager (INFO)] Starting Omniverse Channel Manager...
@@ -402,13 +462,13 @@ Select a live session to join: 0
 
 
 # Code Places
-- Directory of `Mesh Seperate` extension in `Audio2Face` app: 
+- Directory of `Mesh Seperate` extension in `Audio2Face` app:
     - Go to `Window\Extensions\` then serch for `Mesh`, click on `Mesh Seperate` then click on the folder icon on the top to get: above
 ```
 D:\nv\ov\pkg\audio2face-2022.2.1\extscache\omni.kit.mesh_separate-1.1.7
 ```
-- Diector of `Hello World` example from `Issac Sim` app
-    - Go to `Menu\Issac Examples\Hello World` then in the dialog that opens, click on the folder icon on top to get `HelloWorld.py` in this:
+- Diector of `Hello World` example from `Isaac Sim` app
+    - Go to `Menu\Isaac Examples\Hello World` then in the dialog that opens, click on the folder icon on top to get `HelloWorld.py` in this:
 ```
 D:\nv\ov\pkg\isaac_sim-2022.2.0\exts\omni.isaac.examples\omni\isaac\examples\user_examples
 ```
@@ -420,4 +480,4 @@ D:\nv\ov\pkg\isaac_sim-2022.2.0\exts\omni.isaac.examples\omni\isaac\examples\use
 
 
 ## Installation Notes
-- 
+- Hmm...  what was I thinking?
