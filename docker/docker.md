@@ -17,7 +17,7 @@ output: html_document
 * `container` - an instance of a running or exited image
 * `entry point` - the program that will be running
 * `tag` - Tag is alphanumeric identifier of the image within a repository like `vafsb/faketemp:latest`
-* `numeric ID` - a 12 digit hex numeric id identifying a running or exited container like `15fa59af0e7d` 
+* `numeric ID` - a 12 digit hex numeric id identifying a running or exited container like `15fa59af0e7d`
 * `container ID` - another word for numeric ID
 * `container states` - containers can be "created", "up" or "exited" https://stackoverflow.com/questions/43734412/what-does-created-container-mean-in-docker
 * `registry` - a Docker registry is a service that stores docker images like `vafsb.azurecr.io`
@@ -36,18 +36,17 @@ output: html_document
 - Get rid of need for sudo on Linux
    -  `sudo usermod -aG docker user_name`  # add user_name to docker groupdo
    -  `groups`                             # check your group membership
-   -  `cut -d: -f1 /etc/group`             # list all groups on that machine 
+   -  `cut -d: -f1 /etc/group`             # list all groups on that machine
 
 # Windows
 - Docker uses a single hyper-v, and thus is subject to any hyper-v nuances and limitations
 - When docker is running there will be tray app running where you can get some info
 - However most interaction with docker is via command line, be it cmd, PowerShell, or some form of bash
- 
+
  # Basic commands
 * `docker -?`                    (list all commands)
 * `docker -v`                    (version)
 * `docker version`               (long client/server version)
-* `docker -p2`                   (list running containers)
 * `docker search tensorvlow`     (search docker hub for an image)
 * `docker ps`                    (see what containers are running)
 * `docker ps -q`                 (see running containers but just show their numeric IDs)
@@ -74,7 +73,7 @@ output: html_document
     - `/var/lib/docker`
     - `c:\ProgramData\docker`
 - Docker Daemon logs
-    - SO Post: https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log 
+    - SO Post: https://stackoverflow.com/questions/30969435/where-is-the-docker-daemon-log
     - Ubuntu: `sudo journalctl -fu docker.service`
     - Windows (PowerShell): `Get-EventLog -LogName Application -Source Docker -After (Get-Date).AddMinutes(-5) | Sort-Object Time`
 
@@ -97,7 +96,7 @@ output: html_document
 # Pruning and deleting things
 * `docker rm -v $(docker ps -a -q -f status=exited)`  # delete all exited containers)
 * `docker rm -f $(docker ps -qa)`                     # !!! delete all stopped and running containers !!!
-- `docker rmi $(docker images -f "dangling=true" -q)` # prune dangling images             
+- `docker rmi $(docker images -f "dangling=true" -q)` # prune dangling images
 - `docker rmi $(docker images --quiet test*)`         # prune images begin with word "test"
 
 # Terminal commands
@@ -105,7 +104,7 @@ output: html_document
 * `docker run -it f7190e39d56b bash`         # run an image, login to it and poke around
 * Get `ps -ax` in that docker : `apt-get update && apt-get install procps`
 
-# Useful 
+# Useful
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/notebooks:/notebooks tensorflow/tensorflow`
 * `docker run --name tf -p:8888:8888 -v //d/tensorflow/boltzmann-machines:/rbms tensorflow/tensorflow`
 

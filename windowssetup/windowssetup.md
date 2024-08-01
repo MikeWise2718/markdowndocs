@@ -26,12 +26,12 @@ Stuff I do every time I reinstall windows.
 - An evaluation version of Windows Enterprise restarts after 90 days
 - Puts off Windows sActivation Checks
 - Check licensing with `slmgr.vbs /dli`\
-- Detailed: `slmgr.vbs /dlv` 
+- Detailed: `slmgr.vbs /dlv`
 - You can "rearm" it up to 3 times with `slmgr -rearm` (from an admin window)
 - Expiration date `slmgr.vbs /xpr`\
 - "Windows Notification Mode" means the activation deadline has passed and certain things will be turned off (customizations, auto reboot, etc.)
 - 3 times 90 is 260 days, after expiration of the eval version it will start to autoboot after one hour of running
-- Skip autoboot after expiry: (https://medium.com/tech-learn-share/how-to-stop-expired-windows-server-auto-shutdown-every-hour-c0cd74e0974e) 
+- Skip autoboot after expiry: (https://medium.com/tech-learn-share/how-to-stop-expired-windows-server-auto-shutdown-every-hour-c0cd74e0974e)
    - Initially download PsTools
    - Create folder called — PSTOOLS on C: drive
    - Extract all the contents of the zip file in C:\ drive into the folder PSTOOLS (which we just created)
@@ -42,10 +42,25 @@ Stuff I do every time I reinstall windows.
    - Enter `sc delete WLMS`
    - `regedit` go to `HKLM\System\CurrentControlSet\Service\WLMS` key and delete it
    - Now reboot
-   - You can control uptime by looking in task manager under CPU, it should display up time 
+   - You can control uptime by looking in task manager under CPU, it should display up time
    - The simple way of doing it would be to open command prompt with administrator privileges and run the command `sc delete WLMS` and then delete the WLMS key from the registry. However, if this doesn’t work, you can try the above method which will work for sure..
 
-
+# Installing using a local account
+- Otherwise it will give your home account a screwed up name based on your email
+- (https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account)
+1. Follow the Windows 11 install process until you get to the "choose a country" screen.
+2. Now we want to issue a command from forcing you to have an internet connections
+2a. Hit Shift + F10. A command prompt appears
+3. Type OOBE\BYPASSNRO (i.e. go to the OOBE subfolder and invoke the bypassnro batch file)
+3a. Computer will reboot
+4. Hit Shift + F10 again. type "ipconfig /release" go disable Internet
+5. Continue with installation
+6. When you get to the "Let's connect you to a network" page with the big wifi symbol,
+   there will be a new option"I don't have Intenet" at the bottom next to the "Next" button,
+   choose that.
+7. This will casuse a new option to appear on that page "Continue with limited setup"
+8. A new login screen will appear with "Whos going to use this device". You can enter a username there.
+9. Enter a password, but you will have to disable the "Change password on next login" option somewhere
 
 # Things I like to install
 
@@ -57,7 +72,7 @@ Stuff I do every time I reinstall windows.
 ###	Office
    -	Outlook, Word, Ppt, Excel, Visio
    - Greenshot
-   
+
 ###	Compilers
    - VS Code
    -	Newest Visual Studio
@@ -72,12 +87,12 @@ Stuff I do every time I reinstall windows.
    -	Notepad 2
    -	Notepad++
    -	VS Code
-   -	HxD – hex editor -  https://mh-nexus.de/en/hxd/ 
+   -	HxD – hex editor -  https://mh-nexus.de/en/hxd/
 ###	Explorer
    -	Configure file extensions
-  - Preview Config at https://chocolatey.org/packages/previewconfig 
-   - See this post: https://superuser.com/questions/970951/how-can-i-get-a-file-preview-in-file-explorer-in-windows-10 
-  -	Configure previews for 
+  - Preview Config at https://chocolatey.org/packages/previewconfig
+   - See this post: https://superuser.com/questions/970951/how-can-i-get-a-file-preview-in-file-explorer-in-windows-10
+  -	Configure previews for
      - 	Text
          - 	r,cs,csv,js,json,py
      - 	Bitmaps?
@@ -164,7 +179,7 @@ CyberCPU sequence
 diskpart
 list disk
 sel disk 0 (which ever one Windows is on)
-list vol 
+list vol
 (look for FAT32 100 MB partiation)
 sel vol 1
 assign letter=v
@@ -192,3 +207,6 @@ close command prompt
 select "Close your PC"
 You will have lost recovery
 ``````
+
+# Install Office
+https://microsoft.sharepoint.com/sites/mywork/SitePages/Microsoft365Apps/Get-Microsoft-365-Apps.aspx

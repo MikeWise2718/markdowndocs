@@ -1,0 +1,26 @@
+Microsoft's mission is to "Empower every person and organization on the planet to achieve more".
+
+AI and particularly our LLM-fueled RAG-augmented CoPilots fit perfectly into that mission and have been wholeheartedly adopted by the entire company. To resounding finanical success.
+But there is a problem, our GPT LLM is not longer alone and RAG is not particularly difficult, so it is foreseeable that these products will become common, ubiquitous even, and thus decline in value.
+
+In particular the data that create LLMs is for the most part is derived from the Internet, and the only easy way to improve it is to find new data. However everyone sees this and that avenue is also being quickly exploited to exhaustion.
+
+There is a growing consensus that the only way to take AIs (and thus CoPilots) significantly beyond the capabilities that we have today is to augment them with experince and simulation, thus giving the CoPilot an ability to "try things out" and "think about it" and deliver a better answer than the one-shot replies that they mostly use today.
+
+Gaining expereince in the real world implies the need to give AIs some masure of agency and independence in the physical world - and this implies robotics. An example of where this will become increasingly useful is the use of AI in factory production scenarios. 
+
+If AI is to really understand and drive a factory optimally, it needs to have access to the physcial Robots that the factory uses (or at least the data they generate). It also needs to be able to create simulations with which it can try out different scenarios before implementing or suggesting them.
+
+So if Microsoft wants to continue to be the best at its mission, it needs to ride the next wave, which will almost surely include robotics and simulation.
+
+Concretely, the greatest cost and barrier to useage in Robotics is not the hardware but rather the programming, which is very specialized and inflexible in todays world. However AI techniques based on Reinforcement Learning, Imitation Learning, and others approaches, are starting to create motion policies are starting to change this. 
+It can be forseen that these will reduce the programming costs drastically, which will in turn lead to a drastic increase in the places where Robotics can be applied.
+
+What Microsoft could do in this space:
+- Microsoft's internal IC and Mangement culture places a low value on simulation, physics, robotics, and related fields. For a company with so much technical know-how and education, it is surprisingly rare to find someone at home with physics-based simulation. This will need to change, whereby it is admittedly difficult.
+- There are pockets of competence in Microsoft around physics and simulation, but they tend to be hidden away in XBox world and do not mix with in the Enterprise space (Havok and MSR come to mind - and there are probably others). This doesn't seem optimal.
+- Microsoft is creating many CoPilots, but not many that use simulation as a step to improve their answers - in spite of the somewhat obvious nature of that strategy. We need to start doing that.
+- Advanced Robotics companies (like those addressing humanoid robots) are an obvious place to look for advanced AI techniques applied to robotics. Understanding what they have to offer and exploting it.
+- Nvidia has a pretty amazing set of capabilities - many brand new - that are little explored so far (FoudationPose, Modulus, CuRobo and CuMotion, and others). We could do a lot with those but they take time to explore.
+- Academia as well (the Octo Generalist Roby Policy) comes to mind. 
+- We need to find a way to undertake customer projects that "fail" - in the sense that they try out an approach that turns out not to work. This is hard, but probably the best lessons would be learned this way. There is so much new technolgy around that failure is sometime inevitiable.

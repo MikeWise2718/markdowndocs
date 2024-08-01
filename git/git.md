@@ -137,8 +137,8 @@ git config   -global credential.helper 'cache   -timeout=3600'
 ## Undo commit
 - From (https://www.reddit.com/r/git/comments/ep40we/how_to_undo_a_commit_in_git/)
 - Medium article: (https://itnext.io/how-to-undo-a-commit-in-git-2c7d49deabe0)
-- Softway: `git revert HEAD` - this leaves a record
-- Hardway: `git reset HEAD~ --hard` - this leaves no record
+- Soft: `git revert "HEAD^"` - this leaves the changes (as not staged) and deletes the commit
+- Hard: `git reset HEAD~ --hard` - DESTRUCTIVE form of above, you probably do not want it
 
 
 ## Git Log
@@ -148,6 +148,7 @@ git config   -global credential.helper 'cache   -timeout=3600'
 * `git log --p Assets/_scripts/GraphAlgos.cs` * get the diff history of a file
 * The above commands should have "--" as flag switches
 * `git log --follow -p -- filename`   -follow the history of a file
+* `git log --all --decorate --oneline --graph`   - the best graph - remember it with "A Dog" = git log --all --decorate --oneline --graph
 
 ## Git Ignore
 * `  *.jpg` * No jpgs in this directory and any others

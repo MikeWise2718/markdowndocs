@@ -36,7 +36,7 @@ One you run that the environment is setup so you can run the C++ compiler:  cl.e
 And so on...
 ```
 
-# Downgrading on Ubuntu
+# Downgrading on Ubuntu 18
 Got it from here: (https://dmitry.ai/t/topic/33)
 
 ```
@@ -49,7 +49,7 @@ apt install cuda-10-0
 reboot
 ```
 
-# CUDA on Ubuntu
+# CUDA 8 on Ubuntu 18
 - Only got cuda to work after installing the drivers in the GUI, and then reinstalling them with the Nvidia run file
 - There is a script to copy the samples to your local directory in `/usr/local/cuda-8-0/bin`
   - Example usage: `mike@Abra:/usr/local/cuda-8.0/bin$ ./cuda-install-samples-8.0.sh /home/mike`
@@ -92,6 +92,21 @@ mike@Abra:~/NVIDIA_CUDA-8.0_Samples$ find . -path '*.mk' -type f -exec grep -i '
 ./5_Simulations/particles/findgllib.mk:    UBUNTU_PKG_NAME = "nvidia-384"
 
 ```
+
+
+# Linux 22.04
+- Installing CUDA 11.8
+- No longer has integrated samples had to get from seperate repo
+  - installed into a local dir `~/ov/cuda-samples`
+  - `git clone https://github.com/NVIDIA/cuda-samples.git`
+  - `make`
+  - Compiled seeminly okay - binary in `/ov/cuda-samples/bin/x86_64/linux/release`
+- However there were no visuals (was looking for oceanFFT) - turnes out meas was not installed
+  -`install libglu1-mesa libxi-dev libxmu-dev libglu1-mesa-dev`
+- ALso had to install glut
+  - `sudo apt-get install freeglut3 freeglut3-dev`
+- Redid `make` and everything was there
+- Still had some errors
 
 ```
 

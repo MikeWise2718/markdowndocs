@@ -24,8 +24,12 @@ It has some issues as there are several versions with different execution models
 # Using gnu grep with windows and colosr
 - If you have git installed and in your path, you can use grep in windows
 - It colorizes better than findstr which will not highlight a matched string
-- This worked for me `grep -r world . --include=*.py --color=always`
+- This worked for me `grep -i -r world . --include=*.py --color=always`
 - Got this from SuperUser (https://superuser.com/questions/666577/grep-does-not-recurse-for-files-with-a-specific-extension)
+
+# grep multiple words
+- This worked for me under windows 11 with git grep `grep -r  --include=*.py --color=always -E "def|world" .`
+
 
 # Linux
 The whole `{} \;` thing is a bit mystifying, sometimes it works without it, sometimes it doesn't work no matter what you do. Googling didn't help. Probably should just use the grep recursive flag, but that has issues too.

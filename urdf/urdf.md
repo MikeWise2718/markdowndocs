@@ -14,6 +14,15 @@ output: html_document
   - (https://medium.com/@jmake/a-practical-approach-to-the-nvidia-omniverse-robotics-simulation-toolkit-part-1-c7f068791954)
   - The repo:
 
+
+# yourdfpy
+- A urdf viewer (https://yourdfpy.readthedocs.io/en/latest/)mki
+- unfortunately it requires pyglet<2
+  - `pip install "pyglet<2"`
+- Development guide: (https://urdfpy.readthedocs.io/en/latest/development/index.html#development)
+
+
+
 # Coordinate System
 - This document (about SDF) goes into how URDF defines them (http://sdformat.org/tutorials?tut=pose_frame_semantics&ver=1.5)
 From the MatLab article:

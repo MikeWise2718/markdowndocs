@@ -36,7 +36,7 @@ output: html_document
    - Install Visual C++ Redistributables: (`choco install -y vcredist2013 vcredist140`)
    - Install OpenSSL from (https://slproweb.com/products/Win32OpenSSL.html) - dubious location
      - `Win64 OpenSSL v1.1.1n OpenSSL` installer (I used the msi and version is q now)
-     - Creates directory in `C:\Program Files\OpenSSL-Win64` with stuff in it    
+     - Creates directory in `C:\Program Files\OpenSSL-Win64` with stuff in it
      - might need to do this if installer doesn't set it:
         - `setx /m OPENSSL_CONF "C:\Program Files\OpenSSL-Win64\bin\openssl.cfg"`
      - Append `C:\Program Files\OpenSSL-Win64\bin\` to path
@@ -44,7 +44,7 @@ output: html_document
      - Test: `openssl` should open an OpenSSL prompt that you can exit
     - Install Visual Studio 2019 (Community?)
        - Make sure `Desktop Development with C++` was selected.
-       - Make sure that no C++ CMake tools are installed by unselecting them in the list of components to be installed. 
+       - Make sure that no C++ CMake tools are installed by unselecting them in the list of components to be installed.
           - not sure how to check this
     - Install OpenCV
        - Precompiled from: (https://github.com/ros2/ros2/releases/download/opencv-archives/opencv-3.4.6-vc16.VS2019.zip )
@@ -122,3 +122,10 @@ output: html_document
 - Didn't try Rviz, but it could work
 - Tried to compile moveit but failed to find many components like `angles`, `geometric_shapes`, etc.
 - Boost?
+
+
+## Ros2 on WSL
+- Seems I have humble hawkbill installed already
+- can see what I have done before with `history`
+- `source /opt/ros/humble/setup.bash`
+- `ros2 run rviz2 rviz2`

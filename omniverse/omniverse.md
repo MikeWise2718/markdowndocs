@@ -481,3 +481,10 @@ D:\nv\ov\pkg\isaac_sim-2022.2.0\exts\omni.isaac.examples\omni\isaac\examples\use
 
 ## Installation Notes
 - Hmm...  what was I thinking?
+
+
+## Operations Order
+- The order of operation for a prim with an XForm can be inspected by clicking on a primitive, going to properties and then scrolling to the `Raw USD Properties` blade/dialog at the very bottom
+- There is a list of raw properties and there is a record `xformOpOrder` - usually at the very end of the list
+- You can read the order of the operations from left to right
+- So like `[xformOp:scale, xformOp:translate, xformOp:rotateY]` is a "Scaling, followed by a Translate, then followed by a rotation around the Y axis"

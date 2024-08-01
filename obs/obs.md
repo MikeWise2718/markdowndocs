@@ -10,7 +10,7 @@ output: html_document
 - Apparently you should start it in Administrator mode
 
 # Concepts
-- Scene Collections (a collection of scenes)
+- Scene Collections (a collection of screens or tescenes)
 - Source (a video, audio source, image, etc)
 - Scene (a collection of sources (kind of as layers))
 - Settings (a hellishly large collection of settings) (lower right panel Control/Settings)
@@ -55,3 +55,12 @@ output: html_document
 
 # Scenes and sources
 - A scene is a group of sources
+
+
+# Something about powerpoint but I forgot...
+
+
+
+# DaVinci Resolve
+- you can't edit in OBS
+- So use DaVinici Resolve

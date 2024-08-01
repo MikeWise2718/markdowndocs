@@ -9,10 +9,16 @@ A helpful question on using a local markdown.css: [local markdown.css](http://st
 
 
 # VS Code
-VS Code is a general editor, made for working with lots of different kinds of projects - but kept lightweight. Portability to platforms like MacOS and Linux are also high priorities. 
+VS Code is a general editor, made for working with lots of different kinds of projects - but kept lightweight. Portability to platforms like MacOS and Linux are also high priorities.
 
 Note that to get a preview of this document in VS Code use Ctrl-Shift-V
 A good place to start is the Help/Welcome command
+
+# Syncing setup
+- First you need to be signed in to the correct place where you are syncing too. I am using my Microsoft github account.
+   -This is done at the botton of the vertical bar on the left clicking on the profile icon. Password and Authenticaor are required
+- Then you need to make sure that the the sync setting option is checked in the setting icon there
+- You can check the syncing to see if the installed extensions are the same on both installations.
 
 
 ## Command Palette
@@ -55,7 +61,7 @@ Example:
             "program":"${workspaceFolder}/ml-agents/mlagents/trainers/learn.py",
             "args": ["config/trainer_config.yaml","--train", "--run-id=codetest01"],
             "console":"integratedTerminal",
-            "pythonPath": "${config:python.pythonPath}" 
+            "pythonPath": "${config:python.pythonPath}"
         },
     ]
 }
@@ -90,13 +96,13 @@ VS Code manages its settings on a folder basis, so you should have a folder for 
 Settings are explained here: [settings](https://code.visualstudio.com/docs/getstarted/settings)
 
 Go to Command Palette and type in Settings and then choose the one you want - two of the most ineresting are the User settings and the Workspace settings:<br>
- ![Command Palette](CommandPaletteSettings.png "Command Palette")   
+ ![Command Palette](CommandPaletteSettings.png "Command Palette")
 
  You get a list of the settings you can change to the left of the settings you are editing. You can have VScode copy them over by clicking on the pencil icon (which is not that obvious).<br>
 
 ![Editing User Settings](EditingUserSettings.png "Editing User Settings")
 
-# Storing stuff 
+# Storing stuff
  - The user settings are stored in `C:/Users/mike/AppData/Roaming/Code/User/settings.json`
  - The Extensions are stored in `C:/Users/mike/.vscode/extensions`
  - The folder specific settings are stored in `..\folder/.vscode/settings.json`
@@ -104,7 +110,7 @@ Go to Command Palette and type in Settings and then choose the one you want - tw
 
 ## Key bindings
 - `File > Preferences > Keyboard Shortcuts`<br>
-![alt text](KeyboardShortcutSearch.png "Keyboard Shortcut Search")  
+![alt text](KeyboardShortcutSearch.png "Keyboard Shortcut Search")
 
 ## VS Code and Markdown
  - This might become a big topic, but for now we will lump it in here.
@@ -135,6 +141,6 @@ Go to Command Palette and type in Settings and then choose the one you want - tw
 ```
 
 
- ## Python Project 
+ ## Python Project
  To figure out what is being set look in the `launch.json` fie in `.vscode` sub-directory of the folder you opened as vscode:<br>
    ![alt text](PythonProject.png "Python Project")
