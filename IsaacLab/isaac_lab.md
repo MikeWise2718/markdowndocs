@@ -72,7 +72,7 @@ pip install -e . --no-build-isolation
 pip install pytest
 python3 -m pytest .
 
-"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+`"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64`
 set SETUPTOOLS_ENABLE_FEATURES="legacy-editable"
 set DISTUTILS_USE_SDK=1
 
@@ -388,3 +388,79 @@ Windows test
 `d:`
 `cd \ov\curobo2310\examples\issac-sim`
 `c:python motion_gen_reacher.py --robot franka.yml`
+
+
+# curobolib
+- Uses pytorch and cuda
+-
+
+
+- https://stackoverflow.com/questions/48000761/list-submodules-of-a-python-module
+```
+c:python
+Python 3.10.14 (main, Apr 12 2024, 14:18:47) [MSC v.1912 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from omni.isaac.kit import SimulationApp
+(lots of deprecitaion stuff)
+>>> sa = SimulationApp()
+(lots of module loading stuff)
+>>> from pkgutil import iter_modules
+>>> def list_submodules(module):
+...     for submodule in iter_modules(module.__path__):
+...         print(submodule.name)
+...
+>>> list_submodules(curobolib)
+geom
+geom_cu
+kinematics
+kinematics_fused_cu
+lbfgs_step_cu
+line_search_cu
+ls
+opt
+tensor_step
+tensor_step_cu
+util_file
+
+
+>>> dir(curobolib.geom)
+['PoseError', 'PoseErrorDistance', 'SdfSphereOBB', 'SdfSphereVoxel', 'SdfSweptSphereOBB', 'SdfSweptSphereVoxel', 'SelfCollisionDistance', 'SelfCollisionDistanceLoss', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'backward_PoseError_jit', 'backward_full_PoseError_jit', 'geom_cu', 'get_pose_distance', 'get_pose_distance_backward', 'get_self_collision_distance', 'get_torch_jit_decorator', 'log_warn', 'torch']
+
+>>> dir(curobolib.geom_cu)
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'closest_point', 'closest_point_voxel', 'pose_distance', 'pose_distance_backward', 'self_collision_distance', 'swept_closest_point', 'swept_closest_point_voxel']
+
+>>> from curobo.curobolib import kinematics
+>>> dir(kinematics)
+['Function', 'KinematicsFusedFunction', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'get_cuda_kinematics', 'kinematics_fused_cu', 'log_warn', 'rotation_matrix_to_quaternion', 'torch']
+
+>>> from curobo.curobolib import kinematics_fused_cu
+>>> dir(kinematics_fused_cu)
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'backward', 'forward', 'matrix_to_quaternion']
+
+>>> from curobo.curobolib import lbfgs_step_cu
+>>> dir(lbfgs_step_cu)
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'forward']
+
+>>> from curobo.curobolib import line_search_cu
+>>> dir(line_search_cu)
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'line_search', 'update_best']
+
+>>> dir(curobo.curobolib.ls)
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'line_search_cu', 'log_warn', 'torch', 'update_best', 'wolfe_line_search']
+
+>>> from curobo.curobolib import opt
+>>> dir(opt)
+['Function', 'LBFGScu', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'lbfgs_step_cu', 'log_warn', 'torch']
+
+>>> from curobo.curobolib import tensor_step
+>>> dir(tensor_step)
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'log_warn', 'tensor_step_acc_fwd', 'tensor_step_acc_idx_fwd', 'tensor_step_cu', 'tensor_step_pos_clique_bwd', 'tensor_step_pos_clique_fwd', 'tensor_step_pos_clique_idx_fwd', 'torch']
+
+>>> from curobo.curobolib import tensor_step_cu
+>>> dir(tensor_step_cu)
+['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'step_acceleration', 'step_acceleration_idx', 'step_idx_position2', 'step_position', 'step_position2', 'step_position_backward', 'step_position_backward2']
+
+>>> from curobo.curobolib import util_file
+>>> dir(util_file)
+['__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'add_cpp_path', 'get_cpp_path', 'join_path', 'os']
+```
