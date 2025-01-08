@@ -19,7 +19,55 @@ Config page: <https://www.ssh.com/ssh/config/>
 - `ssh mike@192.168.25.12` for example, note that user is specified in host address
 
 
+## Azure facts
+- Azure configures an "azureuser" by default, but you can specify your own name
+- It wants you to use ssh certificates, but they don't work with XRDP so.... not super useful for OV
+- If you want to have a user use XRDP you will have to set a password
+   - (https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli)
+   - `sudo passwd azureuser` is the command that does this
+- If you lose a certificate, you can get the system to generate a new one on the portal
+   - `Connect`
+   - Other ways to Connect
+   - Troubleshooting - I lost my certificate
 
+- You can add a new user with cloud-init and `az cli`
+  - (https://learn.microsoft.com/en-us/azure/virtual-machines/linux/cloudinit-add-user)
+  - there is some wierdness here
+  - Why a new resource group?
+  - What is imageCIURN?
+
+```
+#cloud-config - file cloud_init_add_user.txt
+users:
+  - default
+  - name: myadminuser
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3<snip>
+```
+```
+az group create --name myResourceGroup --location eastus
+az vm create \
+  --resource-group myResourceGroup \
+  --name vmName \
+  --image imageCIURN \
+  --custom-data cloud_init_add_user.txt \
+  --generate-ssh-keys```
+```
+- `ssh <user>@<publicIpAddress>`
+- `sudo cat /etc/group`
+
+## WSL ssh
+- download private key (`pikachu_key.pem` file)
+- put `pikachu_key.pem` in ~/.ssh
+- start vpn
+-  `ssh -i ~/.ssh/pikachu_key.pem azureuser@10.0.0.6`
+
+
+## WSL scp
+- `ssh -i ~/.ssh/pikachu_key.pem azureuser@10.0.0.6`
 
 ## sshd
 - The server deamon is configured with `/etc/ssh/sshd_config`

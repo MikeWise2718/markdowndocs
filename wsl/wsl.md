@@ -7,6 +7,7 @@ output: html_document
 # Intro
 Windows Subsystem for Linux
 Note that to get a preview of this document in VS Code use Ctrl-Shift-V
+- A useful guide - (https://www.sitepoint.com/wsl2/)
 
 - DON'T INSTALL CUDA on WSL - see this for how to do it right:
    - `https://docs.nvidia.com/cuda/wsl-user-guide/index.html`
@@ -86,7 +87,46 @@ total 24
 29545 -rw-r--r-- 1 mike mike  807 Jun 17 13:35 .profile
 mike@Fearow:~$
 ```
+- On 5 Nov 2024 - `wsl --version`
+- Had just updated from 2.2.something with `wsl --update`
+```
+C:\Windows\System32\lxss\tools>wsl --version
+WSL version: 2.3.24.0
+Kernel version: 5.15.153.1-2
+WSLg version: 1.0.65
+MSRDC version: 1.2.5620
+Direct3D version: 1.611.1-81528511
+DXCore version: 10.0.26100.1-240331-1435.ge-release
+Windows version: 10.0.26120.751
+```
+
+## Inspecting the kernel
+- Open File Explorer and enter `\\wsl$\`
+- It is not in `C:\Windows\System32\lxss\tools` though googling might get that
+- Apparently it is actually in your app director though
+
+## .wslconfig and wsl.conf
+- `.wslconfig` is in `c:\user\<username>` - default is no file
+- Offical docs: (https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+
+
+## Adding Joystick
+- Need to add a windows tool to map USB and then rebuild the kernel to load the right modules
+- Instructions can be found here: (https://github.com/microsoft/WSL/issues/7747)
+- Turns out you can't swap the kernel under MSIT corp Intune policy
+```
+C:\Users\mwise>wsl
+wsl: The .wslconfig setting 'wsl2.kernel' is disabled by the computer policy.
+ROS 2 Distro Humble Hawksbill activated on Ubu 22.04
+mike@Fearow:~$
+```
+
+## Building the kernel
+- Simple clone the repo, install the tool chain, configure the kernel, and build it
+- WSL2 Repo Site:(https://github.com/microsoft/WSL2-Linux-Kernel)
+- Helpful Site:(https://microhobby.com.br/blog/2019/09/21/compiling-your-own-linux-kernel-for-windows-wsl2/)
+- Took close to an hour to build on WSL2 (Fearow)
+
 
 - DON'T INSTALL CUDA on WSL - see this for how to do it right:
     `https://docs.nvidia.com/cuda/wsl-user-guide/index.html`
-

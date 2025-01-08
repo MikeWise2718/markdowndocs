@@ -10,6 +10,9 @@ output: html_document
 # Issac Sim Tutorials
 - https://docs.omniverse.nvidia.com/isaacsim/latest/introductory_tutorials/index.html
 
+# Ubuntu
+https://docs.omniverse.nvidia.com/launcher/latest/it-managed-launcher/install_guide_linux.html
+
 # Code locations
 - Isaac Sim Extensions (all of them): `C:\Users\mike\AppData\Local\ov\pkg\isaac_sim-2023.1.1\exts>`
 - Isaac Sim Core: `cd \Users\mike\AppData\Local\ov\pkg\isaac_sim-2023.1.1\exts\omni.isaac.core\omni\isaac\core\`

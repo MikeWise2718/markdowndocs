@@ -22,8 +22,8 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
  - capacity problems abound...
 
 # Azure App Service for Linux
-- Docs here: https://politics.stackexchange.com/questions/39688/why-did-the-eu-agree-to-delay-the-brexit-deadline 
-- Had to install App Service Extension 0.13.0: 
+- Docs here: https://politics.stackexchange.com/questions/39688/why-did-the-eu-agree-to-delay-the-brexit-deadline
+- Had to install App Service Extension 0.13.0:
 
 
 # Billing
@@ -32,8 +32,8 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
 - Select a sub and you can download to a csv
 - Understand your bill here: <https://docs.microsoft.com/en-us/azure/billing/billing-understand-your-bill>
 - But because the rates are blank for internal subs, you can't really see what things cost
-- There is a possiblity to estimate costs ahead of time: <https://docs.microsoft.com/en-us/azure/billing/billing-getting-started> 
-- The cube can be accessed over: <https://azuremsregistration.cloudapp.net> 
+- There is a possiblity to estimate costs ahead of time: <https://docs.microsoft.com/en-us/azure/billing/billing-getting-started>
+- The cube can be accessed over: <https://azuremsregistration.cloudapp.net>
   - If you get an error it probably has the wrong user, try in another browser or incognito
 - 2019-03-24 - Clicking on the Azure subscriptions (the key icon) and then a subscription now brings up the current and projected costs:<br>
 ![Azure Subscription costs](subcosts.png)
@@ -67,6 +67,18 @@ Options available
 - AD Join /AAD Join/Add Work Account - <https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/>
 - How domain join is different now - <https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/>
 - AD and MPW in WIndows 10 - <https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/>
+
+
+# MFA
+This is mostly about the Microsoft Mobile Authenticator but not only.
+- Setting that up: (https://support.microsoft.com/en-us/account-billing/work-or-school-account-help-718b3d92-a8a7-4656-8a05-c0228d346b7d)
+- Particularly this - which is not what I see: (https://support.microsoft.com/en-us/account-billing/set-up-an-authenticator-app-as-a-two-step-verification-method-2db39828-15e1-4614-b825-6e2b524e7c95)
+- You can change this though: (see MfaLoginOptions.png)
+- Slightly helpful deepdive: (https://aadinternals.com/post/mfa/)
+- You can view your sign-ins here and you should occasionally: (https://mysignins.microsoft.com/)
+  - Note the other entries on the left: (Overview, Security info, Devices, Password, Organizations, Settings&Privacy, Recent Activity)
+- Another way to get to that sign-in page: (https://aka.ms/mfasetup)
+- Another way to get to devices (https://aka.ms/mydevice)
 
 
 # Acronyms
@@ -156,4 +168,3 @@ C:\WINDOWS\system32>dsregcmd /status
 
 C:\WINDOWS\system32>
 ```
-

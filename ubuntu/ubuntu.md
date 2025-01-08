@@ -41,7 +41,7 @@ Ubuntu seems to be the data science standard now.
 # Scripts
  - write scripts and dump then in your `~/bin` directory to save typing
  - begin then with `#!/bin/bash` remember "shebang bin bash"
- - you can't used them to change directory unless you run them in your shell with a dot command like `. cdobjdet` 
+ - you can't used them to change directory unless you run them in your shell with a dot command like `. cdobjdet`
 
 # VNC
 - Finally got something working, but it is not great.
@@ -65,6 +65,29 @@ Ubuntu seems to be the data science standard now.
 - It has a client, start in Windows with Windows Key and then type "NoMachine"
 - It is commercial, but free for home use
 
+# NoMachine Screen Modes (in order)
+ - Viewport model
+    - The remote pixels are displayed 1-1 in your NM window.
+    - Pros:
+       - No distortion, no blurring
+    - Cons:
+       - can't full size like you can with RDP terminal
+   - Scale to Window
+   - Resize remote display
+   - Fullscreen
+   - Fullscreen on all monitors
+   - iconize
+   - Change settings
+      - Quality/speed tradeof
+      - Resolutions (can go from 640x480 to 1920x1080)
+      - Options
+        - disable networ-adaptive display quality
+        etc.
+        Request a frame rate
+
+
+
+
 # Misc Unix commands
 - find a library file - `find / -name lib*`
 - find a library file locally - `find . -name lib*`
@@ -73,7 +96,7 @@ Ubuntu seems to be the data science standard now.
 - find files with masks - `find . -path '*/src/*.h' -o -path '*/src/*.cpp'`
 - find files and pipe to grep - `find . -path '*/src/*.h' -exec grep PATTERN {} \;`
 - same with filename and line - `find . -path '*/src/*.h' -exec grep -Hn PATTERN {} \;`
-   - see this https://unix.stackexchange.com/questions/131535/recursive-grep-vs-find-type-f-exec-grep-which-is-more-efficient-faster 
+   - see this https://unix.stackexchange.com/questions/131535/recursive-grep-vs-find-type-f-exec-grep-which-is-more-efficient-faster
 - Another example of finding with grep:   `find . -path '*.mk' -type f -exec grep -i 'UBUNTU_PKG_NAME =' {} +`
 - After finding things we need to change: `find . -path '*.mk' -type f -exec sed -i 's/nvidia-367/nvidia-384/g' {} \;`
 - change field 3 to AD - `awk '{$3 = "AD"; print}' infile > outfile`
@@ -89,7 +112,7 @@ Ubuntu seems to be the data science standard now.
    - `for f in *.pdf; do chmod 664 "$f"; done`
 
 # Terminal Window
-- Note that the "super" key is the "windows" key in the docs. 
+- Note that the "super" key is the "windows" key in the docs.
 - Open Terminal Window - Ctrl-Alt-T
 - Paste into Terminal Window - Ctrl-Shift-V
 - Other shortcuts can be found [here](https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
@@ -118,5 +141,45 @@ Ubuntu seems to be the data science standard now.
 - Installed Chrome next (via Firefox)
 
 # Grub
-- config in /etc/local/grub
+- config in `/etc/local/grub`
+`
+# Azure
+- Create a new VM (Virtual Machines->Create)
+   a.	Setup Subscription, Resource Group and VM name as appropriate
+   b.	Security Type: Trusted Launch Virtual Machines
+      i.	Disable Secure Boot under “configured Security Features”
+      ii. You can tell with the command "bootctl"
+   c.	Image: Ubuntu 22.04 LTS – x64 Gen 2
+   d.	VM architecture: x64
+   e.	Size: Standard_B2ms
+   f.	Use name and password authentication
+   g.	Allow inbound ports
+      i.	SSH (22)
+      ii.	RDP (3389) (set through networking settings)
+   h.	Set public IP address (in networking settings)
+   i.	Disk size: 64GB+
+   j.	OS Disk Type: Standard SSD
 
+- Setup RDP following these instructions (use public IP)
+   a.	([Use xrdp with Linux - Azure Virtual Machines | Microsoft Learn](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli))
+  5.	Connect via RDP
+  6.	Optimize RDP using these instructions
+      a.	Optimizing RDP Performance (xrdp): (https://beye.blog/optimizing-rdp-performance-xrdp-lessons-learned-with-ubuntu-22-04/)
+
+- Installing Xrdp: (https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli)
+```
+# Install XFCE using apt
+sudo apt-get update
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install xfce4
+sudo apt install xfce4-session
+
+# Install and configure a remote desktop server
+sudo apt-get -y install xrdp
+sudo systemctl enable xrdp
+sudo adduser xrdp ssl-cert # Ubu 20 only
+echo xfce4-session >~/.xsession
+sudo systemctl restart xrdp
+
+# Open TCP 3389
+# Open RDP on Windows and connect to the IP address of the Xrdp server
+```

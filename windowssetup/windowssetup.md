@@ -18,6 +18,10 @@ Stuff I do every time I reinstall windows.
 # Windows Update Tips
  - https://serverfault.com/questions/625332/windows-update-not-working-on-windows-2012-r2-standard
 
+# Windows sleep troubleshooting
+- Found this here: (https://www.faqforge.com/windows/how-to-see-which-application-prevents-your-pc-in-windows-10-from-entering-sleep-mode/)
+- Sleep debugging: From an admin command prompt: `powercfg /requests`
+
 
 # Windows keys
 - `aka.ms\mykeys`

@@ -30,6 +30,18 @@ Have to do it in WSL
 sudo tar -xvzf /mnt/c/Users/mike/Downloads/island-usd-v2.1.tgz -C /mnt/c/Users/mike/Downloads/island
 ```
 
+# Nvidia binary USDTools
+- The original USD tools like `usdcat`, `usdview`, etc.
+- Nvidia provides these as binaries for Linux and Windows since they are hard to compile
+- Current version is 24.08 using Python 3.10 on 2 Nov 2024
+- link: (https://developer.nvidia.com/usd#bin)
+- Over 40k files and 1GB - took 15+ minutes to extract
+- Afterwards you have to add the following directories to the path (assuming `d:\usd` as the extract root)
+  - `d:\usd\tools`
+  - `d:\usd\lib`
+
+
+
 # USDTools
 - you need these
 - Hard to compile
@@ -39,13 +51,13 @@ sudo tar -xvzf /mnt/c/Users/mike/Downloads/island-usd-v2.1.tgz -C /mnt/c/Users/m
   - wouldn't work with newer versions of python
      -  `AttributeError: module 'subprocess' has no attribute 'mswindows'. Did you mean: '_mswindows'?`
   - Had to use conda because I needed a different version of python
-    - 
+    -
   - had to use python 2.7 in the end because conda has forgotten about python 3.4 and below
     - `conda create --name USDtools python=2.7`
   - Had to get the x86 to use the conda environment
      - `C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools`
   - Couldn't have a space in the installation directory (like they suggested)
-     - `python build_scripts\build_usd.py "C:\Program Files\USD" does not work`, fails building TBB or 
+     - `python build_scripts\build_usd.py "C:\Program Files\USD" does not work`, fails building TBB or
 ```
 STATUS: Installing zlib...
 STATUS: Installing boost...
@@ -122,7 +134,7 @@ C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools
    - `usdview top.geom.usd`
 
 # Install into a VM
-- Fresh USD install 9 Nov 2023 into a VM on Hyper-V 
+- Fresh USD install 9 Nov 2023 into a VM on Hyper-V
 - Setup up Windows 11 Developer VM (rearmed because license expired)
 - Had VS Studio 2022 Community installed
 - Uses Windows 11 Enterprise Edition, Evaluation
@@ -136,7 +148,7 @@ C:\Users\mike\anaconda3\condabin\conda.bat activate USDtools
 - pip install pyside2
 - pip install pyopengl
 - it started to do it around 12:00
-- failed 
+- failed
 - pip install ninga2
 - failed again with opensubdiv
 - pokked around
