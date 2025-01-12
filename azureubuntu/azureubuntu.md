@@ -71,7 +71,8 @@ sudo apt install firefox
 
 # Install Edge (needed for Intune)
 - download deb file from: https://www.microsoft.com/en-us/edge/?cs=3457492030&form=MA13FJ
-- cd ~/Downloads
+- `cd ~/Downloads`
+- `sudo dpkg -i microsoft-edge*`
 - to start: `/opt/microsoft/msedge/msedge https://google.com`
 - or right click and look under "Applications" and then "Internet"
 - Clean it up by turning off the feed and quick links
