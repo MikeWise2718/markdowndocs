@@ -40,6 +40,8 @@ output: html_document
 
 # Install XRDP
 - To get RDP working: (https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli)
+- The Nvidia driver install script below must be run after XRDP
+- If XRDP gets upgraded, you might need to reinstall the nvidia drivers
 ```
 # Install xfce using apt (takes awhile - maybe 5-10 minutes)
 sudo apt-get update
@@ -71,17 +73,19 @@ sudo apt install firefox
 - download deb file from: https://www.microsoft.com/en-us/edge/?cs=3457492030&form=MA13FJ
 - cd ~/Downloads
 - to start: `/opt/microsoft/msedge/msedge https://google.com`
+- or right click and look under "Applications" and then "Internet"
 - Clean it up by turning off the feed and quick links
    -  Look for the gear icon (page settin) it is on the actual web page in the upper right
    -  Click on it
    -  Change the region to English United States
    -  Change the content feed to "None"
    -  Change the "Quick Links" to "None"
-
+- You can find it in the m
 
 # Install Nvidia device drivers
 - Can look for Nvidia Extension (see screenshot)
 - Script that we got from Yuval Mazor that works:
+- Should be installed after XRDP (and after XRDP gets upgraded)
 ```
 #!/bin/bash
 sudo apt update
@@ -112,6 +116,7 @@ sudo reboot
 ```
 
 
+# the following didn't work
 - https://learn.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
 - `sudo apt update`
 - `sudo apt upgrade`
@@ -122,9 +127,26 @@ sudo reboot
 
 
 
-# Install XRDP
--
-- Login
+# Install intune-portal
+- You will need this if you need to grab a Microsoft 2FA auth repo
+- https://learn.microsoft.com/en-us/mem/intune/user-help/microsoft-intune-app-linux
+
+````
+sudo apt install curl gpg
+
+# Ubuntu 22.04 only
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/22.04/prod jammy main" > /etc/apt/sources.list.d/microsoft-ubuntu-jammy-prod.list'
+
+sudo apt update
+sudo apt install intune-portal
+intune-portal
+```
+- if it gets confused try rebooting (`sudo reboot`)
+- do not `sudo apt upgrade` after adding the gpg signature - this might break things
+- if it works you will see the device under `https://myaccount.microsoft.com/device-list`
+
 
 # Install Edge
 
