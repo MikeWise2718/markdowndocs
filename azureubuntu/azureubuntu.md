@@ -69,7 +69,8 @@ sudo apt install firefox
 
 # Install Edge (needed for Intune)
 - download deb file from: https://www.microsoft.com/en-us/edge/?cs=3457492030&form=MA13FJ
-- cd ~/Downloads
+- `cd ~/Downloads`
+- `sudo dpkg -i microsoft-edge*`
 - to start: `/opt/microsoft/msedge/msedge https://google.com`
 - Clean it up by turning off the feed and quick links
    -  Look for the gear icon (page settin) it is on the actual web page in the upper right
@@ -111,7 +112,7 @@ echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64' >> ~/.bashrc
 sudo reboot
 ```
 
-
+# This didn' work....
 - https://learn.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
 - `sudo apt update`
 - `sudo apt upgrade`
