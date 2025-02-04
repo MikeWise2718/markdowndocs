@@ -144,6 +144,7 @@ Much of the app is built around a Teams plug_in. These are normally built using 
 ## Testing with actual video
     - From (https://superuser.com/a/1331422/524399)
     - Play video: `ffmpeg -re -stream_loop -1 -i input.mp4 -f v4l2 /dev/video0`
+    - Play video: `ffmpeg -re -stream_loop -1 -i ~/Videos/murmur1.mp4 -f v4l2 /dev/video2`
     - Play image: `ffmpeg -loop 1 -i lena512.jpg -f v4l2 /dev/video0`
     - Play desktop: `ffmpeg -f x11grab -framerate 25 -video_size 1280x720 -i :1 -f v4l2 /dev/video0`
         - note the value of the -i parameter `:1` is the value that `echo $DISPLAY` outputs

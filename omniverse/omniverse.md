@@ -234,18 +234,79 @@ PS C:\Users\mwise>
        + Launched in developer mode
        + Enabled extension `omni.kit.collaboration.channel_manager`
        + Exited app
-   - Added `sphereflake22` to the newly created `release/exts`folder
+   - Added `sphereflake22` to the newly created `_build/linux_x.../release/exts`folder
        + `cd release/exts`
        - `git clone https://github.com/mikewise2718/sphereflake22`
+   - kit files are in ./source/apps
    - Modified the `[dependencies]` in the kit streaming app (actually did it to both kit apps)
        +   `"sphereflake22" = {}`
        +   `"omni.kit.collaboration.channel_manager" = {}`
    - Tested
-       + `./repo.sh launch` 
-       + 
+       + `./repo.sh launch`
+       +
  ## Packaging the Kit App
-   - 
+-`./repo.sh package --container --name sf4ovc-106-3:0.1`
+- `./repo.sh launch --container --name sf4ovc-106-3:0.1`
+- if the repo package tpp; is still broken
+   - copy over repo_tools.toml from a working version
+   - replace the repoman subdir where all the tools are
+   - note that package changed (a new file had been added) so I had to copy the package.py over localpack.py
+- then use localpack
+- select the kit option that has the streaming enabled !! Important
+- start it and test
+   -
+- to test need to use the webviewer
+   - github repo at `https://github.com/NVIDIA-Omniverse/web-viewer-sample`
+   - `cd apps/web_viewer_sample`
+   - `npm run dev`
 
+- Then run it
+   - `./repo.sh launch --container`
+   - it will ask you which container to run, make sure it is the one built with the streaming option
+
+# Uploading the container to OVC
+   - Login to the IAI Dev sub and start vm_nucleus
+   - connect the to the `vnet-ovc` VPN with the Azure VPN Client
+   - should get a list of uploaded containers you can start
+   - now go to the box you built it on
+   - `docker login nvcr.io`
+   - "Username: $oauthtoken"
+   - "Password: < Insert private key here >"
+   - Identity Private key comes from somewhere in the NGC site
+   - in the following 05...72 is my org id,retrieved from my NGC profile
+   - `docker tag sf4ovc-106-3r:latest nvcr.io/0509407381744272/sf4ovc-106-3r:1.0`
+   - `docker push nvcr.io/0509407381744272/sf4ovc-106-3r:1.0`
+
+
+# NGC Login
+- Link: (https://org.ngc.nvidia.com/)
+- Service is confusing opening screen is "getting started stuff"
+- To get to dashboard
+   - Scroll down and find "CLI" tile
+   - CLick on "Download" link in that tile
+- Service keys can be found from dashboard - but they are not identity keys
+- To generate a personal identity key
+   - Click on user name in the upper right
+   - In the dropdown click "Setup"
+   - Click on "Generate Personal Key"
+- To see all personal identity keys
+   - Click on Users
+   - Click on your name
+   - Click on "Personal Keys" tab
+
+# Nvidia Enterprise Support Portal
+   - Link: https://enterprise-support.nvidia.com/s/
+- Go to cases
+- Click on filter
+   - On left activate Filter
+   - Filter on "Case Owner"
+   - Select radio button "My Cases"
+   - Currently have 7 of them
+
+![Red Fish](images/Cases.png)
+
+    - Submit case:
+![Blue Fish](images/PortalSubmitCase.png)
 
 
 #  OVC docs

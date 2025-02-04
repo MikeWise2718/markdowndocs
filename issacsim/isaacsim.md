@@ -61,3 +61,37 @@ https://docs.omniverse.nvidia.com/launcher/latest/it-managed-launcher/install_gu
 - How to group objects? (Create an XForm and create them under it)
 - How to make a group of objects selectable as one object? (chnge kind to "Component" or anything else)
 - How to toggle that selection mode (use the All Model Kinds icon (top left ))
+
+
+# Isaac Lab 2.0
+- Needs Isaac Sim 4.5
+- Link to installation docs: (https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/pip_installation.html)
+- Creation of virtual env is wrong instead of:
+   - You need this beforehand: `sudo apt install python3.10-venv`
+   - `python3.10 -m venv env_isaaclab`
+   - `source env_isaaclab/bin/activate`
+   - Check CUDA version: `nvcc --version` - I had version 11.5
+```
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Thu_Nov_18_09:45:30_PST_2021
+Cuda compilation tools, release 11.5, V11.5.119
+Build cuda_11.5.r11.5/compiler.30672275_0
+```
+   - Install Cuda with correct version
+   - Here CUDA 11 or 12, the minor version does not seem to matter)
+       - `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu118`
+       - `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121`
+       - takes like 5 min
+       - You could test with
+          - `python`
+          - `>>> import torch`
+          - `>>> torch.cuda.is_available()`
+          - `True`
+          - Note that I needed to do a `pip install numpy` to get this to work
+          - you might want to skip this because installing isaac sim coming next will want a particular version of numpy
+   - Upgrade pip
+       - `pip install --upgrade pip`
+   - Install isaac sim
+      - `pip install isaacsim[all,extscache]==4.5.0 --extra-index-url https://pypi.nvidia.com`
+      - It should run now with `isaacsim` - but takes about 10 minutes the first time as it is "pulling" additional extensions
