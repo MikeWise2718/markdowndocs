@@ -62,6 +62,17 @@ https://docs.omniverse.nvidia.com/launcher/latest/it-managed-launcher/install_gu
 - How to make a group of objects selectable as one object? (chnge kind to "Component" or anything else)
 - How to toggle that selection mode (use the All Model Kinds icon (top left ))
 
+# Venv on windows 11 for Python 3.10
+- Had Python 3.13 installed on Windows 11
+- Created the directory for the home of the vevn (d:\ov\isaac_lerobot)
+- `cd \ov\isaac_lerobot`
+- `pip install virtualenv`
+- `pip install virtualenvwrapper-win`
+- `python -m virtualenv venv --python=3.10`
+- `venv\activate`
+- Prompt changed to `(venv) D:\ov\isaac_lerobot>`
+- started python and it was indeed python 3.10.11
+
 
 # Isaac Lab 2.0
 - Needs Isaac Sim 4.5

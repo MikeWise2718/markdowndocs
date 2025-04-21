@@ -18,8 +18,30 @@ Note that everything requirecs "nvcc" a compiler driver for what every compiler 
 - While the documentation claims that sample binaries and utilities are installed, this is not true, you have to compile everything on your machine first.
 - This is also required to do any compilation yourself, perhaps it first compiles some needed utilities first.
 
+# Ubuntu CUDA
+- **Do not install** `nvidia-cuda-toolkit` from apt - it installs into `/usr/bin` and you can't manage versions that way
+- Locate the version you need and download from the Nvidia site
+   - For example currently: (https://developer.nvidia.com/cuda-downloads)
+- When you are done set three environment variables
+- You can find what repository you installed a package from with:
+   - `apt policy <Package Name>`
+- Ubuntu - this way you can have multiple versions and just change then environment variables
+```
+export CUDA_HOME=/usr/local/cuda-12.4
+export PATH=/usr/local/cuda-12.4/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+Windows
+```
+CUDA_HOME C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4
+CUDA_PATH C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4
+```
 
-
+# Installing CUDA Samples
+- https://github.com/NVIDIA/cuda-samples
+- Make sure it is getting the correct `nvcc` in your path before doing the global make
+- You can delete it and start over by deleting the build directly
+- deviceQuery and deviceQueryDev are quite useful
 
 # C++
 Upgrading to the latest Visual Studio (2017) was a bit of a pain. The command line bat file is hidden under:

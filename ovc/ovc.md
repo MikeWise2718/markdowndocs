@@ -92,15 +92,15 @@ Container info
 <img alt="Red Fish" src=images/EspYourRecentCases.png width=400 title="NGC Personal Keys" />
 
 
+
 ## Making a New case
    - Upload container
    - Create New Case
-      - Title "Deploy Container App"
+      - Title "Deploy Container App to OVC"
       - Description:
-         - "NGC Private Registry"
+
          - (link to container)
-         - Application Name: Sf4ovc-106-5
-         - Version: 1.0
+         - Application Name: nvcr.io/0509407381744272/sf4ovc-106-5:1.4
          - Don't bother with icon - it isn't supported yet
          - After submit select Omniverse Cloud CSP entitlement
    - Entitlement: Search for Omniverse and choose "MDF-NVIDIA Omniverse Cloud CSP Marketplace Annual Subscription, Upfront"
