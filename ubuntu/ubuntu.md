@@ -7,6 +7,17 @@ output: html_document
 # Intro
 Ubuntu seems to be the data science standard now.
 
+# Stuff to do with Ubunut 22.04
+- Install net-tools
+- to get colored vim you might need to install vim
+  - sudo apt install
+- Install Chrome
+      - login with gmail account to sync links
+- Install Miniconda
+      - Deactivate base activation in miniconda
+- Install openssh-server
+- Setup sshkeys
+
 
 # Terminal windows
 - You pretty much do all system stuff via the terminal with good old Linux commands

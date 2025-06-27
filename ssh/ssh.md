@@ -12,6 +12,53 @@ Secure Shell. It has a frigging web site: <https://www.ssh.com/>
 # Configuration
 Config page: <https://www.ssh.com/ssh/config/>
 
+## sshd on Ubuntu
+ - `sudo apt install openssh-server`
+ - `sudo systemctl status ssh`
+ - `sudo ufw allow ssh`
+ - `ifconfig` - note the ip address xx.xx.xx.xx
+ - `ssh xx.xx.xx.xx` should allow password login from local host
+
+## sshkeygen
+- In order to use scp you will need to have ssh keys configured
+- Generate keys with keygen into ~/.ssh
+   - private/public pair has no extension
+   - public key has the extension .pub
+   - good to rename the private/public pair to .pem
+- Copy the public file to "authorized_keys"
+   - If a file already exists then append it (somehow)
+- get the pem file to whereevery you want to connect from
+   - `lsblk`
+   - `sudo mount /dev/sb1 /mnt`
+   - `cp file.pem /mnt`
+- put it in the ~/.ssh directory and chmod it to 400
+- ssh into it
+- can debug with
+   - `ssh -i ~/.ssh/zweilous.pem mike@10.0.2.24`
+   - `ssh -v`
+   - `ssh -vv`
+   - `ssh -vvv`
+```
+ssh-keygen -t rsa -f ~/.ssh/id_rsa
+ls /mnt
+lsblk
+ls
+cp id_rsa.pub /media/mike/UBUNTU\ 22_0/
+lsblk
+ifconfig
+lsblk
+sudo mount /dev/sdb1 /mnt/media
+
+cp * /media/mike/1C23-7D14/
+ls /media/mike/1C23-7D14/
+ls
+mkdir authorized_keys
+rm -r authorized_keys/
+cp id_rsa.pub authorized_keys
+chmod 600 authorized_keys
+ls
+```
+
 ## ssh
 - The ssh program on a host receives its configuration from either the command line or from configuration files `~/.ssh/config` and `/etc/ssh/ssh_conf` in that order of precendence. Note this is for configuring `ssh`, not the login daemon `sshd`
 - Public keys get added to `authorized_keys` file in your `~/.ssh/` directory

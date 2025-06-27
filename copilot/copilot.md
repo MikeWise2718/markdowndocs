@@ -6,7 +6,7 @@ output: html_document
 
 # Intro
 - An AI pair programmer apparently - from GitHub.
-- Derived from OpenAI's Codex - https://openai.com/blog/openai-codex 
+- Derived from OpenAI's Codex - https://openai.com/blog/openai-codex
 
 
 # Codex
@@ -19,3 +19,10 @@ output: html_document
     - Processing of context limited to 14k discussed at 2:31
     - "Copilot quality decreases on larger files"  https://github.com/orgs/community/discussions/9282
 - Amzaon Code Whisperer vs Copilot https://www.youtube.com/watch?v=p4Sc_-2yJHs
+
+
+# Certification
+- Link: https://examregistration.github.com/certification/COPILOT
+
+- plans overview: https://docs.github.com/en/copilot/about-github-copilot/plans-for-github-copilot
+- what is this - https://devblogs.microsoft.com/all-things-azure/tag/github-copilot-business-for-non-ghe/

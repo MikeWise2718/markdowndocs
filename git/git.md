@@ -75,6 +75,18 @@ output:
      * the commit you are currently working on
      * `git show HEAD`
 
+## GitHub CLI
+- `gh auth status` is your friend
+- To setup on ubu
+   - `sudo apt install gh
+   -`gh auth login`
+      - choose browser and https
+      - note the 8 character alpha-digit code like 8F3D-342F
+      - enter it into the browser
+  - Then from command line `gh auth setup-git`
+      - `git config global edit` will show you what that did to the config in an editor
+  - you should now be able to use git without specifying a user
+    - check `http://github.com/issues/cli/cli/4351` for more information
 
 ## Branching concepts
  * heads
