@@ -57,7 +57,7 @@ output: html_document
 - Add Physics material to TBar and EETool - 13:22
 - Isaac Sim model finished - 14:15
 
-
+## ROS2
 - ROS2 start - 14:15
 - data_collection.py - 14:20
 - ready to collect the data - 17:01
@@ -66,6 +66,8 @@ output: html_document
 - launch robot-arm joystick controller python script - 17:27
 - launch ros2 ur5_moveit_config arm_joy_control.launch.py - 17:38
 - rviz visible - 17:40
+
+## Data collection
 - run python3 data_collection.py - 17:46
 - operate the tool and move the TBar - 18:12
 - note index and episode_index - 18:13
@@ -75,6 +77,8 @@ output: html_document
 -   python3 create episodes_jsonl.py
 -   python3 create episodes_stats_jsonl.py
 - move generated files to meta directory - 19:48
+
+
 - already generated files location for lazy people for training - 20:07
 - to run the training move these two scripts into the LeRobot examples -20:24
 - to execute training execute 3_train_policy_mod.py - 20:44

@@ -89,10 +89,10 @@ Built on Thu_Nov_18_09:45:30_PST_2021
 Cuda compilation tools, release 11.5, V11.5.119
 Build cuda_11.5.r11.5/compiler.30672275_0
 ```
-   - Install Cuda with correct version
+   - Install CUDA with correct version
    - Here CUDA 11 or 12, the minor version does not seem to matter)
        - `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu118`
-       - `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121`
+       - `pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124`
        - takes like 5 min
        - You could test with
           - `python`
@@ -103,6 +103,65 @@ Build cuda_11.5.r11.5/compiler.30672275_0
           - you might want to skip this because installing isaac sim coming next will want a particular version of numpy
    - Upgrade pip
        - `pip install --upgrade pip`
-   - Install isaac sim
+   - Install IsaacSim
       - `pip install isaacsim[all,extscache]==4.5.0 --extra-index-url https://pypi.nvidia.com`
       - It should run now with `isaacsim` - but takes about 10 minutes the first time as it is "pulling" additional extensions
+      - To see where it installed to a `pip show isaacsim`
+
+load PushT scene into Isaac sim
+```
+c:
+cd \temp\testisaacsim
+venv\Scripts\activate
+Open d:/ov/isaac_lerobot/pusht-scene.usd
+Force additiona collider generation (no)
+```
+
+# IsaacSim and LeRobot
+- YouTube example: https://www.youtube.com/watch?v=eO5wMzw9LeQ
+- Project download (zip file): https://drive.google.com/drive/folders/1eyh1GzMGnrjCnwW0_CWqEyVtDDd-0Sfe
+- UR Moveit configs for all UR robots
+
+Install lerobot
+```
+git clone https://github.com/huggingface/lerobot
+pip install -e .
+```
+
+Installation of ROS2 part
+```
+ 2006  sudo apt update && sudo apt install curl -y
+ 2009  sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+ 2010  sudo apt install ros-humble-moveit-common
+ 2011  sudo apt install ros-humble-control-msgs
+ 2012  sudo apt install ros-humble-control-toolbox
+ 2016  sudo apt install ros-humble-moveit-core
+ 2017  sudo apt install ros-humble-moveit-servo
+ 2018  sudo apt install ros-humble-ros-testing
+ 2019  colcon build
+```
+
+This should bring up Rviz2 with a model of the UR5 arm mounted on a pedestal.
+Note it only works with a joystick
+```
+source ur5_simulation/install/setup.bash
+sudo apt install ros-humble-controller-manager
+sudo apt install ros-humble-moveit-ros-visualization
+ros2 launch ur5_moveit_config arm_joy_control.launch.py
+```
+
+To train a model
+```
+todo
+```
+
+To run a trained model
+```
+- find `ur_simulation/lerobot_related/examples/2_evaluate_policy.py
+- make sure that your policy path points to the directory where your model.safetensors is
+source ur5_simulation/install/setup.bash
+ros2 launch ur5_moveit_config arm_diffusion_control.launch.py
+start your isaac sim simulator
+
+python 2_evaluate_policy.py
+```
