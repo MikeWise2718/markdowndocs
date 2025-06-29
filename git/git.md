@@ -88,6 +88,42 @@ output:
   - you should now be able to use git without specifying a user
     - check `http://github.com/issues/cli/cli/4351` for more information
 
+## Auth Gotchas
+### Key Points
+- The user set in .git/config (user.name and user.email) only affects the author information in commits, not which GitHub account is used for authentication when pushing.
+
+- Git authentication for push operations is controlled by your credentials manager (such as Windows Credential Manager, macOS Keychain, or credential files), SSH keys, or the credential helper, not by `gh auth status` alone.
+
+- The gh CLI (`gh auth status`) and Git itself maintain separate authentication mechanisms.
+
+### Common Causes and Solutions
+- 1. Cached Credentials/Old Tokens
+
+  - If you previously authenticated with a different user, your credentials manager may still have those credentials cached, causing Git to use the wrong account for git push.
+
+  - Make sure you are using `useHttpPath = true`
+     - `git config --global credential.useHttpPath true`
+     - check `c:\Users\username\.gitconfig` or `git config --global --list`
+
+  - Solution: Remove or update stored credentials:
+
+     - Windows: Open Credential Manager in Control Panel, look at windows credentials and delete any GitHub-related credentials.
+     Note: This is the infamous "Credential Helper"
+     - macOS: Open Keychain Access and remove GitHub entries.
+     - Linux: Check ~/.git-credentials or your credential manager.
+
+- 2. SSH Key Mismatch
+
+   - If you're using SSH, Git will use whatever key is configured in your ~/.ssh/config file. If the key is associated with a different GitHub account, pushes will use that account.
+
+   - Solution: Ensure the correct SSH key is being used for the repository. You can specify this in ~/.ssh/config and verify with ssh -T [email protected].
+
+- 3. Remote URL Points to Wrong Account
+
+   - If your remote URL is set to use HTTPS, Git will use the credentials stored for that URL. If it's SSH, it will use the associated SSH key.
+
+   - Solution: Check your remote URL with git remote -v and update it if necessary:
+
 ## Branching concepts
  * heads
  * HEAD not on the branch head
