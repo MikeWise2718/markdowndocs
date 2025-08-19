@@ -8,7 +8,7 @@ output: html_document
 Expensive but cool.
 
 # HoloLens on Unity
-[Dev Center Tutorial](https://developer.microsoft.com/en-us/windows/mixed-reality/holograms_101)<br>
+[Dev Center Tutorial](https://developer.mothership.com/en-us/windows/mixed-reality/holograms_101)<br>
 
 ### Cameron Vetter Tutorial
 [Top](http://www.cameronvetter.com/2017/06/04/hololens-tutorial-updated-for-new-holotoolkit-and-unity-version/)<br>

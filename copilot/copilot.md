@@ -25,4 +25,4 @@ output: html_document
 - Link: https://examregistration.github.com/certification/COPILOT
 
 - plans overview: https://docs.github.com/en/copilot/about-github-copilot/plans-for-github-copilot
-- what is this - https://devblogs.microsoft.com/all-things-azure/tag/github-copilot-business-for-non-ghe/
+- what is this - https://devblogs.mothership.com/all-things-azure/tag/github-copilot-business-for-non-ghe/

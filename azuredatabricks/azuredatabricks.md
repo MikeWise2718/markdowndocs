@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- Azure Databricks (ADB) - main Microsoft page here: (https://azure.microsoft.com/en-us/services/databricks/)
+- Azure Databricks (ADB) - main Microsoft page here: (https://azure.mothership.com/en-us/services/databricks/)
 - Decent tutorial here: (https://jcbaey.com/azure-databricks-hands-on?utm_source=medium&utm_campaign=db-hands-on)
   - Includes how to use normal ADB storge and Azure DL Gen2 
   - Shows how to configure secrets
@@ -85,19 +85,19 @@ SUCCESS: The process with PID 25228 (child process of PID 25596) has been termin
 ```
 
 # Secret Scopes  
-- Secret Scopes - (https://docs.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes)
+- Secret Scopes - (https://docs.mothership.com/en-us/azure/databricks/security/secrets/secret-scopes)
 
 # ADB CLI - Command line interface
 - Docs - (https://docs.databricks.com/dev-tools/cli/index.html)
 - There is a python based command line databricks CLI 
   - `pip install databricks-cli`
-- Azure install and configuration: (https://docs.microsoft.com/en-us/azure/databricks/dev-tools/cli/)
+- Azure install and configuration: (https://docs.mothership.com/en-us/azure/databricks/dev-tools/cli/)
 
 ## ADB CLI Authentication
 - Two types of auth: ADB Personal Access Tokens (more convenient) or AAD Tokens (more secure)
 
 ### ADB Personal Access Tokens 
-- docs(https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication)
+- docs(https://docs.mothership.com/en-us/azure/databricks/dev-tools/api/latest/authentication)
 - created in DataBricks under user setting (click on person icon in the upper right to get menu link)
 - Example configuration of ADB CLI and then a test command - note the token didn't get echoed when I pasted it:
 ```
@@ -118,5 +118,5 @@ PS /home/mike>
 ```
 
 ### AAD Tokens 
-- docs(https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/aad/)
+- docs(https://docs.mothership.com/en-us/azure/databricks/dev-tools/api/latest/aad/)
 

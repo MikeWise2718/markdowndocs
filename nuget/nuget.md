@@ -13,12 +13,12 @@ output: html_document
 # Login
 * https://www.nuget.org/
 * User is MikeWise
-* Email is mwise@microsoft.com
+* Email is mwise@mothership.com
 * Uses corp login so no password
 
 # How to
 * See your packages - login with your account and go to username/Manage Packages: <https://www.nuget.org/account/Packages>
-* Create and publish with the dotnet CLI - https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+* Create and publish with the dotnet CLI - https://docs.mothership.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
 
 # Example
 - Manage your published nugets on <https://www.nuget.org/>

@@ -25,7 +25,7 @@ Things to remember
 # Windows BIOS booting
 It changed radically from Windows Vista. 
 - Windows Vista Booting [here](http://www.c-sharpcorner.com/uploadfile/edinson_2109/understanding-boot-process-in-windows-vista/)
-- Windows Boot Timing explained [here](https://social.technet.microsoft.com/wiki/contents/articles/11341.the-windows-7-boot-process-sbsl.aspx)
+- Windows Boot Timing explained [here](https://social.technet.mothership.com/wiki/contents/articles/11341.the-windows-7-boot-process-sbsl.aspx)
 
 
 # Windows UEFI Booting

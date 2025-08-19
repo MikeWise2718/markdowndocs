@@ -9,7 +9,7 @@ output: html_document
 
  # Wiseworks
  - My domain is [wiseworks](https://wiseworks.visualstudio.com/_projects)
- - profile email  is mwise@microsoft.com
+ - profile email  is mwise@mothership.com
  - uses green fish icon
 
 

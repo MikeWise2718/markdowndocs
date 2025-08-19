@@ -14,8 +14,8 @@ output: html_document
 
 
 # Python Functions
-- Developer guide: (https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python)
-- Have to follow a certain file folder layout: (https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#folder-structure)
+- Developer guide: (https://docs.mothership.com/en-us/azure/azure-functions/functions-reference-python)
+- Have to follow a certain file folder layout: (https://docs.mothership.com/en-us/azure/azure-functions/functions-reference-python#folder-structure)
 - You probably want to develop against Microsoft Store Python because that is what is deployed
 - The Azure Function Template configured an environment in the `.venv` directory
 - How to configure that: (https://code.visualstudio.com/docs/python/environments)
@@ -27,7 +27,7 @@ output: html_document
 - you might want to install or uninstall something
 - you probably want to have a few `azure` modules as possible so don't just use `pip freeze` to make a `requirements.txt`
 - see this"ModuleNotFoundError" article for dragons and hints about handcrafting `requirements.txt`
-- (https://docs.microsoft.com/en-us/azure/azure-functions/recover-python-functions?tabs=vscode#troubleshoot-modulenotfounderror)
+- (https://docs.mothership.com/en-us/azure/azure-functions/recover-python-functions?tabs=vscode#troubleshoot-modulenotfounderror)
 
 
 To debug it in VS Code you need a `launch.json` file in your `.vscode` directory something like this:

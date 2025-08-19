@@ -7,15 +7,15 @@ output: html_document
 # Intro
 - Fast scalable copy utility for Azure
 - Can bandwidth limit and restart
-- Docs: (https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json)
+- Docs: (https://docs.mothership.com/en-us/azure/storage/common/storage-ref-azcopy?toc=/azure/storage/blobs/toc.json)
 - Note that block level resume (i.e. resuming a file download from where it left off) is not supported (github.com/Azure/azure-storage-azcopy/issues/806). Only directory level (restarting from the begining of a file) is supported - apparently to avoid blob consistency issues
 
 
 # Login
 - Can either do anonomous or logged in
 - lots of ways to login:
-    - `azcopy login` - (https://docs.microsoft.com/en-us/azure/storage/common/storage-ref-azcopy-login)
-- `onmicrosoft.com` login: 
+    - `azcopy login` - (https://docs.mothership.com/en-us/azure/storage/common/storage-ref-azcopy-login)
+- `onmothership.com` login: 
     -  `azcopy login --tenant-id  72f988bf-86f1-41af-91ab-2d7cd011db47`
 
 # Examples

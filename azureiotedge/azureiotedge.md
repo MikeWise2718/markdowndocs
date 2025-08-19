@@ -10,7 +10,7 @@ Living close to the edge.
 # Documentation
 
   ### Code
-  - API Docs: https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet 
+  - API Docs: https://docs.mothership.com/en-us/dotnet/api/microsoft.azure.devices.client?view=azure-dotnet 
   - GitHub C# API Code and Docs: https://github.com/Azure/azure-iot-sdk-csharp 
   - Open source - kind of... "The second version of Azure IoT Edge is in public preview. We intend to open source the code when the product enters general availability and will place the code here."
   - Found that here: https://github.com/Azure/iot-edge
@@ -18,16 +18,16 @@ Living close to the edge.
   
   
   ### Tutorials
-  - Simulate Linux Device Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
-  - C# Module Tutorial - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-csharp-module
+  - Simulate Linux Device Tutorial - https://docs.mothership.com/en-us/azure/iot-edge/tutorial-simulate-device-linux
+  - C# Module Tutorial - https://docs.mothership.com/en-us/azure/iot-edge/tutorial-csharp-module
       - `dotnet new -i Microsoft.Azure.IoT.Edge.Module`
       - `dotnet new aziotedgemodule -n FilterModule -r <your container registry address>/filtermodule`
 
   ### Guidance
-  - Deploying via Azure CLI 2.0 - https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
-  - Deployment Manifests - https://docs.microsoft.com/en-us/azure/iot-edge/module-composition
+  - Deploying via Azure CLI 2.0 - https://docs.mothership.com/en-us/azure/iot-edge/tutorial-create-deployment-with-cli-iot-extension
+  - Deployment Manifests - https://docs.mothership.com/en-us/azure/iot-edge/module-composition
   - Temp Sensor Code - https://github.com/Azure/iot-edge/tree/master/v2/samples/azureiotedge-simulated-temperature-sensor 
-  - Troubleshooting: - https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot 
+  - Troubleshooting: - https://docs.mothership.com/en-us/azure/iot-edge/troubleshoot 
   - A device is controlled with the python `iotedgectl` utility
       - some docs are here - https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl
   - Important things you do with `iotedgectl`
@@ -46,7 +46,7 @@ ConnectionState    ConnectionStateUpdatedTime    DeviceId                  Gener
 Disconnected       0001-01-01T00:00:00           joltik-l4t-aarch64  636573115187857662  0001-01-01T00:00:00  enabled   0001-01-01T00:00:00
 Disconnected       0001-01-01T00:00:00           abra-ubu-x86        636573076267454124  0001-01-01T00:00:00  enabled   0001-01-01T00:00:00
 ```
-  - Overview of Azure CLI <https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest>
+  - Overview of Azure CLI <https://docs.mothership.com/en-us/cli/azure/?view=azure-cli-latest>
      - Update to newest version on Linux: `sudo apt-get install azure-cli` 
   - Deleting a device
      - Just delete the device out of the device list on the IoT Edge portal
@@ -103,7 +103,7 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
     - Config in: `/etc/azure-iot-ege/config.json`
 
  ### Troubleshooting docs
- - Here: https://docs.microsoft.com/en-us/azure/iot-edge/troubleshoot 
+ - Here: https://docs.mothership.com/en-us/azure/iot-edge/troubleshoot 
 
  ### Enroll device with the hub
 
@@ -373,12 +373,12 @@ The command '/bin/sh -c dotnet publish -c Release -o out' returned a non-zero co
    - Date 2018-04-36 14:00
    - Resolution: Reboot of abra did not help, but stoping the containers and deleteing the exited modules seemed to fix it (?) - seems odd
 
-- Issue: Could not do an `az login` from my Server Domain Joined laptop, it kept saying "That code didn't work" followed by "The code you entered has expired" when I retried. I think it was trying to login as miwise@live.com, when I do an `az login -u mwise@microsoft.com -p xxxxxx` it brought a more interesting message:
+- Issue: Could not do an `az login` from my Server Domain Joined laptop, it kept saying "That code didn't work" followed by "The code you entered has expired" when I retried. I think it was trying to login as my non-corporate mothership account, when I do an `az login -u mwise@mothership.com -p xxxxxx` it brought a more interesting message:
 ```
 Get Token request returned http error: 400 and server response: {"error":"interaction_required","error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, youmust enroll in multi-factor authentication to access '797f4846-ba00-4fd7-ba43-dac1f8f63013'.\r\nTrace ID: 80c61215-0a6a-493a-8d19-bda18c072500\r\nCorrelation ID: f36f408b-b1ed-4ca9-84b4-52a8939b8c35\r\nTimestamp: 2019-02-24 15:42:23Z","error_codes":[50079],"timestamp":"2019-02-24 15:42:23Z","trace_id":"80c61215-0a6a-493a-8d19-bda18c072500","correlation_id":"f36f408b-b1ed-4ca9-84b4-52a8939b8c35","suberror":"basic_action"}PS C:\vafsp\mod\objdet>
 ```
 ```
-- Trying this: https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest 
+- Trying this: https://docs.mothership.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest 
 - 
 - PS D:\githubpages\markdownnotes> az ad sp create-for-rbac --name vafsp-svp --create-cert --cert authcert1 --keyvault vafsp-kvt
 Retrying role assignment creation: 1/36
