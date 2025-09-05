@@ -31,7 +31,10 @@ output: html_document
    - For errors see messages in the console window
 - Will be listed under "Packages - Coplay" if top icon selected, in front of "Packages - Unity"
 - Should see UnityMCP under Window
-- `claude mcp add --scope user Unity-MCP -- uv run --directory C:\Users\mike\AppData\Local\Programs\UnityMCP\UnityMcpServer\src server.py`
+- Old
+    - `claude mcp add --scope user Unity-MCP -- uv run --directory C:\Users\mike\AppData\Local\Programs\UnityMCP\UnityMcpServer\src server.py`
+- CosplayDev 3.1
+    - `claude mcp add unity-mcp -- uv run --directory C:\Users\mike\AppData\Local\Programs\UnityMCP\UnityMcpServer\src server.py`
 
 
 # Sketchup
@@ -55,4 +58,5 @@ output: html_document
    - navigagte to `blender-mcp` dir and select `addon.py`
 - Add to Claude Code
    - from `blender-mcp` directory
-   - `claude mcp add sketchup-mcp -- uvx blender-mcp`
+   - `claude mcp add blender-mcp -- uvx blender-mcp`
+   - `claude mcp add blender-mcp -- uvx d:\python\blender-mcp\blender-mcp`
