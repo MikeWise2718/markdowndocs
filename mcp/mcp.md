@@ -37,6 +37,21 @@ output: html_document
     - `claude mcp add unity-mcp -- uv run --directory C:\Users\mike\AppData\Local\Programs\UnityMCP\UnityMcpServer\src server.py`
 
 
+## Problems and fixes
+- Wasn't connecting when I got back from Houston 5 Sept 2025
+- Took an hour to fix 
+- Ran and coonected when I ran directly from the command line, but claude reprted "could't connect"
+  - Used the same command copy and pasted from the `claude mcp list`
+- Not sure of fix - did the following things
+  - Upgrade the Unity package (using the upgrade button in Unity Package Manager)
+  - Upgraded Claude from 1.0.75 to 1.0.104 (using `claude upgrade`)
+  - Tried the "Autoconnect button" from the UnityMCP menu dialog 
+    - That seemed to configure a `unity-mcp` MCP entry that didn't work but then my `UnityMCP` entry did work after that
+    - so deleted the `unity-mcp` 
+    - Said it worked but Claude couldn't read console logs using the MCP - vexing
+    - I think once I hit "Play" - that caused something to change that made claude able to read the logs
+
+
 # Sketchup
 - Repo: (https://github.com/mhyrr/sketchup-mcp)
 - Installed repo.
