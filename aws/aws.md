@@ -22,5 +22,5 @@ output: html_document
 - is stored in `~/.aws` in Linux or `%homedrive%%homepath%\.aws` in Windows
 - access_key and secret is then found in `credentials`
 - region is then found in `config`
-- proper way to configure region: `ws configure set region us-west-2`
+- proper way to configure region: `aws configure set region us-west-2`
 

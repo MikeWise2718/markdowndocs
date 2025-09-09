@@ -8,6 +8,7 @@ output: html_document
 - Amazon's AI coding UI - A fork of VS Code, not an extension
 - Kiro home: https://kiro.dev/ 
 - Kiro docs: https://kiro.dev/docs/getting-started/ 
+- Kiro issues: https://github.com/kirodotdev/Kiro/issues/
 - Supports TypeScrit, Python and Java
 
 # Notes

@@ -1,5 +1,5 @@
 ---
-title: "ComfiUI"
+title: "ComfyUI"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -61,8 +61,12 @@ python3.12 --version
 
 # Models
 - Reside on Hugging face or civitai
-- Best way to find them is to ask Perplexity as HF search often doesn't work
+- Best way to find them is to ask Perplexity as HF search often doesn't workcd
 
 ## CIVITAI
 - https://civitai.com/
 - mikewise1618471
+
+## Tensor.Art
+- https://tensor.art/
+- 

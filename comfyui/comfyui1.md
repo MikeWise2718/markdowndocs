@@ -1,5 +1,5 @@
 ---
-title: "ComfiUI"
+title: "ComfyUI"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -40,7 +40,10 @@ python3.12 --version
 - Download models:
    - Place the necessary Stable Diffusion models (e.g., checkpoints) in the `ComfyUI/models/checkpoints` directory.
 - Launch ComfyUI:
+   - Activate environment
+   -  `python main.py`
    -  `python3 main.py`
+   -  `uv run main.py`
 
 
 ## CIVITAI
