@@ -1,13 +1,10 @@
 ---
-title: "MikroTik CRS Switch"
+title: "Template Titles"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- Fullname - MikroTik Cloud Router Switch CRS5125-24G-1S-RM
-- Details 10/100/1000 Ethernet ports	24
-
 Explain what this thing is and what kind of help can be expected of this file.
 
 Note that to get a preview of this document in VS Code use Ctrl-Shift-V

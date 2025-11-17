@@ -37,8 +37,9 @@ sudo tar -xvzf /mnt/c/Users/mike/Downloads/island-usd-v2.1.tgz -C /mnt/c/Users/m
 - link: (https://developer.nvidia.com/usd#bin)
 - Over 40k files and 1GB - took 15+ minutes to extract
 - Afterwards you have to add the following directories to the path (assuming `d:\usd` as the extract root)
-  - `d:\usd\tools`
+  - `d:\usd\scripts`
   - `d:\usd\lib`
+- Do not add `d:\usd\bin` as it will execute the binaries before the path is setup
 
 
 

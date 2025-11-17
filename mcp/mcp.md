@@ -75,3 +75,7 @@ output: html_document
    - from `blender-mcp` directory
    - `claude mcp add blender-mcp -- uvx blender-mcp`
    - `claude mcp add blender-mcp -- uvx d:\python\blender-mcp\blender-mcp`
+
+
+# Campsim
+- `claude mcp add  campsim -- C:\Users\mike\miniconda3\Scripts\uv.exe run --directory ./mcp-bridge python -m src.campsim_mcp_server`

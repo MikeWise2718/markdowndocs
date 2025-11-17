@@ -1,0 +1,23 @@
+# MikroTik CRS Switch Upgrade to RouterOS7 Notes
+Some notes about how I upgraded
+
+## Original
+- Doing this retroactively - 2017 was 8 or 9 years ago
+- Default signin is Admin/(blank) 
+- Changed it to be the same as my main router password 
+- Assigned a static IP 192.168.25.3 - seemingly the gateway is 192.168.25.2 (which is wrong)
+- Can be configured over Winbox (custom for MikroTik - works with only a mac address), or webfig (web configuration)
+- RouterOS was 6.39.1
+- See "Before Upgrade" screenshots for more
+
+## Upgradced 16 Nov 2025
+- Upgraded to RouterOS 7.20.4
+- Automatic upgrade didn't work due to DNS failure
+- Downloaded ntk and uploaded to router and rebooted
+- Switch failed to route and failed to respond to http (webfig)
+- Used Perplexity for debugging to delve into the Interwebs
+- Key was using WinBox because you can log into it with just knowing the mac address 
+- Mac address changed wetn I upgraded by the way, but just the last byte.
+- Ultimate reason was the switch IP  was assigned to Port1 (the master port) only, and I was wired to Port10. WHen I changed it in the interface list it worked
+- Not sure routing works still
+- See "After Upgrade" screenshots for more

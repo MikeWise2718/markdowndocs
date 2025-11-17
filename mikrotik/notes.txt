@@ -1,0 +1,20 @@
+# Original
+- Doing this retroactively - 2017 was 8 or 9 years ago
+- Default signin is Admin/(blank) 
+- Changed it to be the same as my main router password 
+- Assigned a static IP 192.168.25.3 - seemingly the gateway is 192.168.25.2 (which is wrong)
+- Can be configured over Winbox (works with only a mac address), or webfig (web configuration)
+- RouterOS was 6.39.1
+- See screenshots for more
+
+# Upgradced to RouterOS 7 16 Nov 2025
+- Upgraded to RouterOS 7.20.4
+- Automatic upgrade didn't work due to DNS failure (probably too old)
+- Downloaded ntk and uploaded to router and rebooted
+- Switch failed to route and failed to respond to http (webfig)
+- ultimate reason was the swith IP was assigned to Port1 (the master port) only, and I was wired to Port10. WHen I changed it in the interface list it worked
+- Not sure routing works still (seems to be not working as I couldn't just plug my windows box into it)
+
+# Lessons learned
+- Log into switch beforehand and screenshot everything
+- Locate docs for initializing router from scratch including default user and password

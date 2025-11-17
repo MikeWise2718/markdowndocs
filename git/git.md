@@ -396,3 +396,35 @@ Two other interesting solutions
 - Could only see error with `GIT_TRACE=1`, otherwise we just got a perpetual loop
 - Seemed to fix with: `git config http.version HTTP/1.1`
 - Got from this source: (https://github.com/MicrosoftDocs/azure-devops-docs/issues/4179)
+
+
+# WSL and Windows
+- To set up wsl to use Windows Credential manager - this worked:
+```
+ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+```
+Note the "escaped space" after Program and before Files.
+
+
+# Git Config Madness
+- https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved
+
+- On windows there are 5 different windows config scopes:
+```
+windows@location (main)
+$ git config --list --show-origin
+file:"C:\\ProgramData/Git/config" user.email=portal@example.com
+file:C:/_git/etc/gitconfig user.name=Syster Sally
+file:C:/_git/etc/gitconfig user.email=system@example.com
+file:C:/Users/cameron/.gitconfig user.email=global@example.com
+file:.git/config user.email=local@example.com
+```
+
+Ubuntu:
+```
+linux@location (main)
+$ git config --list --show-origin
+file: /etc/gitconfig user.name=Syster Sally
+file: /home/gme/.gitconfig user.name=Glow Ball
+file: .git/config user.name=Cameron
+```

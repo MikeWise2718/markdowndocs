@@ -563,3 +563,135 @@ D:\nv\ov\pkg\isaac_sim-2022.2.0\exts\omni.isaac.examples\omni\isaac\examples\use
 - There is a list of raw properties and there is a record `xformOpOrder` - usually at the very end of the list
 - You can read the order of the operations from left to right
 - So like `[xformOp:scale, xformOp:translate, xformOp:rotateY]` is a "Scaling, followed by a Translate, then followed by a rotation around the Y axis"
+
+
+## uv installation (as of Sept 2025)
+
+### usd-cubes
+
+#### General scheme
+- make a directory and `uv init` it
+- Modify the `pyproject.toml` with the appropriate commands
+- probably need to pin the python to a specific version  `uv pin python 3.11` 
+- Replace the `main.py` program with your code.
+- Create a lock file with `uv lock`
+- Sync it to `pyproject.toml` with `uv sync`
+- Run it with `uv run main.py` 
+
+#### USD Example
+- `uv init usd-cubes`
+- `cd usd-cubes`
+- Add the following to `pyproject.toml` and save it
+```
+[project]
+name = "usd-cubes"
+version = "0.1.0"
+dependencies = [
+    "openusd>=24.3"  # "openusd" orr "usd-core" depending on Python package registry naming 
+]
+requires-python = ">=3.10"
+```
+- Note that `openusd` is prefered, but hasn't been published yet by pypi.
+- `uv lock` - should create a uv.lock file reflecting the above denpenndices
+- Replace `main.py` contents with te following
+```
+from pxr import Usd, UsdGeom, Gf
+
+stage = Usd.Stage.CreateNew("minimal_scene.usda")
+for i in range(3):
+    cube = UsdGeom.Cube.Define(stage, f"/World/Cube_{i}")
+    cube.AddTranslateOp().Set(Gf.Vec3f(i * 2, 0, 0))
+stage.GetRootLayer().Save()
+print("Scene saved as minimal_scene.usda")
+```
+- `uv sync` should install everything, look for a new venv
+- `uv run main.py` should save the usd file
+
+
+## Isaac Sim Example
+- Pinned to Python 3.11
+- RGB cubes examplw with materials and lights
+- `pyproject.toml`
+```
+[project]
+name = "isaac-sim-cubes"
+version = "0.1.0"
+description = "cubes on isacc sim"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "torch==2.7.0",                         # Required for Isaac Sim [4]
+    "torchvision==0.22.0",
+    "isaacsim[all,extscache]==5.0.0"        # The core Isaac Sim package [8][4]
+]
+
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu128" }]
+torchvision = [{ index = "pytorch-cu128" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.pip_extra_index_urls]
+url = "https://pypi.nvidia.com"             # This enables Isaac Sim pip packages
+```
+
+- `main.py`
+```
+from isaacsim import SimulationApp
+# import isaacsim.core.utils.prims as prim_utils
+
+simulation_app = SimulationApp({"headless": False})
+
+import omni.usd
+stage = omni.usd.get_context().get_stage()
+
+from pxr import UsdGeom, Gf, UsdLux, Sdf, UsdShade
+
+cube_infos = [
+    ("/World/CubeRed",   (1.0, 0.0, 0.0), "Red"),
+    ("/World/CubeGreen", (0.0, 1.0, 0.0), "Green"),
+    ("/World/CubeBlue",  (0.0, 0.0, 1.0), "Blue"),
+]
+
+# Example: Add 3 cubes
+for i in range(3):
+    path = cube_infos[i][0]
+    color = cube_infos[i][1]
+    label = cube_infos[i][2]
+    
+    print(f"Defining {path}")
+    
+    cube = UsdGeom.Cube.Define(stage, path)
+    cube.AddTranslateOp().Set(Gf.Vec3f(i * 2.2, 0, 0))
+   
+    
+    mat_path = Sdf.Path(f"/World/Looks/Mat{label}")
+    material = UsdShade.Material.Define(stage, mat_path)
+    shader = UsdShade.Shader.Define(stage, mat_path.AppendPath("Shader"))
+    shader.CreateIdAttr("UsdPreviewSurface")
+    shader.CreateInput("diffuseColor", Sdf.ValueTypeNames.Color3f).Set(color)
+    shader.CreateInput("roughness", Sdf.ValueTypeNames.Float).Set(0.2)
+    shader.CreateInput("metallic", Sdf.ValueTypeNames.Float).Set(0.0)
+    material.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(), "surface")    
+    
+    UsdShade.MaterialBindingAPI(cube).Bind(material)
+
+# Add a light
+dome_light = UsdLux.DomeLight.Define(stage, Sdf.Path("/World/DomeLight"))
+dome_light.CreateIntensityAttr(5000.0)          # Set the dome light intensity
+dome_light.CreateColorAttr((1.0, 1.0, 1.0))     # White light
+
+# simulation_app.update()
+
+while simulation_app.is_running():
+        # perform step
+    simulation_app.update()        
+    # sim.step()
+    
+simulation_app.close()
+```

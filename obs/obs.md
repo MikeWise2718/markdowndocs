@@ -57,9 +57,8 @@ output: html_document
 - A scene is a group of sources
 
 
-# Something about powerpoint but I forgot...
-
-
+# Recording a video playing in a hyper-v
+(screen shot)
 
 # DaVinci Resolve
 - you can't edit in OBS

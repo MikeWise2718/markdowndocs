@@ -55,9 +55,17 @@ python3.12 --version
    -  `python3 main.py`
 
 
+# Misc Repos
+- ComfyUI -  `git clone https://github.com/comfyanonymous/ComfyUI.git`
+- ComfyUI Node Manager - `git clone https://github.com/ltdrdata/ComfyUI-Manager.git`
+- WD14 Reverse Tagger - `git clone https://github.com/pythongosssss/ComfyUI-WD14-Tagger`
+- image2prompt - `git clone https://github.com/zhongpei/Comfyui_image2prompt` 
+
 # Installing Node Manager
-- `cd <your ComfyUI install>/ComfyUI/custom_nodes`
+- `cd d:/ComfyUI/custom_nodes`
 - `git clone https://github.com/ltdrdata/ComfyUI-Manager.git`
+
+# Installing 
 
 # Models
 - Reside on Hugging face or civitai
@@ -69,4 +77,23 @@ python3.12 --version
 
 ## Tensor.Art
 - https://tensor.art/
-- 
+
+
+## uv Installation 
+- got it out of a perplexity space
+- uv notes - `https://codemaker2016.medium.com/introducing-uv-next-gen-python-package-manager-b78ad39c95d7`
+
+### Step-by-step
+- Clone Comfy UI into your directory - `git clone https://github.com/comfyanonymous/ComfyUI.git comfyui0`
+- Change into rep directory = cd `confyui0` 
+- Create venv - `uv venv`
+- Install the appropriate versoin of Pytorch - `uv pip install torch torchvision torchaudio --torch-backend=cu128`
+   - `.venv\Scripts\Activate`
+   - `python -c "import torch; print(torch.cuda.is_available())"` 
+   - If it is not `True`, you need to fix it.
+- Install ComfyUI dependencies - `uv pip install -r requirements.txt`
+   - Maybe this happens automagicaly when we installed torch? 
+- Optionally uv lock it - `uv lock`
+    - This creates a `uv.lock` file with all the dependencies in it
+- Run it - `uv run python main.py` 
+
