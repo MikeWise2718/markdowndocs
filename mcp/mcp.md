@@ -18,6 +18,14 @@ output: html_document
 - `claude mcp get <name>`
 
 
+# Node
+- You probably need node for most things
+- Installed Node 24 from ....
+- set `HOME=%USERPROFILE%` 
+- or add `HOME` and `%USERPROFILE%` to your User Environment setup dialog
+- After this you should be able to run something directly like the SSH MCP server below:
+   - node `"C:\Users\mike\AppData\Roaming\npm\node_modules\mcp-ssh-manager\src\index.js"`
+
 # Unity
 - There are quite a few MCP Servers
 - Using this one: `https://github.com/CoplayDev/unity-mcp`
@@ -79,3 +87,21 @@ output: html_document
 
 # Campsim
 - `claude mcp add  campsim -- C:\Users\mike\miniconda3\Scripts\uv.exe run --directory ./mcp-bridge python -m src.campsim_mcp_server`
+
+# MCP-SSH-Manager (bvisible)
+- https://github.com/bvisible/mcp-ssh-manager
+- Local JSON:
+.mcp.json
+```
+{
+  "mcpServers": {
+    "ssh-manager": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "C:\\Users\\mike\\AppData\\Roaming\\npm\\node_modules\\mcp-ssh-manager\\src\\index.js"
+      ]
+    }
+  }
+}
+```

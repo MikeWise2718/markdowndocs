@@ -102,3 +102,6 @@ Turns out I didn't have an ISDN phone line anymore, I have only Internet telepho
 
 # Wifi
 To do
+
+
+# GUDE Power

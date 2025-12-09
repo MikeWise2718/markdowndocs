@@ -77,7 +77,13 @@ output: html_document
        - `curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd`
        - It does not appear to use Chocolatey (looked into the `install.cmd`)
    - Settings then is loaded from `c:\users\username\.claude\settings.json`
-current settings.json 11/11/2025
+
+
+## ccstatline
+- Need to have Node 18+ or bun installed
+- test by `npx -y ccstatusline@latest`
+
+current  `c:\users\mike\.claude\settings.json` -  11/11/2025
 ```
 {
   "statusLine": {
@@ -88,7 +94,8 @@ current settings.json 11/11/2025
   "alwaysThinkingEnabled": true
 }
 ```
-.config\ccstatusline\settings.json
+- to dustomize `ccstatline` fields edit `c:\users\mike\.config\ccstatusline\settings.json`
+- example:
 ```
 {
   "version": 3,
