@@ -125,7 +125,7 @@ you need an api key to login. This is where you set it, but note that you cannot
 You set it for a R session with this command:
 ```
 Sys.setenv("plotly_username"="DemoAccount")   # mikewise1618
-Sys.setenv("plotly_api_key"="lr1c37zw81")     # save it somewhere 
+Sys.setenv("plotly_api_key"="YOUR_API_KEY_HERE")     # save it somewhere
 ```
 If you use it every day it should go in your .Rprofile
 
@@ -138,7 +138,7 @@ chart_link
 And for python like this:
 ```
 import plotly 
-plotly.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')
+plotly.tools.set_credentials_file(username='DemoAccount', api_key='YOUR_API_KEY_HERE')
 #plotly.offline.plot(fig, filename='polarplot-1.html') 
 plotly.plotly.iplot(fig, filename='polarplot-1')
 
@@ -172,7 +172,7 @@ p2 <- plot_ly(eco, x = ~date, y = ~uempmed,line=list(color="#0000ff")) %>%
 p <- subplot(p1, p2)
 p
 Sys.setenv("plotly_username"="mikewise1618")   # mikewise1618
-Sys.setenv("plotly_api_key"="LP05sV7k4rzFl5k9ewjY") 
+Sys.setenv("plotly_api_key"="YOUR_API_KEY_HERE")
 chart_link <- api_create(p, filename="subplotExample",sharing="public",fileopt="overwrite")
 chart_link
 ```
