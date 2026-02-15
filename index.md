@@ -5,7 +5,7 @@ output: html_document
 
 A compendium of things I have learned that I think I might need again but will likely forget. So pretty much anything.
 
-**137 topics** | Last updated: 2026-02-15
+**133 topics** | Last updated: 2026-02-15
 
 ---
 
@@ -36,7 +36,6 @@ A compendium of things I have learned that I think I might need again but will l
 | [MCP](https://mikewise2718.github.io/markdowndocs/mcp/mcp) | 2025-12 |
 | [Notepad2](https://mikewise2718.github.io/markdowndocs/notepad2/notepad2) | 2025-02 |
 | [NuGet](https://mikewise2718.github.io/markdowndocs/nuget/nuget) | 2025-08 |
-| [pip](https://mikewise2718.github.io/markdowndocs/pip/pip) | 2018-10 |
 | [Python on VS Code](https://mikewise2718.github.io/markdowndocs/pythononvscode/pythononvscode) | 2021-11 |
 | [RTVS](https://mikewise2718.github.io/markdowndocs/rtvs/rtvs) | 2017-12 |
 | [VI](https://mikewise2718.github.io/markdowndocs/vi/vi) | 2018-05 |
@@ -53,7 +52,6 @@ A compendium of things I have learned that I think I might need again but will l
 | [Azure Copy](https://mikewise2718.github.io/markdowndocs/azcopy/azcopy) | 2025-08 |
 | [Azure Databricks](https://mikewise2718.github.io/markdowndocs/azuredatabricks/azuredatabricks) | 2025-08 |
 | [Azure DSVM](https://mikewise2718.github.io/markdowndocs/azuredsvm/azuredsvm) | 2019-04 |
-| [Azure Flask](https://mikewise2718.github.io/markdowndocs/azureflask/azureflask) | 2019-04 |
 | [Azure Functions](https://mikewise2718.github.io/markdowndocs/azurefunctions/azurefunctions) | 2025-08 |
 | [Azure IoT Edge](https://mikewise2718.github.io/markdowndocs/azureiotedge/azureiotedge) | 2025-08 |
 | [Azure IoT Hub](https://mikewise2718.github.io/markdowndocs/azureiothub/azureiothub) | 2025-08 |
@@ -73,6 +71,7 @@ A compendium of things I have learned that I think I might need again but will l
 | [CUDA](https://mikewise2718.github.io/markdowndocs/cuda/cuda) | 2025-06 |
 | [Keras](https://mikewise2718.github.io/markdowndocs/keras/keras) | 2018-02 |
 | [ONNX](https://mikewise2718.github.io/markdowndocs/onnx/onnx) | 2018-10 |
+| [OpenClaw](https://mikewise2718.github.io/markdowndocs/openclaw/openclaw) | 2026-02 |
 | [OCR](https://mikewise2718.github.io/markdowndocs/ocr/ocr) | 2021-04 |
 | [Plotly](https://mikewise2718.github.io/markdowndocs/plotly/plotly) | 2018-06 |
 | [Pose Estimation](https://mikewise2718.github.io/markdowndocs/poseest/poseest) | 2024-08 |
@@ -146,12 +145,10 @@ A compendium of things I have learned that I think I might need again but will l
 |-------|-------------|
 | [Bing Maps](https://mikewise2718.github.io/markdowndocs/bingmaps/bingmaps) | 2025-08 |
 | [BotFramework](https://mikewise2718.github.io/markdowndocs/botframework/botframeworknotes) | 2025-08 |
-| [Netlink](https://mikewise2718.github.io/markdowndocs/netlink/netlink) | 2023-06 |
 | [Node.js](https://mikewise2718.github.io/markdowndocs/nodejs/nodejs) | 2025-01 |
 | [OpenStreetMap](https://mikewise2718.github.io/markdowndocs/openstreetmap/openstreetmap) | 2020-05 |
 | [Protobuf](https://mikewise2718.github.io/markdowndocs/protobuf/protobuf) | 2018-12 |
 | [ReactiveX](https://mikewise2718.github.io/markdowndocs/reactivex/reactivex) | 2018-03 |
-| [Teams](https://mikewise2718.github.io/markdowndocs/teams/teams) | 2021-02 |
 | [TinkerPop](https://mikewise2718.github.io/markdowndocs/tinkerpop/tinkerpop) | 2019-06 |
 | [ZeroMQ](https://mikewise2718.github.io/markdowndocs/zeromq/zeromq) | 2018-05 |
 
@@ -162,7 +159,6 @@ A compendium of things I have learned that I think I might need again but will l
 | [AlphaESS](https://mikewise2718.github.io/markdowndocs/alphaess/alphaess) | 2025-01 |
 | [Android](https://mikewise2718.github.io/markdowndocs/android/android) | 2025-08 |
 | [AR Core](https://mikewise2718.github.io/markdowndocs/arcore/arcore) | 2019-01 |
-| [Crypto Mining](https://mikewise2718.github.io/markdowndocs/cryptomining/cryptomining) | 2021-08 |
 | [FritzBox](https://mikewise2718.github.io/markdowndocs/fritzbox/fritzbox) | 2025-12 |
 | [HoloLens](https://mikewise2718.github.io/markdowndocs/hololens/hololens) | 2025-08 |
 | [Home Automation](https://mikewise2718.github.io/markdowndocs/homeautomation/homeautomation) | 2019-08 |
