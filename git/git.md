@@ -223,15 +223,15 @@ git config --global alias.hs "log --pretty='%C(yellow)%h %C(cyan)%ad %Cgreen%aN%
 ```
 
 ```
-C:\cse\pyvaxdecoder\PFH.FURS\PFH.FURS.Vaccination\pyvaxdecoder>git hs -10
-* 4daa064c4 5 minutes ago Mike Wise (HEAD -> pyvaxdecoder, origin/pyvaxdecoder) kluge fixed %3D error for saskey
-* 12682e91a 2 hours ago Mike Wise fixed requirements.txt for azure
-*   0924548b1 4 hours ago Mike Wise merged
+C:\projects\example>git hs -10
+* 4daa064c4 5 minutes ago UserA (HEAD -> feature, origin/feature) fixed encoding error
+* 12682e91a 2 hours ago UserA fixed requirements.txt for azure
+*   0924548b1 4 hours ago UserA merged
 |\
-| * be4b2feb0 6 hours ago erhunse added required packages in requirements.txt
-| * dfc295efc 10 hours ago erhunse changed json return
-| * 38388b0b9 10 hours ago erhunse Should read file with filename given and return vaccine. TODO: base64. to check (sas)
-* | 55be8fe95 13 hours ago erhunse Should read file with filename given and return vaccine. TODO: base64. to check (sas)
+| * be4b2feb0 6 hours ago UserB added required packages in requirements.txt
+| * dfc295efc 10 hours ago UserB changed json return
+| * 38388b0b9 10 hours ago UserB Should read file with filename given and return result
+* | 55be8fe95 13 hours ago UserB Should read file with filename given and return result
 |/
 * d159f3b1e 32 hours ago erhunse added  record and updated extractor
 * 3f01d3de2 35 hours ago erhunse python port vaxdecoder

@@ -192,7 +192,7 @@ Original `omni.create.bat`:
 setlocal
 call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit"  %*
 ```
-Paul Rance's:
+Alternative version with extra flags:
 ```
 call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/default_rasterpolicy_enabled=true --/renderer/multiGpu/enabled=true --/exts/omni.kit.widget.graph/raster_nodes=true %*
 ```

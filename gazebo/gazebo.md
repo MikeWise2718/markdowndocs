@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- Don't try and compile it under windows like the docs indicate you should do. It is a catasrophy
+- Compiling under Windows is not recommended despite what the docs say — it is extremely difficult to get working
 - Works well with WSLg, but you need Windows 11
 
 # Installation
@@ -95,7 +95,7 @@ output: html_document
     - Had to comment out the two `%win_lib%` calls in `configure.bat` at the begining
     - Had to add `set ignition-math4_DIR=d:\gz-ws\ign-math\build\` to get it to find the math4 cmake
     - Had to add `set dlfcn-win32_DIR=D:\gz-ws\dlfcn-win32-vc15-x64-dll-MD\share\dlfcn-win32' to get it to find the dlfcn-win32 cmake
-- After about 3 hours of getting nowhere I gave up
+- Gave up on the Windows compile path after extensive troubleshooting
 
 
 # Conveyer belt

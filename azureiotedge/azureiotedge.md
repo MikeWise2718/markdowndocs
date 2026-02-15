@@ -67,7 +67,7 @@ Disconnected       0001-01-01T00:00:00           abra-ubu-x86        63657307626
         
      - compile by right clicking on the `.csproj` file
      - build the docker by right-clicking on the docker file in the right sub-directory
-        - you will be asked to brows to the `publish` subdirectory (how stupid is this?)
+        - you will be asked to browse to the `publish` subdirectory (not very intuitive)
         - you will be asked to name the image - you will need to put the name of the targe repository in the first part of the name (I think this is required)
      - Now login to your repository and push the docker image
         - `az acr login --name mikescontainers`
@@ -271,9 +271,9 @@ Runtime started.
 ```
 
 # Base images
-- Audi hack
+- Client project
     - most things based off `FROM microsoft/dotnet:2.0.0-runtime-stretch`
-    - ml based off `FROM  audimunichacr.azurecr.io/audi_tf_models`
+    - ml based off a client-specific ACR image
  - New style
     - FROM microsoft/dotnet:2.0-sdk AS build-env
     - FROM microsoft/dotnet:2.0-runtime
@@ -295,8 +295,8 @@ Runtime started.
  
  - Issue: iotedgectl somehow could not pull the images, although I could locally
    - Date 2018-04-15 12:07 
-   - Resolution:  `sudo iotedgectl login --address vafsb.azurecr.io --username vafsb --password IBcNH....3lvVz68`
-   - Notes: `az acr login --name vafsb` and `docker login vafsb.azurecr.io -u vafsb -p IBcNH...v68` were not enough
+   - Resolution:  `sudo iotedgectl login --address <registry>.azurecr.io --username <user> --password <password>`
+   - Notes: `az acr login --name <registry>` and `docker login <registry>.azurecr.io -u <user> -p <password>` were not enough
      - Even the the `sudo iotedgect` variant did not work at first - probably because I had `iotedgectl` stopped. 
      - When I did it while it was running, it worked
      - Afterwards this registry data should be in the `/etc/azure.../config.json` file so you will only need to do it onces

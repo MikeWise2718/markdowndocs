@@ -51,7 +51,7 @@ Not really that trival, described in some detail in the github repo [here](https
 # Utilities
 - There is no `nvidia-smi`, however there is `~/tegrastats` which is not bad.
 - `sudo ~/tegrastats` gets you a few more columns.
-- It doesn't set up a `~/bin` for your utilities. Boo hiss...
+- It doesn't set up a `~/bin` for your utilities, which is inconvenient.
 - More info: https://devtalk.nvidia.com/default/topic/928386/gpu-usage-monitoring-on-tx1/?offset=10
 
 # Installation of CudNN
@@ -106,7 +106,7 @@ These are the current contents of config.json:
     },
     "type": "docker"
   },
-  "deviceConnectionString": "HostName=MikesIoThub1618.azure-devices.net;DeviceId=joltik-l4t-aarch64;SharedAccessKey=xxxxxxx",
+  "deviceConnectionString": "HostName=<iothub-name>.azure-devices.net;DeviceId=<device-id>;SharedAccessKey=<key>",
   "homeDir": "/var/lib/azure-iot-edge",
   "hostName": "tegra-ubuntu",
   "logLevel": "info",

@@ -1,5 +1,5 @@
 ---
-title: "Template Titles"
+title: "R Grid"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)

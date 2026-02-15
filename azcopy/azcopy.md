@@ -21,10 +21,10 @@ output: html_document
 # Examples
 ## Copy
 ```
-azcopy.exe copy "https://msftcampusdata.blob.core.windows.net/hhdata8/hh5ab-u8.txt?sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=IuKUOzMUtuGdWFVq0dWfq465DHAOCWWY3OI6n4SReDQ%3D" "H:\msftcampusdata\hhdata8\hh5ab-u8.txt" --overwrite=prompt --check-md5 FailIfDifferent --from-to=BlobLocal --cap-mbps=50 --recursive;
+azcopy.exe copy "https://mystorageaccount.blob.core.windows.net/container/file.txt?sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=REDACTED" "H:\localpath\file.txt" --overwrite=prompt --check-md5 FailIfDifferent --from-to=BlobLocal --cap-mbps=50 --recursive;
 ```
 
 ## Resume
 ```
-azcopy.exe jobs resume 1a81...45 --source-sas="sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=IuKUOzMUtuGdWFVq0dWfq465DHAOCWWY3OI6n4SReDQ%3D" --cap-mbps=50
+azcopy.exe jobs resume <job-id> --source-sas="sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=REDACTED" --cap-mbps=50
 ```

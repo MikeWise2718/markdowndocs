@@ -10,7 +10,7 @@ This is apparently *the* RL book.
 Example image:
 ![Red Fish](SmallerFish.png)
 
-Example equation: $c^2 = \sqrt{a^2 + b^2}$
+Example equation: $c = \sqrt{a^2 + b^2}$
 
 #  1 - Introduction
 ## 1.1	Reinforcement Learning <br>

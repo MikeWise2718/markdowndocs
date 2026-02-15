@@ -13,7 +13,7 @@ A place to gather notes about climate models and the orgs driving them.
     - IFS (Integreated Forecasting System) - https://www.ecmwf.int/en/research/modelling-and-prediction
 - GIFF - NASA Goddard Instute for Space Studies - (https://map.nasa.gov/models/)
 - GEOS-5 - NASA Goddard Space Flight Center - (https://gmao.gsfc.nasa.gov/GEOS/)
-- CESM - NCAR (https://gmao.gsfc.nasa.gov/GEOS/)
+- CESM - NCAR (https://www.cesm.ucar.edu/)
 
 # Federated Model Frameworks
 - Nature artcile around multi-sector climate impacts - (https://www.nature.com/articles/s41467-018-02984-9)

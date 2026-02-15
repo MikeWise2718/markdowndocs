@@ -9,11 +9,11 @@ output: html_document
 # Intro
 Tensorflow - main install link: [link](https://www.tensorflow.org/install/)
  - 9 March 2017 TF 1.0.1 installed into Anaconda3 (from file dates)
- - Actually installing TF is a royal pia every time. Switching to Docker.
+ - Installing TF can be quite difficult. Switching to Docker.
     - That turned out to be a bad idea as Docker does not support GPUs on Windows
 
 # Installing with GPU on Ubuntu
-- It is a pain in the butt. The drivers, Cuda, CuDNN, must all fit to the version of TF, and it can be hard to tell.
+- It is quite involved. The drivers, CUDA, cuDNN must all match the version of TF, and compatibility can be hard to determine.
 - Following all these steps are key: https://www.tensorflow.org/install/install_linux
 
 ### Drivers

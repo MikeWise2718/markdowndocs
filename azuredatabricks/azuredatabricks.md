@@ -38,7 +38,7 @@ output: html_document
 - Docs - (https://docs.databricks.com/dev-tools/databricks-connect.html#:~:text=Download%20and%20unpack%20the%20open,%2Flocal%2Flib%2Fpython3.)
 - As of 9-Feb-2021 using Python 3.7 and Cluster Runtime 7.5
 - `pip install -U databricks-connect==7.3.*`, note 7.5 was not available
-- Databricks instance: WeDataBricksTest in WestEurope - Simulation and Autonomous Systems
+- Databricks instance: WeDataBricksTest in WestEurope
     - Need to collect these:
     - URL: https://adb-3181657523121670.10.azuredatabricks.net
     - Cluster ID: 0208-163407-lapse941

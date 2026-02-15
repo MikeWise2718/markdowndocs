@@ -73,7 +73,7 @@ python3.12 --version
 
 ## CIVITAI
 - https://civitai.com/
-- mikewise1618471
+- (username redacted)
 
 ## Tensor.Art
 - https://tensor.art/

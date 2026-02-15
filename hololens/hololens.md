@@ -1,5 +1,5 @@
 ---
-title: "Template Titles"
+title: "HoloLens"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -27,7 +27,7 @@ Expensive but cool.
   * set transform position to 0,0,0 
   * Set *Clear Flags* property to "Solid color"
   * Set color to 0,0,0,0
-* Did not mention fields to set application name (wtf are they?)
+* Did not mention fields to set application name (unclear where these are)
 * Did not mention need to set checkboxes for *SpatialPerception* and *Microphone* in Player Settings under Publishing Settings/Capabilities
 * The Spatial Mapper changed pretty drastically, totally new components, and no on/off switch (which didn't seem work anyway).
 * I think it only works with Visual Studio 2017

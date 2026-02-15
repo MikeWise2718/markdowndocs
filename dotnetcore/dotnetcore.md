@@ -6,7 +6,7 @@ output: html_document
 
 # Intro
 * The new open-sourced cross-platform version of .Net
-* Current version is 2.0
+* .NET Core has been superseded by .NET 5+ (now just called ".NET")
 * Main Repo: https://github.com/dotnet/core
 
 # Docs

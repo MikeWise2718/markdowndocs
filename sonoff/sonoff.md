@@ -6,7 +6,7 @@ output: html_document
 
 # Intro
 - An awesome little computer that can hook up to the world wirelessly and report things like temperatures.
-- Thank you Jonathan for telling me about it :)
+- Found out about these from a colleague's recommendation
 - I have two "Sonoff TH10 Wifi Smart Switches" got it for like 8 Euros- review here: (https://tech.scargill.net/sonoff-th10-and-th16/)
 - (https://ewelink.coolkit.cc/?p=149)
 - How to replace the firmware: (https://github.com/arendst/Tasmota)
@@ -16,5 +16,5 @@ output: html_document
 - explanation: (https://hackaday.com/2015/03/18/how-to-directly-program-an-inexpensive-esp8266-wifi-module/)
 
 # Initializig
-- Ewelink didn't work so tried "EPS2866 Smart Config" instead on Jonathans recommendation
+- Ewelink didn't work so tried "EPS2866 Smart Config" instead on a recommendation
 - That did't work either, so went back to Ewelink, and this time it worked.

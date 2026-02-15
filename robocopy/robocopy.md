@@ -28,5 +28,5 @@ Copy a bunch of files on the cwd of E: with a particular mask with all attribute
 - List only - don't do it
    - `robocopy E:\ [0-9][0-9]-* C:\ /E /COPYALL /IS /IT /L`
 - Do it:
-   - `robocopy E:\ [0-9][0-9]-* C:\ /E /COPYALL /IS /IT /L`
+   - `robocopy E:\ [0-9][0-9]-* C:\ /E /COPYALL /IS /IT`
 - Note this needs admin priveldges 

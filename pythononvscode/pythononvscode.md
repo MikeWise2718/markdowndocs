@@ -29,7 +29,7 @@ To activate a particular python environment
 - Now you can select code portions, right click and select `Run Selection/Line in Python`
 - On the command line you can query the variable stats with print statmenets
 
-### Things that kind of suck about this REPL Experience
+### Limitations of this REPL Experience
 - There is no variable window like in R-Studio, RTVS, or Spyder
 - There is no up-arror or down arrow to select recent statements
 - There is no "source" button or command anywhere

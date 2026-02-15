@@ -17,12 +17,12 @@ view=azure-devops)
 - `git config user.email "mike.wise@mothership.com"`
 - `git config user.name mike-wise`
 - `git config user.password XXXXXXX`
--  Created repo at `https://dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
--  `git push --mirror https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
+-  Created repo at `https://dev.azure.com/<team>/<project>/_git/CampSim`
+-  `git push --mirror https://<team>@dev.azure.com/<team>/<project>/_git/CampSim`
 -    oddly it didn't dual auth me?
 - `git lfs fetch origin --all`
    - Took like 10 minutes to fetch all 1074 objects - 5.3 GB, 7.9 MB/s
-- `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
+- `git lfs push --all https://<team>@dev.azure.com/<team>/<project>/_git/CampSim`
 - Failed with 37 LFS Server timeout errors:
 
 
@@ -34,7 +34,7 @@ view=azure-devops)
  
 - Finally fixed it with this
   - `git config http.version HTTP/1.1`
-  - `git lfs push --all https://AppliedInnovationTeam@dev.azure.com/AppliedInnovationTeam/UnityDevOps/_git/CampSim`
+  - `git lfs push --all https://<team>@dev.azure.com/<team>/<project>/_git/CampSim`
   - `Uploading LFS objects: 100% (1074/1074), 5.3 GB | 4.2 MB/s, done.` in about 3 minutes
    
 

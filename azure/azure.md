@@ -22,7 +22,7 @@ One used to do things with PowerShell, but the Azure CLI 2.0 is a much better wa
  - capacity problems abound...
 
 # Azure App Service for Linux
-- Docs here: https://politics.stackexchange.com/questions/39688/why-did-the-eu-agree-to-delay-the-brexit-deadline
+- Docs here: https://learn.microsoft.com/en-us/azure/app-service/overview
 - Had to install App Service Extension 0.13.0:
 
 

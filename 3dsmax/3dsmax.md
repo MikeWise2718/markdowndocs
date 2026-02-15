@@ -7,7 +7,7 @@ output: html_document
 # Intro
  - 3d studio - now called 3ds max 
  - Autodesk bought it for better or worse - installs a lot of Autodesk when you install it so watch out
- - currently costs 2057.58 Euros a year to use, but you can get a trial edition and run it in a hyper-v to avoid this
+ - currently costs 2057.58 Euros a year to use; a trial edition is available for evaluation
  - will need an email account for it
 
 # Basics

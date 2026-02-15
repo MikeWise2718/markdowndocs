@@ -1,5 +1,5 @@
 ---
-title: "Windwos SetupTemplate Titles."
+title: "Windows Setup"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -164,7 +164,7 @@ claimedtpmcounter       0x10002
 ### Backing up bcd
 - Good video (https://www.youtube.com/watch?v=CZ17JrgFFhw&t=271s)
 - Enter `bcdedit export c:\bcd.bak` from Admin Command Shell to backup
-- Enter `bcdedit export c:\bcd.bak` from Admin Command Shell to restore (!!!! danger)
+- Enter `bcdedit /import c:\bcd.bak` from Admin Command Shell to restore
 
 ## Breaking it
 - `bcdedit /set path \win`

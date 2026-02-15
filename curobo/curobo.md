@@ -1,5 +1,5 @@
 ---
-title: "Template Titles"
+title: "CuRobo"
 output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
@@ -67,16 +67,9 @@ output: html_document
 
   # CuRobo Start
 - Apparently only works on Linux
-- Tommy says won't work on WSL2 because
-```
-7 June 2024
-[12:30] Tommy Wu (External)
-you can enable gpu in wsl2 , but you can not run isaac sim in wsl2 now
-[12:30] Tommy Wu (External)
-since it need extra vulkan enabled which is not suppored by wsl GPU enbaled.
-[12:31] Tommy Wu (External)
-I have tried hard to enable that.
-```
+- Won't work on WSL2 because:
+  - You can enable GPU in WSL2, but you cannot run Isaac Sim in WSL2
+  - It needs extra Vulkan support which is not available with WSL GPU passthrough
 (clean WSL2 install on Ubunut 22)
 (forgot to check python version)
 (installed some apt repo source)

@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-Secure Shell. It has a frigging web site: <https://www.ssh.com/>
+Secure Shell. It even has its own web site: <https://www.ssh.com/>
 - History <https://docstore.mik.ua/orelly/networking_2ndEd/ssh/ch01_05.htm#ch01-87482.html>
 - SSH1 vs. SSH2 (1995 vs. 1998) <https://docstore.mik.ua/orelly/networking_2ndEd/ssh/ch01_05.htm#ch01-87482.html>
 

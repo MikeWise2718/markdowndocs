@@ -85,7 +85,7 @@ sudo apt install firefox
 
 # Install Nvidia device drivers
 - Can look for Nvidia Extension (see screenshot)
-- Script that we got from Yuval Mazor that works:
+- Script that works for installing NVIDIA drivers:
 - Should be installed after XRDP (and after XRDP gets upgraded)
 ```
 #!/bin/bash
@@ -109,10 +109,12 @@ source ~/.bashrc
 nvidia-smi
 nvcc -V
 echo "Installation complete. Please reboot and verify that the GRID driver and CUDA toolkit have been installed successfully."
-sudo apt-get remove --purge $(dpkg --get-selections | grep -i nvidia | cut -f1)
-sudo apt-get remove --purge $(dpkg --get-selections | grep -i cuda | cut -f1)
-sed -i PATH="$PATH:/usr/local/cuda-12.0/bin" >
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64' >> ~/.bashrc
+# WARNING: The lines below were removing the just-installed drivers and had a broken sed command.
+# They have been commented out. If you need to remove nvidia/cuda, do so intentionally.
+# sudo apt-get remove --purge $(dpkg --get-selections | grep -i nvidia | cut -f1)
+# sudo apt-get remove --purge $(dpkg --get-selections | grep -i cuda | cut -f1)
+# sed -i PATH="$PATH:/usr/local/cuda-12.0/bin" >   # broken sed command
+# echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64' >> ~/.bashrc
 sudo reboot
 ```
 

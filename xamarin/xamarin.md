@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Xamarin
-All that is left of Microsoft's mobile strategy?
+Microsoft's cross-platform mobile framework (now retired, succeeded by .NET MAUI).
 
 [Xamarin Recipes](https://github.com/xamarin/recipes)
 [Accelerometer Instructions](https://developer.xamarin.com/recipes/android/os_device_resources/accelerometer/get_accelerometer_readings/)
