@@ -145,8 +145,11 @@ line 134:
       dist_t max_d = {0.0, 0, 0};
 
 line 357:
+<!-- raw/endraw needed: Jekyll Liquid treats {{ }} as template variables and breaks the build -->
+{% raw %}
       // dist_t  max_d[NBPB] = {{ .d = 0.0, .i = 0, .j = 0 } };
       dist_t  max_d[NBPB] = {{0.0,0,0 }};
+{% endraw %}
 
 in d:/ov/curobot/src/curobo/util/usd_helper.py
 and changed 13 calls of `join_path` to `join_usd_path`
@@ -224,10 +227,13 @@ D:\ov\curobo2310>diff D:\ov\curobo2310\src\curobo\curobolib\cpp\self_collision_k
 >       // dist_t max_d = { .d = 0.0, .i = 0, .j = 0 };
 >       dist_t max_d = {0.0, 0, 0};
 357c358,359
+<!-- raw/endraw needed: Jekyll Liquid treats {{ }} as template variables and breaks the build -->
+{% raw %}
 <       dist_t  max_d[NBPB] = {{ .d = 0.0, .i = 0, .j = 0 } };
 ---
 >       // dist_t  max_d[NBPB] = {{ .d = 0.0, .i = 0, .j = 0 } };
 >       dist_t  max_d[NBPB] = {{0.0,0,0 }};
+{% endraw %}
 
 ```
 - `copy D:\ov\curobo400\src\curobo\curobolib\cpp\self_collision_kernel.cu  D:\ov\curobo2310\src\curobo\curobolib\cpp\self_collision_kernel.cu`

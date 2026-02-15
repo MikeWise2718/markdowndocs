@@ -37,10 +37,13 @@ Get AAD TPlem
 		resource: https://management.azure.com/
         
 
+<!-- raw/endraw needed: Jekyll Liquid treats {{ }} as template variables and breaks the build -->
+{% raw %}
 		grant_type:{{grant_type}}
         client_id:{{client_id}}
         client_secret:{{client_secret}}
         resource:{{resource}}
+{% endraw %}
          
          vafsbReactor1 - client_id:64cb...67
          client_secret:xxxxxxxxxxxxxxxxxxxxxxxxxxxx

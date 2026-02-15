@@ -37,7 +37,7 @@ output: html_document
 - A query that output all the data in the current bounding box:
 ```
 (
-  node({{bbox}});
+  node({% raw %}{{bbox}}{% endraw %}); <!-- raw/endraw needed: Jekyll Liquid treats {{ }} as template variables -->
    <;
 );
 out meta;
