@@ -48,17 +48,17 @@ output: html_document
                 {
                     new MapType("Aerial")
                     {
-                        //string key = "IdbTbLfVZWE6B5pnqB-ybmzk5KbM_lyQeLtt_YusYNc";
+                        //string key = "YOUR_SUBSCRIPTION_KEY";
                         // See https://docs.mothership.com/en-us/rest/api/maps/render/getmaptile;
 
                         //urlWithoutLabels = "https://t{rnd0-4}.ssl.ak.tiles.virtualearth.net/tiles/a{quad}.jpeg?mkt={lng}&g=1457&n=z",
                         //urlWithLabels = "https://t{rnd0-4}.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch/{quad}?mkt={lng}&it=A,G,L,LA&og=30&n=z"
-                        urlWithoutLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=IdbTbLfVZWE6B5pnqB-ybmzk5KbM_lyQeLtt_YusYNc&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}",
-                        urlWithLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=IdbTbLfVZWE6B5pnqB-ybmzk5KbM_lyQeLtt_YusYNc&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}"
+                        urlWithoutLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=YOUR_SUBSCRIPTION_KEY&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}",
+                        urlWithLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=YOUR_SUBSCRIPTION_KEY&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}"
                      },
                     new MapType("Road")
                     {
-                        urlWithLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=IdbTbLfVZWE6B5pnqB-ybmzk5KbM_lyQeLtt_YusYNc&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}"
+                        urlWithLabels = "https://atlas.mothership.com/map/tile/basic?subscription-key=YOUR_SUBSCRIPTION_KEY&api-version=1.0&layer=basic&style=main&zoom={zoom}&x={x}&y={y}"
                         //urlWithLabels = "https://t{rnd0-4}.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch/{quad}?mkt={lng}&it=G,VE,BX,L,LA&og=30&n=z"
                     }
                 }

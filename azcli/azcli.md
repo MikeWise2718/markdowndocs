@@ -37,13 +37,13 @@ output: html_document
 - `sudo docker run -it --rm edgecontainermodule.azurecr.io/ros-signalr-hmi:latency`
 
 
-# MetLife
+# Client project example
 ```
 az version
-az account set -s "ProjectSomethingOrOther"
+az account set -s "YourSubscriptionName"
 az storage account list --output table
-az storage container list --account-name pvxdeveusst001 --output table
-az storage blob list --container vaxdecodingdata --account-name pvxstorageaccount001 --output table
+az storage container list --account-name yourstorageaccount --output table
+az storage blob list --container yourcontainer --account-name yourstorageaccount --output table
 ```
 
 # What locations are there   
@@ -105,4 +105,4 @@ Go to security
 Add an access token for that machine
 Copy the login token to notepad or something
 go to where you want to clone it
-enter "get clone https://repsol-digital
+enter "git clone https://yourorg@dev.azure.com/yourorg/yourproject/_git/yourrepo"

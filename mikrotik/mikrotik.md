@@ -37,15 +37,9 @@ output: html_document
 
 # Netgear GS724TPP Switch
 - IP Address  192.168.25.171
-- Serial Number  65FA1B50A0060
-- MAC Address  C8:9E:43:9A:97:88
-Password tries:
-- Toor.125
-- toor.125
-- toor.25
-- Netgear1618!
-- admin/password
-- admin/1234
+- Serial Number  REDACTED
+- MAC Address  REDACTED
+- Default credentials: see https://kb.netgear.com/1148/What-are-the-default-user-interface-passwords-for-NETGEAR-devices
 https://kb.netgear.com/1148/What-are-the-default-user-interface-passwords-for-NETGEAR-devices
 Password recovery
 https://kb.netgear.com/app/answers/detail/a_id/8903

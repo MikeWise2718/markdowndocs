@@ -42,10 +42,7 @@ A ubiquitous router - in Germany at least.
 - Can be restored to another FritzBox - not sure if the model can change, but probably
 
 # DSL
-- Here is a section from the PDF letter with my signing data from Vodafone with my user data:<br>
-![vodafone user data](VodafoneUserData.png).<br>
-
-- I simply had to add my username and password - like this:<br> ![this](ZugangsDaten.png).<br>
+- Enter the DSL username and password from your ISP letter in the FritzBox DSL settings (Zugangsdaten).
 
 
 
@@ -56,8 +53,7 @@ A ubiquitous router - in Germany at least.
 # ISDN Phones
 Turns out I didn't have an ISDN phone line anymore, I have only Internet telephony from Vodafone. Took me awhile to realize this.
 
-- The sip numbers and their passwords from Vodafone looked like this:<br>
-![vodafone user data](PhoneDaten.png).<br>
+- Enter your SIP phone numbers and passwords from your ISP into the FritzBox telephony settings.
 
 - I had to enter these numbers inwith the FritzBox and the FritzBox had to register them with my provider (mVodafone). For my provider (Vodafone DSL) I only had to add the numbers and the password, becasuse it knew the pattern that vodafone uses:<br>
 ![vodafone sip registration](SipNumberRegistration.png).<br>

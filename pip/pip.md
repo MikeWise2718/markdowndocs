@@ -12,5 +12,5 @@ output: html_document
 
 # Ensure pip
 
-- this worked for me once in a virtual environment - <https://www.businessinsider.com/best-microscope-images-nikon-small-world-winners-2018-10>
+- `python -m ensurepip --upgrade`
 
