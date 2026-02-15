@@ -122,10 +122,10 @@ Review of all ~137 topic pages for embarrassing, wrong, or sensitive content.
 
 ---
 
-## Global Issues — NOT ADDRESSED
+## Global Issues — PARTIALLY ADDRESSED
 
-### "mothership.com" domain substitutions
-Across many files, Microsoft domains (`docs.microsoft.com`, `azure.microsoft.com`, etc.) have been replaced with `mothership.com` variants. **Every link to Microsoft documentation is broken** for visitors. This affects dozens of files including: android, copilot, csharp, dotnetcore, hololens, linq, nuget, and many more.
+### "mothership.com" domain substitutions — FIXED ✅
+~~Across many files, Microsoft domains (`docs.microsoft.com`, `azure.microsoft.com`, etc.) have been replaced with `mothership.com` variants.~~ Fixed: 106 broken URLs restored to correct `microsoft.com` equivalents across 26 files. Email addresses (`@mothership.com`) and `onmothership.com` references left as intentional redactions of internal Microsoft info.
 
 ### Recurring "# Something Else" template placeholders
 The following files still have empty `# Something Else` sections from the original template: alphaess, bonsai, chome, citiesskylines, climatemodels, colcon, comfyui, ~~cryptomining~~, factorio, gamearch, kerbal.
