@@ -36,7 +36,7 @@ HWiNFO is a Windows only tool for reading sensor values - particularly those fro
 
 # Installing Skin
 - Link to Rainmeter plug-in forum: (https://www.hwinfo.com/forum/forums/rainmeter-plug-in.12/)
-  - My user is MikeWise1618
+  - (registered forum user)
 - This thread seems to have the best installation instructions (https://www.hwinfo.com/forum/threads/rainmeter-plug-in-for-hwinfo-3-2.2172/)
 - Instructions were broken because the web site was changed and google was confused
 - Plugin installation instructions:

@@ -90,7 +90,7 @@ then ran:
 pip install torch
 python3
 ```
-mike@Fearow:~$ python3
+user@host:~$ python3
 Python 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch
@@ -173,7 +173,7 @@ Robot spheres in:
 # Curobo on Ubuntu
 - 26 July 2024
 ## Ubunutu
-- Installed new Ubuntu 24.04 (Luxray) - bare bones (no office)
+- Installed new Ubuntu 24.04 - bare bones (no office)
 
 ## OV
 - Installed OV  `omnivers-launcher-liux.AppImage`
@@ -365,7 +365,7 @@ tests/pose_test.py::test_pose_transform_point_grad
 D:\ov\curobo2310>
 ```
 
-On Luxray (Ubunutu 24.04)
+On Ubuntu 24.04
 Coloring changes to yellow for warning at 70% - not 90%
 ```
 mike@luxray:~$ omni_python -m pytest .

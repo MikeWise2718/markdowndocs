@@ -18,19 +18,19 @@ cd /home/mike/tfrepos/models/research/object_detection
 File Diff - vapydiff
 ```
 #!/bin/bash
-SDIR=/home/mike/tfrepos/models/research/object_detection/
-DDIR=/home/mike/vafsb/h-mod/h-objdet/vapy/
+SDIR=/home/user/tfrepos/models/research/object_detection/
+DDIR=/home/user/project/h-mod/h-objdet/vapy/
 find . -name "va_*.py" -exec diff -q {}  $DDIR{} \;
 ```
 
 Delete lots of stuff - camclean
 ```
 #!/bin/bash
-sudo find /mass/vafsb/imcap -name "c*.jpg"  -delete
-sudo find /mass/vafsb/imcap/pyOutput -name "*.txt"  -delete
-sudo find /mass/vafsb/imcap/output_redaction -name "*.csv"  -delete
-sudo find /mass/vafsb/imcap/output_redaction/boxplots/ -name "*.jpg"  -delete
-sudo find /mass/vafsb/imcap/output_redaction/redacted/ -name "*.jpg"  -delete
-sudo find /mass/vafsb/imcap/output_redaction/cropped/ -name "*.jpg"  -delete
+sudo find /data/project/imcap -name "c*.jpg"  -delete
+sudo find /data/project/imcap/pyOutput -name "*.txt"  -delete
+sudo find /data/project/imcap/output_redaction -name "*.csv"  -delete
+sudo find /data/project/imcap/output_redaction/boxplots/ -name "*.jpg"  -delete
+sudo find /data/project/imcap/output_redaction/redacted/ -name "*.jpg"  -delete
+sudo find /data/project/imcap/output_redaction/cropped/ -name "*.jpg"  -delete
 
 ```

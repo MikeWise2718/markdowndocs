@@ -75,8 +75,8 @@ Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.146.1-microsoft-standard-WSL2 x86_
 
 This message is shown once a day. To disable it please create the
 /home/mike/.hushlogin file.
-mike@Fearow:~$ ls
-mike@Fearow:~$ ls -ali
+user@host:~$ ls
+user@host:~$ ls -ali
 total 24
   477 drwxr-x--- 3 mike mike 4096 Jun 17 13:35 .
 16386 drwxr-xr-x 3 root root 4096 Jun 17 13:35 ..
@@ -85,7 +85,7 @@ total 24
 29615 drwx------ 2 mike mike 4096 Jun 17 13:35 .cache
 29617 -rw-r--r-- 1 mike mike    0 Jun 17 13:35 .motd_shown
 29545 -rw-r--r-- 1 mike mike  807 Jun 17 13:35 .profile
-mike@Fearow:~$
+user@host:~$
 ```
 - On 5 Nov 2024 - `wsl --version`
 - Had just updated from 2.2.something with `wsl --update`
@@ -118,14 +118,14 @@ Windows version: 10.0.26120.751
 C:\Users\mwise>wsl
 wsl: The .wslconfig setting 'wsl2.kernel' is disabled by the computer policy.
 ROS 2 Distro Humble Hawksbill activated on Ubu 22.04
-mike@Fearow:~$
+user@host:~$
 ```
 
 ## Building the kernel
 - Simple clone the repo, install the tool chain, configure the kernel, and build it
 - WSL2 Repo Site:(https://github.com/microsoft/WSL2-Linux-Kernel)
 - Helpful Site:(https://microhobby.com.br/blog/2019/09/21/compiling-your-own-linux-kernel-for-windows-wsl2/)
-- Took close to an hour to build on WSL2 (Fearow)
+- Took close to an hour to build on WSL2
 
 
 - DON'T INSTALL CUDA on WSL - see this for how to do it right:

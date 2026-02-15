@@ -39,7 +39,7 @@ Living close to the edge.
 # How tos from a remote build machine
   - List devices - this works better than the device-identity command which fails whey you are out of messages
 ```  
-C:\Users\mike>az iot device list --hub-name MikesIoThub1618 --output table
+C:\Users\user>az iot device list --hub-name <iothub-name> --output table
 This command is deprecating and will be removed in future releases. Use 'az iot hub device-identity list (via IoT Extension)' instead.
 ConnectionState    ConnectionStateUpdatedTime    DeviceId                  GenerationId  LastActivityTime     Status    StatusUpdatedTime
 -----------------  ----------------------------  ------------------  ------------------  -------------------  --------  -------------------

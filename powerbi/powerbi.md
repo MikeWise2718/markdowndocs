@@ -9,7 +9,7 @@ output: html_document
 * My site: https://msit.powerbi.com/groups/me/contentlist
 * There is the `PowerBI Desktop` and the `PowerBI Service`. They are quite different.
 * Best place to look for info is the PBI community 
-   * User: MikeWise1618  - email: mwise@mothership.com
+   * (registered community user)
    * https://community.powerbi.com/t5/Developer/Get-data-using-REST-API/td-p/122055
    * https://community.powerbi.com/t5/Developer/A-way-to-use-REST-API-to-Extract-Data-from-Dataset/td-p/329635
 

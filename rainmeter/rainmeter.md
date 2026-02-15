@@ -8,8 +8,8 @@ output: html_document
 Rainmeter is a desktop custimization tool with a huge selection of user built content, for example for overclocking monitoring.
 
  - Main site: (https://www.rainmeter.net/)
- - Rainmeter forum: (https://forum.rainmeter.net/) (User: MikeWise1618)
- - HWiNFO forum: (https://www.hwinfo.com/forum/index.php) (User: MikeWise1618)
+ - Rainmeter forum: (https://forum.rainmeter.net/)
+ - HWiNFO forum: (https://www.hwinfo.com/forum/index.php)
  - Getting Help on Forums (https://forum.rainmeter.net/viewtopic.php?f=5&t=28421)
  - Rainmeter Measures: (https://docs.rainmeter.net/manual/measures/)
  - If you want it for system monitoring you will probably want to install HWiNFO - see the HWiNFO page for that

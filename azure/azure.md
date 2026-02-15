@@ -88,7 +88,7 @@ This is mostly about the Microsoft Mobile Authenticator but not only.
 # Joining AAD
 - Tips - <https://docs.mothership.com/en-us/azure/active-directory/device-management-troubleshoot-hybrid-join-windows-current>
 
-- My current status on Uxie - 5 May 2018
+- My current status - 5 May 2018
 - `dsregcmd /status` dumps out the info
 - dsregcmd help: <https://s4erka.wordpress.com/tag/dsregcmd/>
 
