@@ -42,7 +42,7 @@ output: html_document
     - Need to collect these:
     - URL: https://adb-3181657523121670.10.azuredatabricks.net
     - Cluster ID: 0208-163407-lapse941
-    - databricks-connect-token dapi489a396c389a7f0687f5d9649926afe9-2
+    - databricks-connect-token YOUR_TOKEN_HERE
     - orgid: 3181657523121670
     - port: 15001
 - Includes how to set up with VS Code and Miniconda
