@@ -133,7 +133,7 @@ locale                  en-US
 inherit                 {globalsettings}
 flightsigning           Yes
 default                 {current}
-resumeobject            {190dd86d-9b23-11ee-a6dd-c3031ed96fe4}
+resumeobject            {190d...e4}
 displayorder            {current}
 toolsdisplayorder       {memdiag}
 timeout                 30
@@ -146,7 +146,7 @@ path                    \WINDOWS\system32\winload.efi
 description             Windows 11
 locale                  en-US
 inherit                 {bootloadersettings}
-recoverysequence        {190dd86f-9b23-11ee-a6dd-c3031ed96fe4}
+recoverysequence        {190d...e4-2}
 displaymessageoverride  Recovery
 recoveryenabled         Yes
 isolatedcontext         Yes
@@ -154,7 +154,7 @@ flightsigning           Yes
 allowedinmemorysettings 0x15000075
 osdevice                partition=C:
 systemroot              \WINDOWS
-resumeobject            {190dd86d-9b23-11ee-a6dd-c3031ed96fe4}
+resumeobject            {190d...e4}
 nx                      OptIn
 bootmenupolicy          Standard
 hypervisorlaunchtype    Auto

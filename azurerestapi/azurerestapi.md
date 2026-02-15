@@ -27,12 +27,12 @@ Get AAD TPlem
 		POST https://login.microsoftonline.com/:tenant_id/oauth2/token
 		
 	URI PARAMS:
-		tenant_id:72f988bf-86f1-41af-91ab-2d7cd011db47 (look in AAD under Properties)
+		tenant_id:72f9...db47 (look in AAD under Properties)
 		
 	BODY:                                                   ((Using Postman2-test application in AAD) - client_id Under AAD/App registrations/Postman2-test - client_secret - ditto and then Settings/Keys
 	
 		grant_type: client credentials 
-		client_id:8615f0f8-8e29-43c4-9137-c15e85be63b2  
+		client_id:8615...b2  
 		client_secret:xxxxxxxxxxxxxxxxxxxxxxxxxxxxx= 
 		resource: https://management.azure.com/
         
@@ -42,7 +42,7 @@ Get AAD TPlem
         client_secret:{{client_secret}}
         resource:{{resource}}
          
-         vafsbReactor1 - client_id:64cbd1e9-8597-4c9e-a58c-adeab2c1bf67
+         vafsbReactor1 - client_id:64cb...67
          client_secret:xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 		
 	TESTS
@@ -55,7 +55,7 @@ Get IoT Hubs in Subscription
 		Get https://management.azure.com/subscriptions/:subscriptionId/providers/Microsoft.Devices/IotHubs?api-version=2016-02-03
 		
 	URI PARAMS:
-		subscriptionId:(1c3e0a47-076e-4d49-8e75-29b514711c49)
+		subscriptionId:(1c3e...49)
 		
 	HEADERS:
 		Autorization: Bearer {(bearerToken)}
@@ -70,7 +70,7 @@ Get IoT Hubs in Subscription
 		Get https://management.azure.com/subscriptions/:subscriptionsId/providers/Microsoft.Devices/IotHubs?api-version=2016-02-03
 		
 	URI PARAMS:
-		subscriptionId: (1c3e0a47-076e-4d49-8e75-29b514711c49)
+		subscriptionId: (1c3e...49)
 		
 	HEADERS:
 		Authorization: Bearer {(bearerToken)}

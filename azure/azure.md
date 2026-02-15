@@ -101,17 +101,17 @@ C:\WINDOWS\system32>dsregcmd /status
 
           AzureAdJoined : NO
        EnterpriseJoined : NO
-               DeviceId : a926cbb6-f302-4978-83d4-57ea3c3769d8
+               DeviceId : a926...d8
              Thumbprint : C0D030EEAA8F3145E2976E17A256ADF72220F253
-         KeyContainerId : 9c83c8f4-a902-4b9e-bef1-fc1098cc8d91
+         KeyContainerId : 9c83...91
             KeyProvider : Microsoft Platform Crypto Provider
            TpmProtected : YES
            KeySignTest: : PASSED
                     Idp : login.windows.net
-               TenantId : 72f988bf-86f1-41af-91ab-2d7cd011db47
+               TenantId : 72f9...db47
              TenantName : Microsoft
-            AuthCodeUrl : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/authorize
-         AccessTokenUrl : https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token
+            AuthCodeUrl : https://login.microsoftonline.com/72f9...db47/oauth2/authorize
+         AccessTokenUrl : https://login.microsoftonline.com/72f9...db47/oauth2/token
                  MdmUrl : https://enrollment.manage-beta.mothership.com/EnrollmentServer/Discovery.svc
               MdmTouUrl : https://portal.manage-beta.mothership.com/TermsOfUse.aspx
        MdmComplianceUrl :
@@ -123,9 +123,9 @@ C:\WINDOWS\system32>dsregcmd /status
               KeySrvUrl : https://enterpriseregistration.windows.net/EnrollmentServer/key/
                KeySrvId : urn:ms-drs:enterpriseregistration.windows.net
      WebAuthNSrvVersion : 1.0
-         WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/72f988bf-86f1-41af-91ab-2d7cd011db47/
+         WebAuthNSrvUrl : https://enterpriseregistration.windows.net/webauthn/72f9...db47/
           WebAuthNSrvId : urn:ms-drs:enterpriseregistration.windows.net
- DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/72f988bf-86f1-41af-91ab-2d7cd011db47/
+ DeviceManagementSrvUrl : https://enterpriseregistration.windows.net/manage/72f9...db47/
   DeviceManagementSrvId : urn:ms-drs:enterpriseregistration.windows.net
            DomainJoined : YES
              DomainName : WISEDOM
@@ -136,17 +136,17 @@ C:\WINDOWS\system32>dsregcmd /status
 
                  NgcSet : NO
         WorkplaceJoined : YES
-      WorkplaceDeviceId : a926cbb6-f302-4978-83d4-57ea3c3769d8
+      WorkplaceDeviceId : a926...d8
     WorkplaceThumbprint : C0D030EEAA8F3145E2976E17A256ADF72220F253
            WorkplaceIdp : login.windows.net
-      WorkplaceTenantId : 72f988bf-86f1-41af-91ab-2d7cd011db47
+      WorkplaceTenantId : 72f9...db47
     WorkplaceTenantName : Microsoft
         WorkplaceMdmUrl : https://enrollment.manage-beta.mothership.com/EnrollmentServer/Discovery.svc
    WorkplaceSettingsUrl : eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ==
           WamDefaultSet : YES
     WamDefaultAuthority : consumers
            WamDefaultId : https://login.mothership.com
-         WamDefaultGUID : {D7F9888F-E3FC-49B0-9EA6-A85B5F392A4F} (MicrosoftAccount)
+         WamDefaultGUID : {D7F9...4F} (MicrosoftAccount)
              AzureAdPrt : NO
     AzureAdPrtAuthority : NO
           EnterprisePrt : NO

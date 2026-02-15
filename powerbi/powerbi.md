@@ -90,7 +90,7 @@ Import-Module PowerBIPS
 
 # ClientID is Azure Application Id with PBI permissions and Reply Url: https://login.live.com/oauth20_desktop.srf and https://localhost
 # Don't forget to "grant permissions" in the Azure Portal as well
-$authToken = Get-PBIAuthToken -clientId 9c74176a-8437-4e92-94f5-2041a54c3b2c
+$authToken = Get-PBIAuthToken -clientId 9c74...2c
 
 # Get-PBIWorkspace
 # Set-PBIWorkspace -guid 

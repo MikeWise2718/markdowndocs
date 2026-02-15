@@ -206,8 +206,8 @@ call "%~dp0kit\kit.exe" "%%~dp0apps/omni.create.kit" --/exts/omni.ui/raster/defa
 - `az login`
 ```
 PS C:\Users\mwise> az vm list -g ov-rg --query "[].id" -o tsv
-/subscriptions/f537e965-f080-4572-ba15-f6fcd113fe35/resourceGroups/ov-rg/providers/Microsoft.Compute/virtualMachines/vdi-ov-mw
-/subscriptions/f537e965-f080-4572-ba15-f6fcd113fe35/resourceGroups/ov-rg/providers/Microsoft.Compute/virtualMachines/vdi-ubu22-mw
+/subscriptions/f537...35/resourceGroups/ov-rg/providers/Microsoft.Compute/virtualMachines/vdi-ov-mw
+/subscriptions/f537...35/resourceGroups/ov-rg/providers/Microsoft.Compute/virtualMachines/vdi-ubu22-mw
 PS C:\Users\mwise>
 ```
 

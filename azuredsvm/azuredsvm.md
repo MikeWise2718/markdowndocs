@@ -12,7 +12,7 @@ output: html_document
 
 # Starting a remote run on an DSVM
 - Request Just-In-Time access to the box
-- Login: `ssh mike@23.98.150.186`
+- Login: `ssh mike@YOUR_VM_IP`
 - Start a detachable session (persistent screen) `screen` then return after the startup text
    - you can check it with `screen -r` now
 - Activate the right Python Environment `source activate py36`

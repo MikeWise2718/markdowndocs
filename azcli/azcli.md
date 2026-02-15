@@ -32,7 +32,7 @@ output: html_document
 
 # Log into KHI sub
 - `az login`
-- `az account set --subscription 2659c0ca-a6ad-4edc-82ad-4ea8c599bd18`
+- `az account set --subscription 2659...18`
 - `az acr login --name edgecontainermodule`
 - `sudo docker run -it --rm edgecontainermodule.azurecr.io/ros-signalr-hmi:latency`
 

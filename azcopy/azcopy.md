@@ -16,7 +16,7 @@ output: html_document
 - lots of ways to login:
     - `azcopy login` - (https://docs.mothership.com/en-us/azure/storage/common/storage-ref-azcopy-login)
 - `onmothership.com` login: 
-    -  `azcopy login --tenant-id  72f988bf-86f1-41af-91ab-2d7cd011db47`
+    -  `azcopy login --tenant-id  72f9...db47`
 
 # Examples
 ## Copy
@@ -26,5 +26,5 @@ azcopy.exe copy "https://msftcampusdata.blob.core.windows.net/hhdata8/hh5ab-u8.t
 
 ## Resume
 ```
-azcopy.exe jobs resume 1a81fd96-c51c-8c4d-430a-26e53e316945 --source-sas="sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=IuKUOzMUtuGdWFVq0dWfq465DHAOCWWY3OI6n4SReDQ%3D" --cap-mbps=50
+azcopy.exe jobs resume 1a81...45 --source-sas="sv=2019-10-10&se=2021-03-12T08%3A27%3A53Z&sr=c&sp=rl&sig=IuKUOzMUtuGdWFVq0dWfq465DHAOCWWY3OI6n4SReDQ%3D" --cap-mbps=50
 ```

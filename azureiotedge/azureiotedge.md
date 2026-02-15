@@ -375,7 +375,7 @@ The command '/bin/sh -c dotnet publish -c Release -o out' returned a non-zero co
 
 - Issue: Could not do an `az login` from my Server Domain Joined laptop, it kept saying "That code didn't work" followed by "The code you entered has expired" when I retried. I think it was trying to login as my non-corporate mothership account, when I do an `az login -u mwise@mothership.com -p xxxxxx` it brought a more interesting message:
 ```
-Get Token request returned http error: 400 and server response: {"error":"interaction_required","error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, youmust enroll in multi-factor authentication to access '797f4846-ba00-4fd7-ba43-dac1f8f63013'.\r\nTrace ID: 80c61215-0a6a-493a-8d19-bda18c072500\r\nCorrelation ID: f36f408b-b1ed-4ca9-84b4-52a8939b8c35\r\nTimestamp: 2019-02-24 15:42:23Z","error_codes":[50079],"timestamp":"2019-02-24 15:42:23Z","trace_id":"80c61215-0a6a-493a-8d19-bda18c072500","correlation_id":"f36f408b-b1ed-4ca9-84b4-52a8939b8c35","suberror":"basic_action"}PS C:\vafsp\mod\objdet>
+Get Token request returned http error: 400 and server response: {"error":"interaction_required","error_description":"AADSTS50079: Due to a configuration change made by your administrator, or because you moved to a new location, youmust enroll in multi-factor authentication to access '797f...13'.\r\nTrace ID: 80c6...00\r\nCorrelation ID: f36f...35\r\nTimestamp: 2019-02-24 15:42:23Z","error_codes":[50079],"timestamp":"2019-02-24 15:42:23Z","trace_id":"80c6...00","correlation_id":"f36f...35","suberror":"basic_action"}PS C:\vafsp\mod\objdet>
 ```
 ```
 - Trying this: https://docs.mothership.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest 
@@ -386,10 +386,10 @@ Retrying role assignment creation: 2/36
 Retrying role assignment creation: 3/36
 Retrying role assignment creation: 4/36
 {
-  "appId": "7ba64db8-eadf-4362-9703-beb900b87bab",
+  "appId": "7ba6...ab",
   "displayName": "vafsp-svp",
   "name": "http://vafsp-svp",
   "password": null,
-  "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+  "tenant": "72f9...db47"
 }
 ```
