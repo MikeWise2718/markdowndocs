@@ -9,7 +9,7 @@ Okay, it is sort of stone age, but it is very useful. But I forgot a lot of it.
 
 There are 4 essential modes
 
-- `vi mode` (you can move around with the curors, ctrl-F, ctrl-B, h j k l)
+- `vi mode` (you can move around with the cursors, ctrl-F, ctrl-B, h j k l)
 - `input mode` (you can enter text- leave with `ESC`)
 - `command mode` (als `ex` mode you have a: and the cursoris ther,e you can ender commands)
 - `visual mode` - VIM only, you can mark a block with the `v` key and cursoring around

@@ -6,7 +6,7 @@ date: 20 May 2017
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
-# Ploty notes
+# Plotly notes
 An overview with some of the information I might need in the future when I come back to this having forgotten everything.
 
 ## Intro

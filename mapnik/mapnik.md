@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- mapnik make extrodinarily high quality graphic maps. It is the engine used to generate the OpenStreetMap maps.
+- mapnik make extraordinarily high quality graphic maps. It is the engine used to generate the OpenStreetMap maps.
 - Github repo: https://github.com/mapnik 
 - Website: https://mapnik.org/
 - Current version (as of 2019-01-21) is 3.0.21

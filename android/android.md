@@ -7,7 +7,7 @@ output: html_document
 # Intro
 If there is one thing I forget faster than how to configure Android, I don't know what it is. And a lot of it is Android manufacturer specific.
  - I used an LG Nexus 5X for a couple of years
- - Now I have a Huaewi Mate 9
+ - Now I have a Huawei Mate 9
 
 # Concepts
  * Lock screen - Duh..

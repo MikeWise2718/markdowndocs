@@ -1,20 +1,20 @@
-  **
-title: "Data Science Languages Cheatsheet"
+---
+title: "Git"
 output:
   html_document:
      css: markdown.css
-  **
+---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # All things git
-[Git Basics](https://git*scm.com/book/en/v2/Getting*Started*Git*Basics)<br>
-[Git Documentation](https://git*scm.com/docs)<br>
-[Visual Git Doc](https://marklodato.github.io/visual*git*guide/index*en.html)<br>
-[Basic Git Commands](https://confluence.atlassian.com/bitbucketserver/basic*git*commands*776639767.html)<br>
-[Git Cheatsheet](https://education.github.com/git*cheat*sheet*education.pdf)<br>
-[Things to hate about it](https://stevebennett.me/2012/02/24/10*things*i*hate*about*git/)
-[GitHub etiquette](https://help.github.com/articles/fork*a*repo/)
-[Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging*vs*rebasing)
+[Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)<br>
+[Git Documentation](https://git-scm.com/docs)<br>
+[Visual Git Doc](https://marklodato.github.io/visual-git-guide/index-en.html)<br>
+[Basic Git Commands](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)<br>
+[Git Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)<br>
+[Things to hate about it](https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/)
+[GitHub etiquette](https://help.github.com/articles/fork-a-repo/)
+[Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
 # Tutorials
  * I really liked David Mahler's systematic approach https://www.youtube.com/channel/UCEoaojfEY_6L5TWWjIn9t9Q
@@ -132,11 +132,11 @@ output:
  * refspec (https://git-scm.com/book/en/v2/Git-Internals-The-Refspec)
 
 ## More advanced stuff
- * plumbing instead of porceline (git is a content*addressable file system) [git internals](https://git*scm.com/book/en/v1/Git*Internals)
+ * plumbing instead of porcelain (git is a content-addressable file system) [git internals](https://git-scm.com/book/en/v1/Git-Internals)
  * what your mental model should be [git for computer scientists](http://eagain.net/articles/git*for*computer*scientists/)
- * Driessen on branching models [a successful Git branching model](https://nvie.com/posts/a*successful*git*branching*model/)
- * Git is your friend not a foe (v2,v3,v4 are great) [git as friend](https://hades.github.io/2010/01/git*your*friend*not*foe/)
- * git didn't beat SVN, GitHub [did](https://blog.gitprime.com/git*didnt*beat*svn*github*did/)
+ * Driessen on branching models [a successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+ * Git is your friend not a foe (v2,v3,v4 are great) [git as friend](https://hades.github.io/2010/01/git-your-friend-not-foe/)
+ * git didn't beat SVN, GitHub [did](https://blog.gitprime.com/git-didnt-beat-svn-github-did/)
  * why you should not [rebase](https://medium.com/@fredrikmorken/why-you-should-stop-using-git-rebase-5552bee4fed1)
  * git [workflows](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows)
  * commits do not know their branch (https://community.atlassian.com/t5/Bitbucket-questions/Knowing-from-which-branch-the-current-branch-was-created-from/qaq-p/570135)
@@ -147,7 +147,7 @@ output:
 
 ## User Profile Information
  * There are 3 default paths for the config file (on linux at least).
-   * ref: https://stackoverflow.com/questions/7328826/curious*where*does*git*store*user*information
+   * ref: https://stackoverflow.com/questions/7328826/curious-where-does-git-store-user-information
    * Repository itself: `<your_git_repository>/.git/config`
    * User home directory: `~/.gitconfig`
    * System*wide directory: `$(prefix)/etc/gitconfig`

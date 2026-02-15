@@ -47,7 +47,7 @@ output: html_document
 * `docker -?`                    (list all commands)
 * `docker -v`                    (version)
 * `docker version`               (long client/server version)
-* `docker search tensorvlow`     (search docker hub for an image)
+* `docker search tensorflow`     (search docker hub for an image)
 * `docker ps`                    (see what containers are running)
 * `docker ps -q`                 (see running containers but just show their numeric IDs)
 * `docker kill containername`    (kill a particular container)

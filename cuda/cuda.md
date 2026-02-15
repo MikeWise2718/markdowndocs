@@ -9,7 +9,7 @@ Cuda is a library from Nvidia that supports massively parallel operations on GPU
 
 Here is a good intro [article](https://devblogs.nvidia.com/parallelforall/even-easier-introduction-cuda/)
 
-Note that everything requirecs "nvcc" a compiler driver for what every compiler you are using (in my case VC++)
+Note that everything requires "nvcc" a compiler driver for what every compiler you are using (in my case VC++)
 
 
 # Installation
@@ -23,7 +23,7 @@ Note that everything requirecs "nvcc" a compiler driver for what every compiler 
 - Locate the version you need and download from the Nvidia site
    - For example currently: (https://developer.nvidia.com/cuda-downloads)
 - When you are done set three environment variables
-- You can find what repositornomy you installed a package from with:
+- You can find what repository you installed a package from with:
    - `apt policy <Package Name>`
 - Ubuntu - this way you can have multiple versions and just change then environment variables
 ```

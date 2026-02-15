@@ -145,7 +145,7 @@ protoc -I=. --csharp_out=. ./addressbookv3.proto
 
 Run it and convert the binary protobuf file to protbuf text
 ```
-!#/bin/bash
+#!/bin/bash
 python testpython1.py afile.pb
 protoc --decode_raw < afile.pb >afileraw.pbtxt
 protoc --decode tutorial.AddressBook addressbookv2.proto < afile.pb >afile.pbtxt

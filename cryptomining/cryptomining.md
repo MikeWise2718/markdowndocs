@@ -9,7 +9,7 @@ Explain what this thing is and what kind of help can be expected of this file.
 
 
 # Background
-- Etherium
+- Ethereum
 - How to get started mining: (https://www.youtube.com/watch?v=qmpiSbydoyY)
 
 
@@ -17,7 +17,7 @@ Explain what this thing is and what kind of help can be expected of this file.
 - What to mine: (https://whattomine.com/)
 - MSI Afterburner: (https://www.msi.com/Landing/afterburner)
 - Coinmarket Cap: (https://coinmarketcap.com/)
-- Etherium: (https://www.youtube.com/watch?v=jxLkbJozKbY)
+- Ethereum: (https://www.youtube.com/watch?v=jxLkbJozKbY)
 - Nicehash: (https://www.nicehash.com/my/dashboard)
 - NiceHash on Linux - 
 

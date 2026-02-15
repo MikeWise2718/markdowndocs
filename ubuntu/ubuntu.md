@@ -7,7 +7,7 @@ output: html_document
 # Intro
 Ubuntu seems to be the data science standard now.
 
-# Stuff to do with Ubunut 22.04
+# Stuff to do with Ubuntu 22.04
 - Install net-tools
 - to get colored vim you might need to install vim
   - sudo apt install

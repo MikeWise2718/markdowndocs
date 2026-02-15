@@ -4,25 +4,25 @@ output: html_document
 ---
 [up](https://mikewise2718.github.io/markdowndocs/)
 
-# KSP needs no explanatin
-- Beginingers guide <https://wiki.kerbalspaceprogram.com/wiki/Tutorial:_Walkthrough_for_Ye_Compleat_Beginner>
+# KSP needs no explanation
+- Beginners guide <https://wiki.kerbalspaceprogram.com/wiki/Tutorial:_Walkthrough_for_Ye_Compleat_Beginner>
 
 # Command you simply must know
-- Space bar - stages (sperates and throws away) rocket-stages, and it also ignites liquid fueled rockets (throttle it up first, see below). I think solid boosters always immediately ignite (?)
+- Space bar - stages (separates and throws away) rocket-stages, and it also ignites liquid fueled rockets (throttle it up first, see below). I think solid boosters always immediately ignite (?)
 - Left shift - Increase the throttle on a liquid fuel rocket
 - Left Ctrl - Decreses the throttle
 - "Z" - Maximum thrust
 - "Z" - Maximum thrust
 - "a" and "d" - Pitch (on ground "a" is west - or 270 degrees, and "d" is east or 90 degrees)
 - "w" and "s" - Yaw
-- "T" - brings up your oSAS (Stability Assist System) - makes it unnessary to keep correcting your yaw and pitch commands - also has auto positioning for various rocket orientations
+- "T" - brings up your oSAS (Stability Assist System) - makes it unnecessary to keep correcting your yaw and pitch commands - also has auto positioning for various rocket orientations
 - "+" and "-" - zooms view
 
 # Misc
 - Keybindings <https://wiki.kerbalspaceprogram.com/wiki/Key_bindings>
 
 # In general
-- Lauch with space bar
+- Launch with space bar
 - Start tipping the rocket with "d" at 1000 m
 - Be at 45 degrees at 10000 m
 - Be at 90 degrees at 30000 m (fuel should be 2/3ds gone)

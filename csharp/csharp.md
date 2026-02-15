@@ -7,7 +7,7 @@ output: html_document
 # Intro
 - How functional is C# - https://hackernoon.com/is-c-7-starting-to-look-like-a-functional-language-d4326b427aaa
 - Features by C# version - http://www.dotnetcurry.com/linq/727/linq-examples-tips-tricks
-- C$ Version by .NET version - https://stackoverflow.com/a/19532977/3458744
+- C# Version by .NET version - https://stackoverflow.com/a/19532977/3458744
 
 
 

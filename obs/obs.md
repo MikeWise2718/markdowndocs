@@ -62,4 +62,4 @@ output: html_document
 
 # DaVinci Resolve
 - you can't edit in OBS
-- So use DaVinici Resolve
+- So use DaVinci Resolve

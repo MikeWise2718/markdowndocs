@@ -10,7 +10,7 @@ output: html_document
 
 
 # Codex
-- Codex is being deprecitated now - I think (26 April 2023)
+- Codex is being deprecated now - I think (26 April 2023)
 - Example usage - https://platform.openai.com/docs/guides/code
 
 # Python examples in youtube
@@ -18,7 +18,7 @@ output: html_document
 - GitHub Copilot: Good or Bad  https://www.youtube.com/watch?v=PDNt07UePvk
     - Processing of context limited to 14k discussed at 2:31
     - "Copilot quality decreases on larger files"  https://github.com/orgs/community/discussions/9282
-- Amzaon Code Whisperer vs Copilot https://www.youtube.com/watch?v=p4Sc_-2yJHs
+- Amazon Code Whisperer vs Copilot https://www.youtube.com/watch?v=p4Sc_-2yJHs
 
 
 # Certification

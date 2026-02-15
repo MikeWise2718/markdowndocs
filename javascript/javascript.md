@@ -7,7 +7,7 @@ output: html_document
 # In general
 JavaScript (JS) is not my favorite language, but I think it has some great features. It is in many ways closer to being a functional language than the C/Java derivative that it pretends to be. But it has a lot of "gotchas". 
 
-JaveScript is technically now called "Ecmascript" - the newest standard is ES6 which introduced fat arrows for lambdas.
+JavaScript is technically now called "Ecmascript" - the newest standard is ES6 which introduced fat arrows for lambdas.
 
 Typescript, Microsoft's typed variant of Javascript is a better engineering language, if that is what you need. Any JS program can be "converted" to typescript, TypeScript has static typing, explicity interfaces, modules, and some other [stuff](https://www.hanselman.com/blog/WhyDoesTypeScriptHaveToBeTheAnswerToAnything.aspx). Was introduced in 2012 and adopting is still increasing 5 years later (one of the fastest growing languages in SO poll of 2017).
 

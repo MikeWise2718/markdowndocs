@@ -29,7 +29,7 @@ SillyTavern (or ST for short) is a locally installed user interface that allows 
    - https://www.base64decode.org/ 
   
 
-# Olama
+# Ollama
 - download web site: https://ollama.com/download/windows
 - Hugging face Dolphin Mixtral 8x7b -  https://huggingface.co/TheBloke/dolphin-2.7-mixtral-8x7b-GGUF
 - `ollama run hf.co/mradermacher/dolphin-2.7-mixtral-8x7b-GGUF:Q4_K_M`

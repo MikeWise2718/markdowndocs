@@ -6,8 +6,8 @@ output: html_document
 
 # Intro ()
 - The Nvidia Jetson TX2 is an embeded ARM device for High Performance Computing on the IoT edge. 
-- It runs Linux 4 Tegra (L4T) which is an Ubuntu derived Linux distirubtion running on ARM.
-- The actualy module is quite small, but the Dev Kit contains a carrier board which is a little ITX form factor main board that hosts it.
+- It runs Linux 4 Tegra (L4T) which is an Ubuntu derived Linux distribution running on ARM.
+- The actual module is quite small, but the Dev Kit contains a carrier board which is a little ITX form factor main board that hosts it.
 * You can pretty much only manage it with another Ubunut computer.
 * I suppose you could get it to work from a VM - but since Hyper-V doesn't play that well with USB devices, it might be a challenge.
 * A lot of information carries over from the Jetson TX1 which had the same carrier board.
@@ -21,7 +21,7 @@ output: html_document
 * Docs (not that up-to-date) are [here](http://docs.nvidia.com/jetpack-l4t/2_1/content/developertools/mobile/jetpack/jetpack_l4t/2.0/jetpack_l4t_install.htm)
 * They assume you are doing this from another Ubunu ucomputer called the "host", the Jetson is called the "target"
 * Apparently it comes with the operating system installed, but I never saw it, somehow I only got my HDMI monitor to display it after I had flashed it once.
-* You download a Jetpack package and kick off the installl by setting the x flag and running it
+* You download a Jetpack package and kick off the install by setting the x flag and running it
 * The install has three parts
   1. An installation of various things on the Ubuntu Host computer.
   2. The target machine gets flashed with the new version of L4T which goes over a USB/Micro-USB cable.
@@ -30,7 +30,7 @@ output: html_document
 * It can be difficult to figure out what ethernet interfaces are what, the two shorter ones turned out to run over the USB cable (, the longer one turned out to be running from my usb/ethernet adapter, and the one starting with "w" was the wifi.
   1. enp0s20u2 - this was associated with the host USB to target USB-micro connnection
   2. enp0s20u2i5 - this was also associated with the host USB to target USB-micro connnection
-  3. enx00b56d02715f - this was assocoated with the host USB-ethernet adapter to target ethernet connection
+  3. enx00b56d02715f - this was associated with the host USB-ethernet adapter to target ethernet connection
   4. wlp3s0 - this was associted with the wifi connection
 * Oddly, installing the Jetpack seems to be the only publicly supported way of getting CUDA on a TX2 - see [this](https://devtalk.nvidia.com/default/topic/1001520/setting-up-cuda-manually-on-tx2/)
 * Details about what the post-installation does can only be obtained by inspecting the code in that directory. Someone does it [here](https://devtalk.nvidia.com/default/topic/982848/jetson-tx1/tx1-specific-arm64-deb-repo-for-cuda-8/post/5063053/#5063053) for examples.
