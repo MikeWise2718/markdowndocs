@@ -15,8 +15,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #1a1a2e;
   font-weight: 600;
+}
+
+/* Override Architect theme banner font */
+#header_wrap, #header_wrap h1, #header_wrap h2,
+.inner, #project_title, #project_tagline {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 h1 { border-bottom: 2px solid #e1e4e8; padding-bottom: 0.3em; }
