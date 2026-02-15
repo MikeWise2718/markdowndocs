@@ -15,6 +15,7 @@ output: html_document
 
 # Architecture
 - System architecture overview: (https://ppaolo.substack.com/p/openclaw-system-architecture-overview)
+- Architecture video: (https://youtu.be/w4DvUU8pWmg?si=gO0R7C_lJOQwwwsY)
 
 # Videos
 - Interview with the author of OpenClaw: (https://youtu.be/NMBoNFDOr_o?si=TaBB7OdT6HnYrvu1)
