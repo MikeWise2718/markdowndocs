@@ -19,3 +19,4 @@ output: html_document
 # Videos
 - Interview with the author of OpenClaw: (https://youtu.be/NMBoNFDOr_o?si=TaBB7OdT6HnYrvu1)
 - Raw install demo: (https://youtu.be/ssYt09bCgUY?si=VFPI7eAq6KVLTZGe)
+- Skills development: (https://youtu.be/wAqzLwn2jWg?si=X0II9v7-dJQIihgb)
