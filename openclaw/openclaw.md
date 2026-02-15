@@ -13,5 +13,8 @@ output: html_document
 - Homepage: (https://openclaw.ai/)
 - GitHub: (https://github.com/openclaw/openclaw)
 
+# Architecture
+- System architecture overview: (https://ppaolo.substack.com/p/openclaw-system-architecture-overview)
+
 # Videos
 - Interview with the author of OpenClaw: (https://youtu.be/NMBoNFDOr_o?si=TaBB7OdT6HnYrvu1)
