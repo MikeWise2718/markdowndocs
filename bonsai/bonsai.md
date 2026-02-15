@@ -14,5 +14,3 @@ output: html_document
 - An "Architect" component chooses the models being used to learn something. (https://docs.bons.ai/guides/ai-engine-guide.html#architect)
 - Currently has a fairly limited repertoire (Tensorflow, APEX, PPO) but this may be obsolete information - (https://docs.bons.ai/guides/ai-engine-guide.html#currently-supported-models)
 - ApeX (https://xlnwel.github.io/blog/reinforcement%20learning/ApeX-IMPALA/)
-
-# Something Else

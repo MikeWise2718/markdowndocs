@@ -152,5 +152,3 @@ intune-portal
 
 
 # Install Edge
-
-# Something Else

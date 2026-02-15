@@ -127,8 +127,8 @@ Review of all ~137 topic pages for embarrassing, wrong, or sensitive content.
 ### "mothership.com" domain substitutions — FIXED ✅
 ~~Across many files, Microsoft domains (`docs.microsoft.com`, `azure.microsoft.com`, etc.) have been replaced with `mothership.com` variants.~~ Fixed: 106 broken URLs restored to correct `microsoft.com` equivalents across 26 files. Email addresses (`@mothership.com`) and `onmothership.com` references left as intentional redactions of internal Microsoft info.
 
-### Recurring "# Something Else" template placeholders
-The following files still have empty `# Something Else` sections from the original template: alphaess, bonsai, chome, citiesskylines, climatemodels, colcon, comfyui, ~~cryptomining~~, factorio, gamearch, kerbal.
+### Recurring "# Something Else" template placeholders — FIXED ✅
+~~The following files still have empty `# Something Else` sections from the original template.~~ Removed empty placeholder headings from 9 files (alphaess, androidstudio, bonsai, chome, azuremaps, azureubuntu, climatemodels, kerbal, zeromq). Renamed to meaningful headings in 3 files with actual content (boost, colcon, onnx). citiesskylines, comfyui, factorio, gamearch were already clean. cryptomining was deleted.
 
 ---
 

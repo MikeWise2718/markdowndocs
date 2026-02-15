@@ -37,5 +37,3 @@ output: html_document
  
 # Words
 - Apoapsis and periapsis here: <https://www.quora.com/Are-apogee-and-perigee-respectively-apoapsis-and-periapsis-of-the-Earth>
-
-# Something Else

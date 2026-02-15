@@ -16,5 +16,3 @@ Stuff I need to know about Chrome
 # Eliminating recently used dropdowns
 - Make it appear and then click the delete x in the far right
 - Make it appear and then (Shift-Delete) Super User: (https://superuser.com/questions/160137/delete-url-history-in-google-chrome)
-
-# Something Else

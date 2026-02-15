@@ -14,7 +14,7 @@ output: html_document
 - https://robots.uc3m.es/installation-guides/install-boost.html
    - Issue b2 variant=release address-model=64 link=static,shared to build 64-bit static and dynamic binaries in Release configuration for all available Boost components
 
-# Something Else
+# Build Commands
 - b2 --build-dir=d:\lib\boost --toolset=msvc --built-type=complete stage
 - b2 --build-dir=d:\lib\boost --toolset=msvc --built-type=complete --link=static,shared stage
 

@@ -8,5 +8,3 @@ output: html_document
 - C++/C# Server and Client - http://zguide.zeromq.org/cs:all
 - Python Server - http://zguide.zeromq.org/py:hwserver
 - Python Client - http://zguide.zeromq.org/py:hwclient
-
-# Something Else

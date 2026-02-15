@@ -15,6 +15,3 @@ Example link: [jQuery FAQs](https://learn.jquery.com/using-jquery-core/faq/)
 
 Example image:
 ![Red Fish](SmallerFish.png)
-
-
-# Something Else
