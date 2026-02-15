@@ -6,7 +6,7 @@ output: html_document
 
 # Intro
 - Azure Data Science VM
-- Web Page: (https://azure.mothership.com/en-us/services/virtual-machines/data-science-virtual-machines/)
+- Web Page: (https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/)
 - Three kinds, Windows, Ubuntu, CentOS
 - Diff between Ubuntu and CentOS: (https://stackoverflow.com/questions/49964685/azure-what-is-the-difference-between-dsvm-on-centos-vs-ubuntu)
 

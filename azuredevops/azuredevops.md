@@ -11,7 +11,7 @@ output: html_document
 # Cloning a repo from GitHub to Azure Repos
 - Had a repo called mikewise2718/campsim in GitHub
 - Wanted it in Azure Repos
-- Followed these steps (https://docs.mothership.com/en-us/azure/devops/repos/git/import-git-repository?
+- Followed these steps (https://docs.microsoft.com/en-us/azure/devops/repos/git/import-git-repository?
 view=azure-devops)
 - `git clone --bare https://github.com/mikewise2718/campsim.git`
 - `git config user.email "mike.wise@mothership.com"`
@@ -52,7 +52,7 @@ view=azure-devops)
   - Default is YAML, if you want the GUI editor way of building tasks you need to click on the "Classic editor link" when you create ht pipeline, you can't change it afterwards
 
   ## Agents
-  - Docs: (https://docs.mothership.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser)
+  - Docs: (https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser)
   - Essentially two kinds of agents, Microsoft Hosted, and Self Hosted
   - Microsoft Hosted are containers where you can't (?) install anything
   - Self Hosted are manchines you manage yourself (say an Azure VM or your local machine)

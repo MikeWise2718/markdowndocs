@@ -8,15 +8,15 @@ output: html_document
  - Azure command line interface.
  - 2.0 is a rewrite in Python from Node.js - who knows why?
  - Runs on Linux nicely, freeing Azure from PowerShell dependence.
- - Docs here -  https://docs.mothership.com/en-us/cli/azure/?view=azure-cli-latest
- - Scripts here - https://docs.mothership.com/en-us/azure/batch/scripts/batch-cli-sample-run-job
+ - Docs here -  https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest
+ - Scripts here - https://docs.microsoft.com/en-us/azure/batch/scripts/batch-cli-sample-run-job
 
 # Installation
-- Linux Install Instructions - https://docs.mothership.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
+- Linux Install Instructions - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-apt?view=azure-cli-latest
 
 # Upgrade version
 - `az version`
-- Check current version number here - https://docs.mothership.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+- Check current version number here - https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - Upgrade on Windows
    - Just download the MSI installer under Windows from above and reinstall
 - Upgrade on Linux:

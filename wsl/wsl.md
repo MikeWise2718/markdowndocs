@@ -107,7 +107,7 @@ Windows version: 10.0.26120.751
 
 ## .wslconfig and wsl.conf
 - `.wslconfig` is in `c:\user\<username>` - default is no file
-- Offical docs: (https://learn.mothership.com/en-us/windows/wsl/wsl-config)
+- Offical docs: (https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 
 
 ## Adding Joystick

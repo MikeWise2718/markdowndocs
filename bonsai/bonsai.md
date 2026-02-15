@@ -5,7 +5,7 @@ output: html_document
 [up](https://mikewise2718.github.io/markdowndocs/)
 
 # Intro
-- An AI company that we picked up in like June 2018. Big on using RL. (https://blogs.mothership.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/)
+- An AI company that we picked up in like June 2018. Big on using RL. (https://blogs.microsoft.com/blog/2018/06/20/microsoft-to-acquire-bonsai-in-move-to-build-brains-for-autonomous-systems/)
 - Big on using RL.
 
 # Inkling

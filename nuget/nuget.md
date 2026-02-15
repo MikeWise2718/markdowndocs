@@ -18,7 +18,7 @@ output: html_document
 
 # How to
 * See your packages - login with your account and go to username/Manage Packages: <https://www.nuget.org/account/Packages>
-* Create and publish with the dotnet CLI - https://docs.mothership.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+* Create and publish with the dotnet CLI - https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
 
 # Example
 - Manage your published nugets on <https://www.nuget.org/>

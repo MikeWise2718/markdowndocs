@@ -15,11 +15,11 @@ output: html_document
 
 # Overview 
 * It is all about licnsening: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
-* REST API Limitations: https://msdn.mothership.com/en-us/library/dn950053.aspx
+* REST API Limitations: https://msdn.microsoft.com/en-us/library/dn950053.aspx
 * Embedded complications: https://www.encorebusiness.com/blog/power-bi-free-vs-pro-vs-premium/
 
 # Duplicating Workspaces, Reports, Dashboards, etc.
-* Tutorial <https://powerbi.mothership.com/en-us/blog/duplicate-workspaces-using-the-power-bi-rest-apis-a-step-by-step-tutorial/>
+* Tutorial <https://powerbi.microsoft.com/en-us/blog/duplicate-workspaces-using-the-power-bi-rest-apis-a-step-by-step-tutorial/>
 
 # PBI Service Data Export
 * You cannot use the REST API to do this (https://community.powerbi.com/t5/Developer/Get-data-using-REST-API/td-p/122055)
@@ -37,7 +37,7 @@ output: html_document
 
 # License type
 * What kind of License do I have? http://community.powerbi.com/t5/Service/Power-BI-Pro-how-to-tell/td-p/186195
-* Pricing: https://powerbi.mothership.com/en-us/pricing/
+* Pricing: https://powerbi.microsoft.com/en-us/pricing/
 * It is under Gear/Manage Storage (oddly)<br>
 * According to this Picture I am a `Pro User` - so I can use the REST API:<br>
 ![gears](ManagePersonalSettings.png)
@@ -67,7 +67,7 @@ output: html_document
 
 
 # Custom Visuals
-* Usage docs - https://docs.mothership.com/en-us/power-bi/power-bi-custom-visuals
+* Usage docs - https://docs.microsoft.com/en-us/power-bi/power-bi-custom-visuals
 * Github sources and instructions - https://github.com/Microsoft/PowerBI-visuals
 * R Custom Visuals - https://github.com/Microsoft/PowerBI-visuals/blob/master/RVisualTutorial/CreateNewVisual.md
 
@@ -81,7 +81,7 @@ output: html_document
 * Relvant post: <https://github.com/DevScope/powerbi-powershell-modules/issues/12>
 * Following is a PowerShell script using the PBI Rest api to do this
 ```
-# Upload to CSV using PowerBIPS: https://powerbi.mothership.com/en-us/blog/using-a-power-bi-app-to-upload-csv-files-to-a-dataset/
+# Upload to CSV using PowerBIPS: https://powerbi.microsoft.com/en-us/blog/using-a-power-bi-app-to-upload-csv-files-to-a-dataset/
 # PowerBIPS page (including installation): https://github.com/DevScope/powerbi-powershell-modules
 # Docs https://github.com/DevScope/powerbi-powershell-modules/tree/master/Modules/PowerBIPS/doc
 
@@ -177,7 +177,7 @@ Clear-PBITableRows -authToken $authToken -DataSetId $dataSet.Id -TableName $tabl
 * Install with `Install-Module -Name PowerBIPS`
 
 * https://stackoverflow.com/questions/6354317/how-do-i-retrieve-the-available-commands-from-a-module
-* No real API doc but here is a listing of the commands. They don't correpsond closely to the REST API at first glance: https://docs.mothership.com/en-us/rest/api/power-bi/ - more like a subset
+* No real API doc but here is a listing of the commands. They don't correpsond closely to the REST API at first glance: https://docs.microsoft.com/en-us/rest/api/power-bi/ - more like a subset
 * Actually this listing does not contain all the functions, for excample `Get-PBIWorkspace` and `SetPBIWorkspaces` is not listed, but it is in the PowerShell Gallery listing above.
 ```
 PS C:\WINDOWS\system32> Import-Module PowerBIPS

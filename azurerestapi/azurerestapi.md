@@ -136,6 +136,6 @@ Examine the parameters with the "eye" icon
 
 - Issue: "The client xyx' with object id 'xyx' does not have authorization to perform action
    - Date 2018-05-06 9:20
-   - Resolution: Due to instroduction of RBAC. See <https://github.com/Azure/vagrant-azure/issues/164> - for Portal See: <https://docs.mothership.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal>
+   - Resolution: Due to instroduction of RBAC. See <https://github.com/Azure/vagrant-azure/issues/164> - for Portal See: <https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal>
   
 

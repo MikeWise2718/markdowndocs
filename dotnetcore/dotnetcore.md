@@ -11,14 +11,14 @@ output: html_document
 
 # Docs
 * Docs: https://dotnet.github.io/
-* Get Started: https://www.mothership.com/net/learn/get-started/windows
+* Get Started: https://www.microsoft.com/net/learn/get-started/windows
 
 # Ubuntu
-* Installing (`snap` did not work, had to use ) Microsoft <https://dotnet.mothership.com/download/linux-package-manager/ubuntu18-04/sdk-current>
+* Installing (`snap` did not work, had to use ) Microsoft <https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/sdk-current>
 * Note that you need to registert the Microsoft Key and feed first...
 
 # Dotnet commands
-* They are documented here: https://docs.mothership.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
+* They are documented here: https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet?tabs=netcore2x
 * `dotnet new console` - makes a .dot net console app using the console template in the current directory
 * `dotnet restore` - adds all the crap to make it work (from version 2.0 run automatically by new, build and run)
 * `dotnet build` - build from the csproj in the directory
@@ -35,7 +35,7 @@ output: html_document
 * `dotnet uninstall package packagename` 
 * `dotnet nuget locals all --list` 
 
-More info here: https://docs.mothership.com/en-us/nuget/tools/dotnet-commands 
+More info here: https://docs.microsoft.com/en-us/nuget/tools/dotnet-commands 
 
 # Build File
 * The build file is ths `*.csproj` file.
@@ -105,12 +105,12 @@ MVC ViewStart                                     viewstart                     
 
 
 ## csproj format
-* ms-build schema - https://docs.mothership.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference 
-* csproj schema - https://docs.mothership.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference
-* newish additions - https://docs.mothership.com/en-us/dotnet/core/tools/csproj
+* ms-build schema - https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference 
+* csproj schema - https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-project-file-schema-reference
+* newish additions - https://docs.microsoft.com/en-us/dotnet/core/tools/csproj
 
 
 ## Solution (Sln) files
 * See this: https://stackoverflow.com/questions/42730877/net-core-when-to-use-dotnet-new-sln 
-* Docs: https://docs.mothership.com/en-us/dotnet/co e/tools/dotnet-sln
+* Docs: https://docs.microsoft.com/en-us/dotnet/co e/tools/dotnet-sln
 

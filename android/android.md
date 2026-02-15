@@ -24,7 +24,7 @@ If there is one thing I forget faster than how to configure Android, I don't kno
   * If you have the device plugged in and have enabled USB debugging on the Android, and `adb devices` lists the device (see below),then it should appear in the Visusl Studio Debug dropdown<br>
    ![VS Menu](vsmenu.png) as a build option
   * You can build an APK by right clicking on the project in the Solution Explorer with the `archive` command
-  * You will get app not installed unless you sign it - instructions here: <https://docs.mothership.com/en-us/xamarin/android/deploy-test/signing/?tabs=windows>
+  * You will get app not installed unless you sign it - instructions here: <https://docs.microsoft.com/en-us/xamarin/android/deploy-test/signing/?tabs=windows>
   * 
 
 # File Manager

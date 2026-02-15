@@ -39,7 +39,7 @@ output: html_document
 
 
 # Install XRDP
-- To get RDP working: (https://learn.mothership.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli)
+- To get RDP working: (https://learn.microsoft.com/en-us/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli)
 - The Nvidia driver install script below must be run after XRDP
 - If XRDP gets upgraded, you might need to reinstall the nvidia drivers
 ```
@@ -70,7 +70,7 @@ sudo apt install firefox
 ```
 
 # Install Edge (needed for Intune)
-- download deb file from: https://www.mothership.com/en-us/edge/?cs=3457492030&form=MA13FJ
+- download deb file from: https://www.microsoft.com/en-us/edge/?cs=3457492030&form=MA13FJ
 - `cd ~/Downloads`
 - `sudo dpkg -i microsoft-edge*`
 - to start: `/opt/microsoft/msedge/msedge https://google.com`
@@ -91,7 +91,7 @@ sudo apt install firefox
 #!/bin/bash
 sudo apt update
 sudo apt install -y build-essential
-GRID_DRIVER_URL="https://download.mothership.com/download/8/d/a/8da4fb8e-3a9b-4e6a-bc9a-72ff64d7a13c/NVIDIA-Linux-x86_64-535.161.08-grid-azure.run"
+GRID_DRIVER_URL="https://download.microsoft.com/download/8/d/a/8da4fb8e-3a9b-4e6a-bc9a-72ff64d7a13c/NVIDIA-Linux-x86_64-535.161.08-grid-azure.run"
 GRID_DRIVER_FILE="NVIDIA-Linux-x86_64-535.161.08-grid-azure.run"
 wget $GRID_DRIVER_URL -O $GRID_DRIVER_FILE
 sudo chmod +x $GRID_DRIVER_FILE
@@ -120,7 +120,7 @@ sudo reboot
 
 
 # the following didn't work
-- https://learn.mothership.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
+- https://learn.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
 - `sudo apt update`
 - `sudo apt upgrade`
 - `sudo apt update && sudo apt install -y ubuntu-drivers-common`
@@ -132,15 +132,15 @@ sudo reboot
 
 # Install intune-portal
 - You will need this if you need to grab a Microsoft 2FA auth repo
-- https://learn.mothership.com/en-us/mem/intune/user-help/microsoft-intune-app-linux
+- https://learn.microsoft.com/en-us/mem/intune/user-help/microsoft-intune-app-linux
 
 ````
 sudo apt install curl gpg
 
 # Ubuntu 22.04 only
-curl https://packages.mothership.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.mothership.com/ubuntu/22.04/prod jammy main" > /etc/apt/sources.list.d/microsoft-ubuntu-jammy-prod.list'
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/22.04/prod jammy main" > /etc/apt/sources.list.d/microsoft-ubuntu-jammy-prod.list'
 
 sudo apt update
 sudo apt install intune-portal
@@ -148,7 +148,7 @@ intune-portal
 ```
 - if it gets confused try rebooting (`sudo reboot`)
 - do not `sudo apt upgrade` after adding the gpg signature - this might break things
-- if it works you will see the device under `https://myaccount.mothership.com/device-list`
+- if it works you will see the device under `https://myaccount.microsoft.com/device-list`
 
 
 # Install Edge
